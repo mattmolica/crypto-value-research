@@ -8,6 +8,7 @@ requests>=2.32
 httpx>=0.28
 beautifulsoup4>=4.12
 matplotlib>=3.9
+tabulate>=0.9
 
 # BigQuery
 google-cloud-bigquery>=3.25
