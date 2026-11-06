@@ -1,1 +1,37 @@
+# Virtual environments
 .venv/
+venv/
+env/
+
+# Python build and cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (keep the folder, not the downloads)
+data/*
+!data/.gitkeep
+
+# Secrets and local config
+.env
+.env.*
+*.key
+*service-account*.json
+credentials*.json
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
