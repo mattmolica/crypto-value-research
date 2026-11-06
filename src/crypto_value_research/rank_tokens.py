@@ -3,6 +3,7 @@
 Usage:
     python -m crypto_value_research.rank_tokens
     python -m crypto_value_research.rank_tokens --sort p_f --out data/ranking.csv
+    python -m crypto_value_research.rank_tokens --window 365
 """
 
 from __future__ import annotations
@@ -36,14 +37,31 @@ DEFAULT_TOKENS: dict[str, str | None] = {
     "pendle": None,
 }
 
+# Vote-escrow tokens: holders lock them to earn the protocol's fees, and CoinGecko
+# leaves locked tokens out of market cap. These are valued on all issued tokens.
+LOCKED_SUPPLY = {"aerodrome", "curve-finance"}
+
+WINDOW_LABELS = {30: "30 days", 90: "90 days", 365: "year"}
+
 DISPLAY_COLUMNS = [
     "rank", "symbol", "name", "market_cap", "fdv", "mcap_to_fdv",
     "fees_annual", "revenue_annual", "holders_revenue_annual",
-    "p_f", "p_s", "fdv_rev", "p_e_holders",
+    "p_f", "p_s", "p_s_1y", "fdv_rev", "p_e_holders", "notes",
 ]
 
 
-def build_table(tokens: dict[str, str | None], pause: float = 0.3) -> pd.DataFrame:
+def build_table(
+    tokens: dict[str, str | None],
+    pause: float = 0.3,
+    window: int = 90,
+    locked: set[str] | frozenset[str] = frozenset(),
+) -> pd.DataFrame:
+    """Join DefiLlama flows with CoinGecko market data and add multiples.
+
+    `window` (30, 90 or 365 days) picks the flows the main multiples use; the
+    trailing year is always added as p_s_1y. Slugs in `locked` are valued on all
+    issued tokens rather than circulating market cap.
+    """
     session = requests.Session()
     flows = []
     for slug, gecko_override in tokens.items():
@@ -60,6 +78,7 @@ def build_table(tokens: dict[str, str | None], pause: float = 0.3) -> pd.DataFra
         m = markets.get(f.gecko_id or "", {})
         if not m:
             print(f"warning: no CoinGecko market data for {f.slug} ({f.gecko_id})", file=sys.stderr)
+        main, year, month = f.annual[window], f.annual[365], f.annual[30]
         rows.append({
             "slug": f.slug,
             "gecko_id": f.gecko_id,
@@ -71,9 +90,13 @@ def build_table(tokens: dict[str, str | None], pause: float = 0.3) -> pd.DataFra
             "circulating_supply": m.get("circulating_supply"),
             "total_supply": m.get("total_supply"),
             "max_supply": m.get("max_supply"),
-            "fees_30d": f.total_30d.get("fees"),
-            "revenue_30d": f.total_30d.get("revenue"),
-            "holders_revenue_30d": f.total_30d.get("holders_revenue"),
+            "locked_supply": f.slug in locked,
+            "fees_annual": main.get("fees"),
+            "revenue_annual": main.get("revenue"),
+            "holders_revenue_annual": main.get("holders_revenue"),
+            "revenue_annual_1y": year.get("revenue"),
+            "holders_revenue_annual_30d": month.get("holders_revenue"),
+            "holders_revenue_annual_1y": year.get("holders_revenue"),
         })
     return add_multiples(pd.DataFrame(rows))
 
@@ -88,7 +111,7 @@ def format_table(df: pd.DataFrame) -> str:
     shown = df[DISPLAY_COLUMNS].copy()
     for c in ("market_cap", "fdv", "fees_annual", "revenue_annual", "holders_revenue_annual"):
         shown[c] = shown[c].map(usd)
-    for c in ("p_f", "p_s", "fdv_rev", "p_e_holders"):
+    for c in ("p_f", "p_s", "p_s_1y", "fdv_rev", "p_e_holders"):
         shown[c] = shown[c].map(mult)
     shown["mcap_to_fdv"] = shown["mcap_to_fdv"].map(lambda x: "n/a" if pd.isna(x) else f"{x:.0%}")
     return shown.to_markdown(index=False) if _has_tabulate() else shown.to_string(index=False)
@@ -106,13 +129,16 @@ def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--sort", default="p_s", choices=["p_s", "p_f", "fdv_rev", "p_e_holders"],
                    help="multiple to rank by, cheapest first (default: p_s)")
+    p.add_argument("--window", type=int, default=90, choices=sorted(WINDOW_LABELS),
+                   help="trailing days of fees/revenue the multiples use (default: 90)")
     p.add_argument("--out", help="also write the full table to this CSV path")
     args = p.parse_args(argv)
 
-    table = rank(build_table(DEFAULT_TOKENS), by=args.sort)
+    table = rank(build_table(DEFAULT_TOKENS, window=args.window, locked=LOCKED_SUPPLY), by=args.sort)
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     print(f"Token valuation ranking, sorted by {args.sort} (cheapest first), {stamp}")
-    print("Flows are DefiLlama trailing 30 days x 365/30. Market data from CoinGecko.\n")
+    print(f"Flows are DefiLlama's trailing {WINDOW_LABELS[args.window]}, scaled to a year; "
+          "p_s_1y uses the trailing year. Market data from CoinGecko.\n")
     print(format_table(table))
     if args.out:
         table.to_csv(args.out, index=False)

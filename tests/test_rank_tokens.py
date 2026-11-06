@@ -4,18 +4,22 @@ import pytest
 from crypto_value_research import rank_tokens
 from crypto_value_research.sources.defillama import ProtocolFlows
 
+def _annual(fees, revenue, holders, year_revenue=None):
+    """Same flows in every window, except the trailing year's revenue if given."""
+    base = {"fees": fees, "revenue": revenue, "holders_revenue": holders}
+    year = dict(base, revenue=year_revenue if year_revenue is not None else revenue)
+    return {30: dict(base), 90: dict(base), 365: year}
+
+
 FLOWS = {
-    "alpha": ProtocolFlows("alpha", "Alpha", "alpha-token",
-                           {"fees": 20e6, "revenue": 10e6, "holders_revenue": 5e6}),
-    "beta": ProtocolFlows("beta", "Beta", "beta-wrong-id",
-                          {"fees": 4e6, "revenue": 1e6, "holders_revenue": None}),
-    "gamma": ProtocolFlows("gamma", "Gamma", None,
-                           {"fees": None, "revenue": None, "holders_revenue": None}),
+    "alpha": ProtocolFlows("alpha", "Alpha", "alpha-token", _annual(240e6, 120e6, 60e6, 240e6)),
+    "beta": ProtocolFlows("beta", "Beta", "beta-wrong-id", _annual(48e6, 12e6, None)),
+    "gamma": ProtocolFlows("gamma", "Gamma", None, _annual(None, None, None)),
 }
 
 MARKETS = {
     "alpha-token": {"symbol": "alp", "current_price": 2.0, "market_cap": 1e9,
-                    "fully_diluted_valuation": 2e9},
+                    "fully_diluted_valuation": 2e9, "total_supply": 1e9},
     "beta-token": {"symbol": "bet", "current_price": 1.0, "market_cap": 1e9,
                    "fully_diluted_valuation": 1e9},
 }
@@ -27,7 +31,7 @@ def fake_sources(monkeypatch):
 
     def fetch_protocol_flows(slug, session=None):
         f = FLOWS[slug]
-        return ProtocolFlows(f.slug, f.name, f.gecko_id, dict(f.total_30d))
+        return ProtocolFlows(f.slug, f.name, f.gecko_id, {w: dict(v) for w, v in f.annual.items()})
 
     def fetch_markets(ids, session=None):
         requested["ids"] = list(ids)
@@ -49,9 +53,24 @@ def test_build_table_joins_sources(fake_sources, capsys):
     assert df.loc["beta", "gecko_id"] == "beta-token"
     assert df.loc["alpha", "symbol"] == "ALP"
     assert df.loc["alpha", "fdv"] == 2e9
-    assert df.loc["alpha", "p_s"] == pytest.approx(1e9 / (10e6 * 365 / 30))
+    assert df.loc["alpha", "p_s"] == pytest.approx(1e9 / 120e6)
+    assert df.loc["alpha", "p_s_1y"] == pytest.approx(1e9 / 240e6)
     assert pd.isna(df.loc["gamma", "market_cap"])
     assert "no CoinGecko market data for gamma" in capsys.readouterr().err
+
+
+def test_build_table_values_locked_tokens_on_issued_supply(fake_sources):
+    df = rank_tokens.build_table(TOKENS, pause=0, locked={"alpha"}).set_index("slug")
+    # alpha: price $2 x 1B issued tokens = $2B, not the $1B circulating cap
+    assert df.loc["alpha", "market_value"] == 2e9
+    assert df.loc["alpha", "p_s"] == pytest.approx(2e9 / 120e6)
+    assert "issued tokens" in df.loc["alpha", "notes"]
+    assert df.loc["beta", "market_value"] == 1e9
+
+
+def test_build_table_window_picks_flows(fake_sources):
+    df = rank_tokens.build_table(TOKENS, pause=0, window=365).set_index("slug")
+    assert df.loc["alpha", "revenue_annual"] == 240e6
 
 
 def test_format_table_renders_units(fake_sources):
@@ -72,6 +91,7 @@ def test_main_writes_csv(fake_sources, monkeypatch, tmp_path, capsys):
 
     stdout = capsys.readouterr().out
     assert "sorted by p_f" in stdout
+    assert "trailing 90 days" in stdout
     saved = pd.read_csv(out)
     assert list(saved["slug"]) == ["alpha", "beta", "gamma"]
     assert list(saved["rank"]) == [1, 2, 3]

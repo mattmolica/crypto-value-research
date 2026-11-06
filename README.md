@@ -60,9 +60,11 @@ python -m crypto_value_research.rank_tokens               # rank by P/S
 python -m crypto_value_research.rank_tokens --sort p_f --out data/ranking.csv
 ```
 
-Pulls trailing 30-day fees, revenue and holders revenue from DefiLlama and
-market cap, FDV and supply from CoinGecko, annualizes the flows (x 365/30) and
-ranks tokens cheapest first. Multiples:
+Pulls daily fees, revenue and holders revenue from DefiLlama and market cap,
+FDV and supply from CoinGecko, totals the flows over the trailing 90 days
+(change with `--window 30|90|365`), scales them to a year and ranks tokens
+cheapest first. The trailing year's P/S (`p_s_1y`) is shown beside it as a
+check. Multiples:
 
 - **P/F**: market cap / annualized fees (everything users pay)
 - **P/S**: market cap / annualized protocol revenue
@@ -72,6 +74,16 @@ ranks tokens cheapest first. Multiples:
 
 Set `COINGECKO_API_KEY` to use a CoinGecko Demo key for higher rate limits.
 The token list lives in `DEFAULT_TOKENS` in `rank_tokens.py`.
+
+Two things to know when reading the table:
+
+- **Locked tokens.** For vote-escrow tokens (listed in `LOCKED_SUPPLY`, e.g.
+  AERO, CRV), holders lock tokens to earn the fees and CoinGecko leaves the
+  locked tokens out of market cap. These are valued on every issued token
+  (price x total supply) instead, so their multiples aren't flattered.
+- **Notes column.** Flags tokens valued that way, and tokens that paid holders
+  in the past year but paid nothing in the last 30 days (a buyback that was
+  paused, for example).
 
 ## Status
 

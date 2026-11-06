@@ -1,11 +1,17 @@
 """DefiLlama fees and revenue (free API, no key needed).
 
 Docs: https://defillama.com/docs/api
+
+We pull each protocol's daily series and add them up ourselves over trailing
+windows (30, 90 and 365 days), because DefiLlama's summary only offers 24h, 7d,
+30d and 1y totals, and a 30-day window is too noisy: payouts that stop and
+start, weekly bookings and one-off catch-up days can swing it by 15% or more.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
 
 import requests
 
@@ -18,25 +24,32 @@ DATA_TYPES = {
     "dailyHoldersRevenue": "holders_revenue",  # the part that reaches token holders
 }
 
+# Trailing windows, in days, that we total every series over.
+WINDOWS = (30, 90, 365)
+
+DAY = 86_400
+
 
 @dataclass
 class ProtocolFlows:
     slug: str
     name: str
     gecko_id: str | None
-    # Trailing 30-day totals in USD, keyed by "fees", "revenue", "holders_revenue".
+    # Annualized USD flows per window: annual[days][column], e.g. annual[90]["fees"].
     # None means DefiLlama has no series for that data type.
-    total_30d: dict[str, float | None]
+    annual: dict[int, dict[str, float | None]] = field(default_factory=dict)
 
 
 def fetch_summary(slug: str, data_type: str, session: requests.Session | None = None) -> dict | None:
-    """Return DefiLlama's summary for one protocol and data type, or None if it has none."""
+    """Return DefiLlama's summary (with the daily chart) for one protocol and data type.
+
+    Returns None if DefiLlama has no such series.
+    """
     http = session or requests
     resp = http.get(
         f"{BASE_URL}/summary/fees/{slug}",
-        params={"dataType": data_type, "excludeTotalDataChart": "true",
-                "excludeTotalDataChartBreakdown": "true"},
-        timeout=30,
+        params={"dataType": data_type, "excludeTotalDataChartBreakdown": "true"},
+        timeout=60,
     )
     if resp.status_code in (400, 404):
         return None
@@ -44,16 +57,38 @@ def fetch_summary(slug: str, data_type: str, session: requests.Session | None = 
     return resp.json()
 
 
-def fetch_protocol_flows(slug: str, session: requests.Session | None = None) -> ProtocolFlows:
-    """Fetch trailing 30-day fees, revenue and holders revenue for a protocol slug."""
+def annualize(chart: list[list[float]], days: int, now: datetime | None = None) -> float | None:
+    """Total the last `days` full days of a daily chart and scale it to one year.
+
+    `chart` is DefiLlama's totalDataChart: [[unix_seconds, usd], ...]. Today's
+    partial day is left out. If the series is younger than the window, the total
+    is scaled by the days it actually covers. Returns None for an empty series.
+    """
+    now = now or datetime.now(timezone.utc)
+    today = int(now.timestamp()) // DAY * DAY
+    start = today - days * DAY
+    points = [(int(t), float(v)) for t, v in chart if int(t) < today]
+    if not points:
+        return None
+    covered = min(days, (today - points[0][0]) // DAY)
+    if covered <= 0:
+        return None
+    total = sum(v for t, v in points if t >= start)
+    return total * 365 / covered
+
+
+def fetch_protocol_flows(
+    slug: str, session: requests.Session | None = None, now: datetime | None = None
+) -> ProtocolFlows:
+    """Fetch annualized fees, revenue and holders revenue for a protocol slug, per window."""
     name, gecko_id = slug, None
-    totals: dict[str, float | None] = {}
+    annual: dict[int, dict[str, float | None]] = {w: {} for w in WINDOWS}
     for data_type, column in DATA_TYPES.items():
         data = fetch_summary(slug, data_type, session)
-        if not data:
-            totals[column] = None
-            continue
-        name = data.get("name") or name
-        gecko_id = gecko_id or data.get("gecko_id")
-        totals[column] = data.get("total30d")
-    return ProtocolFlows(slug=slug, name=name, gecko_id=gecko_id, total_30d=totals)
+        chart = (data or {}).get("totalDataChart") or []
+        if data:
+            name = data.get("name") or name
+            gecko_id = gecko_id or data.get("gecko_id")
+        for w in WINDOWS:
+            annual[w][column] = annualize(chart, w, now) if chart else None
+    return ProtocolFlows(slug=slug, name=name, gecko_id=gecko_id, annual=annual)
