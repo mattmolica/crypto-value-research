@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 import pytest
 import requests
 
@@ -25,31 +27,71 @@ def test_fetch_summary_request_shape(fake_session):
     call = s.calls[0]
     assert call["url"] == f"{defillama.BASE_URL}/summary/fees/aave"
     assert call["params"]["dataType"] == "dailyRevenue"
-    assert call["params"]["excludeTotalDataChart"] == "true"
+    assert "excludeTotalDataChart" not in call["params"]  # we need the daily chart
+
+
+NOW = datetime(2026, 11, 6, 15, 0, tzinfo=timezone.utc)
+TODAY = int(datetime(2026, 11, 6, tzinfo=timezone.utc).timestamp())
+DAY = defillama.DAY
+
+
+def _daily(values_oldest_first):
+    """A chart ending yesterday, plus a partial point for today that must be ignored."""
+    n = len(values_oldest_first)
+    chart = [[TODAY - (n - i) * DAY, v] for i, v in enumerate(values_oldest_first)]
+    return chart + [[TODAY, 1e12]]
+
+
+def test_annualize_full_window():
+    chart = _daily([1.0] * 400)
+    assert defillama.annualize(chart, 30, NOW) == pytest.approx(365.0)
+    assert defillama.annualize(chart, 90, NOW) == pytest.approx(365.0)
+    assert defillama.annualize(chart, 365, NOW) == pytest.approx(365.0)
+
+
+def test_annualize_only_counts_the_window():
+    # 60 old days at 10/day, then 30 recent days at 1/day
+    chart = _daily([10.0] * 60 + [1.0] * 30)
+    assert defillama.annualize(chart, 30, NOW) == pytest.approx(365.0)
+    assert defillama.annualize(chart, 90, NOW) == pytest.approx((600 + 30) * 365 / 90)
+
+
+def test_annualize_young_series_scales_by_days_covered():
+    chart = _daily([2.0] * 10)  # protocol is only 10 days old
+    assert defillama.annualize(chart, 90, NOW) == pytest.approx(2.0 * 365)
+
+
+def test_annualize_empty():
+    assert defillama.annualize([], 90, NOW) is None
+    assert defillama.annualize([[TODAY, 5.0]], 90, NOW) is None  # only today's partial day
 
 
 def test_fetch_protocol_flows_collects_all_types(fake_session):
-    totals = {"dailyFees": 30e6, "dailyRevenue": 9e6}  # no holders revenue series
+    charts = {"dailyFees": _daily([3.0] * 400), "dailyRevenue": _daily([1.0] * 400)}
 
     def handler(url, params, headers):
         dt = params["dataType"]
-        if dt not in totals:
+        if dt not in charts:  # no holders revenue series
             return FakeResponse(status_code=404)
-        return FakeResponse({"name": "Aave", "gecko_id": "aave", "total30d": totals[dt]})
+        return FakeResponse({"name": "Aave", "gecko_id": "aave", "totalDataChart": charts[dt]})
 
-    flows = defillama.fetch_protocol_flows("aave", fake_session(handler))
+    flows = defillama.fetch_protocol_flows("aave", fake_session(handler), now=NOW)
     assert flows.slug == "aave"
     assert flows.name == "Aave"
     assert flows.gecko_id == "aave"
-    assert flows.total_30d == {"fees": 30e6, "revenue": 9e6, "holders_revenue": None}
+    assert set(flows.annual) == set(defillama.WINDOWS)
+    for w in defillama.WINDOWS:
+        assert flows.annual[w]["fees"] == pytest.approx(3.0 * 365)
+        assert flows.annual[w]["revenue"] == pytest.approx(365.0)
+        assert flows.annual[w]["holders_revenue"] is None
 
 
 def test_fetch_protocol_flows_unknown_slug_keeps_defaults(fake_session):
     s = fake_session(lambda *a: FakeResponse(status_code=404))
-    flows = defillama.fetch_protocol_flows("ghost", s)
+    flows = defillama.fetch_protocol_flows("ghost", s, now=NOW)
     assert flows.name == "ghost"
     assert flows.gecko_id is None
-    assert set(flows.total_30d.values()) == {None}
+    assert all(v is None for w in flows.annual.values() for v in w.values())
     assert len(s.calls) == len(defillama.DATA_TYPES)
 
 
