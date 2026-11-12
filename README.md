@@ -85,6 +85,28 @@ Two things to know when reading the table:
   in the past year but paid nothing in the last 30 days (a buyback that was
   paused, for example).
 
+## Valuation history
+
+```bash
+python -m crypto_value_research.history                   # writes data/history/*.csv
+```
+
+Shows how expensive each token has been over its whole life, so "cheap" can
+be judged against the token's own past. It writes a weekly history per token
+(`full_history.csv`) and a summary (`full_summary.csv`) with today's P/S, the
+lifetime low, median and high, and `cheaper_than_pct`: the share of past days
+with a higher P/S than today (0.96 means it has rarely been this cheap).
+
+Free data has no record of past circulating supply, and CoinGecko's free API
+stops at 365 days of market cap. So the long history uses **fully diluted
+value**: daily price from DefiLlama's coins API (back to launch) times total
+supply. Total supply is exact for fixed-supply tokens, modeled for CRV from its
+emission schedule, and estimated for tokens whose supply changed (see
+`SUPPLY_RULES` in `history.py`, which also says which way each estimate leans).
+The last year of circulating market cap is kept beside it as `ps_mcap`.
+
+Needs `coins.llama.fi` reachable in addition to the hosts the ranking uses.
+
 ## Status
 
 Early stage: a first valuation ranking is in; more metrics and screens next.
