@@ -38,6 +38,8 @@ class ProtocolFlows:
     # Annualized USD flows per window: annual[days][column], e.g. annual[90]["fees"].
     # None means DefiLlama has no series for that data type.
     annual: dict[int, dict[str, float | None]] = field(default_factory=dict)
+    # Full days of revenue history DefiLlama has (fees if there is no revenue series).
+    history_days: int | None = None
 
 
 def fetch_summary(slug: str, data_type: str, session: requests.Session | None = None) -> dict | None:
@@ -83,6 +85,7 @@ def fetch_protocol_flows(
     """Fetch annualized fees, revenue and holders revenue for a protocol slug, per window."""
     name, gecko_id = slug, None
     annual: dict[int, dict[str, float | None]] = {w: {} for w in WINDOWS}
+    history: dict[str, int] = {}
     for data_type, column in DATA_TYPES.items():
         data = fetch_summary(slug, data_type, session)
         chart = (data or {}).get("totalDataChart") or []
@@ -91,4 +94,54 @@ def fetch_protocol_flows(
             gecko_id = gecko_id or data.get("gecko_id")
         for w in WINDOWS:
             annual[w][column] = annualize(chart, w, now) if chart else None
-    return ProtocolFlows(slug=slug, name=name, gecko_id=gecko_id, annual=annual)
+        if chart:
+            history[column] = days_of_history(chart, now)
+    return ProtocolFlows(slug=slug, name=name, gecko_id=gecko_id, annual=annual,
+                         history_days=history.get("revenue", history.get("fees")))
+
+
+def days_of_history(chart: list[list[float]], now: datetime | None = None) -> int:
+    """Full days from a chart's first point up to (not including) today."""
+    now = now or datetime.now(timezone.utc)
+    today = int(now.timestamp()) // DAY * DAY
+    first = min(int(t) for t, _ in chart)
+    return max(0, (today - first) // DAY)
+
+
+# --- Every protocol at once (used to build the all-token universe) -----------
+
+def fetch_overview(data_type: str = "dailyRevenue", session: requests.Session | None = None) -> list[dict]:
+    """One row per protocol (and chain) DefiLlama tracks for this data type.
+
+    Each row carries slug, name, category, protocolType ("protocol" or "chain"),
+    parentProtocol (e.g. "parent#uniswap") when it is one product of a larger
+    project, and DefiLlama's own totals such as total30d and total1y.
+    """
+    http = session or requests
+    resp = http.get(
+        f"{BASE_URL}/overview/fees",
+        params={"dataType": data_type, "excludeTotalDataChart": "true",
+                "excludeTotalDataChartBreakdown": "true"},
+        timeout=120,
+    )
+    resp.raise_for_status()
+    return resp.json().get("protocols") or []
+
+
+def fetch_directory(session: requests.Session | None = None) -> dict:
+    """DefiLlama's protocol directory: which CoinGecko token belongs to which protocol.
+
+    Returns {"protocols": [{defillamaId, name, geckoId, ...}],
+             "parentProtocols": [{id, name, gecko_id, ...}]}.
+    """
+    http = session or requests
+    resp = http.get(f"{BASE_URL}/lite/protocols2", timeout=120)
+    resp.raise_for_status()
+    data = resp.json()
+    return {"protocols": data.get("protocols") or [],
+            "parentProtocols": data.get("parentProtocols") or []}
+
+
+def slugify(name: str) -> str:
+    """DefiLlama's URL slug for a name: lower case, spaces to dashes, apostrophes dropped."""
+    return name.strip().lower().replace(" ", "-").replace("'", "")

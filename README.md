@@ -56,9 +56,22 @@ pytest
 ## Token valuation ranking
 
 ```bash
-python -m crypto_value_research.rank_tokens               # rank by P/S
+python -m crypto_value_research.rank_tokens               # every token with revenue, by P/S
 python -m crypto_value_research.rank_tokens --sort p_f --out data/ranking.csv
+python -m crypto_value_research.rank_tokens --min-revenue 5e6 --universe-out data/universe.csv
+python -m crypto_value_research.rank_tokens --tokens default   # the 14 hand-picked tokens
 ```
+
+**Which tokens.** By default it ranks every project DefiLlama tracks that
+earned at least $1M of revenue over the past year (`--min-revenue`) and has a
+token on CoinGecko. Products are folded into their parent project first
+(Uniswap V2, V3 and V4 count as Uniswap, which owns UNI). Chains are left out,
+because their "revenue" is burned gas. `--universe-out` writes every project
+with the reason it was or wasn't ranked: `ranked`, `no token` (Tether, Circle,
+Polymarket and other big earners with nothing to buy), `revenue under floor`,
+`token shared with a bigger project`, or `excluded` (a gold-backed token, whose
+price follows gold). `python -m crypto_value_research.universe` prints just
+this list, and `universe.revenue_tokens(...)` hands it to `history.build_all`.
 
 Pulls daily fees, revenue and holders revenue from DefiLlama and market cap,
 FDV and supply from CoinGecko, totals the flows over the trailing 90 days
@@ -73,17 +86,26 @@ check. Multiples:
 - **MCap/FDV**: share of the diluted supply already circulating
 
 Set `COINGECKO_API_KEY` to use a CoinGecko Demo key for higher rate limits.
-The token list lives in `DEFAULT_TOKENS` in `rank_tokens.py`.
+The hand-picked list lives in `DEFAULT_TOKENS` in `rank_tokens.py`.
 
-Two things to know when reading the table:
+Things to know when reading the table:
 
 - **Locked tokens.** For vote-escrow tokens (listed in `LOCKED_SUPPLY`, e.g.
   AERO, CRV), holders lock tokens to earn the fees and CoinGecko leaves the
   locked tokens out of market cap. These are valued on every issued token
   (price x total supply) instead, so their multiples aren't flattered.
-- **Notes column.** Flags tokens valued that way, and tokens that paid holders
-  in the past year but paid nothing in the last 30 days (a buyback that was
-  paused, for example).
+- **No circulating market cap.** When CoinGecko can't verify a token's
+  circulating supply it reports no market cap; those tokens are valued on fully
+  diluted value instead (this can only make them look dearer) and noted.
+- **Caution column.** `True` when the data makes the multiple hard to trust:
+  the token isn't on CoinGecko, no revenue in the window, market value under
+  $10M, less revenue history than the window, or revenue larger than the whole
+  market value (usually a wrong token match). Filter these out for a clean list.
+- **Notes column.** Explains each caution, and also flags tokens valued on
+  issued supply or FDV, tokens that paid holders in the past year but nothing
+  in the last 30 days (a paused buyback, for example), and tokens whose revenue
+  run rate has fallen by more than half against the past year, since cheap can
+  mean shrinking.
 
 ## Valuation history
 

@@ -3,7 +3,8 @@ import math
 import pandas as pd
 
 from crypto_value_research.valuation import (
-    NOTE_LOCKED, NOTE_PAYOUT_STOPPED, add_multiples, rank,
+    NOTE_FDV, NOTE_LOCKED, NOTE_NO_MARKET, NOTE_NO_REVENUE, NOTE_P_S_BELOW_1,
+    NOTE_PAYOUT_STOPPED, NOTE_TINY, add_multiples, rank,
 )
 
 
@@ -32,7 +33,9 @@ def test_multiples():
     assert math.isnan(df.loc["pricey", "p_e_holders"])
     assert math.isnan(df.loc["none", "p_s"])  # zero revenue -> no multiple
     assert math.isnan(df.loc["none", "fdv_rev"])
-    assert set(df["notes"]) == {""}
+    assert df.loc["cheap", "notes"] == df.loc["pricey", "notes"] == ""
+    assert df.loc["none", "notes"] == NOTE_NO_REVENUE
+    assert list(df["caution"]) == [False, False, True]
 
 
 def test_locked_supply_valued_on_issued_tokens():
@@ -62,7 +65,7 @@ def test_payout_stopped_note():
     out = add_multiples(df).set_index("name")
     assert out.loc["cheap", "notes"] == NOTE_PAYOUT_STOPPED  # paid this year, not lately
     assert out.loc["pricey", "notes"] == ""  # never paid
-    assert out.loc["none", "notes"] == ""  # no recent data
+    assert out.loc["none", "notes"] == NOTE_NO_REVENUE  # no payout note without recent data
     assert math.isclose(out.loc["cheap", "p_s_1y"], 1e9 / 60e6)
 
 
@@ -95,3 +98,63 @@ def test_rank_by_other_column():
     ranked = rank(add_multiples(_frame()), by="p_f")
     # p_f: cheap 1e9/240e6, pricey 1e9/60e6, none 5e8/36e6
     assert list(ranked["name"]) == ["cheap", "none", "pricey"]
+
+
+def _one(**kw):
+    row = {"name": "x", "market_cap": 1e9, "fdv": 1e9, "fees_annual": 100e6,
+           "revenue_annual": 50e6, "holders_revenue_annual": None}
+    row.update(kw)
+    return add_multiples(pd.DataFrame([row])).iloc[0]
+
+
+def test_clean_row_has_no_caution():
+    r = _one()
+    assert not r["caution"]
+    assert r["notes"] == ""
+
+
+def test_missing_circulating_cap_falls_back_to_fdv():
+    for cap in (None, 0.0):
+        r = _one(market_cap=cap, fdv=2e9)
+        assert r["market_value"] == 2e9
+        assert math.isclose(r["p_s"], 2e9 / 50e6)
+        assert r["notes"] == NOTE_FDV
+        assert not r["caution"]
+
+
+def test_no_market_data_is_a_caution():
+    r = _one(market_cap=None, fdv=None, has_market_data=False)
+    assert math.isnan(r["p_s"])
+    assert r["caution"]
+    assert NOTE_NO_MARKET in r["notes"]
+
+
+def test_tiny_market_value_is_a_caution():
+    r = _one(market_cap=5e6, fdv=5e6, revenue_annual=1e6)
+    assert r["caution"]
+    assert r["notes"] == NOTE_TINY
+
+
+def test_revenue_above_market_value_is_a_caution():
+    r = _one(market_cap=40e6, fdv=40e6, revenue_annual=50e6)
+    assert r["caution"]
+    assert NOTE_P_S_BELOW_1 in r["notes"]
+
+
+def test_young_protocol_is_a_caution():
+    r = add_multiples(pd.DataFrame([{
+        "market_cap": 1e9, "fdv": 1e9, "fees_annual": 1e8, "revenue_annual": 5e7,
+        "holders_revenue_annual": None, "history_days": 40}]), window=90).iloc[0]
+    assert r["caution"]
+    assert r["notes"] == "only 40 days of revenue history"
+    old = add_multiples(pd.DataFrame([{
+        "market_cap": 1e9, "fdv": 1e9, "fees_annual": 1e8, "revenue_annual": 5e7,
+        "holders_revenue_annual": None, "history_days": 400}]), window=90).iloc[0]
+    assert not old["caution"]
+
+
+def test_falling_revenue_is_noted_but_not_a_caution():
+    r = _one(revenue_annual=20e6, revenue_annual_1y=100e6)
+    assert not r["caution"]
+    assert r["notes"] == "revenue run rate down 80% vs the past year"
+    assert _one(revenue_annual=60e6, revenue_annual_1y=100e6)["notes"] == ""
