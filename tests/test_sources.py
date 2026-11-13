@@ -134,3 +134,12 @@ def test_fetch_markets_raises_on_http_error(fake_session):
     s = fake_session(lambda *a: FakeResponse(status_code=429))
     with pytest.raises(requests.HTTPError):
         coingecko.fetch_markets(["aave"], s)
+
+
+def test_markets_asks_in_batches(fake_session):
+    ids = [f"t{i}" for i in range(coingecko.BATCH * 2 + 5)] + ["t0"]  # a repeat is asked once
+    s = fake_session(lambda url, params, headers: FakeResponse(
+        [{"id": i} for i in params["ids"].split(",")]))
+    out = coingecko.fetch_markets(ids, s)
+    assert [len(c["params"]["ids"].split(",")) for c in s.calls] == [coingecko.BATCH, coingecko.BATCH, 5]
+    assert len(out) == coingecko.BATCH * 2 + 5

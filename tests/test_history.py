@@ -133,3 +133,86 @@ def test_weekly_keeps_sundays_and_latest_day():
     df = pd.DataFrame({"fdv": np.arange(len(idx), dtype=float)}, index=idx)
     w = history.weekly(df)
     assert list(w.index.strftime("%Y-%m-%d")) == ["2024-01-07", "2024-01-14", "2024-01-17"]
+
+
+# --- any token list ----------------------------------------------------------------
+
+def test_supply_rule_trusts_only_capped_supply():
+    assert history.supply_rule("curve-finance", {}) is history.SUPPLY_RULES["curve-finance"]
+    assert history.supply_rule("lido", {"total_supply": 1e9, "max_supply": 1e9}) is history.EXACT
+    assert history.supply_rule("new", {"total_supply": 9e8, "max_supply": 1e9}) is history.UNCAPPED
+    assert history.supply_rule("new", {"total_supply": 9e8, "max_supply": None}) is history.UNCAPPED
+
+
+def test_parse_tokens_reads_slugs_ids_and_comments():
+    assert history.parse_tokens(["aave", " aerodrome = aerodrome-finance ", "", "# a comment", "gmx  # perps"]) == {
+        "aave": None, "aerodrome": "aerodrome-finance", "gmx": None}
+
+
+def _fake_sources(monkeypatch, priced=("aave",)):
+    """Two years of flat data from fake DefiLlama and CoinGecko fetchers."""
+    days = pd.date_range("2023-01-01", periods=730, freq="D")
+    chart = [[int(d.timestamp()), 1000.0] for d in days]  # $365k revenue a year
+
+    def fetch_summary(slug, data_type, session=None):
+        if slug == "no-id":
+            return {"name": "No Id"}
+        return {"name": slug.title(), "symbol": slug[:4], "gecko_id": f"{slug}-coin", "totalDataChart": chart}
+
+    def fetch_markets(ids, session=None):
+        return {i: {"symbol": i[:4], "total_supply": 1e6, "max_supply": 1e6,
+                    "market_cap": 1e6, "fully_diluted_valuation": 2e6} for i in ids}
+
+    def fetch_price_history(gecko_id, session=None, **kw):
+        if gecko_id.removesuffix("-coin") not in priced:
+            return pd.Series(dtype=float)
+        return pd.Series(2.0, index=days)
+
+    monkeypatch.setattr(history.defillama, "fetch_summary", fetch_summary)
+    monkeypatch.setattr(history.coingecko, "fetch_markets", fetch_markets)
+    monkeypatch.setattr(history.llama_prices, "fetch_price_history", fetch_price_history)
+
+
+def test_build_all_takes_any_list_and_skips_tokens_that_fail(monkeypatch, capsys):
+    _fake_sources(monkeypatch)
+    hist, summary = history.build_all({"aave": None, "no-prices": None, "no-id": None},
+                                      pause=0, market_cap=False, session=object())
+    assert list(summary.symbol) == ["AAVE"]
+    row = summary.iloc[0]
+    assert row.ps_fdv_now == pytest.approx(2e6 / 365_000)
+    assert row.supply_method == history.EXACT.method
+    assert set(hist.symbol) == {"AAVE"} and hist.ps_mcap.isna().all()
+    err = capsys.readouterr().err
+    assert "no-prices skipped" in err and "no CoinGecko id for no-id" in err
+
+
+def test_build_all_with_nothing_buildable_is_empty(monkeypatch):
+    _fake_sources(monkeypatch, priced=())
+    hist, summary = history.build_all({"x": None}, pause=0, market_cap=False, session=object())
+    assert hist.empty and summary.empty
+
+
+def test_main_uses_token_file_and_flags(monkeypatch, tmp_path):
+    seen = {}
+
+    def fake_build_all(tokens, pause, market_cap):
+        seen.update(tokens=tokens, pause=pause, market_cap=market_cap)
+        return (pd.DataFrame({"date": ["2024-01-07"], "symbol": ["AAVE"]}),
+                pd.DataFrame({"symbol": ["AAVE"], "ps_fdv_now": [5.0], "note": [""]}))
+
+    monkeypatch.setattr(history, "build_all", fake_build_all)
+    f = tmp_path / "tokens.txt"
+    f.write_text("aave\n# skip me\naerodrome=aerodrome-finance\n")
+    assert history.main(["--tokens-file", str(f), "--tokens", "gmx", "--no-market-cap",
+                         "--out-dir", str(tmp_path / "out")]) == 0
+    assert seen == {"tokens": {"aave": None, "aerodrome": "aerodrome-finance", "gmx": None},
+                    "pause": 1.0, "market_cap": False}
+    assert (tmp_path / "out" / "full_summary.csv").exists()
+
+
+def test_main_defaults_to_the_ranking_tokens(monkeypatch, tmp_path):
+    seen = {}
+    monkeypatch.setattr(history, "build_all",
+                        lambda tokens, pause, market_cap: seen.update(tokens=tokens) or (pd.DataFrame(), pd.DataFrame()))
+    assert history.main(["--out-dir", str(tmp_path)]) == 1  # nothing built, nothing written
+    assert seen["tokens"] == history.DEFAULT_TOKENS
