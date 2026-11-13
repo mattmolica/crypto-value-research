@@ -7,6 +7,7 @@ as a Demo API key, which gets higher rate limits.
 from __future__ import annotations
 
 import os
+import time
 
 import requests
 
@@ -21,21 +22,32 @@ FIELDS = (
 BATCH = 100  # ids per request; CoinGecko returns at most 250 rows a page and long URLs fail
 
 
-def fetch_markets(ids: list[str], session: requests.Session | None = None) -> dict[str, dict]:
+def fetch_markets(
+    ids: list[str],
+    session: requests.Session | None = None,
+    retries: int = 4,
+    backoff: float = 30.0,
+) -> dict[str, dict]:
     """Return market data for CoinGecko ids, keyed by id. Unknown ids are left out.
 
-    Asks for `BATCH` ids at a time, so any number of ids works.
+    Asks for `BATCH` ids at a time, so any number of ids works. When CoinGecko
+    says we're asking too often (HTTP 429, common on the free API right after
+    other calls), waits `backoff` seconds and retries, up to `retries` times.
     """
     http = session or requests
     ids = list(dict.fromkeys(ids))  # drop repeats, keep order
     out: dict[str, dict] = {}
     for i in range(0, len(ids), BATCH):
-        resp = http.get(
-            f"{BASE_URL}/coins/markets",
-            params={"vs_currency": "usd", "ids": ",".join(ids[i:i + BATCH]), "per_page": 250},
-            headers=_headers(),
-            timeout=30,
-        )
+        for attempt in range(retries + 1):
+            resp = http.get(
+                f"{BASE_URL}/coins/markets",
+                params={"vs_currency": "usd", "ids": ",".join(ids[i:i + BATCH]), "per_page": 250},
+                headers=_headers(),
+                timeout=30,
+            )
+            if resp.status_code != 429 or attempt == retries:
+                break
+            time.sleep(backoff)
         resp.raise_for_status()
         out.update({row["id"]: {f: row.get(f) for f in FIELDS} for row in resp.json()})
     return out

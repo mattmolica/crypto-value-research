@@ -131,9 +131,25 @@ def test_fetch_markets_sends_api_key_when_set(fake_session, monkeypatch):
 
 
 def test_fetch_markets_raises_on_http_error(fake_session):
-    s = fake_session(lambda *a: FakeResponse(status_code=429))
+    s = fake_session(lambda *a: FakeResponse(status_code=500))
     with pytest.raises(requests.HTTPError):
         coingecko.fetch_markets(["aave"], s)
+    assert len(s.calls) == 1  # only "too many requests" is retried
+
+
+def test_fetch_markets_retries_when_rate_limited(fake_session, monkeypatch):
+    waits = []
+    monkeypatch.setattr(coingecko.time, "sleep", waits.append)
+    replies = [FakeResponse(status_code=429), FakeResponse([{"id": "aave", "symbol": "aave"}])]
+    s = fake_session(lambda *a: replies.pop(0))
+    assert coingecko.fetch_markets(["aave"], s, backoff=7) == {
+        "aave": {f: ("aave" if f in ("id", "symbol") else None) for f in coingecko.FIELDS}}
+    assert waits == [7]
+
+    always = fake_session(lambda *a: FakeResponse(status_code=429))
+    with pytest.raises(requests.HTTPError):
+        coingecko.fetch_markets(["aave"], always, retries=2, backoff=0)
+    assert len(always.calls) == 3
 
 
 def test_markets_asks_in_batches(fake_session):
@@ -143,3 +159,27 @@ def test_markets_asks_in_batches(fake_session):
     out = coingecko.fetch_markets(ids, s)
     assert [len(c["params"]["ids"].split(",")) for c in s.calls] == [coingecko.BATCH, coingecko.BATCH, 5]
     assert len(out) == coingecko.BATCH * 2 + 5
+
+
+def test_fetch_protocol_flows_reports_history_days(fake_session):
+    chart = _daily([1.0] * 40)
+
+    def handler(url, params, headers):
+        if params["dataType"] == "dailyHoldersRevenue":
+            return FakeResponse(status_code=404)
+        return FakeResponse({"name": "X", "gecko_id": "x", "totalDataChart": chart})
+
+    f = defillama.fetch_protocol_flows("x", fake_session(handler), now=NOW)
+    assert f.history_days == 40
+    assert f.annual[90]["holders_revenue"] is None
+
+
+def test_fetch_overview_and_directory_request_shape(fake_session):
+    s = fake_session(lambda url, params, headers: FakeResponse(
+        {"protocols": [{"slug": "a"}], "parentProtocols": [{"id": "parent#a"}]}))
+    assert defillama.fetch_overview("dailyRevenue", s) == [{"slug": "a"}]
+    assert s.calls[0]["url"] == f"{defillama.BASE_URL}/overview/fees"
+    assert s.calls[0]["params"]["excludeTotalDataChartBreakdown"] == "true"
+    d = defillama.fetch_directory(s)
+    assert s.calls[1]["url"] == f"{defillama.BASE_URL}/lite/protocols2"
+    assert d["parentProtocols"] == [{"id": "parent#a"}]
