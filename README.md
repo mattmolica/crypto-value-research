@@ -89,7 +89,17 @@ Two things to know when reading the table:
 
 ```bash
 python -m crypto_value_research.history                   # writes data/history/*.csv
+python -m crypto_value_research.history --tokens aave gmx aerodrome=aerodrome-finance
+python -m crypto_value_research.history --tokens-file tokens.txt --no-market-cap
 ```
+
+It runs on any list of tokens. Name each by its DefiLlama protocol slug, adding
+`=coingecko-id` only when DefiLlama doesn't know the CoinGecko id. A token file
+has one per line (`#` starts a comment). With no list it uses the ranking's
+`DEFAULT_TOKENS`. Tokens that can't be built (no price history, no supply, a
+failed download) are skipped with a warning and the rest carry on. For long
+lists, `--no-market-cap` skips the slow one-year CoinGecko download per token.
+From Python, `history.build_all({"aave": None, ...})` returns the same two tables.
 
 Shows how expensive each token has been over its whole life, so "cheap" can
 be judged against the token's own past. It writes a weekly history per token
@@ -100,9 +110,11 @@ with a higher P/S than today (0.96 means it has rarely been this cheap).
 Free data has no record of past circulating supply, and CoinGecko's free API
 stops at 365 days of market cap. So the long history uses **fully diluted
 value**: daily price from DefiLlama's coins API (back to launch) times total
-supply. Total supply is exact for fixed-supply tokens, modeled for CRV from its
-emission schedule, and estimated for tokens whose supply changed (see
-`SUPPLY_RULES` in `history.py`, which also says which way each estimate leans).
+supply. Supply counts as exact only when a token's total supply has reached its
+fixed maximum; it is modeled for CRV from its emission schedule, estimated with
+a stated lean for hand-checked tokens whose supply changed (`SUPPLY_RULES` in
+`history.py`), and marked "estimated" for every other token, so a long list
+never claims more accuracy than it has (see `supply_method` in the summary).
 The last year of circulating market cap is kept beside it as `ps_mcap`.
 
 Needs `coins.llama.fi` reachable in addition to the hosts the ranking uses.

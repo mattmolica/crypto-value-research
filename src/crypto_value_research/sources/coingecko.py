@@ -18,22 +18,27 @@ FIELDS = (
 )
 
 
+BATCH = 100  # ids per request; CoinGecko returns at most 250 rows a page and long URLs fail
+
+
 def fetch_markets(ids: list[str], session: requests.Session | None = None) -> dict[str, dict]:
-    """Return market data for CoinGecko ids, keyed by id. Unknown ids are left out."""
-    if not ids:
-        return {}
+    """Return market data for CoinGecko ids, keyed by id. Unknown ids are left out.
+
+    Asks for `BATCH` ids at a time, so any number of ids works.
+    """
     http = session or requests
-    headers = {}
-    if key := os.environ.get("COINGECKO_API_KEY"):
-        headers["x-cg-demo-api-key"] = key
-    resp = http.get(
-        f"{BASE_URL}/coins/markets",
-        params={"vs_currency": "usd", "ids": ",".join(ids), "per_page": 250},
-        headers=headers,
-        timeout=30,
-    )
-    resp.raise_for_status()
-    return {row["id"]: {f: row.get(f) for f in FIELDS} for row in resp.json()}
+    ids = list(dict.fromkeys(ids))  # drop repeats, keep order
+    out: dict[str, dict] = {}
+    for i in range(0, len(ids), BATCH):
+        resp = http.get(
+            f"{BASE_URL}/coins/markets",
+            params={"vs_currency": "usd", "ids": ",".join(ids[i:i + BATCH]), "per_page": 250},
+            headers=_headers(),
+            timeout=30,
+        )
+        resp.raise_for_status()
+        out.update({row["id"]: {f: row.get(f) for f in FIELDS} for row in resp.json()})
+    return out
 
 
 def _headers() -> dict:

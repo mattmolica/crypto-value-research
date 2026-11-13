@@ -3,6 +3,13 @@
 Usage:
     python -m crypto_value_research.history
     python -m crypto_value_research.history --out-dir data/history
+    python -m crypto_value_research.history --tokens aave gmx aerodrome=aerodrome-finance
+    python -m crypto_value_research.history --tokens-file my_tokens.txt --no-market-cap
+
+Any list of tokens works: name each by its DefiLlama protocol slug, adding
+"=coingecko-id" only when DefiLlama doesn't know the CoinGecko id. A token that
+can't be built (no price history, a failed download) is skipped with a warning
+and the rest carry on.
 
 Free data has one gap: nobody publishes past circulating supply for free, so
 circulating market cap only goes back a year (CoinGecko's free limit). Price
@@ -10,8 +17,10 @@ and total supply can be rebuilt back to launch, so the long history is valued
 on fully diluted value (FDV = price x every token that exists):
 
 - price: DefiLlama coins API, daily back to launch
-- supply: today's total supply from CoinGecko; for tokens whose supply moved a
-  lot we model or estimate it (see SUPPLY_RULES), and say which way it leans
+- supply: today's total supply from CoinGecko. It counts as exact when the
+  token has reached a fixed maximum supply; for tokens we know moved a lot we
+  model or estimate it (see SUPPLY_RULES) and say which way it leans; anything
+  else is marked "estimated" so the reader knows to check
 - revenue and fees: DefiLlama, totalled over the trailing 90 days and scaled
   to a year, the same as the ranking
 
@@ -63,6 +72,24 @@ SUPPLY_RULES: dict[str, SupplyRule] = {
     "pump": SupplyRule("estimated: today's supply",
                        "PUMP supply has shrunk through buybacks, so earlier FDV is understated"),
 }
+
+UNCAPPED = SupplyRule("estimated: today's supply",
+                      "supply isn't at a fixed maximum, so earlier FDV is off if supply changed since")
+
+
+def supply_rule(slug: str, market: dict) -> SupplyRule:
+    """How trustworthy the supply behind a token's FDV history is.
+
+    Hand-checked tokens use SUPPLY_RULES. Otherwise supply counts as exact only
+    when CoinGecko's total supply is within 1% of the token's maximum supply.
+    """
+    if slug in SUPPLY_RULES:
+        return SUPPLY_RULES[slug]
+    total, cap = market.get("total_supply"), market.get("max_supply")
+    if total and cap and abs(total - cap) <= 0.01 * cap:
+        return EXACT
+    return UNCAPPED
+
 
 SYMBOL_OVERRIDES = {"aerodrome": "AERO"}  # DefiLlama gives the parent protocol's "-"
 
@@ -189,32 +216,41 @@ def weekly(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_token(
-    slug: str, gecko_id: str, revenue: dict, session: requests.Session, market: dict
+    slug: str, gecko_id: str, revenue: dict, session: requests.Session, market: dict,
+    market_cap: bool = True,
 ) -> tuple[pd.DataFrame, dict]:
     """Fetch and assemble one token's daily history and summary row.
 
     `revenue` is DefiLlama's dailyRevenue summary, `market` CoinGecko's
-    current market data keyed by id.
+    current market data keyed by id. With `market_cap=False` the last year's
+    circulating market cap isn't fetched (ps_mcap stays blank), which avoids
+    CoinGecko's slow rate limit on long token lists. Raises ValueError when the
+    token has no price history or supply.
     """
     fees = defillama.fetch_summary(slug, "dailyFees", session) or {}
     m = market.get(gecko_id, {})
 
     prices = llama_prices.fetch_price_history(gecko_id, session=session)
+    if prices.empty:
+        raise ValueError(f"DefiLlama has no price history for coingecko:{gecko_id}")
+    if not m.get("total_supply"):
+        raise ValueError(f"CoinGecko has no total supply for {gecko_id}")
     if slug == "sky":  # SKY replaced MKR in Sept 2024: splice in MKR's price at the swap rate
         mkr = llama_prices.fetch_price_history("maker", session=session) / MKR_TO_SKY
         prices = pd.concat([mkr[mkr.index < SKY_LAUNCH], prices[prices.index >= SKY_LAUNCH]])
 
     idx = pd.date_range(prices.index.min(), prices.index.max(), freq="D")
-    supply = supply_history(slug, idx, m.get("total_supply") or math.nan)
-    try:
-        mcap = coingecko.fetch_market_cap_history(gecko_id, session=session)
-    except requests.HTTPError as err:  # the long history doesn't need it, so carry on without
-        print(f"warning: no market cap history for {slug} ({err}); ps_mcap left blank", file=sys.stderr)
-        mcap = None
+    supply = supply_history(slug, idx, m["total_supply"])
+    mcap = None
+    if market_cap:
+        try:
+            mcap = coingecko.fetch_market_cap_history(gecko_id, session=session)
+        except requests.HTTPError as err:  # the long history doesn't need it, so carry on without
+            print(f"warning: no market cap history for {slug} ({err}); ps_mcap left blank", file=sys.stderr)
     df = valuation_history(prices, supply, daily_series(revenue.get("totalDataChart") or []),
                            daily_series(fees.get("totalDataChart") or []), mcap)
 
-    rule = SUPPLY_RULES.get(slug, EXACT)
+    rule = supply_rule(slug, m)
     note = rule.note
     if slug == "sky":
         note = "before Sept 2024 uses MKR price divided by 24,000 (the swap rate to SKY)"
@@ -230,10 +266,26 @@ def build_token(
     return df, row
 
 
-def build_all(tokens: dict[str, str | None], pause: float = 6.0) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Weekly history and a summary row for each token. `tokens` maps DefiLlama slug to CoinGecko id (None: DefiLlama's)."""
-    session = requests.Session()
-    revenue = {slug: defillama.fetch_summary(slug, "dailyRevenue", session) or {} for slug in tokens}
+def build_all(
+    tokens: dict[str, str | None],
+    pause: float = 6.0,
+    market_cap: bool = True,
+    session: requests.Session | None = None,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Weekly history and a summary row for each token.
+
+    `tokens` maps DefiLlama slug to CoinGecko id (None: use DefiLlama's). Tokens
+    that fail are skipped with a warning; the summary is cheapest first against
+    each token's own history.
+    """
+    session = session or requests.Session()
+    revenue = {}
+    for slug in tokens:
+        try:
+            revenue[slug] = defillama.fetch_summary(slug, "dailyRevenue", session) or {}
+        except requests.RequestException as err:
+            print(f"warning: no DefiLlama revenue for {slug} ({err})", file=sys.stderr)
+            revenue[slug] = {}
     ids = {slug: gid or revenue[slug].get("gecko_id") for slug, gid in tokens.items()}
     market = coingecko.fetch_markets([i for i in ids.values() if i], session)
     rows, frames = [], []
@@ -241,7 +293,11 @@ def build_all(tokens: dict[str, str | None], pause: float = 6.0) -> tuple[pd.Dat
         if not ids[slug]:
             print(f"warning: no CoinGecko id for {slug}, skipped", file=sys.stderr)
             continue
-        df, row = build_token(slug, ids[slug], revenue[slug], session, market)
+        try:
+            df, row = build_token(slug, ids[slug], revenue[slug], session, market, market_cap)
+        except (requests.RequestException, ValueError) as err:
+            print(f"warning: {slug} skipped ({err})", file=sys.stderr)
+            continue
         w = weekly(df).copy()
         w.insert(0, "symbol", row["symbol"])
         w.insert(0, "date", w.index.strftime("%Y-%m-%d"))
@@ -249,23 +305,61 @@ def build_all(tokens: dict[str, str | None], pause: float = 6.0) -> tuple[pd.Dat
         rows.append(row)
         print(f"{row['symbol']:>7}: P/S {row['ps_fdv_now']:,.1f}x, cheaper than {row['cheaper_than_pct']:.0%} of its history",
               file=sys.stderr)
-        time.sleep(pause)  # stay under CoinGecko's free rate limit
+        if pause:
+            time.sleep(pause)  # stay under the free APIs' rate limits
+    if not rows:
+        return pd.DataFrame(), pd.DataFrame()
     summary = pd.DataFrame(rows).sort_values("cheaper_than_pct", ascending=False)
     return pd.concat(frames, ignore_index=True), summary
+
+
+def parse_tokens(items: list[str]) -> dict[str, str | None]:
+    """Turn ["aave", "aerodrome=aerodrome-finance"] into {slug: gecko_id or None}.
+
+    Blank items and anything after a "#" are ignored, so a token file can have comments.
+    """
+    tokens: dict[str, str | None] = {}
+    for item in items:
+        item = item.split("#", 1)[0].strip()
+        if not item:
+            continue
+        slug, _, gecko_id = item.partition("=")
+        tokens[slug.strip()] = gecko_id.strip() or None
+    return tokens
 
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--out-dir", default="data/history", help="folder for the two CSVs (default: data/history)")
+    p.add_argument("--tokens", nargs="+", metavar="SLUG[=GECKO_ID]",
+                   help="DefiLlama slugs to build (default: the ranking's DEFAULT_TOKENS)")
+    p.add_argument("--tokens-file", type=Path, metavar="FILE",
+                   help="text file with one SLUG[=GECKO_ID] per line (# starts a comment)")
+    p.add_argument("--no-market-cap", action="store_true",
+                   help="skip the last year's circulating market cap (much faster for long lists)")
+    p.add_argument("--pause", type=float, default=None,
+                   help="seconds to wait between tokens (default: 6, or 1 with --no-market-cap)")
     args = p.parse_args(argv)
 
-    history, summary = build_all(DEFAULT_TOKENS)
+    tokens: dict[str, str | None] = {}
+    if args.tokens_file:
+        tokens.update(parse_tokens(args.tokens_file.read_text().splitlines()))
+    if args.tokens:
+        tokens.update(parse_tokens(args.tokens))
+    tokens = tokens or DEFAULT_TOKENS
+    pause = args.pause if args.pause is not None else (1.0 if args.no_market_cap else 6.0)
+
+    history, summary = build_all(tokens, pause=pause, market_cap=not args.no_market_cap)
+    if summary.empty:
+        print("No token could be built; nothing written.", file=sys.stderr)
+        return 1
     out = Path(args.out_dir)
     out.mkdir(parents=True, exist_ok=True)
     history.to_csv(out / "full_history.csv", index=False)
     summary.to_csv(out / "full_summary.csv", index=False)
     print(summary.drop(columns=["note"]).round(2).to_string(index=False))
-    print(f"\nWrote {out / 'full_history.csv'} and {out / 'full_summary.csv'}")
+    print(f"\nBuilt {len(summary)} of {len(tokens)} tokens. "
+          f"Wrote {out / 'full_history.csv'} and {out / 'full_summary.csv'}")
     return 0
 
 
