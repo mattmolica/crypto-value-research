@@ -107,6 +107,41 @@ Things to know when reading the table:
   run rate has fallen by more than half against the past year, since cheap can
   mean shrinking.
 
+## Value score (cheap for a good reason, or a value trap?)
+
+```bash
+python -m crypto_value_research.rank_tokens --out data/ranking.csv
+python -m crypto_value_research.score --ranking data/ranking.csv --out data/scores.csv
+python -m crypto_value_research.score --ranking data/ranking.csv --no-supply-growth  # faster
+```
+
+A low P/S alone can't tell a bargain from a project that's shrinking. The score
+(0-100, higher is better) puts cheapness beside business health and dilution:
+
+| Part | Metric | Weight |
+|---|---|---|
+| Cheap (40) | P/S on the last 90 days (lower is better) | 25 |
+| | Holder yield: payouts to holders / market value | 15 |
+| Healthy (40) | Revenue trend: last 90 days vs last year | 20 |
+| | Share of revenue that reaches holders | 10 |
+| | Size of revenue | 10 |
+| Low dilution (20) | Share of total supply already circulating | 10 |
+| | Circulating supply growth over the past year (lower is better) | 10 |
+
+Each metric is a percentile among the rated tokens (100 = best of the group,
+50 = middle, unknown counts as 50), so there are no hand-tuned cutoffs to
+overfit. Rows the ranking marks `caution` are **Unrated** and don't affect the
+others. If holder payouts stopped in the last 30 days, the holder metrics count
+as zero. Supply growth is circulating market cap / price a year ago vs today,
+from CoinGecko's free one-year chart (one request per token, ~2.5s each).
+
+The `verdict` column reads the Cheap and Healthy parts together: **Value
+candidate** (both 60+), **Value trap risk** (cheap 60+, healthy under 40),
+**Good, priced in** (healthy 60+, not cheap), **Avoid** (healthy under 40, not
+cheap), **Mixed** (the rest). Weights live in `WEIGHTS` in `score.py`. The
+score is not back-tested against returns; treat it as a screen for what to
+research, not a buy signal.
+
 ## Valuation history
 
 ```bash
@@ -143,4 +178,4 @@ Needs `coins.llama.fi` reachable in addition to the hosts the ranking uses.
 
 ## Status
 
-Early stage: a first valuation ranking is in; more metrics and screens next.
+Early stage: a valuation ranking over every token with revenue and a value score that separates cheap-and-healthy from value traps are in; a regularly updated public page is next.
