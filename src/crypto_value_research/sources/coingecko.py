@@ -90,3 +90,45 @@ def fetch_market_cap_history(
     for ms, value in resp.json().get("market_caps", []):
         caps[pd.Timestamp(int(ms), unit="ms").normalize()] = float(value)  # last value per day wins
     return pd.Series(caps, dtype=float).sort_index()
+
+
+def fetch_supply_growth(
+    gecko_id: str,
+    days: int = 365,
+    session: requests.Session | None = None,
+    retries: int = 4,
+    backoff: float = 30.0,
+) -> float | None:
+    """How much circulating supply grew over the last `days` days (0.25 = +25%).
+
+    CoinGecko has no supply history on the free plan, but it has daily market
+    cap and price, and circulating supply = market cap / price. We compare the
+    first and last days. Returns None when either day is missing or zero
+    (CoinGecko reports 0 market cap when it can't verify circulating supply).
+    """
+    http = session or requests
+    for attempt in range(retries + 1):
+        resp = http.get(
+            f"{BASE_URL}/coins/{gecko_id}/market_chart",
+            params={"vs_currency": "usd", "days": days, "interval": "daily"},
+            headers=_headers(),
+            timeout=60,
+        )
+        if resp.status_code != 429 or attempt == retries:
+            break
+        time.sleep(backoff)
+    resp.raise_for_status()
+    data = resp.json()
+    return supply_growth(data.get("market_caps", []), data.get("prices", []))
+
+
+def supply_growth(market_caps: list[list[float]], prices: list[list[float]]) -> float | None:
+    """Circulating supply growth from first to last point of CoinGecko's chart lists."""
+    supply = []
+    for (_, cap), (_, price) in zip(market_caps, prices):
+        if cap and price and cap > 0 and price > 0:
+            supply.append(cap / price)
+    if len(supply) < 2 or supply[0] <= 0:
+        return None
+    # Skip leading days before CoinGecko started tracking circulating supply.
+    return supply[-1] / supply[0] - 1
