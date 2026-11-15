@@ -229,6 +229,9 @@ def run(history: pd.DataFrame) -> dict:
     pooled, per_token = own_history(df)
     growth = growth_of_dollar(df)
     loo = leave_one_out(df)
+    # the line again without the token whose removal hurts "cheap" most
+    worst = loo[0]["without"] if loo else None
+    g_wo = growth_of_dollar(df[df["symbol"] != worst]) if worst else pd.DataFrame()
     return {
         "tokens": sorted(history["symbol"].unique().tolist()),
         "history_through": history["date"].max().strftime("%Y-%m-%d"),
@@ -238,6 +241,8 @@ def run(history: pd.DataFrame) -> dict:
         "growth_of_dollar": _records(growth.assign(date=growth["date"].dt.strftime("%Y-%m-%d"))
                                      if not growth.empty else growth),
         "growth_leave_one_out": loo,
+        "growth_without": {"token": worst, "line": _records(
+            g_wo.assign(date=g_wo["date"].dt.strftime("%Y-%m-%d")) if not g_wo.empty else g_wo)},
         "cheap_vs_own_past": _records(pooled),
         "own_past_by_token_26w": _records(per_token),
     }
