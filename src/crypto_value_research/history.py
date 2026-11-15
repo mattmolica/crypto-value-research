@@ -97,6 +97,10 @@ def supply_rule(slug: str, market: dict) -> SupplyRule:
     return UNCAPPED
 
 
+# CoinGecko ids whose DefiLlama price history is short: Aerodrome's newer "aero"
+# id only has prices from Oct 2026, the old id goes back to launch.
+PRICE_IDS = {"aero": "aerodrome-finance"}
+
 SYMBOL_OVERRIDES = {"aerodrome": "AERO"}  # DefiLlama gives the parent protocol's "-"
 
 
@@ -237,7 +241,7 @@ def build_token(
     fees = defillama.fetch_summary(slug, "dailyFees", session) or {}
     m = market.get(gecko_id, {})
 
-    prices = llama_prices.fetch_price_history(gecko_id, session=session)
+    prices = llama_prices.fetch_price_history(PRICE_IDS.get(gecko_id, gecko_id), session=session)
     if prices.empty:
         raise ValueError(f"DefiLlama has no price history for coingecko:{gecko_id}")
     if not m.get("total_supply"):
@@ -263,6 +267,7 @@ def build_token(
         note = "before Sept 2024 uses MKR price divided by 24,000 (the swap rate to SKY)"
     fdv_now = m.get("fully_diluted_valuation")
     row = {
+        "slug": slug,
         "symbol": SYMBOL_OVERRIDES.get(slug, (m.get("symbol") or revenue.get("symbol") or slug).upper()),
         "name": revenue.get("name") or slug,
         **summarize(df),

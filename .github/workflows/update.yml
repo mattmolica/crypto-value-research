@@ -50,7 +50,11 @@ jobs:
         run: |
           START=$(date -u +%Y-%m-%dT%H:%M:%SZ)
           python -m crypto_value_research.rank_tokens --out data/ranking.csv
-          python -m crypto_value_research.score --ranking data/ranking.csv --out data/scores.csv
+          # each token's P/S history, for "P/S vs its own past" (about 20 minutes)
+          python -c "import pandas as pd; d = pd.read_csv('data/ranking.csv').dropna(subset=['gecko_id']); open('data/tokens.txt', 'w').write('\n'.join(f'{s}={g}' for s, g in zip(d.slug, d.gecko_id)))"
+          python -m crypto_value_research.history --tokens-file data/tokens.txt --no-market-cap --out-dir data/history || true
+          if [ -f data/history/full_summary.csv ]; then HIST="--history-summary data/history/full_summary.csv"; else HIST=""; fi
+          python -m crypto_value_research.score --ranking data/ranking.csv --out data/scores.csv $HIST
           python -m crypto_value_research.track save --scores data/scores.csv --scored-at "$START"
 
       - name: Re-price every snapshot
