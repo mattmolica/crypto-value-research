@@ -16,7 +16,9 @@ How it works
    fitted to make today's list look good.
 
 3. Score (0-100) = weighted average of the percentiles, using WEIGHTS below:
-     Cheap (40)        P/S on the last 90 days (lower is better)          25
+     Cheap (40)        P/S on the last 90 days vs peers (lower is better) 15
+                       P/S vs the token's own past: share of its history   10
+                         priced higher than today (higher is better)
                        holder yield: payouts to holders / market value    15
      Healthy (40)      revenue trend: last 90 days vs last year           20
                        share of revenue that reaches holders              10
@@ -25,6 +27,11 @@ How it works
                        circulating supply growth over the past year        10
    If holder payouts stopped in the last 30 days, the holder metrics use the
    last 30 days, so they score at the bottom.
+   P/S vs own past comes from `history`'s summary (--history-summary) and
+   needs half a year of the token's own P/S; without it the metric counts as
+   average. It earned its place in the backtest: tokens priced high against
+   their own history trailed the average token by about 9% over the next six
+   months, in every slice of the data tested.
 
 4. Label from the Cheap and Healthy parts (each rescaled to 0-100):
      Value candidate    cheap >= 60 and healthy >= 60
@@ -36,6 +43,8 @@ How it works
 Usage:
     python -m crypto_value_research.score --ranking data/ranking.csv --out data/scores.csv
     python -m crypto_value_research.score --ranking data/ranking.csv --no-supply-growth
+    python -m crypto_value_research.score --ranking data/ranking.csv \
+        --history-summary data/history/full_summary.csv   # adds P/S vs own past
     python -m crypto_value_research.score --ranking data/ranking.csv --snapshot   # keep for tracking
 """
 
@@ -53,7 +62,8 @@ from .sources import coingecko
 
 # metric -> (pillar, weight, higher_is_better)
 WEIGHTS: dict[str, tuple[str, float, bool]] = {
-    "p_s": ("cheap", 25, False),
+    "p_s": ("cheap", 15, False),
+    "ps_own_history": ("cheap", 10, True),
     "holder_yield": ("cheap", 15, True),
     "revenue_trend": ("healthy", 20, True),
     "holder_share": ("healthy", 10, True),
@@ -99,6 +109,7 @@ def metrics(df: pd.DataFrame) -> pd.DataFrame:
     holders = holders.where(~stopped, 0.0).clip(lower=0)
 
     out["p_s"] = df["p_s"].map(_num)
+    out["ps_own_history"] = df.get("ps_own_history", pd.Series(math.nan, index=df.index)).map(_num)
     out["holder_yield"] = (holders / mv).where(mv > 0)
     out["revenue_trend"] = (rev / rev_1y).where(rev_1y > 0)
     out["holder_share"] = (holders / rev).where(rev > 0).clip(upper=1.0)
@@ -170,6 +181,25 @@ def score_table(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+MIN_OWN_HISTORY_YEARS = 0.5
+
+
+def add_own_history(df: pd.DataFrame, summary: pd.DataFrame,
+                    min_years: float = MIN_OWN_HISTORY_YEARS) -> pd.DataFrame:
+    """Add `ps_own_history` from `history`'s full_summary table.
+
+    It is the share of the token's past days whose P/S was higher than today
+    (1 = cheapest it has been). Matched on slug; tokens with less than
+    `min_years` of P/S history get NaN, which the score treats as average.
+    """
+    s = summary.copy()
+    s = s[s["ps_years"].map(_num) >= min_years] if "ps_years" in s else s
+    own = s.drop_duplicates("slug").set_index("slug")["cheaper_than_pct"]
+    out = df.copy()
+    out["ps_own_history"] = out["slug"].map(own)
+    return out
+
+
 def add_supply_growth(
     df: pd.DataFrame, session: requests.Session | None = None, pause: float = 2.5
 ) -> pd.DataFrame:
@@ -205,6 +235,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-supply-growth", action="store_true",
                    help="skip the CoinGecko supply history calls (supply growth counts as average)")
     p.add_argument("--out", help="write the scored table to this CSV path")
+    p.add_argument("--history-summary",
+                   help="full_summary.csv from `history` (with a slug column): adds P/S vs own past")
     p.add_argument("--snapshot", action="store_true",
                    help="also save a dated copy in snapshots/ so `track` can measure it later")
     args = p.parse_args(argv)
@@ -214,6 +246,10 @@ def main(argv: list[str] | None = None) -> int:
         print(f"Fetching a year of supply history for {len(table)} tokens (about 2.5s each)...",
               file=sys.stderr)
         table = add_supply_growth(table)
+    if args.history_summary:
+        table = add_own_history(table, pd.read_csv(args.history_summary))
+        print(f"P/S vs own past known for {table['ps_own_history'].notna().sum()} of {len(table)} tokens",
+              file=sys.stderr)
     scored = score_table(table)
     shown = scored[[c for c in DISPLAY if c in scored]]
     print(shown.to_string(index=False, float_format=lambda x: f"{x:,.2f}"))

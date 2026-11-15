@@ -120,7 +120,8 @@ A low P/S alone can't tell a bargain from a project that's shrinking. The score
 
 | Part | Metric | Weight |
 |---|---|---|
-| Cheap (40) | P/S on the last 90 days (lower is better) | 25 |
+| Cheap (40) | P/S on the last 90 days vs other tokens (lower is better) | 15 |
+| | P/S vs the token's own past: share of its history priced higher than today | 10 |
 | | Holder yield: payouts to holders / market value | 15 |
 | Healthy (40) | Revenue trend: last 90 days vs last year | 20 |
 | | Share of revenue that reaches holders | 10 |
@@ -229,7 +230,7 @@ moved, and overlapping windows (the output counts the truly separate periods).
 
 - **Every day** it re-prices every saved snapshot (`track`) and rewrites
   `results/README.md` (tables GitHub shows in the repo) and `site/data/`.
-- **Every Monday** it first re-ranks and re-scores every token and saves a new
+- **Every Monday** it first re-ranks every token, rebuilds each one's P/S history (for the own-past measure), re-scores, and saves a new
   dated snapshot in `snapshots/`, so the track record grows week by week.
 - It commits those files back to `main`, then publishes `site/` (the charts
   page) to GitHub Pages.

@@ -112,3 +112,18 @@ def test_add_supply_growth_uses_fake_session():
     out = score.add_supply_growth(df, session=FakeSession(handler), pause=0)
     assert out["supply_growth"][0] == pytest.approx(0.1)
     assert math.isnan(out["supply_growth"][1]) and math.isnan(out["supply_growth"][2])
+
+
+def test_add_own_history_matches_slug_and_needs_enough_history():
+    import pandas as pd
+    df = pd.DataFrame({"slug": ["a", "b", "c"]})
+    summary = pd.DataFrame({"slug": ["a", "b"], "cheaper_than_pct": [0.9, 0.2], "ps_years": [2.0, 0.2]})
+    out = score.add_own_history(df, summary)
+    assert out.loc[0, "ps_own_history"] == 0.9
+    assert pd.isna(out.loc[1, "ps_own_history"])   # under half a year of history
+    assert pd.isna(out.loc[2, "ps_own_history"])   # not in the summary
+
+
+def test_own_history_counts_in_cheap_pillar():
+    assert score.WEIGHTS["ps_own_history"] == ("cheap", 10, True)
+    assert sum(w for p, w, _ in score.WEIGHTS.values() if p == "cheap") == 40
