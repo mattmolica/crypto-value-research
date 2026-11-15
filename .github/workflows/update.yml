@@ -1,0 +1,90 @@
+name: update track record
+
+# Runs on GitHub's servers, no Claude needed.
+# Every day: re-price every saved score snapshot and rebuild the results.
+# Every Monday: also re-rank and re-score all tokens and save a new dated snapshot.
+on:
+  schedule:
+    - cron: "17 13 * * *"   # daily, 13:17 UTC (8:17 AM New York)
+  workflow_dispatch:
+    inputs:
+      rescore:
+        description: "Also re-rank and re-score every token now (takes about an hour)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-track-record
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install package
+        run: pip install -e .
+
+      - name: Decide whether to re-score
+        id: plan
+        run: |
+          if [ "${{ inputs.rescore }}" = "true" ] || [ "$(date -u +%u)" = "1" ]; then
+            echo "rescore=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "rescore=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Re-rank and re-score every token, save a snapshot
+        if: steps.plan.outputs.rescore == 'true'
+        run: |
+          START=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          python -m crypto_value_research.rank_tokens --out data/ranking.csv
+          python -m crypto_value_research.score --ranking data/ranking.csv --out data/scores.csv
+          python -m crypto_value_research.track save --scores data/scores.csv --scored-at "$START"
+
+      - name: Re-price every snapshot
+        run: |
+          python -m crypto_value_research.track --out-dir site/data
+          python -m crypto_value_research.report --tracking site/data/tracking.json --out results/README.md \
+            --page-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add snapshots site/data results
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update track record $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Upload page
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  publish-page:
+    # Needs GitHub Pages turned on (Settings > Pages > Source: GitHub Actions).
+    # Until then this job fails on its own and the results above are still saved.
+    needs: update
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

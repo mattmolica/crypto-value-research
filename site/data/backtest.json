@@ -1,0 +1,2922 @@
+{
+ "tokens": [
+  "AAVE",
+  "AERO",
+  "CAKE",
+  "CRV",
+  "ENA",
+  "GMX",
+  "HYPE",
+  "JUP",
+  "LDO",
+  "PENDLE",
+  "PUMP",
+  "RAY",
+  "SKY",
+  "UNI"
+ ],
+ "history_through": "2026-11-08",
+ "cheap_vs_peers": [
+  {
+   "horizon_weeks": 13,
+   "weeks": 245,
+   "independent_periods": 18,
+   "first": "2021-12-05",
+   "last": "2026-08-09",
+   "avg_cheap": 0.43434427307409246,
+   "avg_expensive": 0.2305399965977908,
+   "avg_all": 0.22128992548546067,
+   "median_spread": 0.03117561262562962,
+   "cheap_won_pct": 0.5346938775510204,
+   "avg_rank_corr": 0.03883810067483536
+  },
+  {
+   "horizon_weeks": 26,
+   "weeks": 232,
+   "independent_periods": 8,
+   "first": "2021-12-05",
+   "last": "2026-05-10",
+   "avg_cheap": 1.1342621354756377,
+   "avg_expensive": 0.38953449014080377,
+   "avg_all": 0.49060391185892305,
+   "median_spread": 0.07157132506912148,
+   "cheap_won_pct": 0.5818965517241379,
+   "avg_rank_corr": 0.030440392940392937
+  },
+  {
+   "horizon_weeks": 52,
+   "weeks": 206,
+   "independent_periods": 3,
+   "first": "2021-12-05",
+   "last": "2025-11-09",
+   "avg_cheap": 1.2777536457816578,
+   "avg_expensive": 0.7830809198538772,
+   "avg_all": 0.6931779465813709,
+   "median_spread": 0.04882159176618969,
+   "cheap_won_pct": 0.5533980582524272,
+   "avg_rank_corr": -0.018849192878319092
+  }
+ ],
+ "cheap_vs_peers_weekly_26": [
+  {
+   "date": "2021-12-05",
+   "tokens": 6,
+   "cheap": -0.440694,
+   "expensive": -0.707811,
+   "all": -0.556667,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.6,
+   "spread": 0.267117
+  },
+  {
+   "date": "2021-12-12",
+   "tokens": 6,
+   "cheap": -0.516778,
+   "expensive": -0.752208,
+   "all": -0.623422,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.542857,
+   "spread": 0.23543
+  },
+  {
+   "date": "2021-12-19",
+   "tokens": 6,
+   "cheap": -0.545184,
+   "expensive": -0.854712,
+   "all": -0.702339,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.6,
+   "spread": 0.309528
+  },
+  {
+   "date": "2021-12-26",
+   "tokens": 6,
+   "cheap": -0.432296,
+   "expensive": -0.808522,
+   "all": -0.64015,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.6,
+   "spread": 0.376225
+  },
+  {
+   "date": "2022-01-02",
+   "tokens": 6,
+   "cheap": -0.518871,
+   "expensive": -0.870713,
+   "all": -0.697984,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.828571,
+   "spread": 0.351842
+  },
+  {
+   "date": "2022-01-09",
+   "tokens": 6,
+   "cheap": -0.607443,
+   "expensive": -0.773191,
+   "all": -0.609648,
+   "cheap_symbols": "CAKE SKY",
+   "rank_corr": 0.542857,
+   "spread": 0.165748
+  },
+  {
+   "date": "2022-01-16",
+   "tokens": 6,
+   "cheap": -0.655227,
+   "expensive": -0.536272,
+   "all": -0.597618,
+   "cheap_symbols": "CAKE SKY",
+   "rank_corr": -0.2,
+   "spread": -0.118955
+  },
+  {
+   "date": "2022-01-23",
+   "tokens": 6,
+   "cheap": -0.530575,
+   "expensive": -0.236279,
+   "all": -0.377363,
+   "cheap_symbols": "CAKE SKY",
+   "rank_corr": -0.714286,
+   "spread": -0.294297
+  },
+  {
+   "date": "2022-01-30",
+   "tokens": 6,
+   "cheap": -0.455339,
+   "expensive": -0.006779,
+   "all": -0.260871,
+   "cheap_symbols": "CAKE SKY",
+   "rank_corr": -0.542857,
+   "spread": -0.44856
+  },
+  {
+   "date": "2022-02-06",
+   "tokens": 6,
+   "cheap": -0.483725,
+   "expensive": -0.068509,
+   "all": -0.270264,
+   "cheap_symbols": "CAKE SKY",
+   "rank_corr": -0.485714,
+   "spread": -0.415216
+  },
+  {
+   "date": "2022-02-13",
+   "tokens": 6,
+   "cheap": -0.448672,
+   "expensive": 0.239059,
+   "all": -0.144956,
+   "cheap_symbols": "CAKE SKY",
+   "rank_corr": -0.542857,
+   "spread": -0.68773
+  },
+  {
+   "date": "2022-02-20",
+   "tokens": 6,
+   "cheap": -0.254972,
+   "expensive": -0.077457,
+   "all": -0.294346,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.257143,
+   "spread": -0.177516
+  },
+  {
+   "date": "2022-02-27",
+   "tokens": 6,
+   "cheap": -0.028349,
+   "expensive": -0.188533,
+   "all": -0.255331,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.028571,
+   "spread": 0.160184
+  },
+  {
+   "date": "2022-03-06",
+   "tokens": 6,
+   "cheap": 0.170351,
+   "expensive": -0.203938,
+   "all": -0.149895,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.085714,
+   "spread": 0.374289
+  },
+  {
+   "date": "2022-03-13",
+   "tokens": 6,
+   "cheap": 0.273657,
+   "expensive": -0.179787,
+   "all": -0.072402,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.085714,
+   "spread": 0.453445
+  },
+  {
+   "date": "2022-03-20",
+   "tokens": 6,
+   "cheap": 0.115772,
+   "expensive": -0.467954,
+   "all": -0.31136,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.485714,
+   "spread": 0.583726
+  },
+  {
+   "date": "2022-03-27",
+   "tokens": 6,
+   "cheap": -0.146497,
+   "expensive": -0.513739,
+   "all": -0.389972,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.2,
+   "spread": 0.367242
+  },
+  {
+   "date": "2022-04-03",
+   "tokens": 6,
+   "cheap": -0.337258,
+   "expensive": -0.677166,
+   "all": -0.538984,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.714286,
+   "spread": 0.339908
+  },
+  {
+   "date": "2022-04-10",
+   "tokens": 6,
+   "cheap": -0.111146,
+   "expensive": -0.574827,
+   "all": -0.414595,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.714286,
+   "spread": 0.463681
+  },
+  {
+   "date": "2022-04-17",
+   "tokens": 6,
+   "cheap": -0.214723,
+   "expensive": -0.56176,
+   "all": -0.441119,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.714286,
+   "spread": 0.347037
+  },
+  {
+   "date": "2022-04-24",
+   "tokens": 6,
+   "cheap": -0.174536,
+   "expensive": -0.505256,
+   "all": -0.425379,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.485714,
+   "spread": 0.33072
+  },
+  {
+   "date": "2022-05-01",
+   "tokens": 6,
+   "cheap": 0.169757,
+   "expensive": -0.425004,
+   "all": -0.23466,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.771429,
+   "spread": 0.59476
+  },
+  {
+   "date": "2022-05-08",
+   "tokens": 6,
+   "cheap": 0.069253,
+   "expensive": -0.342401,
+   "all": -0.238653,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.485714,
+   "spread": 0.411654
+  },
+  {
+   "date": "2022-05-15",
+   "tokens": 6,
+   "cheap": 0.278046,
+   "expensive": -0.331276,
+   "all": -0.212715,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.485714,
+   "spread": 0.609322
+  },
+  {
+   "date": "2022-05-22",
+   "tokens": 6,
+   "cheap": 0.461936,
+   "expensive": -0.249989,
+   "all": -0.112822,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.257143,
+   "spread": 0.711924
+  },
+  {
+   "date": "2022-05-29",
+   "tokens": 6,
+   "cheap": 0.592391,
+   "expensive": -0.152734,
+   "all": -0.005754,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.314286,
+   "spread": 0.745125
+  },
+  {
+   "date": "2022-06-05",
+   "tokens": 6,
+   "cheap": 0.670003,
+   "expensive": -0.162176,
+   "all": 0.02262,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.314286,
+   "spread": 0.832179
+  },
+  {
+   "date": "2022-06-12",
+   "tokens": 6,
+   "cheap": 1.291964,
+   "expensive": 0.038226,
+   "all": 0.34465,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.314286,
+   "spread": 1.253738
+  },
+  {
+   "date": "2022-06-19",
+   "tokens": 6,
+   "cheap": 1.000848,
+   "expensive": 0.574503,
+   "all": 0.474203,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.371429,
+   "spread": 0.426345
+  },
+  {
+   "date": "2022-06-26",
+   "tokens": 6,
+   "cheap": 0.676006,
+   "expensive": 0.124837,
+   "all": 0.131012,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.371429,
+   "spread": 0.551169
+  },
+  {
+   "date": "2022-07-03",
+   "tokens": 6,
+   "cheap": 0.812811,
+   "expensive": 0.46968,
+   "all": 0.29868,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.371429,
+   "spread": 0.343131
+  },
+  {
+   "date": "2022-07-10",
+   "tokens": 6,
+   "cheap": 0.292866,
+   "expensive": 0.429141,
+   "all": 0.093597,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.142857,
+   "spread": -0.136275
+  },
+  {
+   "date": "2022-07-17",
+   "tokens": 6,
+   "cheap": 0.359514,
+   "expensive": 0.192847,
+   "all": 0.095038,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": -0.085714,
+   "spread": 0.166667
+  },
+  {
+   "date": "2022-07-24",
+   "tokens": 6,
+   "cheap": 0.489456,
+   "expensive": 0.169827,
+   "all": 0.126833,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.257143,
+   "spread": 0.31963
+  },
+  {
+   "date": "2022-07-31",
+   "tokens": 6,
+   "cheap": 0.366652,
+   "expensive": -0.074117,
+   "all": -0.002382,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.485714,
+   "spread": 0.440769
+  },
+  {
+   "date": "2022-08-07",
+   "tokens": 6,
+   "cheap": 0.299236,
+   "expensive": -0.143451,
+   "all": -0.051144,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.485714,
+   "spread": 0.442686
+  },
+  {
+   "date": "2022-08-14",
+   "tokens": 6,
+   "cheap": 0.376856,
+   "expensive": -0.214062,
+   "all": -0.058373,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.485714,
+   "spread": 0.590918
+  },
+  {
+   "date": "2022-08-21",
+   "tokens": 6,
+   "cheap": 0.769771,
+   "expensive": 0.33138,
+   "all": 0.379429,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.142857,
+   "spread": 0.438391
+  },
+  {
+   "date": "2022-08-28",
+   "tokens": 6,
+   "cheap": 0.512264,
+   "expensive": 0.38553,
+   "all": 0.276084,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.2,
+   "spread": 0.126734
+  },
+  {
+   "date": "2022-09-04",
+   "tokens": 6,
+   "cheap": 0.102597,
+   "expensive": 0.078952,
+   "all": 0.085059,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": -0.028571,
+   "spread": 0.023645
+  },
+  {
+   "date": "2022-09-11",
+   "tokens": 6,
+   "cheap": 0.049276,
+   "expensive": -0.096423,
+   "all": -0.033838,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.485714,
+   "spread": 0.145699
+  },
+  {
+   "date": "2022-09-18",
+   "tokens": 6,
+   "cheap": 0.361151,
+   "expensive": 0.135178,
+   "all": 0.130807,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.2,
+   "spread": 0.225974
+  },
+  {
+   "date": "2022-09-25",
+   "tokens": 6,
+   "cheap": 0.383745,
+   "expensive": 0.126948,
+   "all": 0.138607,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": 0.142857,
+   "spread": 0.256797
+  },
+  {
+   "date": "2022-10-02",
+   "tokens": 6,
+   "cheap": 0.373649,
+   "expensive": 0.229441,
+   "all": 0.192061,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": -0.085714,
+   "spread": 0.144208
+  },
+  {
+   "date": "2022-10-09",
+   "tokens": 6,
+   "cheap": 0.277589,
+   "expensive": 0.308132,
+   "all": 0.185666,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.085714,
+   "spread": -0.030542
+  },
+  {
+   "date": "2022-10-16",
+   "tokens": 6,
+   "cheap": 0.617789,
+   "expensive": 0.530251,
+   "all": 0.412274,
+   "cheap_symbols": "CAKE GMX",
+   "rank_corr": 0.257143,
+   "spread": 0.087538
+  },
+  {
+   "date": "2022-10-23",
+   "tokens": 6,
+   "cheap": 0.582495,
+   "expensive": 0.116276,
+   "all": 0.141853,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.371429,
+   "spread": 0.466219
+  },
+  {
+   "date": "2022-10-30",
+   "tokens": 6,
+   "cheap": 0.333399,
+   "expensive": 0.045727,
+   "all": 0.015274,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.314286,
+   "spread": 0.287672
+  },
+  {
+   "date": "2022-11-06",
+   "tokens": 6,
+   "cheap": 0.284344,
+   "expensive": -0.06102,
+   "all": -0.04896,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.428571,
+   "spread": 0.345364
+  },
+  {
+   "date": "2022-11-13",
+   "tokens": 6,
+   "cheap": 0.502288,
+   "expensive": 0.456361,
+   "all": 0.218371,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.085714,
+   "spread": 0.045927
+  },
+  {
+   "date": "2022-11-20",
+   "tokens": 6,
+   "cheap": 0.464116,
+   "expensive": 0.432117,
+   "all": 0.196771,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.085714,
+   "spread": 0.031999
+  },
+  {
+   "date": "2022-11-27",
+   "tokens": 6,
+   "cheap": 0.259369,
+   "expensive": 0.531065,
+   "all": 0.168847,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.085714,
+   "spread": -0.271697
+  },
+  {
+   "date": "2022-12-04",
+   "tokens": 6,
+   "cheap": 0.155703,
+   "expensive": 0.542176,
+   "all": 0.146973,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.085714,
+   "spread": -0.386474
+  },
+  {
+   "date": "2022-12-11",
+   "tokens": 6,
+   "cheap": -0.084694,
+   "expensive": 0.313489,
+   "all": -0.030959,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.028571,
+   "spread": -0.398183
+  },
+  {
+   "date": "2022-12-18",
+   "tokens": 6,
+   "cheap": 0.106569,
+   "expensive": 0.32747,
+   "all": 0.083058,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.142857,
+   "spread": -0.220901
+  },
+  {
+   "date": "2022-12-25",
+   "tokens": 6,
+   "cheap": 0.251835,
+   "expensive": 0.657454,
+   "all": 0.262509,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.028571,
+   "spread": -0.405619
+  },
+  {
+   "date": "2023-01-01",
+   "tokens": 6,
+   "cheap": 0.402586,
+   "expensive": 0.798556,
+   "all": 0.42727,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.085714,
+   "spread": -0.39597
+  },
+  {
+   "date": "2023-01-08",
+   "tokens": 6,
+   "cheap": 0.367649,
+   "expensive": 0.288168,
+   "all": 0.248296,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.657143,
+   "spread": 0.079481
+  },
+  {
+   "date": "2023-01-15",
+   "tokens": 7,
+   "cheap": 0.030506,
+   "expensive": 0.012389,
+   "all": -0.046295,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.107143,
+   "spread": 0.018117
+  },
+  {
+   "date": "2023-01-22",
+   "tokens": 7,
+   "cheap": -0.102917,
+   "expensive": -0.110459,
+   "all": -0.070323,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.25,
+   "spread": 0.007542
+  },
+  {
+   "date": "2023-01-29",
+   "tokens": 7,
+   "cheap": -0.256746,
+   "expensive": -0.174699,
+   "all": -0.1058,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": 0.107143,
+   "spread": -0.082048
+  },
+  {
+   "date": "2023-02-05",
+   "tokens": 7,
+   "cheap": -0.312813,
+   "expensive": -0.20215,
+   "all": -0.157012,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.142857,
+   "spread": -0.110663
+  },
+  {
+   "date": "2023-02-12",
+   "tokens": 7,
+   "cheap": -0.328891,
+   "expensive": -0.193195,
+   "all": -0.178051,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.428571,
+   "spread": -0.135696
+  },
+  {
+   "date": "2023-02-19",
+   "tokens": 7,
+   "cheap": -0.004736,
+   "expensive": -0.380573,
+   "all": -0.353157,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.25,
+   "spread": 0.375837
+  },
+  {
+   "date": "2023-02-26",
+   "tokens": 7,
+   "cheap": -0.524129,
+   "expensive": -0.338688,
+   "all": -0.335034,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.392857,
+   "spread": -0.185442
+  },
+  {
+   "date": "2023-03-05",
+   "tokens": 7,
+   "cheap": -0.518628,
+   "expensive": -0.320814,
+   "all": -0.368232,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.392857,
+   "spread": -0.197815
+  },
+  {
+   "date": "2023-03-12",
+   "tokens": 7,
+   "cheap": -0.522301,
+   "expensive": -0.291623,
+   "all": -0.331442,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.321429,
+   "spread": -0.230679
+  },
+  {
+   "date": "2023-03-19",
+   "tokens": 7,
+   "cheap": -0.574052,
+   "expensive": -0.298032,
+   "all": -0.284396,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.428571,
+   "spread": -0.27602
+  },
+  {
+   "date": "2023-03-26",
+   "tokens": 7,
+   "cheap": -0.477446,
+   "expensive": -0.21334,
+   "all": -0.212252,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.428571,
+   "spread": -0.264106
+  },
+  {
+   "date": "2023-04-02",
+   "tokens": 7,
+   "cheap": -0.429154,
+   "expensive": -0.192942,
+   "all": -0.142809,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.357143,
+   "spread": -0.236212
+  },
+  {
+   "date": "2023-04-09",
+   "tokens": 7,
+   "cheap": -0.518222,
+   "expensive": -0.195396,
+   "all": -0.207196,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.392857,
+   "spread": -0.322826
+  },
+  {
+   "date": "2023-04-16",
+   "tokens": 7,
+   "cheap": -0.600294,
+   "expensive": -0.317698,
+   "all": -0.302051,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.321429,
+   "spread": -0.282596
+  },
+  {
+   "date": "2023-04-23",
+   "tokens": 7,
+   "cheap": -0.494148,
+   "expensive": -0.048468,
+   "all": -0.122298,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.321429,
+   "spread": -0.44568
+  },
+  {
+   "date": "2023-04-30",
+   "tokens": 7,
+   "cheap": 0.351842,
+   "expensive": -0.028784,
+   "all": -0.068133,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.142857,
+   "spread": 0.380626
+  },
+  {
+   "date": "2023-05-07",
+   "tokens": 7,
+   "cheap": 0.29539,
+   "expensive": 0.225497,
+   "all": 0.133574,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.214286,
+   "spread": 0.069893
+  },
+  {
+   "date": "2023-05-14",
+   "tokens": 7,
+   "cheap": -0.168999,
+   "expensive": 0.757761,
+   "all": 0.366378,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.571429,
+   "spread": -0.92676
+  },
+  {
+   "date": "2023-05-21",
+   "tokens": 7,
+   "cheap": -0.228241,
+   "expensive": 0.710739,
+   "all": 0.383641,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.571429,
+   "spread": -0.938981
+  },
+  {
+   "date": "2023-05-28",
+   "tokens": 7,
+   "cheap": -0.202601,
+   "expensive": 0.654202,
+   "all": 0.396968,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.5,
+   "spread": -0.856803
+  },
+  {
+   "date": "2023-06-04",
+   "tokens": 7,
+   "cheap": -0.173272,
+   "expensive": 0.855388,
+   "all": 0.428009,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.571429,
+   "spread": -1.02866
+  },
+  {
+   "date": "2023-06-11",
+   "tokens": 7,
+   "cheap": 0.114832,
+   "expensive": 1.769072,
+   "all": 0.88017,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.714286,
+   "spread": -1.65424
+  },
+  {
+   "date": "2023-06-18",
+   "tokens": 7,
+   "cheap": -0.006499,
+   "expensive": 2.79236,
+   "all": 1.062828,
+   "cheap_symbols": "CRV GMX",
+   "rank_corr": -0.857143,
+   "spread": -2.798858
+  },
+  {
+   "date": "2023-06-25",
+   "tokens": 7,
+   "cheap": 0.404467,
+   "expensive": 3.823724,
+   "all": 1.339635,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.357143,
+   "spread": -3.419257
+  },
+  {
+   "date": "2023-07-02",
+   "tokens": 7,
+   "cheap": 0.48072,
+   "expensive": 3.001514,
+   "all": 1.185996,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.535714,
+   "spread": -2.520794
+  },
+  {
+   "date": "2023-07-09",
+   "tokens": 7,
+   "cheap": 0.358285,
+   "expensive": 2.705988,
+   "all": 1.044042,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.392857,
+   "spread": -2.347703
+  },
+  {
+   "date": "2023-07-16",
+   "tokens": 7,
+   "cheap": 0.556576,
+   "expensive": 2.361249,
+   "all": 0.995824,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.285714,
+   "spread": -1.804673
+  },
+  {
+   "date": "2023-07-23",
+   "tokens": 7,
+   "cheap": 0.354473,
+   "expensive": 2.417568,
+   "all": 0.918323,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.285714,
+   "spread": -2.063095
+  },
+  {
+   "date": "2023-07-30",
+   "tokens": 7,
+   "cheap": 0.184577,
+   "expensive": 2.724162,
+   "all": 0.999228,
+   "cheap_symbols": "CRV SKY",
+   "rank_corr": -0.678571,
+   "spread": -2.539585
+  },
+  {
+   "date": "2023-08-06",
+   "tokens": 7,
+   "cheap": 0.187306,
+   "expensive": 2.045821,
+   "all": 0.767038,
+   "cheap_symbols": "CRV SKY",
+   "rank_corr": -0.321429,
+   "spread": -1.858516
+  },
+  {
+   "date": "2023-08-13",
+   "tokens": 7,
+   "cheap": 0.232534,
+   "expensive": 2.253245,
+   "all": 0.896862,
+   "cheap_symbols": "CRV SKY",
+   "rank_corr": -0.571429,
+   "spread": -2.020711
+  },
+  {
+   "date": "2023-08-20",
+   "tokens": 7,
+   "cheap": 0.596677,
+   "expensive": 2.676231,
+   "all": 1.240896,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.535714,
+   "spread": -2.079554
+  },
+  {
+   "date": "2023-08-27",
+   "tokens": 7,
+   "cheap": 0.602055,
+   "expensive": 2.622626,
+   "all": 1.339957,
+   "cheap_symbols": "CRV SKY",
+   "rank_corr": -0.571429,
+   "spread": -2.020571
+  },
+  {
+   "date": "2023-09-03",
+   "tokens": 7,
+   "cheap": 0.852382,
+   "expensive": 3.533484,
+   "all": 1.754937,
+   "cheap_symbols": "GMX SKY",
+   "rank_corr": -0.714286,
+   "spread": -2.681101
+  },
+  {
+   "date": "2023-09-10",
+   "tokens": 7,
+   "cheap": 1.21577,
+   "expensive": 4.114975,
+   "all": 2.13867,
+   "cheap_symbols": "CRV SKY",
+   "rank_corr": -0.428571,
+   "spread": -2.899205
+  },
+  {
+   "date": "2023-09-17",
+   "tokens": 8,
+   "cheap": 7.482675,
+   "expensive": 6.516357,
+   "all": 4.1924,
+   "cheap_symbols": "AERO CRV",
+   "rank_corr": -0.02381,
+   "spread": 0.966318
+  },
+  {
+   "date": "2023-09-24",
+   "tokens": 8,
+   "cheap": 14.942078,
+   "expensive": 5.481483,
+   "all": 5.782298,
+   "cheap_symbols": "AERO CRV",
+   "rank_corr": 0.047619,
+   "spread": 9.460595
+  },
+  {
+   "date": "2023-10-01",
+   "tokens": 8,
+   "cheap": 20.095284,
+   "expensive": 5.968191,
+   "all": 7.14938,
+   "cheap_symbols": "AERO CRV",
+   "rank_corr": 0.095238,
+   "spread": 14.127093
+  },
+  {
+   "date": "2023-10-08",
+   "tokens": 9,
+   "cheap": 17.794481,
+   "expensive": 6.68073,
+   "all": 8.489699,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.166667,
+   "spread": 11.113752
+  },
+  {
+   "date": "2023-10-15",
+   "tokens": 9,
+   "cheap": 31.265832,
+   "expensive": 5.310187,
+   "all": 12.32419,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.183333,
+   "spread": 25.955645
+  },
+  {
+   "date": "2023-10-22",
+   "tokens": 9,
+   "cheap": 28.248606,
+   "expensive": 5.297182,
+   "all": 11.369099,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.15,
+   "spread": 22.951424
+  },
+  {
+   "date": "2023-10-29",
+   "tokens": 9,
+   "cheap": 20.221222,
+   "expensive": 4.140042,
+   "all": 8.229851,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.15,
+   "spread": 16.081181
+  },
+  {
+   "date": "2023-11-05",
+   "tokens": 9,
+   "cheap": 17.714816,
+   "expensive": 3.209009,
+   "all": 6.941063,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.116667,
+   "spread": 14.505808
+  },
+  {
+   "date": "2023-11-12",
+   "tokens": 9,
+   "cheap": 10.760339,
+   "expensive": 2.015894,
+   "all": 4.207074,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.066667,
+   "spread": 8.744446
+  },
+  {
+   "date": "2023-11-19",
+   "tokens": 9,
+   "cheap": 9.489454,
+   "expensive": 0.993822,
+   "all": 3.871081,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": 0.1,
+   "spread": 8.495631
+  },
+  {
+   "date": "2023-11-26",
+   "tokens": 9,
+   "cheap": 13.319758,
+   "expensive": 1.64158,
+   "all": 5.4043,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": 0.0,
+   "spread": 11.678178
+  },
+  {
+   "date": "2023-12-03",
+   "tokens": 9,
+   "cheap": 13.168778,
+   "expensive": 1.504007,
+   "all": 5.187727,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.033333,
+   "spread": 11.664771
+  },
+  {
+   "date": "2023-12-10",
+   "tokens": 9,
+   "cheap": 7.869616,
+   "expensive": 1.012886,
+   "all": 3.116965,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.066667,
+   "spread": 6.85673
+  },
+  {
+   "date": "2023-12-17",
+   "tokens": 9,
+   "cheap": 3.34475,
+   "expensive": 1.460733,
+   "all": 1.574639,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.1,
+   "spread": 1.884018
+  },
+  {
+   "date": "2023-12-24",
+   "tokens": 9,
+   "cheap": 3.181905,
+   "expensive": 1.289508,
+   "all": 1.402623,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.133333,
+   "spread": 1.892397
+  },
+  {
+   "date": "2023-12-31",
+   "tokens": 9,
+   "cheap": 4.2088,
+   "expensive": 0.901665,
+   "all": 1.631871,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.083333,
+   "spread": 3.307134
+  },
+  {
+   "date": "2024-01-07",
+   "tokens": 9,
+   "cheap": 4.003797,
+   "expensive": 0.516257,
+   "all": 1.462596,
+   "cheap_symbols": "AERO CRV SKY",
+   "rank_corr": -0.083333,
+   "spread": 3.487541
+  },
+  {
+   "date": "2024-01-14",
+   "tokens": 9,
+   "cheap": 3.850277,
+   "expensive": 0.236871,
+   "all": 1.421215,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.033333,
+   "spread": 3.613406
+  },
+  {
+   "date": "2024-01-21",
+   "tokens": 9,
+   "cheap": 6.954476,
+   "expensive": 0.315676,
+   "all": 2.551977,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.066667,
+   "spread": 6.6388
+  },
+  {
+   "date": "2024-01-28",
+   "tokens": 9,
+   "cheap": 3.373498,
+   "expensive": 0.117473,
+   "all": 1.270793,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.083333,
+   "spread": 3.256025
+  },
+  {
+   "date": "2024-02-04",
+   "tokens": 10,
+   "cheap": 2.071798,
+   "expensive": -0.052426,
+   "all": 0.682036,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.042424,
+   "spread": 2.124225
+  },
+  {
+   "date": "2024-02-11",
+   "tokens": 10,
+   "cheap": 1.988593,
+   "expensive": -0.090682,
+   "all": 0.589499,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.030303,
+   "spread": 2.079275
+  },
+  {
+   "date": "2024-02-18",
+   "tokens": 10,
+   "cheap": 1.833365,
+   "expensive": -0.114446,
+   "all": 0.5395,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.115152,
+   "spread": 1.947811
+  },
+  {
+   "date": "2024-02-25",
+   "tokens": 10,
+   "cheap": 1.749876,
+   "expensive": 0.133879,
+   "all": 0.654592,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.115152,
+   "spread": 1.615997
+  },
+  {
+   "date": "2024-03-03",
+   "tokens": 10,
+   "cheap": -0.247892,
+   "expensive": -0.224535,
+   "all": -0.224027,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.054545,
+   "spread": -0.023357
+  },
+  {
+   "date": "2024-03-10",
+   "tokens": 10,
+   "cheap": -0.36038,
+   "expensive": -0.293728,
+   "all": -0.31585,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.078788,
+   "spread": -0.066652
+  },
+  {
+   "date": "2024-03-17",
+   "tokens": 10,
+   "cheap": -0.461314,
+   "expensive": -0.258935,
+   "all": -0.340662,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.309091,
+   "spread": -0.202379
+  },
+  {
+   "date": "2024-03-24",
+   "tokens": 9,
+   "cheap": -0.369426,
+   "expensive": -0.30501,
+   "all": -0.268519,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.233333,
+   "spread": -0.064417
+  },
+  {
+   "date": "2024-03-31",
+   "tokens": 10,
+   "cheap": -0.38461,
+   "expensive": -0.348464,
+   "all": -0.308634,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.333333,
+   "spread": -0.036146
+  },
+  {
+   "date": "2024-04-07",
+   "tokens": 11,
+   "cheap": -0.391177,
+   "expensive": -0.478391,
+   "all": -0.391076,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.154545,
+   "spread": 0.087215
+  },
+  {
+   "date": "2024-04-14",
+   "tokens": 11,
+   "cheap": -0.262651,
+   "expensive": -0.301402,
+   "all": -0.18068,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.072727,
+   "spread": 0.038751
+  },
+  {
+   "date": "2024-04-21",
+   "tokens": 11,
+   "cheap": -0.305773,
+   "expensive": -0.277024,
+   "all": -0.194073,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.309091,
+   "spread": -0.028749
+  },
+  {
+   "date": "2024-04-28",
+   "tokens": 11,
+   "cheap": -0.273314,
+   "expensive": -0.221115,
+   "all": -0.144781,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.236364,
+   "spread": -0.052199
+  },
+  {
+   "date": "2024-05-05",
+   "tokens": 11,
+   "cheap": -0.247337,
+   "expensive": -0.261611,
+   "all": -0.138354,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.136364,
+   "spread": 0.014275
+  },
+  {
+   "date": "2024-05-12",
+   "tokens": 11,
+   "cheap": 0.055316,
+   "expensive": 0.055649,
+   "all": 0.27879,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.045455,
+   "spread": -0.000333
+  },
+  {
+   "date": "2024-05-19",
+   "tokens": 11,
+   "cheap": -0.005755,
+   "expensive": -0.095365,
+   "all": 0.098313,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.054545,
+   "spread": 0.08961
+  },
+  {
+   "date": "2024-05-26",
+   "tokens": 11,
+   "cheap": 0.062798,
+   "expensive": -0.167967,
+   "all": 0.149282,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.327273,
+   "spread": 0.230765
+  },
+  {
+   "date": "2024-06-02",
+   "tokens": 11,
+   "cheap": 0.201907,
+   "expensive": 0.007871,
+   "all": 0.296756,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.127273,
+   "spread": 0.194036
+  },
+  {
+   "date": "2024-06-09",
+   "tokens": 11,
+   "cheap": 1.096005,
+   "expensive": 0.300882,
+   "all": 0.811086,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.118182,
+   "spread": 0.795123
+  },
+  {
+   "date": "2024-06-16",
+   "tokens": 11,
+   "cheap": 1.372398,
+   "expensive": 0.355864,
+   "all": 0.982574,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.154545,
+   "spread": 1.016534
+  },
+  {
+   "date": "2024-06-23",
+   "tokens": 11,
+   "cheap": 0.765788,
+   "expensive": 0.192388,
+   "all": 0.649458,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.109091,
+   "spread": 0.5734
+  },
+  {
+   "date": "2024-06-30",
+   "tokens": 11,
+   "cheap": 1.183736,
+   "expensive": 0.333332,
+   "all": 0.813607,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.209091,
+   "spread": 0.850404
+  },
+  {
+   "date": "2024-07-07",
+   "tokens": 11,
+   "cheap": 1.469993,
+   "expensive": 0.840539,
+   "all": 1.155421,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.090909,
+   "spread": 0.629454
+  },
+  {
+   "date": "2024-07-14",
+   "tokens": 11,
+   "cheap": 0.84442,
+   "expensive": 0.456241,
+   "all": 0.630826,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.018182,
+   "spread": 0.388179
+  },
+  {
+   "date": "2024-07-21",
+   "tokens": 11,
+   "cheap": 0.58588,
+   "expensive": 0.165337,
+   "all": 0.507322,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": 0.027273,
+   "spread": 0.420543
+  },
+  {
+   "date": "2024-07-28",
+   "tokens": 11,
+   "cheap": 0.58662,
+   "expensive": 0.215666,
+   "all": 0.599126,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.072727,
+   "spread": 0.370954
+  },
+  {
+   "date": "2024-08-04",
+   "tokens": 11,
+   "cheap": 0.670994,
+   "expensive": 0.311925,
+   "all": 0.652264,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.163636,
+   "spread": 0.359069
+  },
+  {
+   "date": "2024-08-11",
+   "tokens": 11,
+   "cheap": 0.426422,
+   "expensive": 0.320812,
+   "all": 0.502706,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.272727,
+   "spread": 0.10561
+  },
+  {
+   "date": "2024-08-18",
+   "tokens": 11,
+   "cheap": 0.243447,
+   "expensive": 0.382031,
+   "all": 0.554271,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.2,
+   "spread": -0.138584
+  },
+  {
+   "date": "2024-08-25",
+   "tokens": 11,
+   "cheap": 0.112581,
+   "expensive": 0.061798,
+   "all": 0.262449,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.190909,
+   "spread": 0.050783
+  },
+  {
+   "date": "2024-09-01",
+   "tokens": 11,
+   "cheap": 0.155764,
+   "expensive": 0.342756,
+   "all": 0.329316,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.445455,
+   "spread": -0.186992
+  },
+  {
+   "date": "2024-09-08",
+   "tokens": 11,
+   "cheap": 0.104558,
+   "expensive": 0.21621,
+   "all": 0.158334,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.290909,
+   "spread": -0.111652
+  },
+  {
+   "date": "2024-09-15",
+   "tokens": 11,
+   "cheap": 0.008691,
+   "expensive": 0.015819,
+   "all": 0.011888,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.209091,
+   "spread": -0.007129
+  },
+  {
+   "date": "2024-09-22",
+   "tokens": 10,
+   "cheap": -0.064716,
+   "expensive": -0.126377,
+   "all": -0.005467,
+   "cheap_symbols": "AERO CRV GMX",
+   "rank_corr": -0.224242,
+   "spread": 0.061661
+  },
+  {
+   "date": "2024-09-29",
+   "tokens": 11,
+   "cheap": -0.453431,
+   "expensive": -0.305822,
+   "all": -0.205549,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.3,
+   "spread": -0.147609
+  },
+  {
+   "date": "2024-10-06",
+   "tokens": 11,
+   "cheap": -0.490813,
+   "expensive": -0.283143,
+   "all": -0.150774,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.309091,
+   "spread": -0.20767
+  },
+  {
+   "date": "2024-10-13",
+   "tokens": 11,
+   "cheap": -0.327804,
+   "expensive": -0.262404,
+   "all": -0.064423,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.063636,
+   "spread": -0.0654
+  },
+  {
+   "date": "2024-10-20",
+   "tokens": 11,
+   "cheap": -0.320366,
+   "expensive": -0.256268,
+   "all": -0.143486,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.045455,
+   "spread": -0.064098
+  },
+  {
+   "date": "2024-10-27",
+   "tokens": 11,
+   "cheap": -0.129967,
+   "expensive": -0.111851,
+   "all": 0.059284,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.136364,
+   "spread": -0.018116
+  },
+  {
+   "date": "2024-11-03",
+   "tokens": 11,
+   "cheap": -0.170654,
+   "expensive": -0.213097,
+   "all": 0.050105,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.081818,
+   "spread": 0.042442
+  },
+  {
+   "date": "2024-11-10",
+   "tokens": 11,
+   "cheap": -0.222704,
+   "expensive": -0.329567,
+   "all": -0.018454,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.2,
+   "spread": 0.106863
+  },
+  {
+   "date": "2024-11-17",
+   "tokens": 11,
+   "cheap": -0.266255,
+   "expensive": -0.314353,
+   "all": -0.084682,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.1,
+   "spread": 0.048099
+  },
+  {
+   "date": "2024-11-24",
+   "tokens": 11,
+   "cheap": -0.378259,
+   "expensive": -0.361112,
+   "all": -0.184729,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.036364,
+   "spread": -0.017147
+  },
+  {
+   "date": "2024-12-01",
+   "tokens": 11,
+   "cheap": -0.430815,
+   "expensive": -0.253298,
+   "all": -0.359962,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.063636,
+   "spread": -0.177518
+  },
+  {
+   "date": "2024-12-08",
+   "tokens": 11,
+   "cheap": -0.531901,
+   "expensive": -0.509309,
+   "all": -0.49954,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.145455,
+   "spread": -0.022593
+  },
+  {
+   "date": "2024-12-15",
+   "tokens": 11,
+   "cheap": -0.395153,
+   "expensive": -0.468403,
+   "all": -0.472787,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.090909,
+   "spread": 0.07325
+  },
+  {
+   "date": "2024-12-22",
+   "tokens": 11,
+   "cheap": -0.30123,
+   "expensive": -0.457073,
+   "all": -0.409862,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.309091,
+   "spread": 0.155843
+  },
+  {
+   "date": "2024-12-29",
+   "tokens": 11,
+   "cheap": -0.197077,
+   "expensive": -0.403516,
+   "all": -0.358317,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.272727,
+   "spread": 0.20644
+  },
+  {
+   "date": "2025-01-05",
+   "tokens": 11,
+   "cheap": -0.289549,
+   "expensive": -0.560466,
+   "all": -0.427515,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.281818,
+   "spread": 0.270918
+  },
+  {
+   "date": "2025-01-12",
+   "tokens": 11,
+   "cheap": -0.15828,
+   "expensive": -0.281773,
+   "all": -0.230073,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.236364,
+   "spread": 0.123493
+  },
+  {
+   "date": "2025-01-19",
+   "tokens": 11,
+   "cheap": -0.041057,
+   "expensive": -0.091132,
+   "all": -0.129837,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.327273,
+   "spread": 0.050075
+  },
+  {
+   "date": "2025-01-26",
+   "tokens": 11,
+   "cheap": 0.149695,
+   "expensive": -0.246735,
+   "all": -0.038099,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.290909,
+   "spread": 0.39643
+  },
+  {
+   "date": "2025-02-02",
+   "tokens": 11,
+   "cheap": 0.08436,
+   "expensive": -0.279716,
+   "all": -0.046103,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.3,
+   "spread": 0.364076
+  },
+  {
+   "date": "2025-02-09",
+   "tokens": 11,
+   "cheap": 0.51106,
+   "expensive": 0.257166,
+   "all": 0.345527,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.127273,
+   "spread": 0.253894
+  },
+  {
+   "date": "2025-02-16",
+   "tokens": 11,
+   "cheap": 0.426419,
+   "expensive": 0.184222,
+   "all": 0.209233,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.2,
+   "spread": 0.242197
+  },
+  {
+   "date": "2025-02-23",
+   "tokens": 11,
+   "cheap": 0.190786,
+   "expensive": 0.268651,
+   "all": 0.22539,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": 0.0,
+   "spread": -0.077865
+  },
+  {
+   "date": "2025-03-02",
+   "tokens": 11,
+   "cheap": 0.28841,
+   "expensive": 0.337616,
+   "all": 0.270232,
+   "cheap_symbols": "AERO CAKE GMX",
+   "rank_corr": -0.018182,
+   "spread": -0.049205
+  },
+  {
+   "date": "2025-03-09",
+   "tokens": 11,
+   "cheap": 0.441423,
+   "expensive": 0.445055,
+   "all": 0.494293,
+   "cheap_symbols": "AERO CAKE GMX",
+   "rank_corr": 0.009091,
+   "spread": -0.003632
+  },
+  {
+   "date": "2025-03-16",
+   "tokens": 11,
+   "cheap": 0.661006,
+   "expensive": 0.981743,
+   "all": 0.729589,
+   "cheap_symbols": "AERO GMX SKY",
+   "rank_corr": -0.081818,
+   "spread": -0.320736
+  },
+  {
+   "date": "2025-03-23",
+   "tokens": 12,
+   "cheap": 0.599389,
+   "expensive": 1.048623,
+   "all": 0.649304,
+   "cheap_symbols": "AERO GMX RAY SKY",
+   "rank_corr": -0.223776,
+   "spread": -0.449234
+  },
+  {
+   "date": "2025-03-30",
+   "tokens": 12,
+   "cheap": 0.520059,
+   "expensive": 1.055571,
+   "all": 0.668566,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.146853,
+   "spread": -0.535513
+  },
+  {
+   "date": "2025-04-06",
+   "tokens": 12,
+   "cheap": 0.93075,
+   "expensive": 0.743739,
+   "all": 0.99014,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.132867,
+   "spread": 0.187011
+  },
+  {
+   "date": "2025-04-13",
+   "tokens": 12,
+   "cheap": 0.373748,
+   "expensive": 0.396548,
+   "all": 0.323373,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.034965,
+   "spread": -0.0228
+  },
+  {
+   "date": "2025-04-20",
+   "tokens": 12,
+   "cheap": 0.29573,
+   "expensive": 0.417147,
+   "all": 0.274363,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.132867,
+   "spread": -0.121417
+  },
+  {
+   "date": "2025-04-27",
+   "tokens": 12,
+   "cheap": 0.15464,
+   "expensive": -0.016298,
+   "all": 0.21654,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.0,
+   "spread": 0.170938
+  },
+  {
+   "date": "2025-05-04",
+   "tokens": 12,
+   "cheap": 0.129695,
+   "expensive": -0.087883,
+   "all": 0.143047,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.034965,
+   "spread": 0.217577
+  },
+  {
+   "date": "2025-05-11",
+   "tokens": 12,
+   "cheap": -0.075982,
+   "expensive": -0.296072,
+   "all": -0.150699,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.048951,
+   "spread": 0.22009
+  },
+  {
+   "date": "2025-05-18",
+   "tokens": 12,
+   "cheap": -0.100691,
+   "expensive": -0.157183,
+   "all": -0.195593,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.104895,
+   "spread": 0.056492
+  },
+  {
+   "date": "2025-05-25",
+   "tokens": 12,
+   "cheap": -0.179518,
+   "expensive": -0.347763,
+   "all": -0.344758,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.174825,
+   "spread": 0.168245
+  },
+  {
+   "date": "2025-06-01",
+   "tokens": 12,
+   "cheap": -0.085745,
+   "expensive": -0.191576,
+   "all": -0.233475,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.006993,
+   "spread": 0.105831
+  },
+  {
+   "date": "2025-06-08",
+   "tokens": 12,
+   "cheap": -0.113522,
+   "expensive": -0.2574,
+   "all": -0.265697,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.097902,
+   "spread": 0.143878
+  },
+  {
+   "date": "2025-06-15",
+   "tokens": 12,
+   "cheap": -0.270862,
+   "expensive": -0.2758,
+   "all": -0.323594,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.188811,
+   "spread": 0.004938
+  },
+  {
+   "date": "2025-06-22",
+   "tokens": 12,
+   "cheap": -0.231038,
+   "expensive": -0.265258,
+   "all": -0.297863,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.118881,
+   "spread": 0.03422
+  },
+  {
+   "date": "2025-06-29",
+   "tokens": 12,
+   "cheap": -0.311378,
+   "expensive": -0.332711,
+   "all": -0.36508,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.076923,
+   "spread": 0.021333
+  },
+  {
+   "date": "2025-07-06",
+   "tokens": 12,
+   "cheap": -0.231494,
+   "expensive": -0.248289,
+   "all": -0.287696,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": -0.13986,
+   "spread": 0.016796
+  },
+  {
+   "date": "2025-07-13",
+   "tokens": 12,
+   "cheap": -0.270144,
+   "expensive": -0.407877,
+   "all": -0.383325,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.300699,
+   "spread": 0.137732
+  },
+  {
+   "date": "2025-07-20",
+   "tokens": 13,
+   "cheap": -0.357427,
+   "expensive": -0.493976,
+   "all": -0.449089,
+   "cheap_symbols": "AERO CAKE GMX PUMP",
+   "rank_corr": 0.56044,
+   "spread": 0.136549
+  },
+  {
+   "date": "2025-07-27",
+   "tokens": 13,
+   "cheap": -0.333584,
+   "expensive": -0.586897,
+   "all": -0.492397,
+   "cheap_symbols": "AERO CAKE GMX PUMP",
+   "rank_corr": 0.582418,
+   "spread": 0.253313
+  },
+  {
+   "date": "2025-08-03",
+   "tokens": 13,
+   "cheap": -0.371771,
+   "expensive": -0.521313,
+   "all": -0.478705,
+   "cheap_symbols": "AERO CAKE GMX PUMP",
+   "rank_corr": 0.478022,
+   "spread": 0.149542
+  },
+  {
+   "date": "2025-08-10",
+   "tokens": 13,
+   "cheap": -0.429921,
+   "expensive": -0.662565,
+   "all": -0.612961,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": 0.549451,
+   "spread": 0.232644
+  },
+  {
+   "date": "2025-08-17",
+   "tokens": 13,
+   "cheap": -0.396297,
+   "expensive": -0.65691,
+   "all": -0.601524,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": 0.423077,
+   "spread": 0.260613
+  },
+  {
+   "date": "2025-08-24",
+   "tokens": 13,
+   "cheap": -0.349569,
+   "expensive": -0.649219,
+   "all": -0.604693,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": 0.554945,
+   "spread": 0.29965
+  },
+  {
+   "date": "2025-08-31",
+   "tokens": 13,
+   "cheap": -0.348198,
+   "expensive": -0.634037,
+   "all": -0.576771,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": 0.549451,
+   "spread": 0.285839
+  },
+  {
+   "date": "2025-09-07",
+   "tokens": 13,
+   "cheap": -0.387679,
+   "expensive": -0.663526,
+   "all": -0.600826,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": 0.549451,
+   "spread": 0.275847
+  },
+  {
+   "date": "2025-09-14",
+   "tokens": 13,
+   "cheap": -0.429932,
+   "expensive": -0.653545,
+   "all": -0.615799,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.351648,
+   "spread": 0.223612
+  },
+  {
+   "date": "2025-09-21",
+   "tokens": 13,
+   "cheap": -0.444041,
+   "expensive": -0.638015,
+   "all": -0.611996,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.362637,
+   "spread": 0.193975
+  },
+  {
+   "date": "2025-09-28",
+   "tokens": 13,
+   "cheap": -0.436387,
+   "expensive": -0.617383,
+   "all": -0.599023,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.43956,
+   "spread": 0.180996
+  },
+  {
+   "date": "2025-10-05",
+   "tokens": 13,
+   "cheap": -0.446381,
+   "expensive": -0.650141,
+   "all": -0.611372,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.434066,
+   "spread": 0.20376
+  },
+  {
+   "date": "2025-10-12",
+   "tokens": 13,
+   "cheap": -0.322867,
+   "expensive": -0.498304,
+   "all": -0.471629,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.576923,
+   "spread": 0.175436
+  },
+  {
+   "date": "2025-10-19",
+   "tokens": 13,
+   "cheap": -0.273619,
+   "expensive": -0.43103,
+   "all": -0.427623,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.565934,
+   "spread": 0.157411
+  },
+  {
+   "date": "2025-10-26",
+   "tokens": 13,
+   "cheap": -0.206508,
+   "expensive": -0.525017,
+   "all": -0.457749,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.483516,
+   "spread": 0.318509
+  },
+  {
+   "date": "2025-11-02",
+   "tokens": 13,
+   "cheap": -0.206473,
+   "expensive": -0.462454,
+   "all": -0.418575,
+   "cheap_symbols": "AERO CAKE GMX SKY",
+   "rank_corr": 0.384615,
+   "spread": 0.25598
+  },
+  {
+   "date": "2025-11-09",
+   "tokens": 13,
+   "cheap": -0.218973,
+   "expensive": -0.387673,
+   "all": -0.315147,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.428571,
+   "spread": 0.1687
+  },
+  {
+   "date": "2025-11-16",
+   "tokens": 13,
+   "cheap": -0.246991,
+   "expensive": -0.307161,
+   "all": -0.323019,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.192308,
+   "spread": 0.06017
+  },
+  {
+   "date": "2025-11-23",
+   "tokens": 13,
+   "cheap": -0.100644,
+   "expensive": -0.089364,
+   "all": -0.147606,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.291209,
+   "spread": -0.01128
+  },
+  {
+   "date": "2025-11-30",
+   "tokens": 13,
+   "cheap": -0.239069,
+   "expensive": -0.165246,
+   "all": -0.26582,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.406593,
+   "spread": -0.073823
+  },
+  {
+   "date": "2025-12-07",
+   "tokens": 13,
+   "cheap": -0.348378,
+   "expensive": -0.196307,
+   "all": -0.335801,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.335165,
+   "spread": -0.152071
+  },
+  {
+   "date": "2025-12-14",
+   "tokens": 13,
+   "cheap": -0.285678,
+   "expensive": -0.128367,
+   "all": -0.260353,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.351648,
+   "spread": -0.157311
+  },
+  {
+   "date": "2025-12-21",
+   "tokens": 13,
+   "cheap": -0.149351,
+   "expensive": 0.046371,
+   "all": -0.127139,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.450549,
+   "spread": -0.195722
+  },
+  {
+   "date": "2025-12-28",
+   "tokens": 13,
+   "cheap": -0.18,
+   "expensive": -0.026313,
+   "all": -0.184501,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.43956,
+   "spread": -0.153688
+  },
+  {
+   "date": "2026-01-04",
+   "tokens": 14,
+   "cheap": -0.167147,
+   "expensive": 0.032759,
+   "all": -0.168781,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.481319,
+   "spread": -0.199906
+  },
+  {
+   "date": "2026-01-11",
+   "tokens": 14,
+   "cheap": -0.184974,
+   "expensive": 0.065613,
+   "all": -0.169944,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.371429,
+   "spread": -0.250588
+  },
+  {
+   "date": "2026-01-18",
+   "tokens": 14,
+   "cheap": -0.181472,
+   "expensive": -0.006478,
+   "all": -0.181242,
+   "cheap_symbols": "AERO CAKE PUMP SKY",
+   "rank_corr": 0.454945,
+   "spread": -0.174994
+  },
+  {
+   "date": "2026-01-25",
+   "tokens": 14,
+   "cheap": -0.112072,
+   "expensive": 0.128942,
+   "all": -0.123499,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": 0.292308,
+   "spread": -0.241014
+  },
+  {
+   "date": "2026-02-01",
+   "tokens": 14,
+   "cheap": -0.049043,
+   "expensive": 0.05242,
+   "all": -0.067485,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": 0.142857,
+   "spread": -0.101463
+  },
+  {
+   "date": "2026-02-08",
+   "tokens": 14,
+   "cheap": 0.06583,
+   "expensive": 0.192478,
+   "all": 0.04988,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": 0.015385,
+   "spread": -0.126647
+  },
+  {
+   "date": "2026-02-15",
+   "tokens": 14,
+   "cheap": 0.085114,
+   "expensive": 0.111066,
+   "all": 0.025682,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": 0.353846,
+   "spread": -0.025952
+  },
+  {
+   "date": "2026-02-22",
+   "tokens": 14,
+   "cheap": 0.532997,
+   "expensive": 0.693547,
+   "all": 0.452132,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.164835,
+   "spread": -0.16055
+  },
+  {
+   "date": "2026-03-01",
+   "tokens": 14,
+   "cheap": 0.533218,
+   "expensive": 0.686069,
+   "all": 0.450866,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.248352,
+   "spread": -0.152852
+  },
+  {
+   "date": "2026-03-08",
+   "tokens": 14,
+   "cheap": 0.480729,
+   "expensive": 1.01836,
+   "all": 0.630573,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.265934,
+   "spread": -0.537631
+  },
+  {
+   "date": "2026-03-15",
+   "tokens": 14,
+   "cheap": 0.414293,
+   "expensive": 0.686808,
+   "all": 0.541988,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.16044,
+   "spread": -0.272514
+  },
+  {
+   "date": "2026-03-22",
+   "tokens": 14,
+   "cheap": 0.785352,
+   "expensive": 1.259612,
+   "all": 0.878995,
+   "cheap_symbols": "AERO GMX LDO PUMP",
+   "rank_corr": -0.371429,
+   "spread": -0.47426
+  },
+  {
+   "date": "2026-03-29",
+   "tokens": 14,
+   "cheap": 0.953931,
+   "expensive": 1.648038,
+   "all": 1.239854,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.389011,
+   "spread": -0.694107
+  },
+  {
+   "date": "2026-04-05",
+   "tokens": 14,
+   "cheap": 1.262108,
+   "expensive": 1.644243,
+   "all": 1.285805,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.323077,
+   "spread": -0.382134
+  },
+  {
+   "date": "2026-04-12",
+   "tokens": 14,
+   "cheap": 0.943919,
+   "expensive": 1.168729,
+   "all": 1.029429,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.243956,
+   "spread": -0.22481
+  },
+  {
+   "date": "2026-04-19",
+   "tokens": 14,
+   "cheap": 0.684704,
+   "expensive": 0.744548,
+   "all": 0.678673,
+   "cheap_symbols": "AERO GMX PUMP SKY",
+   "rank_corr": -0.27033,
+   "spread": -0.059844
+  },
+  {
+   "date": "2026-04-26",
+   "tokens": 14,
+   "cheap": 0.413396,
+   "expensive": 0.812752,
+   "all": 0.618459,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": -0.450549,
+   "spread": -0.399356
+  },
+  {
+   "date": "2026-05-03",
+   "tokens": 14,
+   "cheap": 0.39944,
+   "expensive": 0.82553,
+   "all": 0.515941,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": -0.371429,
+   "spread": -0.426091
+  },
+  {
+   "date": "2026-05-10",
+   "tokens": 14,
+   "cheap": 0.196826,
+   "expensive": 0.435492,
+   "all": 0.288347,
+   "cheap_symbols": "CAKE GMX PUMP SKY",
+   "rank_corr": -0.27033,
+   "spread": -0.238666
+  }
+ ],
+ "growth_of_dollar": [
+  {
+   "date": "2021-12-05",
+   "cheap": 1.0,
+   "expensive": 1.0,
+   "all": 1.0
+  },
+  {
+   "date": "2022-03-06",
+   "cheap": 0.721373,
+   "expensive": 0.575821,
+   "all": 0.650977
+  },
+  {
+   "date": "2022-06-05",
+   "cheap": 0.525116,
+   "expensive": 0.368695,
+   "all": 0.435518
+  },
+  {
+   "date": "2022-09-04",
+   "cheap": 0.864604,
+   "expensive": 0.519029,
+   "all": 0.555022
+  },
+  {
+   "date": "2022-12-04",
+   "cheap": 0.872256,
+   "expensive": 0.325256,
+   "all": 0.441525
+  },
+  {
+   "date": "2023-03-05",
+   "cheap": 1.143394,
+   "expensive": 0.58534,
+   "all": 0.634964
+  },
+  {
+   "date": "2023-06-04",
+   "cheap": 1.005895,
+   "expensive": 0.471498,
+   "all": 0.491281
+  },
+  {
+   "date": "2023-09-03",
+   "cheap": 0.551779,
+   "expensive": 0.396898,
+   "all": 0.408399
+  },
+  {
+   "date": "2023-12-03",
+   "cheap": 0.814958,
+   "expensive": 0.880824,
+   "all": 0.714858
+  },
+  {
+   "date": "2024-03-03",
+   "cheap": 5.580131,
+   "expensive": 1.652914,
+   "all": 2.495343
+  },
+  {
+   "date": "2024-06-02",
+   "cheap": 7.624156,
+   "expensive": 2.375587,
+   "all": 3.049611
+  },
+  {
+   "date": "2024-09-01",
+   "cheap": 4.331985,
+   "expensive": 1.086816,
+   "all": 1.886721
+  },
+  {
+   "date": "2024-12-01",
+   "cheap": 9.536694,
+   "expensive": 2.730395,
+   "all": 4.14327
+  },
+  {
+   "date": "2025-03-02",
+   "cheap": 5.752619,
+   "expensive": 1.874895,
+   "all": 2.67145
+  },
+  {
+   "date": "2025-06-01",
+   "cheap": 5.416373,
+   "expensive": 1.59786,
+   "all": 2.619909
+  },
+  {
+   "date": "2025-08-31",
+   "cheap": 6.932031,
+   "expensive": 2.362427,
+   "all": 3.474106
+  },
+  {
+   "date": "2025-11-30",
+   "cheap": 5.577718,
+   "expensive": 1.343894,
+   "all": 2.138954
+  },
+  {
+   "date": "2026-03-01",
+   "cheap": 4.186624,
+   "expensive": 0.805782,
+   "all": 1.400168
+  },
+  {
+   "date": "2026-05-31",
+   "cheap": 4.216153,
+   "expensive": 0.979382,
+   "all": 1.499324
+  },
+  {
+   "date": "2026-08-30",
+   "cheap": 6.537315,
+   "expensive": 1.380073,
+   "all": 2.089865
+  }
+ ],
+ "growth_leave_one_out": [
+  {
+   "without": "AERO",
+   "cheap": 0.6296315825918494,
+   "expensive": 1.6689841887176595,
+   "all": 0.9269488557376833
+  },
+  {
+   "without": "PUMP",
+   "cheap": 4.7871393831483395,
+   "expensive": 1.3800731134026645,
+   "all": 1.883022968592017
+  },
+  {
+   "without": "SKY",
+   "cheap": 29.83188281194179,
+   "expensive": 7.270684532629202,
+   "all": 11.364668453952723
+  },
+  {
+   "without": "UNI",
+   "cheap": 6.537315492331803,
+   "expensive": 1.3304267556128564,
+   "all": 2.1139902075003083
+  },
+  {
+   "without": "CAKE",
+   "cheap": 36.26133032986818,
+   "expensive": 7.270684532629202,
+   "all": 15.93903419818777
+  },
+  {
+   "without": "LDO",
+   "cheap": 42.206759267139276,
+   "expensive": 8.173915319486234,
+   "all": 16.22924925527035
+  },
+  {
+   "without": "CRV",
+   "cheap": 55.52213348119557,
+   "expensive": 9.881725291717126,
+   "all": 15.042103463684636
+  },
+  {
+   "without": "AAVE",
+   "cheap": 41.0678803120913,
+   "expensive": 6.583259101341626,
+   "all": 13.070736688618137
+  },
+  {
+   "without": "ENA",
+   "cheap": 7.088333939342653,
+   "expensive": 1.0347344810620611,
+   "all": 2.1483639814440636
+  },
+  {
+   "without": "JUP",
+   "cheap": 7.088333939342653,
+   "expensive": 0.9515699943511043,
+   "all": 2.1721030935820296
+  },
+  {
+   "without": "RAY",
+   "cheap": 9.901617469326194,
+   "expensive": 1.3084755483303754,
+   "all": 1.9176131987651746
+  },
+  {
+   "without": "HYPE",
+   "cheap": 7.088333939342653,
+   "expensive": 0.8312340003164767,
+   "all": 1.8345273328459493
+  },
+  {
+   "without": "GMX",
+   "cheap": 78.9492036042128,
+   "expensive": 7.270684532629202,
+   "all": 15.985832452038341
+  },
+  {
+   "without": "PENDLE",
+   "cheap": 9.901617469326194,
+   "expensive": 0.7904672058064225,
+   "all": 2.1414948186920078
+  }
+ ],
+ "growth_without": {
+  "token": "AERO",
+  "line": [
+   {
+    "date": "2021-12-05",
+    "cheap": 1.0,
+    "expensive": 1.0,
+    "all": 1.0
+   },
+   {
+    "date": "2022-03-06",
+    "cheap": 0.721373,
+    "expensive": 0.575821,
+    "all": 0.650977
+   },
+   {
+    "date": "2022-06-05",
+    "cheap": 0.525116,
+    "expensive": 0.368695,
+    "all": 0.435518
+   },
+   {
+    "date": "2022-09-04",
+    "cheap": 0.864604,
+    "expensive": 0.519029,
+    "all": 0.555022
+   },
+   {
+    "date": "2022-12-04",
+    "cheap": 0.872256,
+    "expensive": 0.325256,
+    "all": 0.441525
+   },
+   {
+    "date": "2023-03-05",
+    "cheap": 1.143394,
+    "expensive": 0.58534,
+    "all": 0.634964
+   },
+   {
+    "date": "2023-06-04",
+    "cheap": 1.005895,
+    "expensive": 0.471498,
+    "all": 0.491281
+   },
+   {
+    "date": "2023-09-03",
+    "cheap": 0.551779,
+    "expensive": 0.396898,
+    "all": 0.408399
+   },
+   {
+    "date": "2023-12-03",
+    "cheap": 0.814958,
+    "expensive": 0.880824,
+    "all": 0.714858
+   },
+   {
+    "date": "2024-03-03",
+    "cheap": 1.041169,
+    "expensive": 1.855907,
+    "all": 1.200058
+   },
+   {
+    "date": "2024-06-02",
+    "cheap": 0.888609,
+    "expensive": 2.667331,
+    "all": 1.33335
+   },
+   {
+    "date": "2024-09-01",
+    "cheap": 0.541922,
+    "expensive": 1.220287,
+    "all": 0.84445
+   },
+   {
+    "date": "2024-12-01",
+    "cheap": 0.893484,
+    "expensive": 3.065713,
+    "all": 1.808041
+   },
+   {
+    "date": "2025-03-02",
+    "cheap": 0.624676,
+    "expensive": 2.105149,
+    "all": 1.20889
+   },
+   {
+    "date": "2025-06-01",
+    "cheap": 0.620138,
+    "expensive": 1.794092,
+    "all": 1.19793
+   },
+   {
+    "date": "2025-08-31",
+    "cheap": 0.624771,
+    "expensive": 2.856989,
+    "all": 1.504554
+   },
+   {
+    "date": "2025-11-30",
+    "cheap": 0.50271,
+    "expensive": 1.625232,
+    "all": 0.928994
+   },
+   {
+    "date": "2026-03-01",
+    "cheap": 0.409489,
+    "expensive": 0.974468,
+    "all": 0.617579
+   },
+   {
+    "date": "2026-05-31",
+    "cheap": 0.411303,
+    "expensive": 1.184411,
+    "all": 0.657485
+   },
+   {
+    "date": "2026-08-30",
+    "cheap": 0.629632,
+    "expensive": 1.668984,
+    "all": 0.926949
+   }
+  ]
+ },
+ "cheap_vs_own_past": [
+  {
+   "horizon_weeks": 13,
+   "zone": "cheap",
+   "observations": 1449,
+   "tokens": 14,
+   "avg_return": 0.1264,
+   "median_return": -0.043035,
+   "avg_excess": 0.010125,
+   "median_excess": -0.041355,
+   "beat_avg_pct": 0.397516
+  },
+  {
+   "horizon_weeks": 13,
+   "zone": "middle",
+   "observations": 506,
+   "tokens": 14,
+   "avg_return": 0.111496,
+   "median_return": -0.10539,
+   "avg_excess": 0.016083,
+   "median_excess": -0.081507,
+   "beat_avg_pct": 0.36166
+  },
+  {
+   "horizon_weeks": 13,
+   "zone": "expensive",
+   "observations": 267,
+   "tokens": 11,
+   "avg_return": 0.018656,
+   "median_return": -0.0625,
+   "avg_excess": -0.08543,
+   "median_excess": -0.102053,
+   "beat_avg_pct": 0.325843
+  },
+  {
+   "horizon_weeks": 26,
+   "zone": "cheap",
+   "observations": 1367,
+   "tokens": 13,
+   "avg_return": 0.223337,
+   "median_return": -0.064503,
+   "avg_excess": 0.045556,
+   "median_excess": -0.068258,
+   "beat_avg_pct": 0.392099
+  },
+  {
+   "horizon_weeks": 26,
+   "zone": "middle",
+   "observations": 440,
+   "tokens": 13,
+   "avg_return": -0.00318,
+   "median_return": -0.191061,
+   "avg_excess": -0.030798,
+   "median_excess": -0.099913,
+   "beat_avg_pct": 0.356818
+  },
+  {
+   "horizon_weeks": 26,
+   "zone": "expensive",
+   "observations": 240,
+   "tokens": 10,
+   "avg_return": -0.114667,
+   "median_return": -0.289945,
+   "avg_excess": -0.203014,
+   "median_excess": -0.120424,
+   "beat_avg_pct": 0.295833
+  },
+  {
+   "horizon_weeks": 52,
+   "zone": "cheap",
+   "observations": 1137,
+   "tokens": 12,
+   "avg_return": 0.233908,
+   "median_return": -0.306399,
+   "avg_excess": 0.13461,
+   "median_excess": -0.068677,
+   "beat_avg_pct": 0.380827
+  },
+  {
+   "horizon_weeks": 52,
+   "zone": "middle",
+   "observations": 380,
+   "tokens": 12,
+   "avg_return": -0.135275,
+   "median_return": -0.402719,
+   "avg_excess": -0.168085,
+   "median_excess": -0.100145,
+   "beat_avg_pct": 0.297368
+  },
+  {
+   "horizon_weeks": 52,
+   "zone": "expensive",
+   "observations": 201,
+   "tokens": 9,
+   "avg_return": -0.320356,
+   "median_return": -0.423219,
+   "avg_excess": -0.443678,
+   "median_excess": -0.228148,
+   "beat_avg_pct": 0.154229
+  }
+ ],
+ "own_past_by_token_26w": [
+  {
+   "symbol": "AAVE",
+   "weeks": 245,
+   "cheap_weeks": 188,
+   "expensive_weeks": 7,
+   "excess_when_cheap": 0.032988,
+   "excess_when_expensive": -0.028961
+  },
+  {
+   "symbol": "AERO",
+   "weeks": 113,
+   "cheap_weeks": 10,
+   "expensive_weeks": 74,
+   "excess_when_cheap": 0.634953,
+   "excess_when_expensive": -0.002515
+  },
+  {
+   "symbol": "CAKE",
+   "weeks": 225,
+   "cheap_weeks": 146,
+   "expensive_weeks": 45,
+   "excess_when_cheap": -0.043699,
+   "excess_when_expensive": -0.440647
+  },
+  {
+   "symbol": "CRV",
+   "weeks": 250,
+   "cheap_weeks": 131,
+   "expensive_weeks": 26,
+   "excess_when_cheap": -0.287807,
+   "excess_when_expensive": -0.090572
+  },
+  {
+   "symbol": "ENA",
+   "weeks": 84,
+   "cheap_weeks": 7,
+   "expensive_weeks": 34,
+   "excess_when_cheap": -0.296655,
+   "excess_when_expensive": -0.079561
+  },
+  {
+   "symbol": "GMX",
+   "weeks": 206,
+   "cheap_weeks": 114,
+   "expensive_weeks": 34,
+   "excess_when_cheap": -0.168547,
+   "excess_when_expensive": -0.732747
+  },
+  {
+   "symbol": "HYPE",
+   "weeks": 34,
+   "cheap_weeks": 18,
+   "expensive_weeks": 10,
+   "excess_when_cheap": 1.053902,
+   "excess_when_expensive": 0.437143
+  },
+  {
+   "symbol": "JUP",
+   "weeks": 93,
+   "cheap_weeks": 79,
+   "expensive_weeks": 4,
+   "excess_when_cheap": -0.165915,
+   "excess_when_expensive": -0.358523
+  },
+  {
+   "symbol": "LDO",
+   "weeks": 224,
+   "cheap_weeks": 191,
+   "expensive_weeks": 0,
+   "excess_when_cheap": -0.156538,
+   "excess_when_expensive": null
+  },
+  {
+   "symbol": "PENDLE",
+   "weeks": 110,
+   "cheap_weeks": 89,
+   "expensive_weeks": 0,
+   "excess_when_cheap": -0.098344,
+   "excess_when_expensive": null
+  },
+  {
+   "symbol": "PUMP",
+   "weeks": 17,
+   "cheap_weeks": 14,
+   "expensive_weeks": 0,
+   "excess_when_cheap": 0.635543,
+   "excess_when_expensive": null
+  },
+  {
+   "symbol": "RAY",
+   "weeks": 148,
+   "cheap_weeks": 123,
+   "expensive_weeks": 1,
+   "excess_when_cheap": 1.072994,
+   "excess_when_expensive": -0.420484
+  },
+  {
+   "symbol": "SKY",
+   "weeks": 298,
+   "cheap_weeks": 257,
+   "expensive_weeks": 5,
+   "excess_when_cheap": 0.027274,
+   "excess_when_expensive": -0.209801
+  }
+ ]
+}

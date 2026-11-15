@@ -24,7 +24,7 @@ several months and several snapshots.
 Usage:
     python -m crypto_value_research.track save --scores data/scores.csv          # store today's run
     python -m crypto_value_research.track                                       # measure every snapshot
-    python -m crypto_value_research.track --out-dir data/tracking --no-paths
+    python -m crypto_value_research.track --out-dir data/tracking --paths none
 """
 
 from __future__ import annotations
@@ -299,7 +299,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--snapshot-dir", type=Path, default=SNAPSHOT_DIR)
     p.add_argument("--snapshot-dir", type=Path, default=SNAPSHOT_DIR, help="folder of saved snapshots")
     p.add_argument("--out-dir", type=Path, default=Path("data/tracking"), help="where to write results")
-    p.add_argument("--no-paths", action="store_true", help="skip the day-by-day chart data (one request per token)")
+    p.add_argument("--paths", choices=["oldest", "latest", "all", "none"], default="oldest",
+                   help="which snapshots get day-by-day chart data, one request per token each "
+                        "(default: oldest, the longest record)")
     args = p.parse_args(argv)
 
     if args.command == "save":
@@ -314,8 +316,10 @@ def main(argv: list[str] | None = None) -> int:
     args.out_dir.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
     report = []
-    for snap in snapshots:
-        perf, summary, tables = track_snapshot(snap, session, paths=not args.no_paths)
+    for n, snap in enumerate(snapshots):
+        want = (args.paths == "all" or (args.paths == "latest" and n == len(snapshots) - 1)
+                or (args.paths == "oldest" and n == 0))
+        perf, summary, tables = track_snapshot(snap, session, paths=want)
         day = summary["scored_at"][:10]
         perf.to_csv(args.out_dir / f"tokens-{day}.csv", index=False)
         for name, t in tables.items():
@@ -325,9 +329,9 @@ def main(argv: list[str] | None = None) -> int:
             pth = tables["paths"]
             entry["paths"] = {"dates": [d.strftime("%Y-%m-%dT%H:%MZ") for d in pth.index],
                               **{c: [_f(x) for x in pth[c]] for c in pth}}
-        entry["tokens_detail"] = _records(perf[[
-            "symbol", "name", "verdict", "score_bucket", "value_score", "start_price", "end_price",
-            "return", "price_check"]])
+        detail = ["slug", "symbol", "name", "category", "verdict", "score_bucket", "value_score", "p_s",
+                  "start_price", "end_price", "return", "price_check"]
+        entry["tokens_detail"] = _records(perf[[c for c in detail if c in perf]])
         report.append(entry)
 
         print(f"\nSnapshot {summary['scored_at']}  ({summary['days']} days, {summary['priced']} tokens priced)")
