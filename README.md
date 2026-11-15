@@ -214,6 +214,23 @@ the average token. Read it with the limits in mind: 6 to 14 tokens, a few
 years, survivorship (today's winners), FDV estimated for tokens whose supply
 moved, and overlapping windows (the output counts the truly separate periods).
 
+## Automatic updates
+
+`.github/workflows/update.yml` runs on GitHub's servers with no one at the keyboard:
+
+- **Every day** it re-prices every saved snapshot (`track`) and rewrites
+  `results/README.md` (tables GitHub shows in the repo) and `site/data/`.
+- **Every Monday** it first re-ranks and re-scores every token and saves a new
+  dated snapshot in `snapshots/`, so the track record grows week by week.
+- It commits those files back to `main`, then publishes `site/` (the charts
+  page) to GitHub Pages.
+
+To run it now: Actions tab > "update track record" > Run workflow (tick
+"rescore" to also re-score). For the page to go live, the repository must be
+public and Settings > Pages > Source must be set to "GitHub Actions".
+The backtest (`site/data/backtest.json`) is not re-run by the schedule, since
+it needs the slow full-history download; rebuild it by hand when wanted.
+
 ## Status
 
 Early stage: a valuation ranking over every token with revenue and a value score that separates cheap-and-healthy from value traps are in; a track record (forward tracking of saved score snapshots, plus a P/S backtest) is in; a regularly updated public page is next.

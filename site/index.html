@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Value Score Track Record</title>
+<meta name="description" content="How crypto tokens performed after a value score rated them, updated automatically.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600&display=swap">
+<style>
+/* Layout: one reading column, a ledger of evidence: verdict up top, then forward record, then backtest, then limits */
+:root {
+  --bg: #f7f8f6; --surface: #ffffff; --fg: #15191a; --fg-2: #4b5354; --muted: #7b8485; --rule: #dde2e0;
+  --accent: #1f6f66;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --base: #8a9293; --ink: #15191a;
+  --good: #1a7f37; --bad: #c2362f; --warn-bg: #fff4dc; --warn-fg: #6b4a00;
+  --display: "Fraunces", Georgia, serif; --body: "IBM Plex Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111515; --surface: #181d1d; --fg: #eef1ef; --fg-2: #b9c1bf; --muted: #8a9492; --rule: #2b3333;
+  --accent: #5cbfb1; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --base: #8d9696; --ink: #eef1ef;
+  --good: #4cc26a; --bad: #ef6b63; --warn-bg: #3a2e12; --warn-fg: #f3d28a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111515; --surface: #181d1d; --fg: #eef1ef; --fg-2: #b9c1bf; --muted: #8a9492; --rule: #2b3333;
+  --accent: #5cbfb1; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --base: #8d9696; --ink: #eef1ef;
+  --good: #4cc26a; --bad: #ef6b63; --warn-bg: #3a2e12; --warn-fg: #f3d28a; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 920px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 40px; }
+h1 { font: 600 clamp(28px, 5vw, 40px)/1.1 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 24px/1.2 var(--display); margin: 0; text-wrap: balance; }
+h3 { font: 600 15px/1.3 var(--body); margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font: 500 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.sub { color: var(--fg-2); }
+.muted { color: var(--muted); font-size: 13px; }
+section { display: flex; flex-direction: column; gap: 16px; }
+header { display: flex; flex-direction: column; gap: 10px; }
+.verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.verdict { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.chip { align-self: flex-start; font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; background: var(--warn-bg); color: var(--warn-fg); }
+.chip.no { background: color-mix(in srgb, var(--bad) 14%, transparent); color: var(--bad); }
+.chip.some { background: color-mix(in srgb, var(--good) 14%, transparent); color: var(--good); }
+.banner { background: var(--warn-bg); color: var(--warn-fg); border-radius: 6px; padding: 10px 14px; font-size: 14px; }
+.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 12px 8px; position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--fg-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); font: 12px/1.45 var(--mono); padding: 6px 8px; border-radius: 4px; white-space: nowrap; z-index: 2; }
+.tbl { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 12px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+.pos { color: var(--good); } .neg { color: var(--bad); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat b { font: 500 22px var(--mono); }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
+code { font: 13px var(--mono); background: color-mix(in srgb, var(--fg) 7%, transparent); padding: 1px 5px; border-radius: 3px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.two > * { min-width: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+input[type=search] { font: 14px var(--body); padding: 8px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); color: var(--fg); width: min(320px, 100%); }
+th[data-k] { cursor: pointer; user-select: none; }
+th[data-k]:hover { color: var(--fg); }
+.scroll { max-height: 560px; overflow: auto; }
+.scroll th { position: sticky; top: 0; background: var(--surface); }
+td.l { text-align: left; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Value Crypto Platform · track record · updated automatically</span>
+    <h1>Does the value score find value?</h1>
+    <p class="sub">Two tests. Forward: every week the scores are re-run and frozen with a date, and we watch what each token's price does afterwards. Backward: the part of the score we can rebuild for past years (price-to-sales) is tested on the 14 tokens with full history.</p>
+    <p class="muted" id="asof">Loading results…</p>
+  </header>
+
+  <section>
+    <span class="eyebrow">Where it stands</span>
+    <div class="verdicts">
+      <div class="verdict"><span class="chip">Too early</span><h3>Forward record</h3><p class="sub" id="v-forward">…</p></div>
+      <div class="verdict"><span class="chip no">No clear edge</span><h3>Cheap on P/S vs peers</h3><p class="sub" id="v-peers">…</p></div>
+      <div class="verdict"><span class="chip some">Some signal</span><h3>Expensive vs its own past</h3><p class="sub" id="v-own">…</p></div>
+    </div>
+  </section>
+
+  <section id="forward">
+    <span class="eyebrow">1 · Forward tracking</span>
+    <h2 id="fw-title">Since the scores were saved</h2>
+    <div class="banner" id="fw-banner"></div>
+    <div class="stats" id="fw-stats"></div>
+    <div class="chart" id="fw-chart"><h3>Return since scoring, equal amount in every token of a label</h3><div class="legend"></div></div>
+    <div class="two">
+      <div class="tbl" id="fw-labels"></div>
+      <div class="tbl" id="fw-buckets"></div>
+    </div>
+    <h3>Every score run so far</h3>
+    <div class="tbl" id="fw-runs"></div>
+    <h3>Every token</h3>
+    <input type="search" id="tok-q" placeholder="Search tokens or labels" aria-label="Search tokens">
+    <div class="tbl scroll" id="fw-tokens"></div>
+    <p class="muted">“vs basket” is the group's average return minus the average of every scored token. “Beat basket” is the share of the group's tokens that did better than that average. Prices from DefiLlama, price only (buybacks and fee payouts not added).</p>
+  </section>
+
+  <section id="current">
+    <span class="eyebrow">Latest scores</span>
+    <h2 id="cur-title">Value candidates right now</h2>
+    <p class="sub">Tokens that score as both cheap and healthy in the most recent run. These are research leads to check by hand, not buy signals.</p>
+    <div class="tbl" id="cur-table"></div>
+  </section>
+
+  <section id="backtest">
+    <span class="eyebrow">2 · Backtest on price-to-sales</span>
+    <h2>Did cheap tokens go on to do better?</h2>
+    <p class="sub">Every week since late 2021, the tokens with P/S history were sorted from cheapest to most expensive. Below: $1 put into the cheapest third, rebalanced every 13 weeks, against the most expensive third and all of them. The dashed line is the same cheap basket with one token left out: the token whose removal changes the result most.</p>
+    <div class="chart" id="bt-chart"><h3>Growth of $1, log scale</h3><div class="legend"></div></div>
+    <div class="tbl" id="bt-peers"></div>
+    <h3>Cheap or expensive against the token's own past</h3>
+    <p class="sub">Each week, is a token's P/S lower than most of its own earlier weeks? Only past weeks count, so nothing peeks ahead. Return shown relative to the average token over the same weeks. Medians run below averages because a few big winners pull the average up.</p>
+    <div class="tbl" id="bt-own"></div>
+  </section>
+
+  <section>
+    <span class="eyebrow">3 · Read with care</span>
+    <h2>Limits of these numbers</h2>
+    <ul>
+      <li>The forward record is the real test, and it needs months and several saved score runs before it says anything.</li>
+      <li>The full value score can't be rebuilt for past years: holder payouts, supply growth and circulating supply have no free history. The backtest tests P/S only.</li>
+      <li>6 to 14 tokens at a time over about five years. One token's run can swing everything, as AERO shows.</li>
+      <li>Survivorship: the backtest uses today's big revenue earners. Tokens that faded never made the list.</li>
+      <li>P/S here uses fully diluted value. Supply is estimated for tokens whose supply changed a lot (CRV, AERO, JUP, CAKE, PENDLE, PUMP).</li>
+      <li>Weekly starts with 26 or 52 week holds overlap heavily. The tables show how many truly separate periods there are.</li>
+    </ul>
+    <p class="muted">Code: <code>crypto_value_research.track</code> and <code>crypto_value_research.backtest</code> in the crypto-value-research repository. A scheduled GitHub workflow re-prices every token daily and re-scores weekly; this page reads the results it commits.</p>
+  </section>
+</div>
+
+<script>
+const pct = (x, d = 1) => x == null || isNaN(x) ? "–" : (x > 0 ? "+" : "") + (x * 100).toFixed(d) + "%";
+const cls = x => x == null || isNaN(x) ? "" : x > 0 ? "pos" : x < 0 ? "neg" : "";
+const money = x => "$" + x.toFixed(2);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const el = id => document.getElementById(id);
+
+function table(target, cols, rows) {
+  const head = "<tr>" + cols.map(c => `<th>${c[0]}</th>`).join("") + "</tr>";
+  const body = rows.map(r => "<tr>" + cols.map(c => {
+    const v = c[1](r); const k = c[2] ? c[2](r) : "";
+    return `<td class="${k}">${v}</td>`;
+  }).join("") + "</tr>").join("");
+  el(target).innerHTML = `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
+
+// series: [{name, color(var), dash, values:[...]}], xs: Date[]; fmtY, log
+function lineChart(box, xs, series, { log = false, fmtY, fmtX, zero = false }) {
+  const W = 860, H = 300, m = { l: 56, r: 16, t: 10, b: 28 };
+  const all = series.flatMap(s => s.values).filter(v => v != null);
+  let lo = Math.min(...all), hi = Math.max(...all);
+  if (zero) { lo = Math.min(lo, 0); hi = Math.max(hi, 0); }
+  const f = log ? Math.log : (v => v);
+  let a = f(lo), b = f(hi); const pad = (b - a) * 0.08 || 0.01; a -= pad; b += pad;
+  const t0 = +xs[0], t1 = +xs[xs.length - 1];
+  const X = t => m.l + (W - m.l - m.r) * (t1 === t0 ? 0 : (+t - t0) / (t1 - t0));
+  const Y = v => m.t + (H - m.t - m.b) * (1 - (f(v) - a) / (b - a));
+  let ticks;
+  if (log) ticks = [0.25, 0.5, 1, 2, 4, 8, 16].filter(v => f(v) >= a && f(v) <= b);
+  else { const step = niceStep((b - a) / 5); ticks = []; for (let v = Math.ceil(a / step) * step; v <= b; v += step) ticks.push(+v.toFixed(6)); }
+  const ink = "var(--muted)";
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  ticks.forEach(v => { svg += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--rule)" stroke-width="1"${(log ? v === 1 : v === 0) ? ' stroke-dasharray=""' : ''}/>` +
+    `<text x="${m.l - 8}" y="${Y(v) + 4}" text-anchor="end" font-size="12" fill="${ink}" font-family="var(--mono)">${fmtY(v)}</text>`; });
+  const n = Math.min(6, xs.length), idx = [...new Set(Array.from({ length: n }, (_, i) => Math.round(i * (xs.length - 1) / Math.max(1, n - 1))))];
+  let lastX = -1e9;
+  idx.forEach(i => { if (X(xs[i]) - lastX < 70 && i !== xs.length - 1) return; lastX = X(xs[i]); svg += `<text x="${X(xs[i])}" y="${H - 8}" text-anchor="${i === 0 ? "start" : i === xs.length - 1 ? "end" : "middle"}" font-size="12" fill="${ink}" font-family="var(--mono)">${fmtX(xs[i])}</text>`; });
+  series.forEach(s => {
+    const pts = s.values.map((v, i) => v == null ? null : `${X(xs[i]).toFixed(1)},${Y(v).toFixed(1)}`).filter(Boolean);
+    svg += `<polyline points="${pts.join(" ")}" fill="none" stroke="var(${s.color})" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"${s.dash ? ' stroke-dasharray="5 4"' : ""}/>`;
+    const li = s.values.length - 1; if (s.values[li] != null) svg += `<circle cx="${X(xs[li])}" cy="${Y(s.values[li])}" r="4" fill="var(${s.color})" stroke="var(--surface)" stroke-width="2"/>`;
+  });
+  svg += `<line class="cross" x1="0" x2="0" y1="${m.t}" y2="${H - m.b}" stroke="var(--muted)" stroke-width="1" visibility="hidden"/>`;
+  svg += `<rect x="${m.l}" y="0" width="${W - m.l - m.r}" height="${H}" fill="transparent"/></svg>`;
+  box.querySelector(".legend").innerHTML = series.map(s => (s.dash ? `<span><i style="height:0;border-top:2px dashed var(${s.color})"></i>${s.name}</span>` : `<span><i style="background:var(${s.color})"></i>${s.name}</span>`)).join("");
+  box.insertAdjacentHTML("beforeend", svg + `<div class="tip" hidden></div>`);
+  const sv = box.querySelector("svg"), cross = sv.querySelector(".cross"), tip = box.querySelector(".tip");
+  sv.addEventListener("pointermove", e => {
+    const r = sv.getBoundingClientRect(), px = (e.clientX - r.left) * W / r.width;
+    let best = 0; xs.forEach((x, i) => { if (Math.abs(X(x) - px) < Math.abs(X(xs[best]) - px)) best = i; });
+    cross.setAttribute("x1", X(xs[best])); cross.setAttribute("x2", X(xs[best])); cross.setAttribute("visibility", "visible");
+    tip.innerHTML = `<b>${fmtX(xs[best], true)}</b><br>` + series.map(s => `${s.name}: ${s.values[best] == null ? "–" : (s.fmt || fmtY)(s.values[best])}`).join("<br>");
+    tip.hidden = false;
+    const bx = box.getBoundingClientRect(); let left = e.clientX - bx.left + 12;
+    if (left + tip.offsetWidth > bx.width) left = e.clientX - bx.left - tip.offsetWidth - 12;
+    tip.style.left = Math.max(4, left) + "px"; tip.style.top = (e.clientY - bx.top + 12) + "px";
+  });
+  sv.addEventListener("pointerleave", () => { tip.hidden = true; cross.setAttribute("visibility", "hidden"); });
+}
+function niceStep(x) { const p = Math.pow(10, Math.floor(Math.log10(x))); const n = x / p; return (n < 1.5 ? 1 : n < 3 ? 2 : n < 7 ? 5 : 10) * p; }
+const dateFmt = (d, long) => d.toLocaleDateString("en-US", long ? { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" } : { month: "short", day: "numeric", timeZone: "UTC" });
+const monthFmt = (d, long) => d.toLocaleDateString("en-US", long ? { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" } : { month: "short", year: "numeric", timeZone: "UTC" });
+
+function renderForward(all) {
+  const t = all[0], latest = all[all.length - 1];
+  const asof = new Date(latest.as_of);
+  el("asof").textContent = `Prices as of ${dateFmt(asof, true)} ${asof.toISOString().slice(11, 16)} UTC · ${all.length} saved score run${all.length > 1 ? "s" : ""} · latest scored ${dateFmt(new Date(latest.scored_at), true)}`;
+  renderRuns(all); renderTokens(t, latest); renderCurrent(latest);
+  el("fw-title").textContent = `Since the ${dateFmt(new Date(t.scored_at), true)} scores (${t.days} days)`;
+  el("fw-banner").textContent = t.days < 60
+    ? `Only ${t.days} days have passed. Moves this short are market noise; read this section after a few months and a few more score runs.`
+    : `${t.days} days of data. Still compare against several score runs before trusting a pattern.`;
+  const L = Object.fromEntries(t.labels.map(r => [r.group, r]));
+  const b = t.benchmarks;
+  el("fw-stats").innerHTML = [
+    ["Value candidates", L["Value candidate"]?.avg_return],
+    ["All scored tokens", b["All tokens (equal weight)"]],
+    ["Bitcoin", b.BTC], ["Ether", b.ETH],
+  ].map(([k, v]) => `<div class="stat"><span class="muted">${k}</span><b class="${cls(v)}">${pct(v)}</b></div>`).join("")
+   + `<div class="stat"><span class="muted">Score vs return (rank corr.)</span><b>${t.rank_correlation == null ? "–" : t.rank_correlation.toFixed(2)}</b></div>`;
+  const vc = L["Value candidate"], basket = b["All tokens (equal weight)"];
+  el("v-forward").textContent = `${t.days} days in. Value candidates ${pct(vc?.avg_return)} vs ${pct(basket)} for all scored tokens and ${pct(b.BTC)} for Bitcoin. Far too soon to judge.`;
+
+  if (t.paths) {
+    const xs = t.paths.dates.map(d => new Date(d.replace("Z", ":00Z")));
+    const pick = [["Value candidate", "--s1"], ["Value trap risk", "--s2"], ["Avoid", "--s3"], ["All tokens (equal weight)", "--base"], ["BTC", "--ink", true]];
+    const series = pick.filter(([k]) => t.paths[k]).map(([k, c, d]) => ({ name: k === "BTC" ? "Bitcoin" : k, color: c, dash: d, values: t.paths[k] }));
+    lineChart(el("fw-chart"), xs, series, { fmtY: v => pct(v, 0), fmtX: dateFmt, zero: true });
+  }
+  const cols = (first) => [[first, r => r.group], ["Tokens", r => r.priced], ["Avg", r => pct(r.avg_return), r => cls(r.avg_return)],
+    ["Median", r => pct(r.median_return), r => cls(r.median_return)], ["vs basket", r => pct(r.vs_basket), r => cls(r.vs_basket)], ["Beat basket", r => pct(r.beat_basket, 0).replace("+", "")]];
+  table("fw-labels", cols("Label"), t.labels);
+  table("fw-buckets", cols("Score fifth"), t.buckets);
+}
+
+function renderRuns(all) {
+  table("fw-runs", [["Scored", r => dateFmt(new Date(r.scored_at), true)], ["Days", r => Math.round(r.days)],
+    ["Value candidates", r => pct(lab(r, "Value candidate")), r => cls(lab(r, "Value candidate"))],
+    ["Avoid", r => pct(lab(r, "Avoid")), r => cls(lab(r, "Avoid"))],
+    ["All tokens", r => pct(r.benchmarks["All tokens (equal weight)"]), r => cls(r.benchmarks["All tokens (equal weight)"])],
+    ["Bitcoin", r => pct(r.benchmarks.BTC), r => cls(r.benchmarks.BTC)],
+    ["Score vs return", r => r.rank_correlation == null ? "–" : r.rank_correlation.toFixed(2)]], all.slice().reverse());
+}
+const lab = (r, g) => (r.labels.find(x => x.group === g) || {}).avg_return;
+const esc = x => String(x ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+let tokSort = { k: "return", dir: -1 };
+function renderTokens(first, latest) {
+  const now = Object.fromEntries(latest.tokens_detail.map(x => [x.slug || x.symbol, x]));
+  const rows = first.tokens_detail.map(x => ({ ...x, now: (now[x.slug || x.symbol] || {}).verdict || "–" }));
+  const cols = [["symbol", "Token", r => `<b>${esc(r.symbol)}</b> <span class="muted">${esc(r.name)}</span>`, "l"],
+    ["verdict", "Label then", r => esc(r.verdict), "l"], ["value_score", "Score", r => r.value_score == null ? "–" : r.value_score.toFixed(0)],
+    ["now", "Label now", r => esc(r.now), "l"], ["start_price", "Price then", r => fmtP(r.start_price)],
+    ["end_price", "Price now", r => fmtP(r.end_price)], ["return", "Return", r => pct(r.return)]];
+  const draw = () => {
+    const q = el("tok-q").value.trim().toLowerCase();
+    const list = rows.filter(r => !q || [r.symbol, r.name, r.verdict, r.now].join(" ").toLowerCase().includes(q))
+      .sort((a, b) => { const x = a[tokSort.k], y = b[tokSort.k];
+        if (x == null) return 1; if (y == null) return -1;
+        return (typeof x === "string" ? x.localeCompare(y) : x - y) * tokSort.dir; });
+    el("fw-tokens").innerHTML = `<table><thead><tr>${cols.map(c => `<th data-k="${c[0]}"${c[3] ? ' style="text-align:left"' : ""}>${c[1]}${tokSort.k === c[0] ? (tokSort.dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>` +
+      list.map(r => "<tr>" + cols.map(c => `<td class="${c[3] || ""} ${c[0] === "return" ? cls(r.return) : ""}">${c[2](r)}</td>`).join("") + "</tr>").join("") + "</tbody></table>";
+    el("fw-tokens").querySelectorAll("th[data-k]").forEach(th => th.onclick = () => {
+      const k = th.dataset.k; tokSort = { k, dir: tokSort.k === k ? -tokSort.dir : (k === "symbol" || k === "verdict" || k === "now" ? 1 : -1) }; draw(); });
+  };
+  el("tok-q").oninput = draw; draw();
+}
+const fmtP = p => p == null ? "–" : p >= 1 ? "$" + p.toLocaleString("en-US", { maximumFractionDigits: 2 }) : "$" + p.toPrecision(3);
+
+function renderCurrent(latest) {
+  el("cur-title").textContent = `Value candidates from the ${dateFmt(new Date(latest.scored_at), true)} scores`;
+  const rows = latest.tokens_detail.filter(r => r.verdict === "Value candidate").sort((a, b) => b.value_score - a.value_score);
+  table("cur-table", [["Token", r => `<b>${esc(r.symbol)}</b> <span class="muted">${esc(r.name)}</span>`],
+    ["Category", r => esc(r.category || "–")], ["Value score", r => r.value_score.toFixed(0)],
+    ["P/S (90d)", r => r.p_s == null ? "–" : r.p_s.toFixed(1) + "x"], ["Since scored", r => pct(r.return), r => cls(r.return)]], rows);
+}
+
+function renderBacktest(d) {
+  const g = d.growth_of_dollar, wo = d.growth_without;
+  const xs = g.map(r => new Date(r.date + "T00:00:00Z"));
+  const woMap = Object.fromEntries((wo.line || []).map(r => [r.date, r.cheap]));
+  lineChart(el("bt-chart"), xs, [
+    { name: "Cheapest third", color: "--s1", values: g.map(r => r.cheap), fmt: money },
+    { name: "Most expensive third", color: "--s2", values: g.map(r => r.expensive), fmt: money },
+    { name: "All tokens", color: "--base", values: g.map(r => r.all), fmt: money },
+    { name: `Cheapest third without ${wo.token}`, color: "--s1", dash: true, values: g.map(r => woMap[r.date] ?? null), fmt: money },
+  ], { log: true, fmtY: v => "$" + (v < 1 ? v.toFixed(2) : v.toFixed(0)), fmtX: monthFmt });
+
+  table("bt-peers", [["Hold for", r => `${r.horizon_weeks} weeks`], ["Cheap third avg", r => pct(r.avg_cheap, 0), r => cls(r.avg_cheap)],
+    ["Expensive third avg", r => pct(r.avg_expensive, 0), r => cls(r.avg_expensive)], ["Median gap", r => pct(r.median_spread, 0), r => cls(r.median_spread)],
+    ["Cheap won", r => `${Math.round(r.cheap_won_pct * 100)}% of ${r.weeks} wks`], ["Separate periods", r => "~" + r.independent_periods],
+    ["Rank corr.", r => r.avg_rank_corr.toFixed(2)]], d.cheap_vs_peers.filter(r => r.weeks));
+
+  const own = d.cheap_vs_own_past.filter(r => r.horizon_weeks !== 13);
+  table("bt-own", [["Zone", r => ({ cheap: "Cheapest third of own past", middle: "Middle", expensive: "Most expensive third of own past" })[r.zone]],
+    ["Hold for", r => `${r.horizon_weeks} weeks`], ["Token-weeks", r => r.observations],
+    ["Avg vs average token", r => pct(r.avg_excess, 0), r => cls(r.avg_excess)], ["Median vs average", r => pct(r.median_excess, 0), r => cls(r.median_excess)],
+    ["Beat average", r => Math.round(r.beat_avg_pct * 100) + "%"]], own);
+
+  const last = g[g.length - 1], wl = wo.line[wo.line.length - 1], p26 = d.cheap_vs_peers.find(r => r.horizon_weeks === 26);
+  el("v-peers").textContent = `$1 in the cheapest third grew to ${money(last.cheap)} vs ${money(last.expensive)} for the most expensive, but almost all of that is ${wo.token} in early 2024. Without it: ${money(wl.cheap)} vs ${money(wl.expensive)}. Cheap won ${Math.round(p26.cheap_won_pct * 100)}% of 26-week periods, close to a coin flip.`;
+  const e26 = d.cheap_vs_own_past.find(r => r.zone === "expensive" && r.horizon_weeks === 26), e52 = d.cheap_vs_own_past.find(r => r.zone === "expensive" && r.horizon_weeks === 52);
+  el("v-own").textContent = `Tokens priced in the top third of their own P/S history trailed the average token by ${pct(-e26.avg_excess, 0).replace("+", "")} over 26 weeks and ${pct(-e52.avg_excess, 0).replace("+", "")} over 52. Consistent, but from only a few separate periods.`;
+}
+
+Promise.all([fetch("data/tracking.json", { cache: "no-store" }).then(r => r.json()), fetch("data/backtest.json", { cache: "no-store" }).then(r => r.json())])
+  .then(([t, b]) => { renderForward(t); renderBacktest(b); })
+  .catch(err => { el("asof").textContent = "Results could not load: " + err.message; });
+</script>
+</body>
+</html>
