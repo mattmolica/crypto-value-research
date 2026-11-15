@@ -77,12 +77,18 @@ UNCAPPED = SupplyRule("estimated: today's supply",
                       "supply isn't at a fixed maximum, so earlier FDV is off if supply changed since")
 
 
+# Other DefiLlama slugs for the same token: the parent "aero" (Aerodrome + Velodrome)
+# is what the all-token universe uses, and it must get Aerodrome's supply model.
+SLUG_ALIASES = {"aero": "aerodrome"}
+
+
 def supply_rule(slug: str, market: dict) -> SupplyRule:
     """How trustworthy the supply behind a token's FDV history is.
 
     Hand-checked tokens use SUPPLY_RULES. Otherwise supply counts as exact only
     when CoinGecko's total supply is within 1% of the token's maximum supply.
     """
+    slug = SLUG_ALIASES.get(slug, slug)
     if slug in SUPPLY_RULES:
         return SUPPLY_RULES[slug]
     total, cap = market.get("total_supply"), market.get("max_supply")
@@ -128,6 +134,7 @@ def linear_supply(index: pd.DatetimeIndex, start: pd.Timestamp, start_supply: fl
 
 def supply_history(slug: str, index: pd.DatetimeIndex, total_supply_now: float) -> pd.Series:
     """Estimated total supply for each day in `index`."""
+    slug = SLUG_ALIASES.get(slug, slug)
     if slug == "curve-finance":
         return pd.Series([crv_supply(d) for d in index], index=index, dtype=float)
     if slug == "aerodrome":
@@ -298,6 +305,8 @@ def build_all(
         except (requests.RequestException, ValueError) as err:
             print(f"warning: {slug} skipped ({err})", file=sys.stderr)
             continue
+        if row["symbol"] in {r["symbol"] for r in rows}:  # two projects, one ticker (EDGE, MET)
+            row["symbol"] = f"{row['symbol']}-{slug}"
         w = weekly(df).copy()
         w.insert(0, "symbol", row["symbol"])
         w.insert(0, "date", w.index.strftime("%Y-%m-%d"))

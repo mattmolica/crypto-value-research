@@ -202,7 +202,16 @@ A few days of returns are noise; judge it after months and several snapshots.
 
 ```bash
 python -m crypto_value_research.backtest --history data/history/full_history.csv --out data/backtest.json
+# the full run behind the page: every revenue token, $10M+ FDV, plus robustness checks
+python -m crypto_value_research.history --tokens-file data/all_tokens.txt --no-market-cap --out-dir data/history_all
+python -m crypto_value_research.backtest --history data/history_all/full_history.csv --min-fdv 1e7 \
+    --checks data/history_all/full_summary.csv --out site/data/backtest.json
 ```
+
+`--checks` reruns everything on other slices (no size floor, only tokens with
+an exact supply history, the original 14) so you can see whether the answer
+depends on one choice. `data/all_tokens.txt` is one `slug=coingecko-id` per
+line, e.g. from the latest scores CSV.
 
 The full value score can't be rebuilt for past dates (holder payouts, supply
 growth and circulating supply have no free history), so this tests P/S alone

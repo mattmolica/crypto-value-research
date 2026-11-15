@@ -53,11 +53,27 @@ def spearman(a: pd.Series, b: pd.Series) -> float:
     return float(a.rank().corr(b.rank()))
 
 
-def load(path: Path | str) -> pd.DataFrame:
-    """Weekly (Sunday) price and P/S per token from `history`'s full_history.csv."""
+def load(path: Path | str, min_fdv: float = 0.0, symbols: set[str] | None = None) -> pd.DataFrame:
+    """Weekly (Sunday) price and P/S per token from `history`'s full_history.csv.
+
+    Weeks where the token's fully diluted value was under `min_fdv` get no P/S,
+    so tiny, illiquid tokens don't count as "cheap" (their prices are still
+    kept so returns from earlier weeks can be measured). `symbols` keeps only
+    those tokens.
+    """
     df = pd.read_csv(path, parse_dates=["date"])
     df = df[df["date"].dt.dayofweek == 6]
+    if symbols is not None:
+        df = df[df["symbol"].isin(symbols)]
+    if min_fdv and "fdv" in df:
+        df.loc[~(df["fdv"] >= min_fdv), "ps_fdv"] = math.nan
     return df[["date", "symbol", "price", "ps_fdv"]].sort_values(["symbol", "date"]).reset_index(drop=True)
+
+
+def exact_supply_symbols(summary_path: Path | str) -> set[str]:
+    """Tokens whose past supply is known exactly (fixed total supply), from full_summary.csv."""
+    s = pd.read_csv(summary_path)
+    return set(s.loc[s["supply_method"].astype(str).str.startswith("exact"), "symbol"])
 
 
 def add_forward_returns(df: pd.DataFrame, horizons=HORIZONS) -> pd.DataFrame:
@@ -96,6 +112,8 @@ def cross_section(df: pd.DataFrame, horizon: int, min_tokens: int = MIN_TOKENS) 
             "cheap": g.loc[t == "cheap", col].mean(),
             "expensive": g.loc[t == "expensive", col].mean(),
             "all": g[col].mean(),
+            "cheap_median": g.loc[t == "cheap", col].median(),
+            "expensive_median": g.loc[t == "expensive", col].median(),
             "cheap_symbols": " ".join(g.loc[t == "cheap", "symbol"]),
             # positive = lower P/S went with higher later return
             "rank_corr": spearman(-g["ps_fdv"], g[col]),
@@ -103,6 +121,7 @@ def cross_section(df: pd.DataFrame, horizon: int, min_tokens: int = MIN_TOKENS) 
     out = pd.DataFrame(rows)
     if not out.empty:
         out["spread"] = out["cheap"] - out["expensive"]
+        out["median_gap"] = out["cheap_median"] - out["expensive_median"]
     return out
 
 
@@ -119,6 +138,11 @@ def summarize_cross(cs: pd.DataFrame, horizon: int) -> dict:
         "avg_expensive": float(cs["expensive"].mean()),
         "avg_all": float(cs["all"].mean()),
         "median_spread": float(cs["spread"].median()),
+        # typical token, so one moonshot can't carry it: median of each third, then compared
+        "avg_cheap_median": float(cs["cheap_median"].mean()),
+        "avg_expensive_median": float(cs["expensive_median"].mean()),
+        "cheap_median_won_pct": float((cs["median_gap"] > 0).mean()),
+        "avg_tokens": float(cs["tokens"].mean()),
         "cheap_won_pct": float((cs["spread"] > 0).mean()),
         "avg_rank_corr": float(cs["rank_corr"].mean()),
     }
@@ -248,6 +272,48 @@ def run(history: pd.DataFrame) -> dict:
     }
 
 
+ORIGINAL_14 = {"AAVE", "AERO", "CAKE", "CRV", "ENA", "GMX", "HYPE", "JUP", "LDO", "PENDLE", "PUMP",
+               "RAY", "SKY", "UNI"}
+
+
+def headline(name: str, result: dict) -> dict:
+    """The few numbers that say whether a variant agrees with the others."""
+    peers = {r["horizon_weeks"]: r for r in result["cheap_vs_peers"] if r.get("weeks")}
+    own = {(r["horizon_weeks"], r["zone"]): r for r in result["cheap_vs_own_past"]}
+    g = result["growth_of_dollar"][-1] if result["growth_of_dollar"] else {}
+    loo = result["growth_leave_one_out"][0] if result["growth_leave_one_out"] else {}
+    p13, p26 = peers.get(13, {}), peers.get(26, {})
+    return {
+        "variant": name,
+        "tokens": len(result["tokens"]),
+        "avg_tokens_per_week": p13.get("avg_tokens"),
+        "cheap_median_13w": p13.get("avg_cheap_median"),
+        "expensive_median_13w": p13.get("avg_expensive_median"),
+        "cheap_won_26w": p26.get("cheap_median_won_pct"),
+        "growth_cheap": g.get("cheap"), "growth_expensive": g.get("expensive"), "growth_all": g.get("all"),
+        "without": loo.get("without"), "without_cheap": loo.get("cheap"), "without_expensive": loo.get("expensive"),
+        "own_expensive_26w": own.get((26, "expensive"), {}).get("avg_excess"),
+        "own_cheap_26w": own.get((26, "cheap"), {}).get("avg_excess"),
+        "own_expensive_52w": own.get((52, "expensive"), {}).get("avg_excess"),
+    }
+
+
+def checks(history_path, summary_path, min_fdv: float, main: dict) -> list[dict]:
+    """Rerun the backtest on other slices of the data to see if the answer holds.
+
+    The main run (as passed) plus: no size floor, only tokens with an exact
+    supply history (no estimated FDV), and the original 14 hand-picked tokens.
+    """
+    rows = [headline(f"Main: tokens worth ${min_fdv / 1e6:,.0f}M+" if min_fdv else "Main", main)]
+    if min_fdv:
+        rows.append(headline("No size floor", run(load(history_path))))
+    for name, df in [("Exact supply only", load(history_path, min_fdv, exact_supply_symbols(summary_path))),
+                     ("Original 14 tokens", load(history_path, symbols=ORIGINAL_14))]:
+        if not df.empty:
+            rows.append(headline(name, run(df)))
+    return rows
+
+
 def _records(df: pd.DataFrame) -> list[dict]:
     return json.loads(df.to_json(orient="records", double_precision=6))
 
@@ -257,9 +323,20 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--history", default="data/history/full_history.csv",
                    help="full_history.csv written by `python -m crypto_value_research.history`")
     p.add_argument("--out", help="write the full results as JSON to this path")
+    p.add_argument("--min-fdv", type=float, default=0.0,
+                   help="ignore weeks where a token's fully diluted value was below this, in USD (e.g. 1e7)")
+    p.add_argument("--checks", metavar="SUMMARY_CSV",
+                   help="also rerun on other slices (no size floor, exact supply only, original 14) "
+                        "using full_summary.csv; slow, about 5 minutes each")
+    p.add_argument("--exact-supply-only", metavar="SUMMARY_CSV",
+                   help="keep only tokens with an exact supply history, read from full_summary.csv")
     args = p.parse_args(argv)
 
-    result = run(load(args.history))
+    symbols = exact_supply_symbols(args.exact_supply_only) if args.exact_supply_only else None
+    result = run(load(args.history, args.min_fdv, symbols))
+    result["min_fdv"] = args.min_fdv
+    if args.checks:
+        result["checks"] = checks(args.history, args.checks, args.min_fdv, result)
     print(f"Tokens: {' '.join(result['tokens'])}\n")
     print("1. Cheapest third vs most expensive third by P/S, average return over the next N weeks")
     for s in result["cheap_vs_peers"]:
@@ -268,6 +345,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  {s['horizon_weeks']:>2}w: cheap {s['avg_cheap']:+.0%}  expensive {s['avg_expensive']:+.0%}  "
               f"all {s['avg_all']:+.0%}  cheap won {s['cheap_won_pct']:.0%} of {s['weeks']} weeks "
               f"(~{s['independent_periods']} separate periods), rank corr {s['avg_rank_corr']:+.2f}")
+        print(f"       typical token (medians): cheap {s['avg_cheap_median']:+.0%}  expensive {s['avg_expensive_median']:+.0%}  "
+              f"cheap won {s['cheap_median_won_pct']:.0%} of weeks; ~{s['avg_tokens']:.0f} tokens a week")
     g = result["growth_of_dollar"]
     if g:
         last = g[-1]
@@ -282,6 +361,10 @@ def main(argv: list[str] | None = None) -> int:
     for r in result["cheap_vs_own_past"]:
         print(f"  {r['horizon_weeks']:>2}w {r['zone']:>9}: {r['observations']:>4} token-weeks, "
               f"excess {r['avg_excess']:+.1%}, beat average {r['beat_avg_pct']:.0%}")
+    for c in result.get("checks", []):
+        print(f"  check {c['variant']}: {c['tokens']} tokens, $1 cheap ${c['growth_cheap']:.2f} vs "
+              f"expensive ${c['growth_expensive']:.2f} (without {c['without']}: ${c['without_cheap']:.2f} vs "
+              f"${c['without_expensive']:.2f}), dear-vs-own-past 26w {c['own_expensive_26w']:+.1%}")
     if args.out:
         Path(args.out).write_text(json.dumps(result, indent=1, allow_nan=False))
         print(f"\nWrote {args.out}")

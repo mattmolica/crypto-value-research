@@ -73,3 +73,37 @@ def test_run_produces_all_sections():
     out = backtest.run(history(tokens=7))
     assert {"cheap_vs_peers", "growth_of_dollar", "growth_leave_one_out", "cheap_vs_own_past"} <= set(out)
     assert len(out["growth_leave_one_out"]) == 7
+
+
+def test_load_filters_small_fdv_and_symbols(tmp_path):
+    df = history(5, 2)
+    df["fdv"] = [1e6] * 5 + [1e9] * 5
+    path = tmp_path / "h.csv"
+    df.to_csv(path, index=False)
+    out = backtest.load(path, min_fdv=1e7)
+    assert out.loc[out.symbol == "T0", "ps_fdv"].isna().all()
+    assert out.loc[out.symbol == "T1", "ps_fdv"].notna().all()
+    assert set(backtest.load(path, symbols={"T1"})["symbol"]) == {"T1"}
+
+
+def test_exact_supply_symbols(tmp_path):
+    p = tmp_path / "s.csv"
+    pd.DataFrame({"symbol": ["A", "B"], "supply_method": ["exact: fixed total supply", "estimated: x"]}).to_csv(p, index=False)
+    assert backtest.exact_supply_symbols(p) == {"A"}
+
+
+def test_medians_reported():
+    s = backtest.summarize_cross(backtest.cross_section(backtest.add_forward_returns(history()), 13), 13)
+    assert s["cheap_median_won_pct"] == 1.0 and s["avg_tokens"] == 6
+
+
+def test_checks_rows(tmp_path):
+    df = history(80, 7)
+    df["fdv"] = 1e9
+    hp, sp = tmp_path / "h.csv", tmp_path / "s.csv"
+    df.to_csv(hp, index=False)
+    pd.DataFrame({"symbol": [f"T{i}" for i in range(7)], "supply_method": "exact: fixed"}).to_csv(sp, index=False)
+    main = backtest.run(backtest.load(hp, 1e7))
+    rows = backtest.checks(hp, sp, 1e7, main)
+    assert [r["variant"] for r in rows][0].startswith("Main")
+    assert len(rows) == 3 and rows[0]["growth_cheap"] > rows[0]["growth_expensive"]

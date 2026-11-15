@@ -216,3 +216,11 @@ def test_main_defaults_to_the_ranking_tokens(monkeypatch, tmp_path):
                         lambda tokens, pause, market_cap: seen.update(tokens=tokens) or (pd.DataFrame(), pd.DataFrame()))
     assert history.main(["--out-dir", str(tmp_path)]) == 1  # nothing built, nothing written
     assert seen["tokens"] == history.DEFAULT_TOKENS
+
+
+def test_aero_parent_slug_uses_aerodrome_supply_model():
+    import pandas as pd
+    from crypto_value_research import history
+    idx = pd.date_range("2023-08-28", periods=3, freq="D")
+    assert (history.supply_history("aero", idx, 2e9) == history.supply_history("aerodrome", idx, 2e9)).all()
+    assert history.supply_rule("aero", {}) == history.SUPPLY_RULES["aerodrome"]
