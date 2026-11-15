@@ -36,6 +36,7 @@ How it works
 Usage:
     python -m crypto_value_research.score --ranking data/ranking.csv --out data/scores.csv
     python -m crypto_value_research.score --ranking data/ranking.csv --no-supply-growth
+    python -m crypto_value_research.score --ranking data/ranking.csv --snapshot   # keep for tracking
 """
 
 from __future__ import annotations
@@ -204,6 +205,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-supply-growth", action="store_true",
                    help="skip the CoinGecko supply history calls (supply growth counts as average)")
     p.add_argument("--out", help="write the scored table to this CSV path")
+    p.add_argument("--snapshot", action="store_true",
+                   help="also save a dated copy in snapshots/ so `track` can measure it later")
     args = p.parse_args(argv)
 
     table = pd.read_csv(args.ranking)
@@ -218,6 +221,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.out:
         scored.to_csv(args.out, index=False)
         print(f"\nWrote {args.out}")
+    if args.snapshot:
+        from .track import save_snapshot
+        print(f"Saved snapshot {save_snapshot(scored)}")
     return 0
 
 

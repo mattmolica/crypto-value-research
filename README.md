@@ -176,6 +176,44 @@ The last year of circulating market cap is kept beside it as `ps_mcap`.
 
 Needs `coins.llama.fi` reachable in addition to the hosts the ranking uses.
 
+## Track record: do the scores work?
+
+Two checks, because a score is only worth something if it picks tokens that
+then do better than the alternatives.
+
+**Forward tracking** (the real test, it needs time):
+
+```bash
+python -m crypto_value_research.score --ranking data/ranking.csv --snapshot   # save a dated snapshot
+python -m crypto_value_research.track save --scores data/scores.csv --scored-at 2026-11-13T18:55:00Z
+python -m crypto_value_research.track            # measure every snapshot in snapshots/
+```
+
+Each score run saved in `snapshots/` is frozen. `track` prices every token at
+the snapshot time and now (DefiLlama coins API) and reports the return of each
+label and each fifth of the score, next to Bitcoin, Ether and an equal-weight
+basket of every scored token. It also gives the rank correlation between score
+and return (+1: higher score always did better; 0: the score told us nothing).
+Writes per-token and per-group CSVs, day-by-day paths for charting, and
+`data/tracking/tracking.json`. Price only: holder payouts are not added back.
+A few days of returns are noise; judge it after months and several snapshots.
+
+**Backtest** (what history can say, with big caveats):
+
+```bash
+python -m crypto_value_research.backtest --history data/history/full_history.csv --out data/backtest.json
+```
+
+The full value score can't be rebuilt for past dates (holder payouts, supply
+growth and circulating supply have no free history), so this tests P/S alone
+on the tokens `history` covers: did the cheapest third beat the most expensive
+third over the next 13, 26 and 52 weeks; a growth-of-$1 line rebalanced every
+13 weeks, rerun with each token left out to see if one token carries the
+result; and whether tokens cheap or expensive against their own past then beat
+the average token. Read it with the limits in mind: 6 to 14 tokens, a few
+years, survivorship (today's winners), FDV estimated for tokens whose supply
+moved, and overlapping windows (the output counts the truly separate periods).
+
 ## Status
 
-Early stage: a valuation ranking over every token with revenue and a value score that separates cheap-and-healthy from value traps are in; a regularly updated public page is next.
+Early stage: a valuation ranking over every token with revenue and a value score that separates cheap-and-healthy from value traps are in; a track record (forward tracking of saved score snapshots, plus a P/S backtest) is in; a regularly updated public page is next.

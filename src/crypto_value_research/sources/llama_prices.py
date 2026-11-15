@@ -50,3 +50,39 @@ def fetch_price_history(
         if pause and t < end:
             time.sleep(pause)
     return pd.Series(points, dtype=float).sort_index()
+
+
+BATCH = 50  # coins per price request; keeps URLs short
+
+
+def fetch_prices_at(
+    gecko_ids: list[str],
+    timestamp: int | None = None,
+    session: requests.Session | None = None,
+    pause: float = 0.3,
+    search_width: str = "6h",
+) -> dict[str, float]:
+    """USD price of each CoinGecko id at a moment in time (now if `timestamp` is None).
+
+    Uses DefiLlama's /prices/historical endpoint, which returns the closest
+    price within `search_width` of the timestamp. Ids DefiLlama doesn't know
+    are left out of the result.
+    """
+    http = session or requests
+    ids = list(dict.fromkeys(i for i in gecko_ids if isinstance(i, str) and i))
+    out: dict[str, float] = {}
+    for n in range(0, len(ids), BATCH):
+        chunk = ids[n:n + BATCH]
+        coins = ",".join(f"coingecko:{i}" for i in chunk)
+        if timestamp is None:
+            url, params = f"{BASE_URL}/prices/current/{coins}", {}
+        else:
+            url, params = f"{BASE_URL}/prices/historical/{int(timestamp)}/{coins}", {"searchWidth": search_width}
+        resp = http.get(url, params=params, timeout=60)
+        resp.raise_for_status()
+        for key, val in (resp.json().get("coins") or {}).items():
+            if val and val.get("price") is not None:
+                out[key.split(":", 1)[1]] = float(val["price"])
+        if pause and n + BATCH < len(ids):
+            time.sleep(pause)
+    return out
