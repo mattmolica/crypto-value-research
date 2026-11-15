@@ -78,7 +78,7 @@ td.l { text-align: left; }
   <header>
     <span class="eyebrow">Value Crypto Platform · track record · updated automatically</span>
     <h1>Does the value score find value?</h1>
-    <p class="sub">Two tests. Forward: every week the scores are re-run and frozen with a date, and we watch what each token's price does afterwards. Backward: the part of the score we can rebuild for past years (price-to-sales) is tested on the 14 tokens with full history.</p>
+    <p class="sub">Two tests. Forward: every week the scores are re-run and frozen with a date, and we watch what each token's price does afterwards. Backward: the part of the score we can rebuild for past years (price-to-sales) is tested on about 150 tokens with revenue, back to 2021.</p>
     <p class="muted" id="asof">Loading results…</p>
   </header>
 
@@ -86,8 +86,8 @@ td.l { text-align: left; }
     <span class="eyebrow">Where it stands</span>
     <div class="verdicts">
       <div class="verdict"><span class="chip">Too early</span><h3>Forward record</h3><p class="sub" id="v-forward">…</p></div>
-      <div class="verdict"><span class="chip no">No clear edge</span><h3>Cheap on P/S vs peers</h3><p class="sub" id="v-peers">…</p></div>
-      <div class="verdict"><span class="chip some">Some signal</span><h3>Expensive vs its own past</h3><p class="sub" id="v-own">…</p></div>
+      <div class="verdict"><span class="chip">Mixed</span><h3>Cheap on P/S vs peers</h3><p class="sub" id="v-peers">…</p></div>
+      <div class="verdict"><span class="chip some">Holds up</span><h3>Expensive vs its own past</h3><p class="sub" id="v-own">…</p></div>
     </div>
   </section>
 
@@ -119,12 +119,16 @@ td.l { text-align: left; }
   <section id="backtest">
     <span class="eyebrow">2 · Backtest on price-to-sales</span>
     <h2>Did cheap tokens go on to do better?</h2>
-    <p class="sub">Every week since late 2021, the tokens with P/S history were sorted from cheapest to most expensive. Below: $1 put into the cheapest third, rebalanced every 13 weeks, against the most expensive third and all of them. The dashed line is the same cheap basket with one token left out: the token whose removal changes the result most.</p>
+    <p class="sub">Every week since early 2021, the revenue tokens with P/S history <span id="bt-floor"></span>were sorted from cheapest to most expensive, about <span id="bt-n">45</span> a week. Below: $1 put into the cheapest third, rebalanced every 13 weeks, against the most expensive third and all of them. The dashed line is the same cheap basket with one token left out: the token whose removal changes the result most.</p>
     <div class="chart" id="bt-chart"><h3>Growth of $1, log scale</h3><div class="legend"></div></div>
     <div class="tbl" id="bt-peers"></div>
+    <p class="muted">“Typical” uses the median token of each third, so one huge winner can't carry the result.</p>
     <h3>Cheap or expensive against the token's own past</h3>
     <p class="sub">Each week, is a token's P/S lower than most of its own earlier weeks? Only past weeks count, so nothing peeks ahead. Return shown relative to the average token over the same weeks. Medians run below averages because a few big winners pull the average up.</p>
     <div class="tbl" id="bt-own"></div>
+    <h3>Does the answer hold on other slices of the data?</h3>
+    <p class="sub">The same tests rerun without the size floor, on only the tokens whose past supply is known exactly (no estimated FDV), and on the original 14 hand-picked tokens.</p>
+    <div class="tbl" id="bt-checks"></div>
   </section>
 
   <section>
@@ -133,9 +137,9 @@ td.l { text-align: left; }
     <ul>
       <li>The forward record is the real test, and it needs months and several saved score runs before it says anything.</li>
       <li>The full value score can't be rebuilt for past years: holder payouts, supply growth and circulating supply have no free history. The backtest tests P/S only.</li>
-      <li>6 to 14 tokens at a time over about five years. One token's run can swing everything, as AERO shows.</li>
+      <li>About 45 tokens a week over about five years, but crypto moves together, so there are only a handful of truly separate periods. On the original 14 tokens, one token (AERO) carried the whole result; the wider set fixes most of that.</li>
       <li>Survivorship: the backtest uses today's big revenue earners. Tokens that faded never made the list.</li>
-      <li>P/S here uses fully diluted value. Supply is estimated for tokens whose supply changed a lot (CRV, AERO, JUP, CAKE, PENDLE, PUMP).</li>
+      <li>P/S here uses fully diluted value. About half the tokens don't have a fixed supply, so their past supply is estimated from today's; the exact-supply check above points the same way.</li>
       <li>Weekly starts with 26 or 52 week holds overlap heavily. The tables show how many truly separate periods there are.</li>
     </ul>
     <p class="muted">Code: <code>crypto_value_research.track</code> and <code>crypto_value_research.backtest</code> in the crypto-value-research repository. A scheduled GitHub workflow re-prices every token daily and re-scores weekly; this page reads the results it commits.</p>
@@ -170,7 +174,7 @@ function lineChart(box, xs, series, { log = false, fmtY, fmtX, zero = false }) {
   const X = t => m.l + (W - m.l - m.r) * (t1 === t0 ? 0 : (+t - t0) / (t1 - t0));
   const Y = v => m.t + (H - m.t - m.b) * (1 - (f(v) - a) / (b - a));
   let ticks;
-  if (log) ticks = [0.25, 0.5, 1, 2, 4, 8, 16].filter(v => f(v) >= a && f(v) <= b);
+  if (log) ticks = [0.125, 0.25, 0.5, 1, 2, 4, 8, 16, 32, 64, 128].filter(v => f(v) >= a && f(v) <= b);
   else { const step = niceStep((b - a) / 5); ticks = []; for (let v = Math.ceil(a / step) * step; v <= b; v += step) ticks.push(+v.toFixed(6)); }
   const ink = "var(--muted)";
   let svg = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
@@ -282,18 +286,28 @@ function renderCurrent(latest) {
 function renderBacktest(d) {
   const g = d.growth_of_dollar, wo = d.growth_without;
   const xs = g.map(r => new Date(r.date + "T00:00:00Z"));
-  const woMap = Object.fromEntries((wo.line || []).map(r => [r.date, r.cheap]));
+  const woLine = wo.line || [];
+  const woAt = date => { let v = null; for (const r of woLine) { if (r.date <= date) v = r.cheap; else break; } return v; };
   lineChart(el("bt-chart"), xs, [
     { name: "Cheapest third", color: "--s1", values: g.map(r => r.cheap), fmt: money },
     { name: "Most expensive third", color: "--s2", values: g.map(r => r.expensive), fmt: money },
     { name: "All tokens", color: "--base", values: g.map(r => r.all), fmt: money },
-    { name: `Cheapest third without ${wo.token}`, color: "--s1", dash: true, values: g.map(r => woMap[r.date] ?? null), fmt: money },
+    { name: `Cheapest third without ${wo.token}`, color: "--s1", dash: true, values: g.map(r => woAt(r.date)), fmt: money },
   ], { log: true, fmtY: v => "$" + (v < 1 ? v.toFixed(2) : v.toFixed(0)), fmtX: monthFmt });
 
-  table("bt-peers", [["Hold for", r => `${r.horizon_weeks} weeks`], ["Cheap third avg", r => pct(r.avg_cheap, 0), r => cls(r.avg_cheap)],
-    ["Expensive third avg", r => pct(r.avg_expensive, 0), r => cls(r.avg_expensive)], ["Median gap", r => pct(r.median_spread, 0), r => cls(r.median_spread)],
-    ["Cheap won", r => `${Math.round(r.cheap_won_pct * 100)}% of ${r.weeks} wks`], ["Separate periods", r => "~" + r.independent_periods],
-    ["Rank corr.", r => r.avg_rank_corr.toFixed(2)]], d.cheap_vs_peers.filter(r => r.weeks));
+  table("bt-peers", [["Hold for", r => `${r.horizon_weeks} weeks`],
+    ["Typical cheap", r => pct(r.avg_cheap_median, 0), r => cls(r.avg_cheap_median)],
+    ["Typical expensive", r => pct(r.avg_expensive_median, 0), r => cls(r.avg_expensive_median)],
+    ["Cheap won", r => `${Math.round(r.cheap_median_won_pct * 100)}% of ${r.weeks} wks`],
+    ["Cheap third avg", r => pct(r.avg_cheap, 0), r => cls(r.avg_cheap)], ["Expensive third avg", r => pct(r.avg_expensive, 0), r => cls(r.avg_expensive)],
+    ["Separate periods", r => "~" + r.independent_periods]], d.cheap_vs_peers.filter(r => r.weeks));
+  if (d.checks) table("bt-checks", [["Slice", r => esc(r.variant)], ["Tokens", r => r.tokens],
+    ["$1 cheap third", r => money(r.growth_cheap)], ["$1 expensive third", r => money(r.growth_expensive)],
+    ["Cheap without best token", r => `${money(r.without_cheap)} <span class="muted">(no ${esc(r.without)})</span>`],
+    ["Dear vs own past, 26w", r => pct(r.own_expensive_26w, 0), r => cls(r.own_expensive_26w)],
+    ["Dear vs own past, 52w", r => pct(r.own_expensive_52w, 0), r => cls(r.own_expensive_52w)]], d.checks);
+  el("bt-n").textContent = Math.round((d.cheap_vs_peers[0] || {}).avg_tokens || d.tokens.length);
+  if (d.min_fdv) el("bt-floor").textContent = `(fully diluted value $${d.min_fdv / 1e6}M or more) `;
 
   const own = d.cheap_vs_own_past.filter(r => r.horizon_weeks !== 13);
   table("bt-own", [["Zone", r => ({ cheap: "Cheapest third of own past", middle: "Middle", expensive: "Most expensive third of own past" })[r.zone]],
@@ -302,9 +316,9 @@ function renderBacktest(d) {
     ["Beat average", r => Math.round(r.beat_avg_pct * 100) + "%"]], own);
 
   const last = g[g.length - 1], wl = wo.line[wo.line.length - 1], p26 = d.cheap_vs_peers.find(r => r.horizon_weeks === 26);
-  el("v-peers").textContent = `$1 in the cheapest third grew to ${money(last.cheap)} vs ${money(last.expensive)} for the most expensive, but almost all of that is ${wo.token} in early 2024. Without it: ${money(wl.cheap)} vs ${money(wl.expensive)}. Cheap won ${Math.round(p26.cheap_won_pct * 100)}% of 26-week periods, close to a coin flip.`;
+  el("v-peers").textContent = `$1 kept in the cheapest third grew to ${money(last.cheap)}; the most expensive third fell to ${money(last.expensive)}. Without the best token (${wo.token}) cheap ends at ${money(wl.cheap)}, still ahead. But the typical cheap token beat the typical expensive one in only ${Math.round(p26.cheap_median_won_pct * 100)}% of 6-month periods. P/S mainly helps avoid the most expensive tokens.`;
   const e26 = d.cheap_vs_own_past.find(r => r.zone === "expensive" && r.horizon_weeks === 26), e52 = d.cheap_vs_own_past.find(r => r.zone === "expensive" && r.horizon_weeks === 52);
-  el("v-own").textContent = `Tokens priced in the top third of their own P/S history trailed the average token by ${pct(-e26.avg_excess, 0).replace("+", "")} over 26 weeks and ${pct(-e52.avg_excess, 0).replace("+", "")} over 52. Consistent, but from only a few separate periods.`;
+  el("v-own").textContent = `Tokens priced in the top third of their own P/S history trailed the average token by ${pct(-e26.avg_excess, 0).replace("+", "")} over 26 weeks and ${pct(-e52.avg_excess, 0).replace("+", "")} over 52. It held in every slice of the data we tried.`;
 }
 
 Promise.all([fetch("data/tracking.json", { cache: "no-store" }).then(r => r.json()), fetch("data/backtest.json", { cache: "no-store" }).then(r => r.json())])
