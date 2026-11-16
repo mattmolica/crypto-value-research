@@ -1,8 +1,8 @@
 [
  {
   "scored_at": "2026-11-13T18:55:00Z",
-  "as_of": "2026-11-15T22:57:31Z",
-  "days": 2.2,
+  "as_of": "2026-11-16T23:53:40Z",
+  "days": 3.2,
   "tokens": 154,
   "priced": 152,
   "unpriced": [
@@ -11,84 +11,84 @@
   ],
   "price_mismatch": [],
   "benchmarks": {
-   "BTC": -0.05458707587536038,
-   "ETH": -0.05993434826233046,
-   "All tokens (equal weight)": -0.07734007066409505,
-   "Rated tokens (equal weight)": -0.07867828323243228
+   "BTC": -0.058599515939322444,
+   "ETH": -0.06264378110398883,
+   "All tokens (equal weight)": -0.08668803120814272,
+   "Rated tokens (equal weight)": -0.08700023891711502
   },
-  "rank_correlation": 0.2921188279978296,
+  "rank_correlation": 0.28406131307650573,
   "labels": [
    {
     "group": "Value candidate",
     "tokens": 23,
     "priced": 23,
-    "avg_return": -0.074012,
-    "median_return": -0.068259,
-    "vs_basket": 0.003328,
-    "pct_up": 0.086957,
-    "beat_basket": 0.565217,
-    "best": "FLIP +3%",
-    "worst": "CARDS -19%"
+    "avg_return": -0.082218,
+    "median_return": -0.076028,
+    "vs_basket": 0.00447,
+    "pct_up": 0.043478,
+    "beat_basket": 0.695652,
+    "best": "FLIP +12%",
+    "worst": "PUMP -19%"
    },
    {
     "group": "Value trap risk",
     "tokens": 4,
     "priced": 4,
-    "avg_return": -0.100171,
-    "median_return": -0.102223,
-    "vs_basket": -0.022831,
+    "avg_return": -0.128589,
+    "median_return": -0.135879,
+    "vs_basket": -0.041901,
     "pct_up": 0.0,
-    "beat_basket": 0.0,
+    "beat_basket": 0.25,
     "best": "COW -8%",
-    "worst": "EDGE -11%"
+    "worst": "EDGE -16%"
    },
    {
     "group": "Good, priced in",
     "tokens": 14,
     "priced": 14,
-    "avg_return": -0.061265,
-    "median_return": -0.069032,
-    "vs_basket": 0.016075,
+    "avg_return": -0.064346,
+    "median_return": -0.082902,
+    "vs_basket": 0.022342,
     "pct_up": 0.142857,
-    "beat_basket": 0.642857,
-    "best": "VVV +6%",
-    "worst": "PYTH -12%"
+    "beat_basket": 0.5,
+    "best": "O +6%",
+    "worst": "PYTH -18%"
    },
    {
     "group": "Mixed",
     "tokens": 23,
     "priced": 23,
-    "avg_return": -0.065578,
-    "median_return": -0.062418,
-    "vs_basket": 0.011762,
+    "avg_return": -0.080261,
+    "median_return": -0.080319,
+    "vs_basket": 0.006427,
     "pct_up": 0.086957,
     "beat_basket": 0.521739,
     "best": "TREE +7%",
-    "worst": "KNTQ -19%"
+    "worst": "KNTQ -24%"
    },
    {
     "group": "Avoid",
     "tokens": 32,
     "priced": 32,
-    "avg_return": -0.096379,
-    "median_return": -0.102034,
-    "vs_basket": -0.019039,
+    "avg_return": -0.099994,
+    "median_return": -0.100545,
+    "vs_basket": -0.013306,
     "pct_up": 0.0,
-    "beat_basket": 0.25,
-    "best": "OHM -1%",
-    "worst": "SANC -23%"
+    "beat_basket": 0.34375,
+    "best": "LON -1%",
+    "worst": "SANC -21%"
    },
    {
     "group": "Unrated",
     "tokens": 58,
     "priced": 56,
-    "avg_return": -0.075046,
-    "median_return": -0.078833,
-    "vs_basket": 0.002294,
+    "avg_return": -0.086153,
+    "median_return": -0.079035,
+    "vs_basket": 0.000535,
     "pct_up": 0.107143,
-    "beat_basket": 0.482143,
-    "best": "OTC +33%",
-    "worst": "SHROOM -30%"
+    "beat_basket": 0.535714,
+    "best": "OTC +22%",
+    "worst": "SHROOM -32%"
    }
   ],
   "buckets": [
@@ -96,61 +96,61 @@
     "group": "Top 20%",
     "tokens": 20,
     "priced": 20,
-    "avg_return": -0.07551,
-    "median_return": -0.070863,
-    "vs_basket": 0.00183,
+    "avg_return": -0.080494,
+    "median_return": -0.076089,
+    "vs_basket": 0.006194,
     "pct_up": 0.05,
-    "beat_basket": 0.55,
-    "best": "FLIP +3%",
-    "worst": "CARDS -19%"
+    "beat_basket": 0.65,
+    "best": "FLIP +12%",
+    "worst": "PUMP -19%"
    },
    {
     "group": "20-40%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.056736,
-    "median_return": -0.064485,
-    "vs_basket": 0.020604,
+    "avg_return": -0.059886,
+    "median_return": -0.076028,
+    "vs_basket": 0.026802,
     "pct_up": 0.157895,
-    "beat_basket": 0.578947,
+    "beat_basket": 0.631579,
     "best": "TREE +7%",
-    "worst": "LIT -12%"
+    "worst": "CVX -12%"
    },
    {
     "group": "40-60%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.069203,
-    "median_return": -0.075639,
-    "vs_basket": 0.008137,
-    "pct_up": 0.105263,
+    "avg_return": -0.086275,
+    "median_return": -0.081812,
+    "vs_basket": 0.000413,
+    "pct_up": 0.052632,
     "beat_basket": 0.526316,
-    "best": "DRV +3%",
-    "worst": "KNTQ -19%"
+    "best": "SOLV +2%",
+    "worst": "KNTQ -24%"
    },
    {
     "group": "60-80%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.092201,
-    "median_return": -0.084719,
-    "vs_basket": -0.014861,
+    "avg_return": -0.101221,
+    "median_return": -0.095135,
+    "vs_basket": -0.014533,
     "pct_up": 0.0,
     "beat_basket": 0.368421,
-    "best": "WLFI -1%",
-    "worst": "SANC -23%"
+    "best": "NXM -3%",
+    "worst": "SANC -21%"
    },
    {
     "group": "Bottom 20%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.099908,
-    "median_return": -0.109711,
-    "vs_basket": -0.022568,
+    "avg_return": -0.107468,
+    "median_return": -0.110999,
+    "vs_basket": -0.02078,
     "pct_up": 0.0,
-    "beat_basket": 0.157895,
+    "beat_basket": 0.263158,
     "best": "OHM -1%",
-    "worst": "CHIP -14%"
+    "worst": "ENA -16%"
    }
   ],
   "paths": {
@@ -158,61 +158,71 @@
     "2026-11-13T18:55Z",
     "2026-11-14T00:00Z",
     "2026-11-15T00:00Z",
-    "2026-11-15T22:57Z"
+    "2026-11-16T00:00Z",
+    "2026-11-16T23:53Z"
    ],
    "Value candidate": [
     0.0,
     -0.08073597689613214,
     -0.08801447375374431,
-    -0.07401184334001482
+    -0.07555295189357125,
+    -0.08221775502968985
    ],
    "Value trap risk": [
     0.0,
     -0.10059830847214024,
     -0.12131071077764646,
-    -0.10017141222749973
+    -0.1156997066271997,
+    -0.1285894026777711
    ],
    "Good, priced in": [
     0.0,
     -0.08890085020222041,
-    -0.07377399604466343,
-    -0.061265340913926845
+    -0.0739324978521314,
+    -0.07097025578344111,
+    -0.06434589268426655
    ],
    "Mixed": [
     0.0,
     -0.07446968796212382,
-    -0.07705276406083596,
-    -0.06557837010539887
+    -0.07705335333871063,
+    -0.07978177024337248,
+    -0.08026101706517745
    ],
    "Avoid": [
     0.0,
     -0.09087184302254961,
-    -0.10655902130221492,
-    -0.0963793706051253
+    -0.10657857805470625,
+    -0.09794182273851028,
+    -0.09999409592407117
    ],
    "Unrated": [
     0.0,
     -0.08469162849414712,
     -0.08414069102733315,
-    -0.07504599197551694
+    -0.08567702314130894,
+    -0.08615281799276167
    ],
    "All tokens (equal weight)": [
     0.0,
     -0.0846537210582458,
-    -0.08839731997811023,
-    -0.07734007066409505
+    -0.0884161252068957,
+    -0.08527060947481782,
+    -0.08668803120814272
    ],
    "BTC": [
     0.0,
     -0.049422101986314804,
-    -0.06253550198328905,
-    -0.05458707587536038
+    -0.06254085726230518,
+    -0.056255121403677166,
+    -0.058599515939322444
    ],
    "ETH": [
     0.0,
     -0.058222155973637,
-    -0.0665325746499551,
-    -0.05993434826233046
+    -0.06653431760388084,
+    -0.06114568971400036,
+    -0.06264378110398883
    ]
   },
   "tokens_detail": [
@@ -226,8 +236,8 @@
     "value_score": 86.912371,
     "p_s": 2.256821,
     "start_price": 7.737952,
-    "end_price": 7.313424,
-    "return": -0.054863,
+    "end_price": 7.465061,
+    "return": -0.035267,
     "price_check": true
    },
    {
@@ -240,8 +250,8 @@
     "value_score": 83.136546,
     "p_s": 2.431211,
     "start_price": 0.003497,
-    "end_price": 0.002931,
-    "return": -0.162063,
+    "end_price": 0.002839,
+    "return": -0.188306,
     "price_check": true
    },
    {
@@ -254,8 +264,8 @@
     "value_score": 79.324935,
     "p_s": 1.229121,
     "start_price": 95.934673,
-    "end_price": 92.873485,
-    "return": -0.031909,
+    "end_price": 83.910731,
+    "return": -0.125335,
     "price_check": true
    },
    {
@@ -269,7 +279,7 @@
     "p_s": 7.435102,
     "start_price": 3e-06,
     "end_price": 2e-06,
-    "return": -0.133337,
+    "return": -0.148638,
     "price_check": true
    },
    {
@@ -282,8 +292,8 @@
     "value_score": 76.715252,
     "p_s": 2.498053,
     "start_price": 0.02124,
-    "end_price": 0.019802,
-    "return": -0.067702,
+    "end_price": 0.019639,
+    "return": -0.075405,
     "price_check": true
    },
    {
@@ -296,8 +306,8 @@
     "value_score": 74.135914,
     "p_s": 3.413184,
     "start_price": 0.186239,
-    "end_price": 0.182291,
-    "return": -0.021199,
+    "end_price": 0.181327,
+    "return": -0.026376,
     "price_check": true
    },
    {
@@ -310,8 +320,8 @@
     "value_score": 73.847078,
     "p_s": 6.123738,
     "start_price": 1.238472,
-    "end_price": 1.208732,
-    "return": -0.024014,
+    "end_price": 1.175,
+    "return": -0.05125,
     "price_check": true
    },
    {
@@ -324,8 +334,8 @@
     "value_score": 72.894827,
     "p_s": 7.754652,
     "start_price": 0.421634,
-    "end_price": 0.432952,
-    "return": 0.026842,
+    "end_price": 0.47083,
+    "return": 0.116679,
     "price_check": true
    },
    {
@@ -338,8 +348,8 @@
     "value_score": 71.396958,
     "p_s": 8.630732,
     "start_price": 1.509263,
-    "end_price": 1.428378,
-    "return": -0.053592,
+    "end_price": 1.393391,
+    "return": -0.076773,
     "price_check": true
    },
    {
@@ -352,8 +362,8 @@
     "value_score": 71.228889,
     "p_s": 8.882184,
     "start_price": 1.735419,
-    "end_price": 1.596075,
-    "return": -0.080294,
+    "end_price": 1.62,
+    "return": -0.066508,
     "price_check": true
    },
    {
@@ -366,8 +376,8 @@
     "value_score": 70.117804,
     "p_s": 1.952916,
     "start_price": 0.000236,
-    "end_price": 0.000236,
-    "return": -0.002099,
+    "end_price": 0.000226,
+    "return": -0.044729,
     "price_check": true
    },
    {
@@ -380,8 +390,8 @@
     "value_score": 70.070549,
     "p_s": 3.056669,
     "start_price": 0.135275,
-    "end_price": 0.119832,
-    "return": -0.114161,
+    "end_price": 0.124581,
+    "return": -0.07905,
     "price_check": true
    },
    {
@@ -394,8 +404,8 @@
     "value_score": 69.496189,
     "p_s": 8.482278,
     "start_price": 0.480378,
-    "end_price": 0.438905,
-    "return": -0.086334,
+    "end_price": 0.434243,
+    "return": -0.09604,
     "price_check": true
    },
    {
@@ -408,8 +418,8 @@
     "value_score": 67.462125,
     "p_s": 6.732295,
     "start_price": 0.3841,
-    "end_price": 0.357882,
-    "return": -0.068259,
+    "end_price": 0.357466,
+    "return": -0.069343,
     "price_check": true
    },
    {
@@ -422,8 +432,8 @@
     "value_score": 67.203157,
     "p_s": 26.400557,
     "start_price": 5.811631,
-    "end_price": 5.156575,
-    "return": -0.112715,
+    "end_price": 5.162892,
+    "return": -0.111628,
     "price_check": true
    },
    {
@@ -436,8 +446,8 @@
     "value_score": 66.660742,
     "p_s": 1.152907,
     "start_price": 0.204534,
-    "end_price": 0.166462,
-    "return": -0.18614,
+    "end_price": 0.167951,
+    "return": -0.178857,
     "price_check": true
    },
    {
@@ -450,8 +460,8 @@
     "value_score": 66.090103,
     "p_s": 8.064738,
     "start_price": 2.530495,
-    "end_price": 2.333903,
-    "return": -0.077689,
+    "end_price": 2.340375,
+    "return": -0.075132,
     "price_check": true
    },
    {
@@ -464,8 +474,8 @@
     "value_score": 66.055552,
     "p_s": 8.719553,
     "start_price": 2.04214,
-    "end_price": 1.89211,
-    "return": -0.073467,
+    "end_price": 1.866515,
+    "return": -0.086,
     "price_check": true
    },
    {
@@ -478,8 +488,8 @@
     "value_score": 65.812809,
     "p_s": 3.066294,
     "start_price": 0.287438,
-    "end_price": 0.272441,
-    "return": -0.052176,
+    "end_price": 0.266723,
+    "return": -0.072069,
     "price_check": true
    },
    {
@@ -492,8 +502,8 @@
     "value_score": 65.203025,
     "p_s": 6.446909,
     "start_price": 0.015705,
-    "end_price": 0.013585,
-    "return": -0.135033,
+    "end_price": 0.013823,
+    "return": -0.119854,
     "price_check": true
    },
    {
@@ -506,8 +516,8 @@
     "value_score": 64.934629,
     "p_s": 5.894828,
     "start_price": 4.72683,
-    "end_price": 4.447174,
-    "return": -0.059163,
+    "end_price": 4.426568,
+    "return": -0.063523,
     "price_check": true
    },
    {
@@ -520,8 +530,8 @@
     "value_score": 64.756276,
     "p_s": 8.28051,
     "start_price": 0.057699,
-    "end_price": 0.054097,
-    "return": -0.062418,
+    "end_price": 0.051064,
+    "return": -0.114983,
     "price_check": true
    },
    {
@@ -534,8 +544,8 @@
     "value_score": 63.946574,
     "p_s": 8.049787,
     "start_price": 0.11471,
-    "end_price": 0.103146,
-    "return": -0.100813,
+    "end_price": 0.108144,
+    "return": -0.05724,
     "price_check": true
    },
    {
@@ -548,8 +558,8 @@
     "value_score": 63.639996,
     "p_s": 3.840303,
     "start_price": 0.07771,
-    "end_price": 0.072796,
-    "return": -0.063233,
+    "end_price": 0.073068,
+    "return": -0.059734,
     "price_check": true
    },
    {
@@ -562,8 +572,8 @@
     "value_score": 63.409686,
     "p_s": 19.55157,
     "start_price": 72.87775,
-    "end_price": 68.083994,
-    "return": -0.065778,
+    "end_price": 70.055262,
+    "return": -0.038729,
     "price_check": true
    },
    {
@@ -576,8 +586,8 @@
     "value_score": 63.15539,
     "p_s": 19.886601,
     "start_price": 0.554495,
-    "end_price": 0.521,
-    "return": -0.060406,
+    "end_price": 0.51579,
+    "return": -0.069803,
     "price_check": true
    },
    {
@@ -590,8 +600,8 @@
     "value_score": 60.983305,
     "p_s": 4.575899,
     "start_price": 0.5174,
-    "end_price": 0.487401,
-    "return": -0.057981,
+    "end_price": 0.547547,
+    "return": 0.058267,
     "price_check": true
    },
    {
@@ -604,8 +614,8 @@
     "value_score": 59.816163,
     "p_s": 209.658137,
     "start_price": 3.515253,
-    "end_price": 3.207946,
-    "return": -0.087421,
+    "end_price": 3.160485,
+    "return": -0.100922,
     "price_check": true
    },
    {
@@ -618,8 +628,8 @@
     "value_score": 59.758528,
     "p_s": 5.392314,
     "start_price": 0.074078,
-    "end_price": 0.067962,
-    "return": -0.082551,
+    "end_price": 0.068446,
+    "return": -0.076028,
     "price_check": true
    },
    {
@@ -632,8 +642,8 @@
     "value_score": 59.425833,
     "p_s": 9.524808,
     "start_price": 0.26214,
-    "end_price": 0.265975,
-    "return": 0.014629,
+    "end_price": 0.240908,
+    "return": -0.080994,
     "price_check": true
    },
    {
@@ -646,8 +656,8 @@
     "value_score": 58.326855,
     "p_s": 13.76882,
     "start_price": 1.611,
-    "end_price": 1.448044,
-    "return": -0.101152,
+    "end_price": 1.413775,
+    "return": -0.122424,
     "price_check": true
    },
    {
@@ -660,8 +670,8 @@
     "value_score": 57.543432,
     "p_s": 7.119531,
     "start_price": 0.304505,
-    "end_price": 0.278169,
-    "return": -0.086487,
+    "end_price": 0.277279,
+    "return": -0.089409,
     "price_check": true
    },
    {
@@ -674,8 +684,8 @@
     "value_score": 57.202495,
     "p_s": 14.672441,
     "start_price": 0.159059,
-    "end_price": 0.170331,
-    "return": 0.070867,
+    "end_price": 0.170529,
+    "return": 0.072116,
     "price_check": true
    },
    {
@@ -688,8 +698,8 @@
     "value_score": 57.104336,
     "p_s": 4.90394,
     "start_price": 0.01122,
-    "end_price": 0.010195,
-    "return": -0.091319,
+    "end_price": 0.009927,
+    "return": -0.115214,
     "price_check": true
    },
    {
@@ -702,8 +712,8 @@
     "value_score": 56.809221,
     "p_s": 13.83411,
     "start_price": 3.233548,
-    "end_price": 2.849378,
-    "return": -0.118808,
+    "end_price": 2.984057,
+    "return": -0.077157,
     "price_check": true
    },
    {
@@ -716,8 +726,8 @@
     "value_score": 56.654866,
     "p_s": 81.578934,
     "start_price": 19.293427,
-    "end_price": 20.386414,
-    "return": 0.056651,
+    "end_price": 20.243893,
+    "return": 0.049264,
     "price_check": true
    },
    {
@@ -730,8 +740,8 @@
     "value_score": 56.048538,
     "p_s": 14.872587,
     "start_price": 0.221998,
-    "end_price": 0.207682,
-    "return": -0.064485,
+    "end_price": 0.2005,
+    "return": -0.096838,
     "price_check": true
    },
    {
@@ -744,8 +754,8 @@
     "value_score": 54.907844,
     "p_s": 24.137795,
     "start_price": 1.740794,
-    "end_price": 1.682322,
-    "return": -0.033589,
+    "end_price": 1.635054,
+    "return": -0.060743,
     "price_check": true
    },
    {
@@ -758,8 +768,8 @@
     "value_score": 54.353924,
     "p_s": 171.019205,
     "start_price": 1.517618,
-    "end_price": 1.389347,
-    "return": -0.084521,
+    "end_price": 1.375353,
+    "return": -0.093742,
     "price_check": true
    },
    {
@@ -772,8 +782,8 @@
     "value_score": 53.863966,
     "p_s": 1.749124,
     "start_price": 0.004394,
-    "end_price": 0.00441,
-    "return": 0.003528,
+    "end_price": 0.004489,
+    "return": 0.021488,
     "price_check": true
    },
    {
@@ -786,8 +796,8 @@
     "value_score": 53.276855,
     "p_s": 2.869212,
     "start_price": 0.103765,
-    "end_price": 0.0953,
-    "return": -0.081583,
+    "end_price": 0.09624,
+    "return": -0.072527,
     "price_check": true
    },
    {
@@ -800,8 +810,8 @@
     "value_score": 52.816909,
     "p_s": 1.260328,
     "start_price": 8.39,
-    "end_price": 8.08,
-    "return": -0.036949,
+    "end_price": 7.33,
+    "return": -0.126341,
     "price_check": true
    },
    {
@@ -814,8 +824,8 @@
     "value_score": 52.724982,
     "p_s": 13.480143,
     "start_price": 0.013248,
-    "end_price": 0.012764,
-    "return": -0.036529,
+    "end_price": 0.01268,
+    "return": -0.04287,
     "price_check": true
    },
    {
@@ -828,8 +838,8 @@
     "value_score": 52.679797,
     "p_s": 3.749686,
     "start_price": 0.291634,
-    "end_price": 0.285816,
-    "return": -0.019952,
+    "end_price": 0.288035,
+    "return": -0.012341,
     "price_check": true
    },
    {
@@ -842,8 +852,8 @@
     "value_score": 51.395532,
     "p_s": 3.148432,
     "start_price": 0.020471,
-    "end_price": 0.019455,
-    "return": -0.049635,
+    "end_price": 0.019623,
+    "return": -0.041427,
     "price_check": true
    },
    {
@@ -856,8 +866,8 @@
     "value_score": 51.045877,
     "p_s": 24.238095,
     "start_price": 0.231435,
-    "end_price": 0.204304,
-    "return": -0.117228,
+    "end_price": 0.206018,
+    "return": -0.109822,
     "price_check": true
    },
    {
@@ -870,8 +880,8 @@
     "value_score": 50.875194,
     "p_s": 132.554606,
     "start_price": 0.015062,
-    "end_price": 0.014783,
-    "return": -0.018506,
+    "end_price": 0.014765,
+    "return": -0.019721,
     "price_check": true
    },
    {
@@ -884,8 +894,8 @@
     "value_score": 50.634252,
     "p_s": 3.933075,
     "start_price": 0.332098,
-    "end_price": 0.293997,
-    "return": -0.114726,
+    "end_price": 0.2787,
+    "return": -0.160789,
     "price_check": true
    },
    {
@@ -898,8 +908,8 @@
     "value_score": 49.397669,
     "p_s": 23.496357,
     "start_price": 0.091382,
-    "end_price": 0.079738,
-    "return": -0.127419,
+    "end_price": 0.079981,
+    "return": -0.124766,
     "price_check": true
    },
    {
@@ -912,8 +922,8 @@
     "value_score": 48.794079,
     "p_s": 5.414699,
     "start_price": 0.164381,
-    "end_price": 0.161017,
-    "return": -0.020465,
+    "end_price": 0.163289,
+    "return": -0.006639,
     "price_check": true
    },
    {
@@ -926,8 +936,8 @@
     "value_score": 48.596317,
     "p_s": 3.717394,
     "start_price": 0.0999,
-    "end_price": 0.091757,
-    "return": -0.081513,
+    "end_price": 0.091727,
+    "return": -0.081812,
     "price_check": true
    },
    {
@@ -940,8 +950,8 @@
     "value_score": 48.234813,
     "p_s": 52.267024,
     "start_price": 0.296695,
-    "end_price": 0.30493,
-    "return": 0.027756,
+    "end_price": 0.285293,
+    "return": -0.03843,
     "price_check": true
    },
    {
@@ -954,8 +964,8 @@
     "value_score": 48.113614,
     "p_s": 6.790325,
     "start_price": 0.08121,
-    "end_price": 0.071958,
-    "return": -0.113931,
+    "end_price": 0.071361,
+    "return": -0.121279,
     "price_check": true
    },
    {
@@ -968,8 +978,8 @@
     "value_score": 47.952955,
     "p_s": 134.151925,
     "start_price": 10.013404,
-    "end_price": 9.256,
-    "return": -0.075639,
+    "end_price": 9.125739,
+    "return": -0.088648,
     "price_check": true
    },
    {
@@ -982,8 +992,8 @@
     "value_score": 47.683452,
     "p_s": 12.701502,
     "start_price": 0.578973,
-    "end_price": 0.497,
-    "return": -0.141583,
+    "end_price": 0.468927,
+    "return": -0.190071,
     "price_check": true
    },
    {
@@ -996,8 +1006,8 @@
     "value_score": 47.43549,
     "p_s": 13.433044,
     "start_price": 0.068532,
-    "end_price": 0.066169,
-    "return": -0.034487,
+    "end_price": 0.06355,
+    "return": -0.0727,
     "price_check": true
    },
    {
@@ -1010,8 +1020,8 @@
     "value_score": 46.219069,
     "p_s": 6.693811,
     "start_price": 0.03658,
-    "end_price": 0.033319,
-    "return": -0.089147,
+    "end_price": 0.032586,
+    "return": -0.109199,
     "price_check": true
    },
    {
@@ -1024,8 +1034,8 @@
     "value_score": 45.990837,
     "p_s": 23.824909,
     "start_price": 0.296347,
-    "end_price": 0.240975,
-    "return": -0.186846,
+    "end_price": 0.224827,
+    "return": -0.241337,
     "price_check": true
    },
    {
@@ -1038,8 +1048,8 @@
     "value_score": 45.936423,
     "p_s": 47.149919,
     "start_price": 19.722037,
-    "end_price": 17.985772,
-    "return": -0.088037,
+    "end_price": 17.792917,
+    "return": -0.097815,
     "price_check": true
    },
    {
@@ -1052,8 +1062,8 @@
     "value_score": 45.876434,
     "p_s": 8.692987,
     "start_price": 0.001772,
-    "end_price": 0.001524,
-    "return": -0.140078,
+    "end_price": 0.001554,
+    "return": -0.123107,
     "price_check": true
    },
    {
@@ -1066,8 +1076,8 @@
     "value_score": 44.938572,
     "p_s": 64.139236,
     "start_price": 0.144912,
-    "end_price": 0.134437,
-    "return": -0.072286,
+    "end_price": 0.131126,
+    "return": -0.095135,
     "price_check": true
    },
    {
@@ -1080,8 +1090,8 @@
     "value_score": 44.62728,
     "p_s": 13.161785,
     "start_price": 0.169923,
-    "end_price": 0.155527,
-    "return": -0.084719,
+    "end_price": 0.153878,
+    "return": -0.094426,
     "price_check": true
    },
    {
@@ -1094,8 +1104,8 @@
     "value_score": 44.561873,
     "p_s": 11.225662,
     "start_price": 0.160374,
-    "end_price": 0.142231,
-    "return": -0.113128,
+    "end_price": 0.135268,
+    "return": -0.156543,
     "price_check": true
    },
    {
@@ -1108,8 +1118,8 @@
     "value_score": 44.558821,
     "p_s": 6.132906,
     "start_price": 0.04409,
-    "end_price": 0.037752,
-    "return": -0.143743,
+    "end_price": 0.038469,
+    "return": -0.127477,
     "price_check": true
    },
    {
@@ -1122,8 +1132,8 @@
     "value_score": 44.549116,
     "p_s": 11.001325,
     "start_price": 0.04746,
-    "end_price": 0.047158,
-    "return": -0.006367,
+    "end_price": 0.045744,
+    "return": -0.036165,
     "price_check": true
    },
    {
@@ -1136,8 +1146,8 @@
     "value_score": 43.561494,
     "p_s": 100.765052,
     "start_price": 51.457939,
-    "end_price": 50.16802,
-    "return": -0.025067,
+    "end_price": 50.019914,
+    "return": -0.027946,
     "price_check": true
    },
    {
@@ -1150,8 +1160,8 @@
     "value_score": 42.311786,
     "p_s": 11.848047,
     "start_price": 0.018418,
-    "end_price": 0.016492,
-    "return": -0.104569,
+    "end_price": 0.016167,
+    "return": -0.122236,
     "price_check": true
    },
    {
@@ -1164,8 +1174,8 @@
     "value_score": 41.487327,
     "p_s": 40.874673,
     "start_price": 1.546042,
-    "end_price": 1.4508,
-    "return": -0.061604,
+    "end_price": 1.436057,
+    "return": -0.071139,
     "price_check": true
    },
    {
@@ -1178,8 +1188,8 @@
     "value_score": 41.472835,
     "p_s": 12.525272,
     "start_price": 0.085652,
-    "end_price": 0.066346,
-    "return": -0.225401,
+    "end_price": 0.06802,
+    "return": -0.205858,
     "price_check": true
    },
    {
@@ -1192,8 +1202,8 @@
     "value_score": 41.453497,
     "p_s": 76.794827,
     "start_price": 0.063752,
-    "end_price": 0.055874,
-    "return": -0.123576,
+    "end_price": 0.052428,
+    "return": -0.17762,
     "price_check": true
    },
    {
@@ -1206,8 +1216,8 @@
     "value_score": 41.110904,
     "p_s": 7.989209,
     "start_price": 0.004424,
-    "end_price": 0.004052,
-    "return": -0.084114,
+    "end_price": 0.004108,
+    "return": -0.071424,
     "price_check": true
    },
    {
@@ -1220,8 +1230,8 @@
     "value_score": 41.096901,
     "p_s": 19.187251,
     "start_price": 1.919901,
-    "end_price": 1.80765,
-    "return": -0.058467,
+    "end_price": 1.765697,
+    "return": -0.080319,
     "price_check": true
    },
    {
@@ -1234,8 +1244,8 @@
     "value_score": 40.408596,
     "p_s": 28.451353,
     "start_price": 112.37026,
-    "end_price": 108.918784,
-    "return": -0.030715,
+    "end_price": 108.30383,
+    "return": -0.036188,
     "price_check": true
    },
    {
@@ -1248,8 +1258,8 @@
     "value_score": 39.510072,
     "p_s": 23.102783,
     "start_price": 0.30752,
-    "end_price": 0.268474,
-    "return": -0.126971,
+    "end_price": 0.264689,
+    "return": -0.139277,
     "price_check": true
    },
    {
@@ -1262,8 +1272,8 @@
     "value_score": 38.193482,
     "p_s": 4.386847,
     "start_price": 0.002331,
-    "end_price": 0.002147,
-    "return": -0.078892,
+    "end_price": 0.002114,
+    "return": -0.093123,
     "price_check": true
    },
    {
@@ -1277,7 +1287,7 @@
     "p_s": 186.380255,
     "start_price": 4e-06,
     "end_price": 3e-06,
-    "return": -0.049978,
+    "return": -0.071764,
     "price_check": true
    },
    {
@@ -1290,8 +1300,8 @@
     "value_score": 37.801178,
     "p_s": 13.171969,
     "start_price": 0.081716,
-    "end_price": 0.070757,
-    "return": -0.13411,
+    "end_price": 0.073901,
+    "return": -0.095629,
     "price_check": true
    },
    {
@@ -1304,8 +1314,8 @@
     "value_score": 36.943425,
     "p_s": 32.114935,
     "start_price": 0.106479,
-    "end_price": 0.099895,
-    "return": -0.061834,
+    "end_price": 0.09961,
+    "return": -0.064504,
     "price_check": true
    },
    {
@@ -1318,8 +1328,8 @@
     "value_score": 34.237498,
     "p_s": 18.28731,
     "start_price": 0.047936,
-    "end_price": 0.042618,
-    "return": -0.110953,
+    "end_price": 0.042881,
+    "return": -0.105462,
     "price_check": true
    },
    {
@@ -1332,8 +1342,8 @@
     "value_score": 32.208636,
     "p_s": 50.838028,
     "start_price": 3.506177,
-    "end_price": 3.040406,
-    "return": -0.132843,
+    "end_price": 3.070734,
+    "return": -0.124193,
     "price_check": true
    },
    {
@@ -1346,8 +1356,8 @@
     "value_score": 31.831732,
     "p_s": 23.451553,
     "start_price": 0.029718,
-    "end_price": 0.028893,
-    "return": -0.027752,
+    "end_price": 0.02713,
+    "return": -0.087083,
     "price_check": true
    },
    {
@@ -1360,8 +1370,8 @@
     "value_score": 29.983919,
     "p_s": 95.344115,
     "start_price": 0.759259,
-    "end_price": 0.687377,
-    "return": -0.094674,
+    "end_price": 0.674981,
+    "return": -0.110999,
     "price_check": true
    },
    {
@@ -1374,8 +1384,8 @@
     "value_score": 29.432594,
     "p_s": 129.117382,
     "start_price": 15.679323,
-    "end_price": 15.539679,
-    "return": -0.008906,
+    "end_price": 15.556081,
+    "return": -0.00786,
     "price_check": true
    },
    {
@@ -1388,8 +1398,8 @@
     "value_score": 29.404334,
     "p_s": 17.422407,
     "start_price": 0.031391,
-    "end_price": 0.02714,
-    "return": -0.135432,
+    "end_price": 0.027448,
+    "return": -0.125615,
     "price_check": true
    },
    {
@@ -1402,8 +1412,8 @@
     "value_score": 29.010385,
     "p_s": 9.809996,
     "start_price": 0.044135,
-    "end_price": 0.039293,
-    "return": -0.109711,
+    "end_price": 0.03827,
+    "return": -0.132894,
     "price_check": true
    },
    {
@@ -1416,8 +1426,8 @@
     "value_score": 28.50997,
     "p_s": 1116.600043,
     "start_price": 0.809141,
-    "end_price": 0.731456,
-    "return": -0.096009,
+    "end_price": 0.719128,
+    "return": -0.111245,
     "price_check": true
    },
    {
@@ -1430,8 +1440,8 @@
     "value_score": 26.991541,
     "p_s": 55.968139,
     "start_price": 4.286096,
-    "end_price": 3.915285,
-    "return": -0.086515,
+    "end_price": 3.915884,
+    "return": -0.086375,
     "price_check": true
    },
    {
@@ -1444,8 +1454,8 @@
     "value_score": 24.133933,
     "p_s": 110.601704,
     "start_price": 0.894,
-    "end_price": 0.8155,
-    "return": -0.087808,
+    "end_price": 0.819048,
+    "return": -0.083839,
     "price_check": true
    },
    {
@@ -1458,8 +1468,8 @@
     "value_score": 23.499446,
     "p_s": 213.019803,
     "start_price": 0.521513,
-    "end_price": 0.4523,
-    "return": -0.132715,
+    "end_price": 0.442048,
+    "return": -0.152373,
     "price_check": true
    },
    {
@@ -1472,8 +1482,8 @@
     "value_score": 22.830028,
     "p_s": 70.891357,
     "start_price": 13.172004,
-    "end_price": 11.861393,
-    "return": -0.0995,
+    "end_price": 11.756028,
+    "return": -0.107499,
     "price_check": true
    },
    {
@@ -1486,8 +1496,8 @@
     "value_score": 21.576365,
     "p_s": 42.334667,
     "start_price": 0.433903,
-    "end_price": 0.399837,
-    "return": -0.078509,
+    "end_price": 0.407509,
+    "return": -0.060827,
     "price_check": true
    },
    {
@@ -1500,8 +1510,8 @@
     "value_score": 20.37682,
     "p_s": 119.925666,
     "start_price": 0.0938,
-    "end_price": 0.0815,
-    "return": -0.13113,
+    "end_price": 0.079307,
+    "return": -0.154511,
     "price_check": true
    },
    {
@@ -1514,8 +1524,8 @@
     "value_score": 18.80476,
     "p_s": 93.835101,
     "start_price": 0.00324,
-    "end_price": 0.002856,
-    "return": -0.118348,
+    "end_price": 0.002781,
+    "return": -0.141626,
     "price_check": true
    },
    {
@@ -1528,8 +1538,8 @@
     "value_score": 15.1789,
     "p_s": 3774.256401,
     "start_price": 0.136936,
-    "end_price": 0.12,
-    "return": -0.123678,
+    "end_price": 0.114649,
+    "return": -0.162756,
     "price_check": true
    },
    {
@@ -1542,8 +1552,8 @@
     "value_score": 11.631501,
     "p_s": 358.389098,
     "start_price": 0.018633,
-    "end_price": 0.016222,
-    "return": -0.129375,
+    "end_price": 0.016137,
+    "return": -0.133949,
     "price_check": true
    },
    {
@@ -1556,8 +1566,8 @@
     "value_score": 9.420565,
     "p_s": 827.378865,
     "start_price": 1.605238,
-    "end_price": 1.392445,
-    "return": -0.132561,
+    "end_price": 1.463536,
+    "return": -0.088275,
     "price_check": true
    },
    {
@@ -1570,8 +1580,8 @@
     "value_score": null,
     "p_s": 0.031713,
     "start_price": 2.2e-05,
-    "end_price": 2.1e-05,
-    "return": -0.078193,
+    "end_price": 2e-05,
+    "return": -0.092763,
     "price_check": true
    },
    {
@@ -1584,8 +1594,8 @@
     "value_score": null,
     "p_s": 0.038503,
     "start_price": 0.166327,
-    "end_price": 0.153563,
-    "return": -0.07674,
+    "end_price": 0.160518,
+    "return": -0.034926,
     "price_check": true
    },
    {
@@ -1598,8 +1608,8 @@
     "value_score": null,
     "p_s": 0.043116,
     "start_price": 0.593757,
-    "end_price": 0.452333,
-    "return": -0.238186,
+    "end_price": 0.458443,
+    "return": -0.227896,
     "price_check": true
    },
    {
@@ -1612,8 +1622,8 @@
     "value_score": null,
     "p_s": 0.089562,
     "start_price": 0.000511,
-    "end_price": 0.000409,
-    "return": -0.200835,
+    "end_price": 0.000466,
+    "return": -0.089047,
     "price_check": true
    },
    {
@@ -1626,8 +1636,8 @@
     "value_score": null,
     "p_s": 0.10459,
     "start_price": 0.04666,
-    "end_price": 0.042248,
-    "return": -0.094559,
+    "end_price": 0.040128,
+    "return": -0.139985,
     "price_check": true
    },
    {
@@ -1640,8 +1650,8 @@
     "value_score": null,
     "p_s": 0.144507,
     "start_price": 0.001126,
-    "end_price": 0.000787,
-    "return": -0.300615,
+    "end_price": 0.000769,
+    "return": -0.316912,
     "price_check": true
    },
    {
@@ -1654,8 +1664,8 @@
     "value_score": null,
     "p_s": 0.188327,
     "start_price": 0.002291,
-    "end_price": 0.003055,
-    "return": 0.333521,
+    "end_price": 0.002799,
+    "return": 0.222014,
     "price_check": true
    },
    {
@@ -1668,8 +1678,8 @@
     "value_score": null,
     "p_s": 0.188329,
     "start_price": 0.019213,
-    "end_price": 0.019188,
-    "return": -0.001302,
+    "end_price": 0.019004,
+    "return": -0.010881,
     "price_check": true
    },
    {
@@ -1682,8 +1692,8 @@
     "value_score": null,
     "p_s": 0.201635,
     "start_price": 0.013239,
-    "end_price": 0.012234,
-    "return": -0.075868,
+    "end_price": 0.012153,
+    "return": -0.082057,
     "price_check": true
    },
    {
@@ -1696,8 +1706,8 @@
     "value_score": null,
     "p_s": 0.244373,
     "start_price": 0.047079,
-    "end_price": 0.043337,
-    "return": -0.079473,
+    "end_price": 0.041968,
+    "return": -0.108559,
     "price_check": true
    },
    {
@@ -1710,8 +1720,8 @@
     "value_score": null,
     "p_s": 0.251102,
     "start_price": 0.000944,
-    "end_price": 0.000712,
-    "return": -0.246018,
+    "end_price": 0.000688,
+    "return": -0.27174,
     "price_check": true
    },
    {
@@ -1724,8 +1734,8 @@
     "value_score": null,
     "p_s": 0.31764,
     "start_price": 0.135556,
-    "end_price": 0.114889,
-    "return": -0.152464,
+    "end_price": 0.10687,
+    "return": -0.211619,
     "price_check": true
    },
    {
@@ -1738,8 +1748,8 @@
     "value_score": null,
     "p_s": 0.420763,
     "start_price": 0.02375,
-    "end_price": 0.021096,
-    "return": -0.111756,
+    "end_price": 0.020146,
+    "return": -0.151737,
     "price_check": true
    },
    {
@@ -1752,8 +1762,8 @@
     "value_score": null,
     "p_s": 0.424068,
     "start_price": 0.084498,
-    "end_price": 0.071117,
-    "return": -0.158355,
+    "end_price": 0.069194,
+    "return": -0.181113,
     "price_check": true
    },
    {
@@ -1766,8 +1776,8 @@
     "value_score": null,
     "p_s": 0.498799,
     "start_price": 0.014035,
-    "end_price": 0.012077,
-    "return": -0.139497,
+    "end_price": 0.012171,
+    "return": -0.132788,
     "price_check": true
    },
    {
@@ -1780,8 +1790,8 @@
     "value_score": null,
     "p_s": 0.507578,
     "start_price": 0.302097,
-    "end_price": 0.253518,
-    "return": -0.160805,
+    "end_price": 0.243746,
+    "return": -0.193154,
     "price_check": true
    },
    {
@@ -1794,8 +1804,8 @@
     "value_score": null,
     "p_s": 0.529019,
     "start_price": 0.003338,
-    "end_price": 0.002912,
-    "return": -0.127502,
+    "end_price": 0.002897,
+    "return": -0.132122,
     "price_check": true
    },
    {
@@ -1808,8 +1818,8 @@
     "value_score": null,
     "p_s": 0.587694,
     "start_price": 0.007925,
-    "end_price": 0.008109,
-    "return": 0.023233,
+    "end_price": 0.008192,
+    "return": 0.033668,
     "price_check": true
    },
    {
@@ -1822,8 +1832,8 @@
     "value_score": null,
     "p_s": 0.736058,
     "start_price": 0.002386,
-    "end_price": 0.002116,
-    "return": -0.113048,
+    "end_price": 0.00211,
+    "return": -0.115598,
     "price_check": true
    },
    {
@@ -1836,8 +1846,8 @@
     "value_score": null,
     "p_s": 0.768784,
     "start_price": 0.143185,
-    "end_price": 0.121958,
-    "return": -0.14825,
+    "end_price": 0.118903,
+    "return": -0.169586,
     "price_check": true
    },
    {
@@ -1850,8 +1860,8 @@
     "value_score": null,
     "p_s": 0.818446,
     "start_price": 0.004301,
-    "end_price": 0.003743,
-    "return": -0.129654,
+    "end_price": 0.003661,
+    "return": -0.14864,
     "price_check": true
    },
    {
@@ -1864,8 +1874,8 @@
     "value_score": null,
     "p_s": 0.896905,
     "start_price": 0.019934,
-    "end_price": 0.02423,
-    "return": 0.21556,
+    "end_price": 0.018966,
+    "return": -0.048539,
     "price_check": true
    },
    {
@@ -1878,8 +1888,8 @@
     "value_score": null,
     "p_s": 0.985965,
     "start_price": 15.092547,
-    "end_price": 14.585147,
-    "return": -0.033619,
+    "end_price": 14.374159,
+    "return": -0.047599,
     "price_check": true
    },
    {
@@ -1892,8 +1902,8 @@
     "value_score": null,
     "p_s": 1.155965,
     "start_price": 0.004758,
-    "end_price": 0.004609,
-    "return": -0.031247,
+    "end_price": 0.004816,
+    "return": 0.012173,
     "price_check": true
    },
    {
@@ -1906,8 +1916,8 @@
     "value_score": null,
     "p_s": 1.230951,
     "start_price": 0.016853,
-    "end_price": 0.014358,
-    "return": -0.148056,
+    "end_price": 0.013437,
+    "return": -0.202735,
     "price_check": true
    },
    {
@@ -1920,8 +1930,8 @@
     "value_score": null,
     "p_s": 1.296487,
     "start_price": 0.003372,
-    "end_price": 0.003225,
-    "return": -0.043674,
+    "end_price": 0.003182,
+    "return": -0.056238,
     "price_check": true
    },
    {
@@ -1934,8 +1944,8 @@
     "value_score": null,
     "p_s": 1.378923,
     "start_price": 0.001902,
-    "end_price": 0.001901,
-    "return": -0.00032,
+    "end_price": 0.001899,
+    "return": -0.001615,
     "price_check": true
    },
    {
@@ -1948,8 +1958,8 @@
     "value_score": null,
     "p_s": 1.514041,
     "start_price": 0.784943,
-    "end_price": 0.734755,
-    "return": -0.063937,
+    "end_price": 0.706368,
+    "return": -0.100103,
     "price_check": true
    },
    {
@@ -1962,8 +1972,8 @@
     "value_score": null,
     "p_s": 1.641219,
     "start_price": 0.012436,
-    "end_price": 0.011098,
-    "return": -0.107571,
+    "end_price": 0.011926,
+    "return": -0.040993,
     "price_check": true
    },
    {
@@ -1976,8 +1986,8 @@
     "value_score": null,
     "p_s": 1.818452,
     "start_price": 0.349049,
-    "end_price": 0.325394,
-    "return": -0.067771,
+    "end_price": 0.336898,
+    "return": -0.034812,
     "price_check": true
    },
    {
@@ -1990,8 +2000,8 @@
     "value_score": null,
     "p_s": 1.86923,
     "start_price": 0.006483,
-    "end_price": 0.006667,
-    "return": 0.028351,
+    "end_price": 0.006469,
+    "return": -0.002124,
     "price_check": true
    },
    {
@@ -2004,8 +2014,8 @@
     "value_score": null,
     "p_s": 2.121301,
     "start_price": 9.415597,
-    "end_price": 8.788405,
-    "return": -0.066612,
+    "end_price": 8.711683,
+    "return": -0.07476,
     "price_check": true
    },
    {
@@ -2018,8 +2028,8 @@
     "value_score": null,
     "p_s": 2.163524,
     "start_price": 0.01279,
-    "end_price": 0.011895,
-    "return": -0.070013,
+    "end_price": 0.011891,
+    "return": -0.0703,
     "price_check": true
    },
    {
@@ -2032,8 +2042,8 @@
     "value_score": null,
     "p_s": 2.322185,
     "start_price": 0.008372,
-    "end_price": 0.007965,
-    "return": -0.048627,
+    "end_price": 0.007885,
+    "return": -0.058249,
     "price_check": true
    },
    {
@@ -2046,8 +2056,8 @@
     "value_score": null,
     "p_s": 2.571022,
     "start_price": 0.038094,
-    "end_price": 0.038029,
-    "return": -0.001699,
+    "end_price": 0.038572,
+    "return": 0.012549,
     "price_check": true
    },
    {
@@ -2060,8 +2070,8 @@
     "value_score": null,
     "p_s": 2.592204,
     "start_price": 0.052589,
-    "end_price": 0.050167,
-    "return": -0.046049,
+    "end_price": 0.046285,
+    "return": -0.119874,
     "price_check": true
    },
    {
@@ -2074,8 +2084,8 @@
     "value_score": null,
     "p_s": 2.654761,
     "start_price": 0.005375,
-    "end_price": 0.005272,
-    "return": -0.019107,
+    "end_price": 0.0054,
+    "return": 0.00457,
     "price_check": true
    },
    {
@@ -2088,8 +2098,8 @@
     "value_score": null,
     "p_s": 3.270478,
     "start_price": 0.051169,
-    "end_price": 0.051324,
-    "return": 0.003038,
+    "end_price": 0.051509,
+    "return": 0.006649,
     "price_check": true
    },
    {
@@ -2102,8 +2112,8 @@
     "value_score": null,
     "p_s": 3.67575,
     "start_price": 0.007583,
-    "end_price": 0.007223,
-    "return": -0.047506,
+    "end_price": 0.00718,
+    "return": -0.053203,
     "price_check": true
    },
    {
@@ -2116,8 +2126,8 @@
     "value_score": null,
     "p_s": 3.954724,
     "start_price": 0.045717,
-    "end_price": 0.044569,
-    "return": -0.025113,
+    "end_price": 0.042502,
+    "return": -0.070317,
     "price_check": true
    },
    {
@@ -2130,8 +2140,8 @@
     "value_score": null,
     "p_s": 4.085198,
     "start_price": 0.442919,
-    "end_price": 0.423859,
-    "return": -0.043032,
+    "end_price": 0.4246,
+    "return": -0.04136,
     "price_check": true
    },
    {
@@ -2144,8 +2154,8 @@
     "value_score": null,
     "p_s": 4.167263,
     "start_price": 55.516467,
-    "end_price": 51.487386,
-    "return": -0.072575,
+    "end_price": 51.751605,
+    "return": -0.067815,
     "price_check": true
    },
    {
@@ -2159,7 +2169,7 @@
     "p_s": 4.673027,
     "start_price": 0.000129,
     "end_price": 0.000119,
-    "return": -0.079684,
+    "return": -0.078574,
     "price_check": true
    },
    {
@@ -2172,8 +2182,8 @@
     "value_score": null,
     "p_s": 5.386913,
     "start_price": 0.032991,
-    "end_price": 0.029271,
-    "return": -0.112752,
+    "end_price": 0.029684,
+    "return": -0.10023,
     "price_check": true
    },
    {
@@ -2186,8 +2196,8 @@
     "value_score": null,
     "p_s": 5.82426,
     "start_price": 0.083786,
-    "end_price": 0.078049,
-    "return": -0.06847,
+    "end_price": 0.075125,
+    "return": -0.103376,
     "price_check": true
    },
    {
@@ -2200,8 +2210,8 @@
     "value_score": null,
     "p_s": 6.712827,
     "start_price": 0.008045,
-    "end_price": 0.006397,
-    "return": -0.204828,
+    "end_price": 0.007178,
+    "return": -0.107782,
     "price_check": true
    },
    {
@@ -2214,8 +2224,8 @@
     "value_score": null,
     "p_s": 8.438307,
     "start_price": 0.040103,
-    "end_price": 0.034704,
-    "return": -0.134646,
+    "end_price": 0.0384,
+    "return": -0.042477,
     "price_check": true
    },
    {
@@ -2228,8 +2238,8 @@
     "value_score": null,
     "p_s": 11.089221,
     "start_price": 0.002484,
-    "end_price": 0.002219,
-    "return": -0.106692,
+    "end_price": 0.00236,
+    "return": -0.049895,
     "price_check": true
    },
    {
@@ -2242,8 +2252,8 @@
     "value_score": null,
     "p_s": 11.712753,
     "start_price": 0.115727,
-    "end_price": 0.115158,
-    "return": -0.004916,
+    "end_price": 0.115066,
+    "return": -0.005714,
     "price_check": true
    },
    {
@@ -2256,8 +2266,8 @@
     "value_score": null,
     "p_s": 12.319267,
     "start_price": 0.001505,
-    "end_price": 0.00138,
-    "return": -0.083076,
+    "end_price": 0.001392,
+    "return": -0.074863,
     "price_check": true
    },
    {
@@ -2270,8 +2280,8 @@
     "value_score": null,
     "p_s": 12.664183,
     "start_price": 0.034289,
-    "end_price": 0.029461,
-    "return": -0.140793,
+    "end_price": 0.030176,
+    "return": -0.119945,
     "price_check": true
    },
    {
@@ -2284,8 +2294,8 @@
     "value_score": null,
     "p_s": 15.643589,
     "start_price": 0.020162,
-    "end_price": 0.02315,
-    "return": 0.148169,
+    "end_price": 0.017783,
+    "return": -0.117993,
     "price_check": true
    },
    {
@@ -2298,8 +2308,8 @@
     "value_score": null,
     "p_s": 16.734488,
     "start_price": 0.003915,
-    "end_price": 0.003407,
-    "return": -0.129877,
+    "end_price": 0.003436,
+    "return": -0.122401,
     "price_check": true
    },
    {
@@ -2312,8 +2322,8 @@
     "value_score": null,
     "p_s": 21.956502,
     "start_price": 0.01131,
-    "end_price": 0.009793,
-    "return": -0.134144,
+    "end_price": 0.009629,
+    "return": -0.148647,
     "price_check": true
    },
    {
@@ -2340,8 +2350,8 @@
     "value_score": null,
     "p_s": null,
     "start_price": 0.250921,
-    "end_price": 0.229746,
-    "return": -0.084391,
+    "end_price": 0.235106,
+    "return": -0.063028,
     "price_check": true
    },
    {
@@ -2354,8 +2364,2307 @@
     "value_score": null,
     "p_s": null,
     "start_price": 0.000114,
-    "end_price": 0.000103,
-    "return": -0.100529,
+    "end_price": 0.000105,
+    "return": -0.079496,
+    "price_check": true
+   },
+   {
+    "slug": "paycash",
+    "symbol": null,
+    "name": "PayCash",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": null,
+    "start_price": null,
+    "end_price": null,
+    "return": null,
+    "price_check": true
+   }
+  ]
+ },
+ {
+  "scored_at": "2026-11-16T22:54:50Z",
+  "as_of": "2026-11-16T23:55:03Z",
+  "days": 0.0,
+  "tokens": 153,
+  "priced": 151,
+  "unpriced": [
+   "XAI",
+   "paycash"
+  ],
+  "price_mismatch": [],
+  "benchmarks": {
+   "BTC": -0.007862042695654936,
+   "ETH": -0.005091632264028756,
+   "All tokens (equal weight)": -0.0030625634315129564,
+   "Rated tokens (equal weight)": -0.002510814304684125
+  },
+  "rank_correlation": 0.050572736238224114,
+  "labels": [
+   {
+    "group": "Value candidate",
+    "tokens": 20,
+    "priced": 20,
+    "avg_return": -0.003334,
+    "median_return": -0.002959,
+    "vs_basket": -0.000272,
+    "pct_up": 0.1,
+    "beat_basket": 0.5,
+    "best": "FLIP +0%",
+    "worst": "AERO -1%"
+   },
+   {
+    "group": "Value trap risk",
+    "tokens": 4,
+    "priced": 4,
+    "avg_return": -0.005635,
+    "median_return": -0.006797,
+    "vs_basket": -0.002573,
+    "pct_up": 0.25,
+    "beat_basket": 0.25,
+    "best": "USUAL +1%",
+    "worst": "ANSEM -2%"
+   },
+   {
+    "group": "Good, priced in",
+    "tokens": 16,
+    "priced": 16,
+    "avg_return": -9e-05,
+    "median_return": -0.002179,
+    "vs_basket": 0.002973,
+    "pct_up": 0.25,
+    "beat_basket": 0.5,
+    "best": "LIT +4%",
+    "worst": "STG -1%"
+   },
+   {
+    "group": "Mixed",
+    "tokens": 26,
+    "priced": 26,
+    "avg_return": -0.001791,
+    "median_return": -0.000849,
+    "vs_basket": 0.001271,
+    "pct_up": 0.346154,
+    "beat_basket": 0.692308,
+    "best": "ETHFI +0%",
+    "worst": "TREE -2%"
+   },
+   {
+    "group": "Avoid",
+    "tokens": 28,
+    "priced": 28,
+    "avg_return": -0.003528,
+    "median_return": -0.004497,
+    "vs_basket": -0.000465,
+    "pct_up": 0.25,
+    "beat_basket": 0.392857,
+    "best": "SANC +2%",
+    "worst": "KMNO -1%"
+   },
+   {
+    "group": "Unrated",
+    "tokens": 59,
+    "priced": 57,
+    "avg_return": -0.003972,
+    "median_return": -0.002313,
+    "vs_basket": -0.00091,
+    "pct_up": 0.175439,
+    "beat_basket": 0.561404,
+    "best": "STONK +1%",
+    "worst": "MASK -3%"
+   }
+  ],
+  "buckets": [
+   {
+    "group": "Top 20%",
+    "tokens": 19,
+    "priced": 19,
+    "avg_return": -0.00306,
+    "median_return": -0.002831,
+    "vs_basket": 3e-06,
+    "pct_up": 0.157895,
+    "beat_basket": 0.526316,
+    "best": "UNI +0%",
+    "worst": "STG -1%"
+   },
+   {
+    "group": "20-40%",
+    "tokens": 19,
+    "priced": 19,
+    "avg_return": -0.002213,
+    "median_return": -0.003363,
+    "vs_basket": 0.00085,
+    "pct_up": 0.263158,
+    "beat_basket": 0.473684,
+    "best": "LIT +4%",
+    "worst": "ANSEM -2%"
+   },
+   {
+    "group": "40-60%",
+    "tokens": 18,
+    "priced": 18,
+    "avg_return": -0.001214,
+    "median_return": -0.001511,
+    "vs_basket": 0.001848,
+    "pct_up": 0.333333,
+    "beat_basket": 0.555556,
+    "best": "USUAL +1%",
+    "worst": "CFG -1%"
+   },
+   {
+    "group": "60-80%",
+    "tokens": 19,
+    "priced": 19,
+    "avg_return": -0.001621,
+    "median_return": -0.001909,
+    "vs_basket": 0.001441,
+    "pct_up": 0.263158,
+    "beat_basket": 0.631579,
+    "best": "SANC +2%",
+    "worst": "QI -1%"
+   },
+   {
+    "group": "Bottom 20%",
+    "tokens": 19,
+    "priced": 19,
+    "avg_return": -0.004378,
+    "median_return": -0.004948,
+    "vs_basket": -0.001315,
+    "pct_up": 0.210526,
+    "beat_basket": 0.368421,
+    "best": "ZRO +1%",
+    "worst": "KMNO -1%"
+   }
+  ],
+  "tokens_detail": [
+   {
+    "slug": "gmx",
+    "symbol": "GMX",
+    "name": "GMX",
+    "category": "Derivatives",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 87.072655,
+    "p_s": 2.159795,
+    "start_price": 7.46535,
+    "end_price": 7.465061,
+    "return": -3.9e-05,
+    "price_check": true
+   },
+   {
+    "slug": "bonk.fun",
+    "symbol": "BONK",
+    "name": "BONK.fun",
+    "category": "Launchpad",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 82.086574,
+    "p_s": 6.32561,
+    "start_price": 2e-06,
+    "end_price": 2e-06,
+    "return": -0.003326,
+    "price_check": true
+   },
+   {
+    "slug": "pump",
+    "symbol": "PUMP",
+    "name": "Pump",
+    "category": "Launchpad",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 77.906573,
+    "p_s": 1.998134,
+    "start_price": 0.00286,
+    "end_price": 0.002838,
+    "return": -0.007939,
+    "price_check": true
+   },
+   {
+    "slug": "marinade",
+    "symbol": "MNDE",
+    "name": "Marinade",
+    "category": "Staking Pool",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 76.059756,
+    "p_s": 2.305948,
+    "start_price": 0.019694,
+    "end_price": 0.019639,
+    "return": -0.002831,
+    "price_check": true
+   },
+   {
+    "slug": "pancakeswap",
+    "symbol": "CAKE",
+    "name": "PancakeSwap",
+    "category": "Dexs",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 73.379075,
+    "p_s": 7.794729,
+    "start_price": 1.620257,
+    "end_price": 1.619711,
+    "return": -0.000337,
+    "price_check": true
+   },
+   {
+    "slug": "uniswap",
+    "symbol": "UNI",
+    "name": "Uniswap",
+    "category": "Dexs",
+    "verdict": "Good, priced in",
+    "score_bucket": "Top 20%",
+    "value_score": 72.787305,
+    "p_s": 23.118911,
+    "start_price": 5.142392,
+    "end_price": 5.1594,
+    "return": 0.003307,
+    "price_check": true
+   },
+   {
+    "slug": "ore-protocol",
+    "symbol": "ORE",
+    "name": "ORE Protocol",
+    "category": "Gamified Mining",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 72.136566,
+    "p_s": 1.066172,
+    "start_price": 84.121356,
+    "end_price": 83.910731,
+    "return": -0.002504,
+    "price_check": true
+   },
+   {
+    "slug": "orca",
+    "symbol": "ORCA",
+    "name": "Orca",
+    "category": "Dexs",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 70.841515,
+    "p_s": 5.745489,
+    "start_price": 1.184347,
+    "end_price": 1.175,
+    "return": -0.007892,
+    "price_check": true
+   },
+   {
+    "slug": "raydium",
+    "symbol": "RAY",
+    "name": "Raydium",
+    "category": "Dexs",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 70.828286,
+    "p_s": 7.948967,
+    "start_price": 1.397406,
+    "end_price": 1.393092,
+    "return": -0.003087,
+    "price_check": true
+   },
+   {
+    "slug": "trust-wallet",
+    "symbol": "TWT",
+    "name": "Trust Wallet",
+    "category": "Interface",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 70.367631,
+    "p_s": 5.879581,
+    "start_price": 0.358531,
+    "end_price": 0.357865,
+    "return": -0.001856,
+    "price_check": true
+   },
+   {
+    "slug": "chainflip",
+    "symbol": "FLIP",
+    "name": "Chainflip",
+    "category": "Dexs",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 69.985922,
+    "p_s": 8.211606,
+    "start_price": 0.470253,
+    "end_price": 0.47083,
+    "return": 0.001228,
+    "price_check": true
+   },
+   {
+    "slug": "thorchain-dex",
+    "symbol": "RUNE",
+    "name": "THORChain DEX",
+    "category": "Dexs",
+    "verdict": "Good, priced in",
+    "score_bucket": "Top 20%",
+    "value_score": 69.579243,
+    "p_s": 17.965822,
+    "start_price": 0.519079,
+    "end_price": 0.51579,
+    "return": -0.006337,
+    "price_check": true
+   },
+   {
+    "slug": "ssv-network",
+    "symbol": "SSV",
+    "name": "SSV Network",
+    "category": "Staking Pool",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 69.117366,
+    "p_s": 7.99841,
+    "start_price": 1.875829,
+    "end_price": 1.867514,
+    "return": -0.004433,
+    "price_check": true
+   },
+   {
+    "slug": "near-protocol",
+    "symbol": "NEAR",
+    "name": "NEAR Protocol",
+    "category": "Bridge",
+    "verdict": "Good, priced in",
+    "score_bucket": "Top 20%",
+    "value_score": 68.665795,
+    "p_s": 184.887964,
+    "start_price": 3.168421,
+    "end_price": 3.158487,
+    "return": -0.003135,
+    "price_check": true
+   },
+   {
+    "slug": "venus",
+    "symbol": "XVS",
+    "name": "Venus",
+    "category": "Lending",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 66.843257,
+    "p_s": 6.897372,
+    "start_price": 2.346118,
+    "end_price": 2.340375,
+    "return": -0.002448,
+    "price_check": true
+   },
+   {
+    "slug": "sky",
+    "symbol": "SKY",
+    "name": "Sky",
+    "category": "CDP",
+    "verdict": "Mixed",
+    "score_bucket": "Top 20%",
+    "value_score": 66.431956,
+    "p_s": 7.279372,
+    "start_price": 0.050985,
+    "end_price": 0.051064,
+    "return": 0.001565,
+    "price_check": true
+   },
+   {
+    "slug": "maple-finance",
+    "symbol": "SYRUP",
+    "name": "Maple Finance",
+    "category": "Lending",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 66.035637,
+    "p_s": 7.738945,
+    "start_price": 0.108104,
+    "end_price": 0.10805,
+    "return": -0.000503,
+    "price_check": true
+   },
+   {
+    "slug": "stargate-finance",
+    "symbol": "STG",
+    "name": "Stargate Finance",
+    "category": "Cross Chain Bridge",
+    "verdict": "Good, priced in",
+    "score_bucket": "Top 20%",
+    "value_score": 65.631455,
+    "p_s": 2.84191,
+    "start_price": 0.125717,
+    "end_price": 0.124581,
+    "return": -0.009035,
+    "price_check": true
+   },
+   {
+    "slug": "aero",
+    "symbol": "AERO",
+    "name": "Aero",
+    "category": "Dexs",
+    "verdict": "Value candidate",
+    "score_bucket": "Top 20%",
+    "value_score": 65.083567,
+    "p_s": 7.542239,
+    "start_price": 0.437979,
+    "end_price": 0.434243,
+    "return": -0.00853,
+    "price_check": true
+   },
+   {
+    "slug": "spark",
+    "symbol": "SPK",
+    "name": "Spark",
+    "category": "Lending",
+    "verdict": "Value candidate",
+    "score_bucket": "20-40%",
+    "value_score": 63.613041,
+    "p_s": 5.270801,
+    "start_price": 0.013868,
+    "end_price": 0.013821,
+    "return": -0.003363,
+    "price_check": true
+   },
+   {
+    "slug": "bankr",
+    "symbol": "BNKR",
+    "name": "Bankr",
+    "category": "Interface",
+    "verdict": "Mixed",
+    "score_bucket": "20-40%",
+    "value_score": 63.389169,
+    "p_s": 1.898503,
+    "start_price": 0.000226,
+    "end_price": 0.000226,
+    "return": 9.5e-05,
+    "price_check": true
+   },
+   {
+    "slug": "render-network-bme",
+    "symbol": "RENDER",
+    "name": "Render Network BME",
+    "category": "DePIN",
+    "verdict": "Good, priced in",
+    "score_bucket": "20-40%",
+    "value_score": 63.117855,
+    "p_s": 153.960349,
+    "start_price": 1.377173,
+    "end_price": 1.375905,
+    "return": -0.000921,
+    "price_check": true
+   },
+   {
+    "slug": "definitive",
+    "symbol": "EDGE",
+    "name": "Definitive",
+    "category": "DEX Aggregator",
+    "verdict": "Value candidate",
+    "score_bucket": "20-40%",
+    "value_score": 62.623146,
+    "p_s": 3.677614,
+    "start_price": 0.073158,
+    "end_price": 0.073068,
+    "return": -0.001233,
+    "price_check": true
+   },
+   {
+    "slug": "venice",
+    "symbol": "VVV",
+    "name": "Venice",
+    "category": "Farm",
+    "verdict": "Good, priced in",
+    "score_bucket": "20-40%",
+    "value_score": 62.337169,
+    "p_s": 85.547776,
+    "start_price": 20.400116,
+    "end_price": 20.2291,
+    "return": -0.008383,
+    "price_check": true
+   },
+   {
+    "slug": "tornado-cash",
+    "symbol": "TORN",
+    "name": "Tornado Cash",
+    "category": "Privacy",
+    "verdict": "Value candidate",
+    "score_bucket": "20-40%",
+    "value_score": 62.063411,
+    "p_s": 5.628633,
+    "start_price": 4.456401,
+    "end_price": 4.426568,
+    "return": -0.006695,
+    "price_check": true
+   },
+   {
+    "slug": "hyperliquid",
+    "symbol": "HYPE",
+    "name": "Hyperliquid",
+    "category": "Derivatives",
+    "verdict": "Good, priced in",
+    "score_bucket": "20-40%",
+    "value_score": 61.586234,
+    "p_s": 18.190828,
+    "start_price": 69.780107,
+    "end_price": 69.887395,
+    "return": 0.001538,
+    "price_check": true
+   },
+   {
+    "slug": "meteora",
+    "symbol": "MET",
+    "name": "Meteora",
+    "category": "Dexs",
+    "verdict": "Value candidate",
+    "score_bucket": "20-40%",
+    "value_score": 60.987027,
+    "p_s": 2.868087,
+    "start_price": 0.268781,
+    "end_price": 0.266773,
+    "return": -0.00747,
+    "price_check": true
+   },
+   {
+    "slug": "convex-finance",
+    "symbol": "CVX",
+    "name": "Convex Finance",
+    "category": "Yield",
+    "verdict": "Mixed",
+    "score_bucket": "20-40%",
+    "value_score": 60.937991,
+    "p_s": 12.214646,
+    "start_price": 1.421234,
+    "end_price": 1.413725,
+    "return": -0.005283,
+    "price_check": true
+   },
+   {
+    "slug": "lista-dao",
+    "symbol": "LISTA",
+    "name": "Lista DAO",
+    "category": "CDP",
+    "verdict": "Value candidate",
+    "score_bucket": "20-40%",
+    "value_score": 60.579126,
+    "p_s": 4.97471,
+    "start_price": 0.068469,
+    "end_price": 0.068476,
+    "return": 9.5e-05,
+    "price_check": true
+   },
+   {
+    "slug": "lido",
+    "symbol": "LDO",
+    "name": "Lido",
+    "category": "Liquid Staking",
+    "verdict": "Mixed",
+    "score_bucket": "20-40%",
+    "value_score": 60.060989,
+    "p_s": 6.515326,
+    "start_price": 0.276827,
+    "end_price": 0.277179,
+    "return": 0.001274,
+    "price_check": true
+   },
+   {
+    "slug": "jupiter",
+    "symbol": "JUP",
+    "name": "Jupiter",
+    "category": "Derivatives",
+    "verdict": "Good, priced in",
+    "score_bucket": "20-40%",
+    "value_score": 59.033905,
+    "p_s": 8.335309,
+    "start_price": 0.24284,
+    "end_price": 0.241008,
+    "return": -0.007543,
+    "price_check": true
+   },
+   {
+    "slug": "geodnet",
+    "symbol": "GEOD",
+    "name": "Geodnet",
+    "category": "Oracle",
+    "verdict": "Value candidate",
+    "score_bucket": "20-40%",
+    "value_score": 58.000818,
+    "p_s": 13.559326,
+    "start_price": 0.201108,
+    "end_price": 0.2004,
+    "return": -0.003521,
+    "price_check": true
+   },
+   {
+    "slug": "o1.exchange",
+    "symbol": "O",
+    "name": "o1.exchange",
+    "category": "Launchpad",
+    "verdict": "Good, priced in",
+    "score_bucket": "20-40%",
+    "value_score": 57.559607,
+    "p_s": 5.192028,
+    "start_price": 0.550306,
+    "end_price": 0.547497,
+    "return": -0.005104,
+    "price_check": true
+   },
+   {
+    "slug": "lighter",
+    "symbol": "LIT",
+    "name": "Lighter",
+    "category": "Derivatives",
+    "verdict": "Good, priced in",
+    "score_bucket": "20-40%",
+    "value_score": 57.39327,
+    "p_s": 11.927896,
+    "start_price": 2.874854,
+    "end_price": 2.992609,
+    "return": 0.04096,
+    "price_check": true
+   },
+   {
+    "slug": "ansem.io",
+    "symbol": "ANSEM",
+    "name": "Ansem.io",
+    "category": "Launchpad",
+    "verdict": "Value trap risk",
+    "score_bucket": "20-40%",
+    "value_score": 56.418887,
+    "p_s": 3.977491,
+    "start_price": 0.047164,
+    "end_price": 0.046285,
+    "return": -0.018633,
+    "price_check": true
+   },
+   {
+    "slug": "tree-news",
+    "symbol": "TREE",
+    "name": "Tree News",
+    "category": "SoFi",
+    "verdict": "Mixed",
+    "score_bucket": "20-40%",
+    "value_score": 55.774629,
+    "p_s": 15.397693,
+    "start_price": 0.173291,
+    "end_price": 0.170529,
+    "return": -0.015937,
+    "price_check": true
+   },
+   {
+    "slug": "sun",
+    "symbol": "SUN",
+    "name": "SUN",
+    "category": "Dexs",
+    "verdict": "Good, priced in",
+    "score_bucket": "20-40%",
+    "value_score": 55.657168,
+    "p_s": 129.306592,
+    "start_price": 0.014777,
+    "end_price": 0.014759,
+    "return": -0.001223,
+    "price_check": true
+   },
+   {
+    "slug": "debridge",
+    "symbol": "DBR",
+    "name": "deBridge",
+    "category": "Bridge",
+    "verdict": "Mixed",
+    "score_bucket": "20-40%",
+    "value_score": 53.895778,
+    "p_s": 12.428079,
+    "start_price": 0.012689,
+    "end_price": 0.01268,
+    "return": -0.000692,
+    "price_check": true
+   },
+   {
+    "slug": "curve-finance",
+    "symbol": "CRV",
+    "name": "Curve Finance",
+    "category": "Dexs",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 53.65007,
+    "p_s": 21.547496,
+    "start_price": 0.206908,
+    "end_price": 0.205936,
+    "return": -0.004698,
+    "price_check": true
+   },
+   {
+    "slug": "railgun",
+    "symbol": "RAIL",
+    "name": "Railgun",
+    "category": "Privacy",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 53.254388,
+    "p_s": 22.087652,
+    "start_price": 1.64118,
+    "end_price": 1.635054,
+    "return": -0.003733,
+    "price_check": true
+   },
+   {
+    "slug": "chainlink",
+    "symbol": "LINK",
+    "name": "Chainlink",
+    "category": "Services",
+    "verdict": "Good, priced in",
+    "score_bucket": "40-60%",
+    "value_score": 52.053742,
+    "p_s": 122.84164,
+    "start_price": 9.158905,
+    "end_price": 9.123,
+    "return": -0.00392,
+    "price_check": true
+   },
+   {
+    "slug": "compound-finance",
+    "symbol": "COMP",
+    "name": "Compound Finance",
+    "category": "Lending",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 51.328573,
+    "p_s": 41.864237,
+    "start_price": 17.859091,
+    "end_price": 17.792917,
+    "return": -0.003705,
+    "price_check": true
+   },
+   {
+    "slug": "arbitrum-foundation",
+    "symbol": "ARB",
+    "name": "Arbitrum Foundation",
+    "category": "Foundation",
+    "verdict": "Good, priced in",
+    "score_bucket": "40-60%",
+    "value_score": 51.127385,
+    "p_s": 57.976863,
+    "start_price": 0.130524,
+    "end_price": 0.131076,
+    "return": 0.004229,
+    "price_check": true
+   },
+   {
+    "slug": "usual",
+    "symbol": "USUAL",
+    "name": "Usual",
+    "category": "RWA",
+    "verdict": "Value trap risk",
+    "score_bucket": "40-60%",
+    "value_score": 51.127067,
+    "p_s": 4.336803,
+    "start_price": 0.009846,
+    "end_price": 0.009942,
+    "return": 0.009685,
+    "price_check": true
+   },
+   {
+    "slug": "kyberswap",
+    "symbol": "KNC",
+    "name": "KyberSwap",
+    "category": "DEX Aggregator",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 51.012899,
+    "p_s": 2.691,
+    "start_price": 0.096214,
+    "end_price": 0.096233,
+    "return": 0.000199,
+    "price_check": true
+   },
+   {
+    "slug": "sosovalue",
+    "symbol": "SOSO",
+    "name": "SoSoValue",
+    "category": "Indexes",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 50.793436,
+    "p_s": 3.721274,
+    "start_price": 0.287372,
+    "end_price": 0.288035,
+    "return": 0.002309,
+    "price_check": true
+   },
+   {
+    "slug": "dolomite",
+    "symbol": "DOLO",
+    "name": "Dolomite",
+    "category": "Lending",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 50.6934,
+    "p_s": 2.965063,
+    "start_price": 0.019643,
+    "end_price": 0.019623,
+    "return": -0.001005,
+    "price_check": true
+   },
+   {
+    "slug": "dydx",
+    "symbol": "DYDX",
+    "name": "dYdX",
+    "category": "Derivatives",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 50.644046,
+    "p_s": 20.383782,
+    "start_price": 0.080299,
+    "end_price": 0.079981,
+    "return": -0.003966,
+    "price_check": true
+   },
+   {
+    "slug": "solv-protocol",
+    "symbol": "SOLV",
+    "name": "Solv Protocol",
+    "category": "Bridge",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 50.425486,
+    "p_s": 1.786687,
+    "start_price": 0.004496,
+    "end_price": 0.004487,
+    "return": -0.002016,
+    "price_check": true
+   },
+   {
+    "slug": "ether.fi",
+    "symbol": "ETHFI",
+    "name": "ether.fi",
+    "category": "Liquid Staking",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 50.045476,
+    "p_s": 10.131791,
+    "start_price": 0.466484,
+    "end_price": 0.468727,
+    "return": 0.004807,
+    "price_check": true
+   },
+   {
+    "slug": "cowswap",
+    "symbol": "COW",
+    "name": "CoWSwap",
+    "category": "DEX Aggregator",
+    "verdict": "Mixed",
+    "score_bucket": "40-60%",
+    "value_score": 49.305219,
+    "p_s": 3.139595,
+    "start_price": 0.092118,
+    "end_price": 0.091727,
+    "return": -0.004244,
+    "price_check": true
+   },
+   {
+    "slug": "pyth",
+    "symbol": "PYTH",
+    "name": "Pyth",
+    "category": "Oracle",
+    "verdict": "Good, priced in",
+    "score_bucket": "40-60%",
+    "value_score": 48.862096,
+    "p_s": 63.139173,
+    "start_price": 0.052413,
+    "end_price": 0.052404,
+    "return": -0.000175,
+    "price_check": true
+   },
+   {
+    "slug": "derive",
+    "symbol": "DRV",
+    "name": "Derive",
+    "category": "Options",
+    "verdict": "Good, priced in",
+    "score_bucket": "40-60%",
+    "value_score": 47.832887,
+    "p_s": 47.664102,
+    "start_price": 0.28728,
+    "end_price": 0.285645,
+    "return": -0.005691,
+    "price_check": true
+   },
+   {
+    "slug": "centrifuge",
+    "symbol": "CFG",
+    "name": "Centrifuge",
+    "category": "RWA",
+    "verdict": "Avoid",
+    "score_bucket": "40-60%",
+    "value_score": 47.583886,
+    "p_s": 6.136834,
+    "start_price": 0.072081,
+    "end_price": 0.071361,
+    "return": -0.009987,
+    "price_check": true
+   },
+   {
+    "slug": "securitize",
+    "symbol": "SECZ",
+    "name": "Securitize",
+    "category": "RWA",
+    "verdict": "Good, priced in",
+    "score_bucket": "40-60%",
+    "value_score": 47.581814,
+    "p_s": 1.104515,
+    "start_price": 7.33,
+    "end_price": 7.33,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "tokenlon",
+    "symbol": "LON",
+    "name": "Tokenlon",
+    "category": "Dexs",
+    "verdict": "Avoid",
+    "score_bucket": "40-60%",
+    "value_score": 47.527254,
+    "p_s": 5.282078,
+    "start_price": 0.163281,
+    "end_price": 0.163289,
+    "return": 5.2e-05,
+    "price_check": true
+   },
+   {
+    "slug": "veranta",
+    "symbol": "AVNT",
+    "name": "Veranta",
+    "category": "Derivatives",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 47.44443,
+    "p_s": 7.617967,
+    "start_price": 0.074364,
+    "end_price": 0.07389,
+    "return": -0.006371,
+    "price_check": true
+   },
+   {
+    "slug": "benqi",
+    "symbol": "QI",
+    "name": "Benqi",
+    "category": "Liquid Staking",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 46.981332,
+    "p_s": 7.53898,
+    "start_price": 0.001572,
+    "end_price": 0.001554,
+    "return": -0.011129,
+    "price_check": true
+   },
+   {
+    "slug": "world-liberty-financial",
+    "symbol": "WLFI",
+    "name": "World Liberty Financial",
+    "category": "Lending",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 46.351258,
+    "p_s": 10.645509,
+    "start_price": 0.045691,
+    "end_price": 0.045733,
+    "return": 0.000937,
+    "price_check": true
+   },
+   {
+    "slug": "kinetiq",
+    "symbol": "KNTQ",
+    "name": "Kinetiq",
+    "category": "Liquid Staking",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 46.215787,
+    "p_s": 18.147927,
+    "start_price": 0.224945,
+    "end_price": 0.224827,
+    "return": -0.000522,
+    "price_check": true
+   },
+   {
+    "slug": "apex-protocol",
+    "symbol": "APEX",
+    "name": "ApeX Protocol",
+    "category": "Derivatives",
+    "verdict": "Value trap risk",
+    "score_bucket": "60-80%",
+    "value_score": 44.858473,
+    "p_s": 9.020963,
+    "start_price": 0.136001,
+    "end_price": 0.135268,
+    "return": -0.005384,
+    "price_check": true
+   },
+   {
+    "slug": "edgex",
+    "symbol": "EDGE",
+    "name": "edgeX",
+    "category": "Derivatives",
+    "verdict": "Value trap risk",
+    "score_bucket": "60-80%",
+    "value_score": 44.641666,
+    "p_s": 3.267949,
+    "start_price": 0.280402,
+    "end_price": 0.2781,
+    "return": -0.00821,
+    "price_check": true
+   },
+   {
+    "slug": "sushi",
+    "symbol": "SUSHI",
+    "name": "Sushi",
+    "category": "DEX Aggregator",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 44.597465,
+    "p_s": 12.124526,
+    "start_price": 0.154462,
+    "end_price": 0.153878,
+    "return": -0.003786,
+    "price_check": true
+   },
+   {
+    "slug": "fluid",
+    "symbol": "FLUID",
+    "name": "Fluid",
+    "category": "Lending",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 43.386353,
+    "p_s": 17.522062,
+    "start_price": 1.769074,
+    "end_price": 1.765697,
+    "return": -0.001909,
+    "price_check": true
+   },
+   {
+    "slug": "aave",
+    "symbol": "AAVE",
+    "name": "Aave",
+    "category": "Lending",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 43.276064,
+    "p_s": 26.581075,
+    "start_price": 108.071746,
+    "end_price": 108.238882,
+    "return": 0.001547,
+    "price_check": true
+   },
+   {
+    "slug": "pulsex",
+    "symbol": "PLSX",
+    "name": "PulseX",
+    "category": "Dexs",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 43.167155,
+    "p_s": 174.754003,
+    "start_price": 3e-06,
+    "end_price": 3e-06,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "nexus-mutual",
+    "symbol": "NXM",
+    "name": "Nexus Mutual",
+    "category": "Insurance",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 43.147605,
+    "p_s": 93.857698,
+    "start_price": 50.155895,
+    "end_price": 50.019914,
+    "return": -0.002711,
+    "price_check": true
+   },
+   {
+    "slug": "metaplex",
+    "symbol": "MPLX",
+    "name": "Metaplex",
+    "category": "Launchpad",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 42.761858,
+    "p_s": 12.537055,
+    "start_price": 0.063943,
+    "end_price": 0.06353,
+    "return": -0.006455,
+    "price_check": true
+   },
+   {
+    "slug": "aethir",
+    "symbol": "ATH",
+    "name": "Aethir",
+    "category": "Developer Tools",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 42.609864,
+    "p_s": 7.406869,
+    "start_price": 0.004107,
+    "end_price": 0.00411,
+    "return": 0.000769,
+    "price_check": true
+   },
+   {
+    "slug": "cetus",
+    "symbol": "CETUS",
+    "name": "Cetus",
+    "category": "Dexs",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 41.550533,
+    "p_s": 10.253878,
+    "start_price": 0.016193,
+    "end_price": 0.016167,
+    "return": -0.001604,
+    "price_check": true
+   },
+   {
+    "slug": "rhea-finance",
+    "symbol": "RHEA",
+    "name": "Rhea Finance",
+    "category": "Lending",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 41.181627,
+    "p_s": 5.878321,
+    "start_price": 0.032662,
+    "end_price": 0.032586,
+    "return": -0.002347,
+    "price_check": true
+   },
+   {
+    "slug": "jito",
+    "symbol": "JTO",
+    "name": "Jito",
+    "category": "DAO Service Provider",
+    "verdict": "Mixed",
+    "score_bucket": "60-80%",
+    "value_score": 40.468783,
+    "p_s": 20.063377,
+    "start_price": 0.264764,
+    "end_price": 0.264589,
+    "return": -0.00066,
+    "price_check": true
+   },
+   {
+    "slug": "pendle",
+    "symbol": "PENDLE",
+    "name": "Pendle",
+    "category": "Yield",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 39.849547,
+    "p_s": 37.935144,
+    "start_price": 1.441666,
+    "end_price": 1.435858,
+    "return": -0.004029,
+    "price_check": true
+   },
+   {
+    "slug": "sanctum",
+    "symbol": "SANC",
+    "name": "Sanctum",
+    "category": "Liquid Staking",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 38.09942,
+    "p_s": 9.515902,
+    "start_price": 0.066639,
+    "end_price": 0.06802,
+    "return": 0.020727,
+    "price_check": true
+   },
+   {
+    "slug": "synfutures",
+    "symbol": "F",
+    "name": "SynFutures",
+    "category": "Derivatives",
+    "verdict": "Avoid",
+    "score_bucket": "60-80%",
+    "value_score": 38.001296,
+    "p_s": 3.883206,
+    "start_price": 0.002112,
+    "end_price": 0.002113,
+    "return": 0.000332,
+    "price_check": true
+   },
+   {
+    "slug": "flying-tulip",
+    "symbol": "FT",
+    "name": "Flying Tulip",
+    "category": "Services",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 37.226401,
+    "p_s": 29.735088,
+    "start_price": 0.099608,
+    "end_price": 0.09961,
+    "return": 2.5e-05,
+    "price_check": true
+   },
+   {
+    "slug": "sui-foundation",
+    "symbol": "SUI",
+    "name": "Sui Foundation",
+    "category": "Canonical Bridge",
+    "verdict": "Mixed",
+    "score_bucket": "Bottom 20%",
+    "value_score": 36.601269,
+    "p_s": 991.996383,
+    "start_price": 0.720983,
+    "end_price": 0.718828,
+    "return": -0.002988,
+    "price_check": true
+   },
+   {
+    "slug": "metadao",
+    "symbol": "META",
+    "name": "MetaDao",
+    "category": "Dexs",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 34.632369,
+    "p_s": 42.465303,
+    "start_price": 3.085178,
+    "end_price": 3.070734,
+    "return": -0.004682,
+    "price_check": true
+   },
+   {
+    "slug": "yield-basis",
+    "symbol": "YB",
+    "name": "Yield Basis",
+    "category": "Leveraged Farming",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 33.255451,
+    "p_s": 16.552595,
+    "start_price": 0.043072,
+    "end_price": 0.042886,
+    "return": -0.004313,
+    "price_check": true
+   },
+   {
+    "slug": "olympus-dao",
+    "symbol": "OHM",
+    "name": "Olympus DAO",
+    "category": "Reserve Currency",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 31.343077,
+    "p_s": 128.50268,
+    "start_price": 15.640705,
+    "end_price": 15.556081,
+    "return": -0.00541,
+    "price_check": true
+   },
+   {
+    "slug": "axie-infinity",
+    "symbol": "AXS",
+    "name": "Axie Infinity",
+    "category": "Gaming",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 29.4842,
+    "p_s": 85.217572,
+    "start_price": 0.678488,
+    "end_price": 0.674932,
+    "return": -0.005242,
+    "price_check": true
+   },
+   {
+    "slug": "kamino",
+    "symbol": "KMNO",
+    "name": "Kamino",
+    "category": "Lending",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 28.837923,
+    "p_s": 21.551159,
+    "start_price": 0.027486,
+    "end_price": 0.02713,
+    "return": -0.012935,
+    "price_check": true
+   },
+   {
+    "slug": "usd-ai",
+    "symbol": "CHIP",
+    "name": "USD AI",
+    "category": "RWA",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 27.400761,
+    "p_s": 15.387038,
+    "start_price": 0.027706,
+    "end_price": 0.027408,
+    "return": -0.010753,
+    "price_check": true
+   },
+   {
+    "slug": "ens",
+    "symbol": "ENS",
+    "name": "ENS",
+    "category": "Domains",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 26.564346,
+    "p_s": 51.447749,
+    "start_price": 3.927501,
+    "end_price": 3.915884,
+    "return": -0.002958,
+    "price_check": true
+   },
+   {
+    "slug": "kerneldao",
+    "symbol": "KERNEL",
+    "name": "KernelDAO",
+    "category": "Liquid Restaking",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 26.466594,
+    "p_s": 8.641275,
+    "start_price": 0.038269,
+    "end_price": 0.03827,
+    "return": 9e-06,
+    "price_check": true
+   },
+   {
+    "slug": "euler",
+    "symbol": "EUL",
+    "name": "Euler",
+    "category": "Lending",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 24.502848,
+    "p_s": 107.918813,
+    "start_price": 0.826132,
+    "end_price": 0.819,
+    "return": -0.008633,
+    "price_check": true
+   },
+   {
+    "slug": "virtuals-protocol",
+    "symbol": "VIRTUAL",
+    "name": "Virtuals Protocol",
+    "category": "AI Agents",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 24.187067,
+    "p_s": 183.437601,
+    "start_price": 0.444404,
+    "end_price": 0.442048,
+    "return": -0.005301,
+    "price_check": true
+   },
+   {
+    "slug": "ston.fi",
+    "symbol": "STON",
+    "name": "STON.fi",
+    "category": "Dexs",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 23.177568,
+    "p_s": 39.51847,
+    "start_price": 0.412473,
+    "end_price": 0.407509,
+    "return": -0.012033,
+    "price_check": true
+   },
+   {
+    "slug": "optimism-foundation",
+    "symbol": "OP",
+    "name": "Optimism Foundation",
+    "category": "Services",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 21.653332,
+    "p_s": 101.940637,
+    "start_price": 0.079671,
+    "end_price": 0.079277,
+    "return": -0.004948,
+    "price_check": true
+   },
+   {
+    "slug": "chutes",
+    "symbol": "SN64",
+    "name": "Chutes",
+    "category": "Decentralized AI",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 21.324961,
+    "p_s": 70.332083,
+    "start_price": 11.710117,
+    "end_price": 11.756028,
+    "return": 0.003921,
+    "price_check": true
+   },
+   {
+    "slug": "renzo",
+    "symbol": "REZ",
+    "name": "Renzo",
+    "category": "Liquid Restaking",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 16.992647,
+    "p_s": 87.523951,
+    "start_price": 0.002799,
+    "end_price": 0.002784,
+    "return": -0.005435,
+    "price_check": true
+   },
+   {
+    "slug": "ethena",
+    "symbol": "ENA",
+    "name": "Ethena",
+    "category": "Basis Trading",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 14.926367,
+    "p_s": 3186.303487,
+    "start_price": 0.11535,
+    "end_price": 0.114564,
+    "return": -0.00681,
+    "price_check": true
+   },
+   {
+    "slug": "doublezero",
+    "symbol": "2Z",
+    "name": "DoubleZero",
+    "category": "Liquid Staking",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 11.866951,
+    "p_s": 334.947166,
+    "start_price": 0.01615,
+    "end_price": 0.016137,
+    "return": -0.000771,
+    "price_check": true
+   },
+   {
+    "slug": "layerzero",
+    "symbol": "ZRO",
+    "name": "LayerZero",
+    "category": "Bridge",
+    "verdict": "Avoid",
+    "score_bucket": "Bottom 20%",
+    "value_score": 10.246876,
+    "p_s": 750.448937,
+    "start_price": 1.453305,
+    "end_price": 1.462137,
+    "return": 0.006077,
+    "price_check": true
+   },
+   {
+    "slug": "godl-protocol",
+    "symbol": "GODL",
+    "name": "GODL protocol",
+    "category": "Gamified Mining",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.034294,
+    "start_price": 0.458443,
+    "end_price": 0.458443,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "pea",
+    "symbol": "BEAN",
+    "name": "PEA",
+    "category": "Gamified Mining",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.041273,
+    "start_price": 0.160518,
+    "end_price": 0.160518,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "stockereum",
+    "symbol": "STOCKER",
+    "name": "Stockereum",
+    "category": "Launchpad",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.086474,
+    "start_price": 0.000466,
+    "end_price": 0.000466,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "pharaoh-exchange",
+    "symbol": "PHAR",
+    "name": "Pharaoh Exchange",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.089609,
+    "start_price": 0.040693,
+    "end_price": 0.040128,
+    "return": -0.013887,
+    "price_check": true
+   },
+   {
+    "slug": "shroom",
+    "symbol": "SHROOM",
+    "name": "Shroom",
+    "category": "Liquidity Manager",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.100043,
+    "start_price": 0.000769,
+    "end_price": 0.000769,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "aark-digital",
+    "symbol": "AARK",
+    "name": "Aark Digital",
+    "category": "Derivatives",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.180905,
+    "start_price": 0.000688,
+    "end_price": 0.000688,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "hydrex",
+    "symbol": "HYDX",
+    "name": "Hydrex",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.18704,
+    "start_price": 0.019004,
+    "end_price": 0.019004,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "neverland",
+    "symbol": "DUST",
+    "name": "Neverland",
+    "category": "Lending",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.191678,
+    "start_price": 0.012153,
+    "end_price": 0.012153,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "stonkfun",
+    "symbol": "STONK",
+    "name": "StonkFun",
+    "category": "Launchpad",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.215834,
+    "start_price": 0.041643,
+    "end_price": 0.041968,
+    "return": 0.007809,
+    "price_check": true
+   },
+   {
+    "slug": "otc",
+    "symbol": "OTC",
+    "name": "OTC",
+    "category": "Launchpad",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.232857,
+    "start_price": 0.002798,
+    "end_price": 0.002799,
+    "return": 0.000563,
+    "price_check": true
+   },
+   {
+    "slug": "up",
+    "symbol": "UP",
+    "name": "up",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.255506,
+    "start_price": 0.107251,
+    "end_price": 0.10687,
+    "return": -0.003559,
+    "price_check": true
+   },
+   {
+    "slug": "ramsesx",
+    "symbol": "RAM",
+    "name": "RamsesX",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.357041,
+    "start_price": 0.020489,
+    "end_price": 0.020146,
+    "return": -0.016743,
+    "price_check": true
+   },
+   {
+    "slug": "zinc",
+    "symbol": "ZINC",
+    "name": "ZINC",
+    "category": "Gamified Mining",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.384582,
+    "start_price": 0.069194,
+    "end_price": 0.069194,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "graphite-protocol",
+    "symbol": "GP",
+    "name": "Graphite Protocol",
+    "category": "Launchpad",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.407461,
+    "start_price": 0.244114,
+    "end_price": 0.243746,
+    "return": -0.001509,
+    "price_check": true
+   },
+   {
+    "slug": "nest",
+    "symbol": "NEST",
+    "name": "nest",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.409551,
+    "start_price": 0.012195,
+    "end_price": 0.012171,
+    "return": -0.001936,
+    "price_check": true
+   },
+   {
+    "slug": "fake-world-assets",
+    "symbol": "FWA",
+    "name": "Fake World Assets",
+    "category": "Luck Games",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.473635,
+    "start_price": 0.00291,
+    "end_price": 0.002897,
+    "return": -0.004705,
+    "price_check": true
+   },
+   {
+    "slug": "streamflow",
+    "symbol": "STREAM",
+    "name": "Streamflow",
+    "category": "Payments",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.625605,
+    "start_price": 0.008181,
+    "end_price": 0.008192,
+    "return": 0.001305,
+    "price_check": true
+   },
+   {
+    "slug": "blackhole",
+    "symbol": "BLACK",
+    "name": "Blackhole",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.6323,
+    "start_price": 0.00211,
+    "end_price": 0.00211,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "pons",
+    "symbol": "PONS",
+    "name": "Pons",
+    "category": "Launchpad",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.644551,
+    "start_price": 0.119929,
+    "end_price": 0.118853,
+    "return": -0.008975,
+    "price_check": true
+   },
+   {
+    "slug": "stonkbrokers",
+    "symbol": "STONKBROKER",
+    "name": "StonkBrokers",
+    "category": "NftFi",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.810078,
+    "start_price": 0.003642,
+    "end_price": 0.003661,
+    "return": 0.005346,
+    "price_check": true
+   },
+   {
+    "slug": "nullmask",
+    "symbol": "MASK",
+    "name": "Nullmask",
+    "category": "Privacy",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.916184,
+    "start_price": 0.019587,
+    "end_price": 0.018966,
+    "return": -0.031717,
+    "price_check": true
+   },
+   {
+    "slug": "fx-protocol",
+    "symbol": "FXN",
+    "name": "fx Protocol",
+    "category": "Dual-Token Stablecoin",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.949421,
+    "start_price": 14.542718,
+    "end_price": 14.374159,
+    "return": -0.011591,
+    "price_check": true
+   },
+   {
+    "slug": "rainbow",
+    "symbol": "RNBW",
+    "name": "Rainbow",
+    "category": "Wallets",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.970157,
+    "start_price": 0.013469,
+    "end_price": 0.013437,
+    "return": -0.0024,
+    "price_check": true
+   },
+   {
+    "slug": "collector-crypt",
+    "symbol": "CARDS",
+    "name": "Collector Crypt",
+    "category": "Physical TCG",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 0.974021,
+    "start_price": 0.171577,
+    "end_price": 0.168066,
+    "return": -0.020462,
+    "price_check": true
+   },
+   {
+    "slug": "mamo",
+    "symbol": "MAMO",
+    "name": "Mamo",
+    "category": "Yield Aggregator",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.168024,
+    "start_price": 0.004814,
+    "end_price": 0.004816,
+    "return": 0.000378,
+    "price_check": true
+   },
+   {
+    "slug": "quickswap",
+    "symbol": "QUICK",
+    "name": "Quickswap",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.269417,
+    "start_price": 0.003185,
+    "end_price": 0.003182,
+    "return": -0.000769,
+    "price_check": true
+   },
+   {
+    "slug": "shadow-exchange",
+    "symbol": "SHADOW",
+    "name": "Shadow Exchange",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.333857,
+    "start_price": 0.707968,
+    "end_price": 0.706368,
+    "return": -0.00226,
+    "price_check": true
+   },
+   {
+    "slug": "meth-protocol",
+    "symbol": "COOK",
+    "name": "mETH Protocol",
+    "category": "Liquid Staking",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.377659,
+    "start_price": 0.0019,
+    "end_price": 0.001899,
+    "return": -0.000505,
+    "price_check": true
+   },
+   {
+    "slug": "sport.fun",
+    "symbol": "FUN",
+    "name": "Sport.fun",
+    "category": "Prediction Market",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.57088,
+    "start_price": 0.011978,
+    "end_price": 0.011926,
+    "return": -0.004331,
+    "price_check": true
+   },
+   {
+    "slug": "gains-network",
+    "symbol": "GAINS",
+    "name": "Gains Network",
+    "category": "Derivatives",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.773443,
+    "start_price": 0.337679,
+    "end_price": 0.336898,
+    "return": -0.002313,
+    "price_check": true
+   },
+   {
+    "slug": "thorswap",
+    "symbol": "THOR",
+    "name": "THORSwap",
+    "category": "DEX Aggregator",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.796209,
+    "start_price": 0.038867,
+    "end_price": 0.038572,
+    "return": -0.007591,
+    "price_check": true
+   },
+   {
+    "slug": "hyperlend",
+    "symbol": "HPL",
+    "name": "HyperLend",
+    "category": "Lending",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.866345,
+    "start_price": 0.006493,
+    "end_price": 0.006469,
+    "return": -0.003647,
+    "price_check": true
+   },
+   {
+    "slug": "inverse-finance",
+    "symbol": "INV",
+    "name": "Inverse Finance",
+    "category": "CDP",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 1.949092,
+    "start_price": 8.740245,
+    "end_price": 8.711683,
+    "return": -0.003268,
+    "price_check": true
+   },
+   {
+    "slug": "saphyre",
+    "symbol": "DRG",
+    "name": "Saphyre",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 2.024906,
+    "start_price": 0.011891,
+    "end_price": 0.011891,
+    "return": 2.1e-05,
+    "price_check": true
+   },
+   {
+    "slug": "navi-protocol",
+    "symbol": "NAVX",
+    "name": "NAVI Protocol",
+    "category": "Lending",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 2.189145,
+    "start_price": 0.007905,
+    "end_price": 0.007885,
+    "return": -0.002617,
+    "price_check": true
+   },
+   {
+    "slug": "the-index",
+    "symbol": "INDEX",
+    "name": "The Index",
+    "category": "Indexes",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 2.724566,
+    "start_price": 0.005432,
+    "end_price": 0.0054,
+    "return": -0.006002,
+    "price_check": true
+   },
+   {
+    "slug": "suilend-protocol",
+    "symbol": "SEND",
+    "name": "Suilend Protocol",
+    "category": "Lending",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 2.990672,
+    "start_price": 0.051444,
+    "end_price": 0.051509,
+    "return": 0.001263,
+    "price_check": true
+   },
+   {
+    "slug": "etherex",
+    "symbol": "REX",
+    "name": "Etherex",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 3.129731,
+    "start_price": 0.007199,
+    "end_price": 0.00718,
+    "return": -0.002674,
+    "price_check": true
+   },
+   {
+    "slug": "overtime",
+    "symbol": "OVER",
+    "name": "Overtime",
+    "category": "Prediction Market",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 3.546896,
+    "start_price": 0.182692,
+    "end_price": 0.181327,
+    "return": -0.007472,
+    "price_check": true
+   },
+   {
+    "slug": "beefy",
+    "symbol": "BIFI",
+    "name": "Beefy",
+    "category": "Yield Aggregator",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 3.84138,
+    "start_price": 52.032222,
+    "end_price": 51.751605,
+    "return": -0.005393,
+    "price_check": true
+   },
+   {
+    "slug": "metronome",
+    "symbol": "MET",
+    "name": "Metronome",
+    "category": "Synthetics",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 3.898553,
+    "start_price": 0.423392,
+    "end_price": 0.4246,
+    "return": 0.002853,
+    "price_check": true
+   },
+   {
+    "slug": "dextools",
+    "symbol": "DEXT",
+    "name": "DEXTools",
+    "category": "Coins Tracker",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 3.904609,
+    "start_price": 0.042801,
+    "end_price": 0.042502,
+    "return": -0.006979,
+    "price_check": true
+   },
+   {
+    "slug": "orynth",
+    "symbol": "ORY",
+    "name": "Orynth",
+    "category": "Launchpad",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 4.460217,
+    "start_price": 0.000119,
+    "end_price": 0.000119,
+    "return": 0.0,
+    "price_check": true
+   },
+   {
+    "slug": "thena",
+    "symbol": "THE",
+    "name": "THENA",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 4.79925,
+    "start_price": 0.029862,
+    "end_price": 0.029684,
+    "return": -0.005953,
+    "price_check": true
+   },
+   {
+    "slug": "stake-dao",
+    "symbol": "SDT",
+    "name": "Stake DAO",
+    "category": "Yield",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 5.004075,
+    "start_price": 0.075544,
+    "end_price": 0.075125,
+    "return": -0.005556,
+    "price_check": true
+   },
+   {
+    "slug": "humidifi",
+    "symbol": "WET",
+    "name": "HumidiFi",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 5.461113,
+    "start_price": 0.038716,
+    "end_price": 0.038469,
+    "return": -0.006357,
+    "price_check": true
+   },
+   {
+    "slug": "bluefin",
+    "symbol": "BLUE",
+    "name": "Bluefin",
+    "category": "Derivatives",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 6.037925,
+    "start_price": 0.007173,
+    "end_price": 0.007178,
+    "return": 0.000697,
+    "price_check": true
+   },
+   {
+    "slug": "based",
+    "symbol": "BASED",
+    "name": "Based",
+    "category": "Interface",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 8.039842,
+    "start_price": 0.038502,
+    "end_price": 0.03832,
+    "return": -0.004728,
+    "price_check": true
+   },
+   {
+    "slug": "tria",
+    "symbol": "TRIA",
+    "name": "TRIA",
+    "category": "Crypto Card Issuer",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 10.355493,
+    "start_price": 0.002358,
+    "end_price": 0.00236,
+    "return": 0.000705,
+    "price_check": true
+   },
+   {
+    "slug": "moonwell",
+    "symbol": "WELL",
+    "name": "Moonwell",
+    "category": "Lending",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 11.045038,
+    "start_price": 0.001412,
+    "end_price": 0.001392,
+    "return": -0.014431,
+    "price_check": true
+   },
+   {
+    "slug": "opinion",
+    "symbol": "OPN",
+    "name": "OPINION",
+    "category": "Prediction Market",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 11.365235,
+    "start_price": 0.030473,
+    "end_price": 0.030176,
+    "return": -0.009742,
+    "price_check": true
+   },
+   {
+    "slug": "balancer",
+    "symbol": "BAL",
+    "name": "Balancer",
+    "category": "Dexs",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 11.963636,
+    "start_price": 0.115903,
+    "end_price": 0.115066,
+    "return": -0.007222,
+    "price_check": true
+   },
+   {
+    "slug": "infinex",
+    "symbol": "INX",
+    "name": "Infinex",
+    "category": "Interface",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 14.7141,
+    "start_price": 0.003463,
+    "end_price": 0.003436,
+    "return": -0.00772,
+    "price_check": true
+   },
+   {
+    "slug": "drift",
+    "symbol": "DRIFT",
+    "name": "Drift",
+    "category": "Derivatives",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 18.874987,
+    "start_price": 0.00964,
+    "end_price": 0.009629,
+    "return": -0.001215,
+    "price_check": true
+   },
+   {
+    "slug": "limitless-exchange",
+    "symbol": "LMTS",
+    "name": "Limitless Exchange",
+    "category": "Prediction Market",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": 28.04868,
+    "start_price": 0.017961,
+    "end_price": 0.017783,
+    "return": -0.009908,
+    "price_check": true
+   },
+   {
+    "slug": "sideshift",
+    "symbol": "XAI",
+    "name": "SideShift",
+    "category": "Cross Chain Bridge",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": null,
+    "start_price": 0.198318,
+    "end_price": null,
+    "return": null,
+    "price_check": true
+   },
+   {
+    "slug": "helium-network",
+    "symbol": "HNT",
+    "name": "Helium Network",
+    "category": "DePIN",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": null,
+    "start_price": 0.23539,
+    "end_price": 0.2351,
+    "return": -0.001233,
+    "price_check": true
+   },
+   {
+    "slug": "odos",
+    "symbol": "ODOS",
+    "name": "ODOS",
+    "category": "DEX Aggregator",
+    "verdict": "Unrated",
+    "score_bucket": null,
+    "value_score": null,
+    "p_s": null,
+    "start_price": 0.000105,
+    "end_price": 0.000105,
+    "return": 0.0,
     "price_check": true
    },
    {
