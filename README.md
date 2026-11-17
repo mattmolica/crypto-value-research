@@ -214,6 +214,18 @@ an exact supply history, the original 14) so you can see whether the answer
 depends on one choice. `data/all_tokens.txt` is one `slug=coingecko-id` per
 line, e.g. from the latest scores CSV.
 
+**What winners have in common** (flips the question: which tokens beat BTC, and
+could we have spotted them?):
+
+```bash
+python -m crypto_value_research.winners --history data/history_all/full_history.csv --out results/winners.json
+```
+
+Labels each token in each 13- and 26-week window as beat / lost vs BTC, tests
+12 start-of-window features one at a time and in a walk-forward logistic
+model, and checks every result against dropping any one token and shifting
+the window dates. Findings: [results/winners.md](results/winners.md).
+
 The full value score can't be rebuilt for past dates (holder payouts, supply
 growth and circulating supply have no free history), so this tests P/S alone
 on the tokens `history` covers: did the cheapest third beat the most expensive
