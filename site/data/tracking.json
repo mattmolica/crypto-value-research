@@ -1,8 +1,8 @@
 [
  {
   "scored_at": "2026-11-13T18:55:00Z",
-  "as_of": "2026-11-20T21:08:25Z",
-  "days": 7.1,
+  "as_of": "2026-11-21T20:07:40Z",
+  "days": 8.1,
   "tokens": 154,
   "priced": 152,
   "unpriced": [
@@ -11,84 +11,84 @@
   ],
   "price_mismatch": [],
   "benchmarks": {
-   "BTC": -0.15385993573703394,
-   "ETH": -0.17531508389327954,
-   "All tokens (equal weight)": -0.18866637334102204,
-   "Rated tokens (equal weight)": -0.17278008470904038
+   "BTC": -0.12513283530846286,
+   "ETH": -0.13222876904842196,
+   "All tokens (equal weight)": -0.16744715283585704,
+   "Rated tokens (equal weight)": -0.1518123519269172
   },
-  "rank_correlation": 0.04441128594682582,
+  "rank_correlation": 0.06201844818231145,
   "labels": [
    {
     "group": "Value candidate",
     "tokens": 23,
     "priced": 23,
-    "avg_return": -0.182587,
-    "median_return": -0.186956,
-    "vs_basket": 0.006079,
-    "pct_up": 0.043478,
-    "beat_basket": 0.521739,
-    "best": "FLIP +13%",
+    "avg_return": -0.174261,
+    "median_return": -0.174714,
+    "vs_basket": -0.006814,
+    "pct_up": 0.0,
+    "beat_basket": 0.434783,
+    "best": "ORCA -5%",
     "worst": "PUMP -32%"
    },
    {
     "group": "Value trap risk",
     "tokens": 4,
     "priced": 4,
-    "avg_return": -0.163492,
-    "median_return": -0.166151,
-    "vs_basket": 0.025174,
-    "pct_up": 0.0,
-    "beat_basket": 0.75,
-    "best": "USUAL -2%",
-    "worst": "EDGE -30%"
+    "avg_return": -0.150153,
+    "median_return": -0.156387,
+    "vs_basket": 0.017294,
+    "pct_up": 0.25,
+    "beat_basket": 0.5,
+    "best": "USUAL +0%",
+    "worst": "EDGE -29%"
    },
    {
     "group": "Good, priced in",
     "tokens": 14,
     "priced": 14,
-    "avg_return": -0.154745,
-    "median_return": -0.176909,
-    "vs_basket": 0.033921,
-    "pct_up": 0.142857,
-    "beat_basket": 0.642857,
-    "best": "O +9%",
-    "worst": "LIT -28%"
+    "avg_return": -0.090658,
+    "median_return": -0.149417,
+    "vs_basket": 0.076789,
+    "pct_up": 0.214286,
+    "beat_basket": 0.571429,
+    "best": "VVV +24%",
+    "worst": "LIT -27%"
    },
    {
     "group": "Mixed",
     "tokens": 23,
     "priced": 23,
-    "avg_return": -0.177517,
-    "median_return": -0.162921,
-    "vs_basket": 0.011149,
+    "avg_return": -0.16135,
+    "median_return": -0.152949,
+    "vs_basket": 0.006097,
     "pct_up": 0.043478,
-    "beat_basket": 0.521739,
-    "best": "TREE +5%",
-    "worst": "KNTQ -37%"
+    "beat_basket": 0.565217,
+    "best": "TREE +21%",
+    "worst": "KNTQ -44%"
    },
    {
     "group": "Avoid",
     "tokens": 32,
     "priced": 32,
-    "avg_return": -0.171378,
-    "median_return": -0.177959,
-    "vs_basket": 0.017288,
-    "pct_up": 0.0625,
+    "avg_return": -0.155785,
+    "median_return": -0.152224,
+    "vs_basket": 0.011663,
+    "pct_up": 0.03125,
     "beat_basket": 0.59375,
-    "best": "KERNEL +2%",
-    "worst": "SANC -38%"
+    "best": "YB +17%",
+    "worst": "SANC -39%"
    },
    {
     "group": "Unrated",
     "tokens": 58,
     "priced": 56,
-    "avg_return": -0.2159,
-    "median_return": -0.211234,
-    "vs_basket": -0.027234,
-    "pct_up": 0.035714,
-    "beat_basket": 0.410714,
-    "best": "THOR +9%",
-    "worst": "ODOS -82%"
+    "avg_return": -0.19425,
+    "median_return": -0.171624,
+    "vs_basket": -0.026803,
+    "pct_up": 0.071429,
+    "beat_basket": 0.482143,
+    "best": "THOR +12%",
+    "worst": "ODOS -74%"
    }
   ],
   "buckets": [
@@ -96,61 +96,61 @@
     "group": "Top 20%",
     "tokens": 20,
     "priced": 20,
-    "avg_return": -0.185459,
-    "median_return": -0.195635,
-    "vs_basket": 0.003208,
-    "pct_up": 0.05,
-    "beat_basket": 0.5,
-    "best": "FLIP +13%",
+    "avg_return": -0.16799,
+    "median_return": -0.174398,
+    "vs_basket": -0.000543,
+    "pct_up": 0.0,
+    "beat_basket": 0.45,
+    "best": "ORCA -5%",
     "worst": "PUMP -32%"
    },
    {
     "group": "20-40%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.14192,
-    "median_return": -0.164339,
-    "vs_basket": 0.046746,
-    "pct_up": 0.157895,
-    "beat_basket": 0.631579,
-    "best": "O +9%",
-    "worst": "LIT -28%"
+    "avg_return": -0.107166,
+    "median_return": -0.159541,
+    "vs_basket": 0.060281,
+    "pct_up": 0.210526,
+    "beat_basket": 0.578947,
+    "best": "VVV +24%",
+    "worst": "CVX -29%"
    },
    {
     "group": "40-60%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.187157,
-    "median_return": -0.171008,
-    "vs_basket": 0.001509,
-    "pct_up": 0.0,
+    "avg_return": -0.165423,
+    "median_return": -0.138059,
+    "vs_basket": 0.002024,
+    "pct_up": 0.052632,
     "beat_basket": 0.578947,
-    "best": "DBR -3%",
-    "worst": "KNTQ -37%"
+    "best": "DRV +14%",
+    "worst": "KNTQ -44%"
    },
    {
     "group": "60-80%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.189295,
-    "median_return": -0.162921,
-    "vs_basket": -0.000628,
+    "avg_return": -0.172718,
+    "median_return": -0.155241,
+    "vs_basket": -0.005271,
     "pct_up": 0.0,
-    "beat_basket": 0.631579,
+    "beat_basket": 0.526316,
     "best": "WLFI -8%",
-    "worst": "SANC -38%"
+    "worst": "SANC -39%"
    },
    {
     "group": "Bottom 20%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.159402,
-    "median_return": -0.186561,
-    "vs_basket": 0.029264,
-    "pct_up": 0.105263,
-    "beat_basket": 0.526316,
-    "best": "KERNEL +2%",
-    "worst": "ENA -30%"
+    "avg_return": -0.144912,
+    "median_return": -0.164184,
+    "vs_basket": 0.022535,
+    "pct_up": 0.052632,
+    "beat_basket": 0.578947,
+    "best": "YB +17%",
+    "worst": "ENA -29%"
    }
   ],
   "paths": {
@@ -163,7 +163,8 @@
     "2026-11-18T00:00Z",
     "2026-11-19T00:00Z",
     "2026-11-20T00:00Z",
-    "2026-11-20T21:08Z"
+    "2026-11-21T00:00Z",
+    "2026-11-21T20:07Z"
    ],
    "Value candidate": [
     0.0,
@@ -173,8 +174,9 @@
     -0.08934369775116427,
     -0.10232809631681007,
     -0.10231103415590125,
-    -0.17308738041136246,
-    -0.18258702597138624
+    -0.17313052930005793,
+    -0.17726231632941492,
+    -0.1742607550753486
    ],
    "Value trap risk": [
     0.0,
@@ -185,7 +187,8 @@
     -0.12593273449517814,
     -0.10434956932490111,
     -0.16187922410368852,
-    -0.16349191255598475
+    -0.14757386033050796,
+    -0.15015275295729447
    ],
    "Good, priced in": [
     0.0,
@@ -195,8 +198,9 @@
     -0.06753903370451454,
     -0.07077695589084766,
     -0.06576636579426678,
-    -0.14234592962826728,
-    -0.1547453592463907
+    -0.1424452446043075,
+    -0.0943007490648308,
+    -0.09065776077055758
    ],
    "Mixed": [
     0.0,
@@ -206,8 +210,9 @@
     -0.08855029851653388,
     -0.08982010859183424,
     -0.10096047080551503,
-    -0.1696583723487992,
-    -0.1775168892585833
+    -0.16965658629403066,
+    -0.15980311279657758,
+    -0.1613504462261993
    ],
    "Avoid": [
     0.0,
@@ -217,8 +222,9 @@
     -0.10605035866663193,
     -0.09557324078929229,
     -0.10312110589859501,
-    -0.15873391495650108,
-    -0.17137798131578638
+    -0.15874536608875783,
+    -0.15700536341479637,
+    -0.1557846403884834
    ],
    "Unrated": [
     0.0,
@@ -229,7 +235,8 @@
     -0.12125383326963989,
     -0.12500888081420491,
     -0.20828411724040485,
-    -0.21590001099584782
+    -0.19564441178767047,
+    -0.19424966867975385
    ],
    "All tokens (equal weight)": [
     0.0,
@@ -239,8 +246,9 @@
     -0.09620505553620604,
     -0.10370115395860913,
     -0.10732726794001596,
-    -0.17938755308397974,
-    -0.18866637334102204
+    -0.17940537013053964,
+    -0.16870572031256917,
+    -0.16744715283585704
    ],
    "BTC": [
     0.0,
@@ -250,8 +258,9 @@
     -0.0734344569190809,
     -0.08372848543825562,
     -0.08723328451049728,
-    -0.1507391064237038,
-    -0.15385993573703394
+    -0.1511323439697837,
+    -0.12853886618865595,
+    -0.12513283530846286
    ],
    "ETH": [
     0.0,
@@ -261,8 +270,9 @@
     -0.07732982329422788,
     -0.08851159786083984,
     -0.08387329534280119,
-    -0.16380199181651012,
-    -0.17531508389327954
+    -0.16435155175482097,
+    -0.13445211424714265,
+    -0.13222876904842196
    ]
   },
   "tokens_detail": [
@@ -276,8 +286,8 @@
     "value_score": 86.912371,
     "p_s": 2.256821,
     "start_price": 7.737952,
-    "end_price": 6.821877,
-    "return": -0.118387,
+    "end_price": 7.210182,
+    "return": -0.068205,
     "price_check": true
    },
    {
@@ -290,8 +300,8 @@
     "value_score": 83.136546,
     "p_s": 2.431211,
     "start_price": 0.003497,
-    "end_price": 0.002383,
-    "return": -0.3185,
+    "end_price": 0.002388,
+    "return": -0.31721,
     "price_check": true
    },
    {
@@ -304,8 +314,8 @@
     "value_score": 79.324935,
     "p_s": 1.229121,
     "start_price": 95.934673,
-    "end_price": 68.48432,
-    "return": -0.286136,
+    "end_price": 75.430318,
+    "return": -0.213732,
     "price_check": true
    },
    {
@@ -319,7 +329,7 @@
     "p_s": 7.435102,
     "start_price": 3e-06,
     "end_price": 2e-06,
-    "return": -0.253776,
+    "return": -0.255227,
     "price_check": true
    },
    {
@@ -332,8 +342,8 @@
     "value_score": 76.715252,
     "p_s": 2.498053,
     "start_price": 0.02124,
-    "end_price": 0.01847,
-    "return": -0.130427,
+    "end_price": 0.018792,
+    "return": -0.115282,
     "price_check": true
    },
    {
@@ -346,8 +356,8 @@
     "value_score": 74.135914,
     "p_s": 3.413184,
     "start_price": 0.186239,
-    "end_price": 0.170993,
-    "return": -0.081862,
+    "end_price": 0.172266,
+    "return": -0.075027,
     "price_check": true
    },
    {
@@ -360,8 +370,8 @@
     "value_score": 73.847078,
     "p_s": 6.123738,
     "start_price": 1.238472,
-    "end_price": 1.060959,
-    "return": -0.143332,
+    "end_price": 1.170513,
+    "return": -0.054873,
     "price_check": true
    },
    {
@@ -374,8 +384,8 @@
     "value_score": 72.894827,
     "p_s": 7.754652,
     "start_price": 0.421634,
-    "end_price": 0.477882,
-    "return": 0.133405,
+    "end_price": 0.390501,
+    "return": -0.073839,
     "price_check": true
    },
    {
@@ -388,8 +398,8 @@
     "value_score": 71.396958,
     "p_s": 8.630732,
     "start_price": 1.509263,
-    "end_price": 1.264967,
-    "return": -0.161864,
+    "end_price": 1.341475,
+    "return": -0.111172,
     "price_check": true
    },
    {
@@ -402,8 +412,8 @@
     "value_score": 71.228889,
     "p_s": 8.882184,
     "start_price": 1.735419,
-    "end_price": 1.461189,
-    "return": -0.15802,
+    "end_price": 1.481652,
+    "return": -0.146228,
     "price_check": true
    },
    {
@@ -416,8 +426,8 @@
     "value_score": 70.117804,
     "p_s": 1.952916,
     "start_price": 0.000236,
-    "end_price": 0.0002,
-    "return": -0.152748,
+    "end_price": 0.000212,
+    "return": -0.103986,
     "price_check": true
    },
    {
@@ -430,8 +440,8 @@
     "value_score": 70.070549,
     "p_s": 3.056669,
     "start_price": 0.135275,
-    "end_price": 0.100984,
-    "return": -0.253487,
+    "end_price": 0.099773,
+    "return": -0.262445,
     "price_check": true
    },
    {
@@ -444,8 +454,8 @@
     "value_score": 69.496189,
     "p_s": 8.482278,
     "start_price": 0.480378,
-    "end_price": 0.38223,
-    "return": -0.204314,
+    "end_price": 0.396149,
+    "return": -0.175339,
     "price_check": true
    },
    {
@@ -458,8 +468,8 @@
     "value_score": 67.462125,
     "p_s": 6.732295,
     "start_price": 0.3841,
-    "end_price": 0.303317,
-    "return": -0.210319,
+    "end_price": 0.317476,
+    "return": -0.173456,
     "price_check": true
    },
    {
@@ -472,8 +482,8 @@
     "value_score": 67.203157,
     "p_s": 26.400557,
     "start_price": 5.811631,
-    "end_price": 4.342646,
-    "return": -0.252766,
+    "end_price": 4.7047,
+    "return": -0.190468,
     "price_check": true
    },
    {
@@ -486,8 +496,8 @@
     "value_score": 66.660742,
     "p_s": 1.152907,
     "start_price": 0.204534,
-    "end_price": 0.14023,
-    "return": -0.314391,
+    "end_price": 0.15532,
+    "return": -0.240614,
     "price_check": true
    },
    {
@@ -500,8 +510,8 @@
     "value_score": 66.090103,
     "p_s": 8.064738,
     "start_price": 2.530495,
-    "end_price": 2.123615,
-    "return": -0.160791,
+    "end_price": 2.165998,
+    "return": -0.144042,
     "price_check": true
    },
    {
@@ -514,8 +524,8 @@
     "value_score": 66.055552,
     "p_s": 8.719553,
     "start_price": 2.04214,
-    "end_price": 1.580959,
-    "return": -0.225832,
+    "end_price": 1.598604,
+    "return": -0.217192,
     "price_check": true
    },
    {
@@ -528,8 +538,8 @@
     "value_score": 65.812809,
     "p_s": 3.066294,
     "start_price": 0.287438,
-    "end_price": 0.2337,
-    "return": -0.186956,
+    "end_price": 0.233509,
+    "return": -0.18762,
     "price_check": true
    },
    {
@@ -542,8 +552,8 @@
     "value_score": 65.203025,
     "p_s": 6.446909,
     "start_price": 0.015705,
-    "end_price": 0.012114,
-    "return": -0.22867,
+    "end_price": 0.012033,
+    "return": -0.233845,
     "price_check": true
    },
    {
@@ -556,8 +566,8 @@
     "value_score": 64.934629,
     "p_s": 5.894828,
     "start_price": 4.72683,
-    "end_price": 3.950029,
-    "return": -0.164339,
+    "end_price": 3.949216,
+    "return": -0.164511,
     "price_check": true
    },
    {
@@ -570,8 +580,8 @@
     "value_score": 64.756276,
     "p_s": 8.28051,
     "start_price": 0.057699,
-    "end_price": 0.043074,
-    "return": -0.253465,
+    "end_price": 0.043838,
+    "return": -0.240218,
     "price_check": true
    },
    {
@@ -584,8 +594,8 @@
     "value_score": 63.946574,
     "p_s": 8.049787,
     "start_price": 0.11471,
-    "end_price": 0.088705,
-    "return": -0.226705,
+    "end_price": 0.088312,
+    "return": -0.230125,
     "price_check": true
    },
    {
@@ -598,8 +608,8 @@
     "value_score": 63.639996,
     "p_s": 3.840303,
     "start_price": 0.07771,
-    "end_price": 0.069812,
-    "return": -0.101638,
+    "end_price": 0.071486,
+    "return": -0.080096,
     "price_check": true
    },
    {
@@ -612,8 +622,8 @@
     "value_score": 63.409686,
     "p_s": 19.55157,
     "start_price": 72.87775,
-    "end_price": 60.298504,
-    "return": -0.172607,
+    "end_price": 61.250785,
+    "return": -0.159541,
     "price_check": true
    },
    {
@@ -626,8 +636,8 @@
     "value_score": 63.15539,
     "p_s": 19.886601,
     "start_price": 0.554495,
-    "end_price": 0.476533,
-    "return": -0.140599,
+    "end_price": 0.490857,
+    "return": -0.114767,
     "price_check": true
    },
    {
@@ -640,8 +650,8 @@
     "value_score": 60.983305,
     "p_s": 4.575899,
     "start_price": 0.5174,
-    "end_price": 0.564349,
-    "return": 0.090741,
+    "end_price": 0.62612,
+    "return": 0.210127,
     "price_check": true
    },
    {
@@ -654,8 +664,8 @@
     "value_score": 59.816163,
     "p_s": 209.658137,
     "start_price": 3.515253,
-    "end_price": 2.764682,
-    "return": -0.213518,
+    "end_price": 2.879882,
+    "return": -0.180747,
     "price_check": true
    },
    {
@@ -668,8 +678,8 @@
     "value_score": 59.758528,
     "p_s": 5.392314,
     "start_price": 0.074078,
-    "end_price": 0.065818,
-    "return": -0.111493,
+    "end_price": 0.067107,
+    "return": -0.094092,
     "price_check": true
    },
    {
@@ -682,8 +692,8 @@
     "value_score": 59.425833,
     "p_s": 9.524808,
     "start_price": 0.26214,
-    "end_price": 0.220775,
-    "return": -0.157796,
+    "end_price": 0.21634,
+    "return": -0.174714,
     "price_check": true
    },
    {
@@ -696,8 +706,8 @@
     "value_score": 58.326855,
     "p_s": 13.76882,
     "start_price": 1.611,
-    "end_price": 1.176736,
-    "return": -0.269562,
+    "end_price": 1.146767,
+    "return": -0.288165,
     "price_check": true
    },
    {
@@ -710,8 +720,8 @@
     "value_score": 57.543432,
     "p_s": 7.119531,
     "start_price": 0.304505,
-    "end_price": 0.235,
-    "return": -0.228256,
+    "end_price": 0.23081,
+    "return": -0.242017,
     "price_check": true
    },
    {
@@ -724,8 +734,8 @@
     "value_score": 57.202495,
     "p_s": 14.672441,
     "start_price": 0.159059,
-    "end_price": 0.167715,
-    "return": 0.05442,
+    "end_price": 0.192502,
+    "return": 0.210256,
     "price_check": true
    },
    {
@@ -738,8 +748,8 @@
     "value_score": 57.104336,
     "p_s": 4.90394,
     "start_price": 0.01122,
-    "end_price": 0.01096,
-    "return": -0.023117,
+    "end_price": 0.011261,
+    "return": 0.003636,
     "price_check": true
    },
    {
@@ -752,8 +762,8 @@
     "value_score": 56.809221,
     "p_s": 13.83411,
     "start_price": 3.233548,
-    "end_price": 2.315,
-    "return": -0.284068,
+    "end_price": 2.373,
+    "return": -0.266131,
     "price_check": true
    },
    {
@@ -766,8 +776,8 @@
     "value_score": 56.654866,
     "p_s": 81.578934,
     "start_price": 19.293427,
-    "end_price": 19.618,
-    "return": 0.016823,
+    "end_price": 23.859311,
+    "return": 0.236655,
     "price_check": true
    },
    {
@@ -780,8 +790,8 @@
     "value_score": 56.048538,
     "p_s": 14.872587,
     "start_price": 0.221998,
-    "end_price": 0.1922,
-    "return": -0.134226,
+    "end_price": 0.184378,
+    "return": -0.169459,
     "price_check": true
    },
    {
@@ -794,8 +804,8 @@
     "value_score": 54.907844,
     "p_s": 24.137795,
     "start_price": 1.740794,
-    "end_price": 1.399824,
-    "return": -0.19587,
+    "end_price": 1.474541,
+    "return": -0.152949,
     "price_check": true
    },
    {
@@ -808,8 +818,8 @@
     "value_score": 54.353924,
     "p_s": 171.019205,
     "start_price": 1.517618,
-    "end_price": 1.24261,
-    "return": -0.18121,
+    "end_price": 1.306225,
+    "return": -0.139293,
     "price_check": true
    },
    {
@@ -822,8 +832,8 @@
     "value_score": 53.863966,
     "p_s": 1.749124,
     "start_price": 0.004394,
-    "end_price": 0.003801,
-    "return": -0.135126,
+    "end_price": 0.003878,
+    "return": -0.117587,
     "price_check": true
    },
    {
@@ -836,8 +846,8 @@
     "value_score": 53.276855,
     "p_s": 2.869212,
     "start_price": 0.103765,
-    "end_price": 0.091457,
-    "return": -0.118614,
+    "end_price": 0.093106,
+    "return": -0.102727,
     "price_check": true
    },
    {
@@ -850,8 +860,8 @@
     "value_score": 52.816909,
     "p_s": 1.260328,
     "start_price": 8.39,
-    "end_price": 6.58,
-    "return": -0.215733,
+    "end_price": 6.09,
+    "return": -0.274136,
     "price_check": true
    },
    {
@@ -864,8 +874,8 @@
     "value_score": 52.724982,
     "p_s": 13.480143,
     "start_price": 0.013248,
-    "end_price": 0.01284,
-    "return": -0.03077,
+    "end_price": 0.012831,
+    "return": -0.031444,
     "price_check": true
    },
    {
@@ -878,8 +888,8 @@
     "value_score": 52.679797,
     "p_s": 3.749686,
     "start_price": 0.291634,
-    "end_price": 0.264741,
-    "return": -0.092217,
+    "end_price": 0.265068,
+    "return": -0.091093,
     "price_check": true
    },
    {
@@ -892,8 +902,8 @@
     "value_score": 51.395532,
     "p_s": 3.148432,
     "start_price": 0.020471,
-    "end_price": 0.017297,
-    "return": -0.155077,
+    "end_price": 0.017937,
+    "return": -0.123805,
     "price_check": true
    },
    {
@@ -906,8 +916,8 @@
     "value_score": 51.045877,
     "p_s": 24.238095,
     "start_price": 0.231435,
-    "end_price": 0.174031,
-    "return": -0.248033,
+    "end_price": 0.17615,
+    "return": -0.238878,
     "price_check": true
    },
    {
@@ -920,8 +930,8 @@
     "value_score": 50.875194,
     "p_s": 132.554606,
     "start_price": 0.015062,
-    "end_price": 0.014545,
-    "return": -0.034343,
+    "end_price": 0.014597,
+    "return": -0.030859,
     "price_check": true
    },
    {
@@ -934,8 +944,8 @@
     "value_score": 50.634252,
     "p_s": 3.933075,
     "start_price": 0.332098,
-    "end_price": 0.23295,
-    "return": -0.298549,
+    "end_price": 0.2353,
+    "return": -0.291473,
     "price_check": true
    },
    {
@@ -948,8 +958,8 @@
     "value_score": 49.397669,
     "p_s": 23.496357,
     "start_price": 0.091382,
-    "end_price": 0.069734,
-    "return": -0.236893,
+    "end_price": 0.068717,
+    "return": -0.248027,
     "price_check": true
    },
    {
@@ -962,8 +972,8 @@
     "value_score": 48.794079,
     "p_s": 5.414699,
     "start_price": 0.164381,
-    "end_price": 0.150785,
-    "return": -0.08271,
+    "end_price": 0.152238,
+    "return": -0.073869,
     "price_check": true
    },
    {
@@ -976,8 +986,8 @@
     "value_score": 48.596317,
     "p_s": 3.717394,
     "start_price": 0.0999,
-    "end_price": 0.085286,
-    "return": -0.146287,
+    "end_price": 0.088013,
+    "return": -0.118989,
     "price_check": true
    },
    {
@@ -990,8 +1000,8 @@
     "value_score": 48.234813,
     "p_s": 52.267024,
     "start_price": 0.296695,
-    "end_price": 0.24188,
-    "return": -0.184752,
+    "end_price": 0.337895,
+    "return": 0.138863,
     "price_check": true
    },
    {
@@ -1004,8 +1014,8 @@
     "value_score": 48.113614,
     "p_s": 6.790325,
     "start_price": 0.08121,
-    "end_price": 0.055718,
-    "return": -0.313905,
+    "end_price": 0.054098,
+    "return": -0.333848,
     "price_check": true
    },
    {
@@ -1018,8 +1028,8 @@
     "value_score": 47.952955,
     "p_s": 134.151925,
     "start_price": 10.013404,
-    "end_price": 8.301031,
-    "return": -0.171008,
+    "end_price": 8.630963,
+    "return": -0.138059,
     "price_check": true
    },
    {
@@ -1032,8 +1042,8 @@
     "value_score": 47.683452,
     "p_s": 12.701502,
     "start_price": 0.578973,
-    "end_price": 0.427777,
-    "return": -0.261145,
+    "end_price": 0.465611,
+    "return": -0.195798,
     "price_check": true
    },
    {
@@ -1046,8 +1056,8 @@
     "value_score": 47.43549,
     "p_s": 13.433044,
     "start_price": 0.068532,
-    "end_price": 0.056849,
-    "return": -0.170478,
+    "end_price": 0.057807,
+    "return": -0.156498,
     "price_check": true
    },
    {
@@ -1060,8 +1070,8 @@
     "value_score": 46.219069,
     "p_s": 6.693811,
     "start_price": 0.03658,
-    "end_price": 0.025798,
-    "return": -0.294744,
+    "end_price": 0.026497,
+    "return": -0.275646,
     "price_check": true
    },
    {
@@ -1074,8 +1084,8 @@
     "value_score": 45.990837,
     "p_s": 23.824909,
     "start_price": 0.296347,
-    "end_price": 0.188,
-    "return": -0.365608,
+    "end_price": 0.1662,
+    "return": -0.43917,
     "price_check": true
    },
    {
@@ -1088,8 +1098,8 @@
     "value_score": 45.936423,
     "p_s": 47.149919,
     "start_price": 19.722037,
-    "end_price": 16.649167,
-    "return": -0.155809,
+    "end_price": 17.086853,
+    "return": -0.133616,
     "price_check": true
    },
    {
@@ -1102,8 +1112,8 @@
     "value_score": 45.876434,
     "p_s": 8.692987,
     "start_price": 0.001772,
-    "end_price": 0.001519,
-    "return": -0.143121,
+    "end_price": 0.001534,
+    "return": -0.134506,
     "price_check": true
    },
    {
@@ -1116,8 +1126,8 @@
     "value_score": 44.938572,
     "p_s": 64.139236,
     "start_price": 0.144912,
-    "end_price": 0.111186,
-    "return": -0.232733,
+    "end_price": 0.113215,
+    "return": -0.218731,
     "price_check": true
    },
    {
@@ -1130,8 +1140,8 @@
     "value_score": 44.62728,
     "p_s": 13.161785,
     "start_price": 0.169923,
-    "end_price": 0.144921,
-    "return": -0.147134,
+    "end_price": 0.148692,
+    "return": -0.124942,
     "price_check": true
    },
    {
@@ -1144,8 +1154,8 @@
     "value_score": 44.561873,
     "p_s": 11.225662,
     "start_price": 0.160374,
-    "end_price": 0.130542,
-    "return": -0.186015,
+    "end_price": 0.129296,
+    "return": -0.193785,
     "price_check": true
    },
    {
@@ -1158,8 +1168,8 @@
     "value_score": 44.558821,
     "p_s": 6.132906,
     "start_price": 0.04409,
-    "end_price": 0.037328,
-    "return": -0.153361,
+    "end_price": 0.038733,
+    "return": -0.121505,
     "price_check": true
    },
    {
@@ -1172,8 +1182,8 @@
     "value_score": 44.549116,
     "p_s": 11.001325,
     "start_price": 0.04746,
-    "end_price": 0.0439,
-    "return": -0.075011,
+    "end_price": 0.043607,
+    "return": -0.081177,
     "price_check": true
    },
    {
@@ -1186,8 +1196,8 @@
     "value_score": 43.561494,
     "p_s": 100.765052,
     "start_price": 51.457939,
-    "end_price": 43.987814,
-    "return": -0.14517,
+    "end_price": 46.991533,
+    "return": -0.086797,
     "price_check": true
    },
    {
@@ -1200,8 +1210,8 @@
     "value_score": 42.311786,
     "p_s": 11.848047,
     "start_price": 0.018418,
-    "end_price": 0.014632,
-    "return": -0.205577,
+    "end_price": 0.015202,
+    "return": -0.174611,
     "price_check": true
    },
    {
@@ -1214,8 +1224,8 @@
     "value_score": 41.487327,
     "p_s": 40.874673,
     "start_price": 1.546042,
-    "end_price": 1.22664,
-    "return": -0.206593,
+    "end_price": 1.27165,
+    "return": -0.17748,
     "price_check": true
    },
    {
@@ -1228,8 +1238,8 @@
     "value_score": 41.472835,
     "p_s": 12.525272,
     "start_price": 0.085652,
-    "end_price": 0.053507,
-    "return": -0.375297,
+    "end_price": 0.052492,
+    "return": -0.387142,
     "price_check": true
    },
    {
@@ -1242,8 +1252,8 @@
     "value_score": 41.453497,
     "p_s": 76.794827,
     "start_price": 0.063752,
-    "end_price": 0.046401,
-    "return": -0.272167,
+    "end_price": 0.048018,
+    "return": -0.2468,
     "price_check": true
    },
    {
@@ -1256,8 +1266,8 @@
     "value_score": 41.110904,
     "p_s": 7.989209,
     "start_price": 0.004424,
-    "end_price": 0.003602,
-    "return": -0.185829,
+    "end_price": 0.003582,
+    "return": -0.190181,
     "price_check": true
    },
    {
@@ -1270,8 +1280,8 @@
     "value_score": 41.096901,
     "p_s": 19.187251,
     "start_price": 1.919901,
-    "end_price": 1.607108,
-    "return": -0.162921,
+    "end_price": 1.621854,
+    "return": -0.155241,
     "price_check": true
    },
    {
@@ -1284,8 +1294,8 @@
     "value_score": 40.408596,
     "p_s": 28.451353,
     "start_price": 112.37026,
-    "end_price": 95.054145,
-    "return": -0.154099,
+    "end_price": 97.75,
+    "return": -0.130108,
     "price_check": true
    },
    {
@@ -1298,8 +1308,8 @@
     "value_score": 39.510072,
     "p_s": 23.102783,
     "start_price": 0.30752,
-    "end_price": 0.222472,
-    "return": -0.276561,
+    "end_price": 0.219534,
+    "return": -0.286116,
     "price_check": true
    },
    {
@@ -1312,8 +1322,8 @@
     "value_score": 38.193482,
     "p_s": 4.386847,
     "start_price": 0.002331,
-    "end_price": 0.002024,
-    "return": -0.131612,
+    "end_price": 0.002118,
+    "return": -0.091543,
     "price_check": true
    },
    {
@@ -1327,7 +1337,7 @@
     "p_s": 186.380255,
     "start_price": 4e-06,
     "end_price": 3e-06,
-    "return": -0.129715,
+    "return": -0.097164,
     "price_check": true
    },
    {
@@ -1340,8 +1350,8 @@
     "value_score": 37.801178,
     "p_s": 13.171969,
     "start_price": 0.081716,
-    "end_price": 0.060643,
-    "return": -0.257873,
+    "end_price": 0.06127,
+    "return": -0.250206,
     "price_check": true
    },
    {
@@ -1354,8 +1364,8 @@
     "value_score": 36.943425,
     "p_s": 32.114935,
     "start_price": 0.106479,
-    "end_price": 0.09985,
-    "return": -0.062253,
+    "end_price": 0.099614,
+    "return": -0.064465,
     "price_check": true
    },
    {
@@ -1368,8 +1378,8 @@
     "value_score": 34.237498,
     "p_s": 18.28731,
     "start_price": 0.047936,
-    "end_price": 0.047568,
-    "return": -0.007674,
+    "end_price": 0.0563,
+    "return": 0.174482,
     "price_check": true
    },
    {
@@ -1382,8 +1392,8 @@
     "value_score": 32.208636,
     "p_s": 50.838028,
     "start_price": 3.506177,
-    "end_price": 3.553647,
-    "return": 0.013539,
+    "end_price": 3.386912,
+    "return": -0.034016,
     "price_check": true
    },
    {
@@ -1396,8 +1406,8 @@
     "value_score": 31.831732,
     "p_s": 23.451553,
     "start_price": 0.029718,
-    "end_price": 0.023396,
-    "return": -0.21272,
+    "end_price": 0.0233,
+    "return": -0.215962,
     "price_check": true
    },
    {
@@ -1410,8 +1420,8 @@
     "value_score": 29.983919,
     "p_s": 95.344115,
     "start_price": 0.759259,
-    "end_price": 0.606284,
-    "return": -0.201479,
+    "end_price": 0.617488,
+    "return": -0.186722,
     "price_check": true
    },
    {
@@ -1424,8 +1434,8 @@
     "value_score": 29.432594,
     "p_s": 129.117382,
     "start_price": 15.679323,
-    "end_price": 15.087175,
-    "return": -0.037766,
+    "end_price": 15.371465,
+    "return": -0.019635,
     "price_check": true
    },
    {
@@ -1438,8 +1448,8 @@
     "value_score": 29.404334,
     "p_s": 17.422407,
     "start_price": 0.031391,
-    "end_price": 0.025535,
-    "return": -0.186561,
+    "end_price": 0.026221,
+    "return": -0.164698,
     "price_check": true
    },
    {
@@ -1452,8 +1462,8 @@
     "value_score": 29.010385,
     "p_s": 9.809996,
     "start_price": 0.044135,
-    "end_price": 0.045151,
-    "return": 0.023021,
+    "end_price": 0.04342,
+    "return": -0.016196,
     "price_check": true
    },
    {
@@ -1466,8 +1476,8 @@
     "value_score": 28.50997,
     "p_s": 1116.600043,
     "start_price": 0.809141,
-    "end_price": 0.633312,
-    "return": -0.217303,
+    "end_price": 0.646127,
+    "return": -0.201465,
     "price_check": true
    },
    {
@@ -1480,8 +1490,8 @@
     "value_score": 26.991541,
     "p_s": 55.968139,
     "start_price": 4.286096,
-    "end_price": 3.491284,
-    "return": -0.18544,
+    "end_price": 3.582389,
+    "return": -0.164184,
     "price_check": true
    },
    {
@@ -1494,8 +1504,8 @@
     "value_score": 24.133933,
     "p_s": 110.601704,
     "start_price": 0.894,
-    "end_price": 0.765,
-    "return": -0.144295,
+    "end_price": 0.779644,
+    "return": -0.127915,
     "price_check": true
    },
    {
@@ -1508,8 +1518,8 @@
     "value_score": 23.499446,
     "p_s": 213.019803,
     "start_price": 0.521513,
-    "end_price": 0.371393,
-    "return": -0.287855,
+    "end_price": 0.378,
+    "return": -0.275185,
     "price_check": true
    },
    {
@@ -1522,8 +1532,8 @@
     "value_score": 22.830028,
     "p_s": 70.891357,
     "start_price": 13.172004,
-    "end_price": 10.565407,
-    "return": -0.197889,
+    "end_price": 11.254939,
+    "return": -0.145541,
     "price_check": true
    },
    {
@@ -1536,8 +1546,8 @@
     "value_score": 21.576365,
     "p_s": 42.334667,
     "start_price": 0.433903,
-    "end_price": 0.412318,
-    "return": -0.049746,
+    "end_price": 0.407028,
+    "return": -0.061936,
     "price_check": true
    },
    {
@@ -1550,8 +1560,8 @@
     "value_score": 20.37682,
     "p_s": 119.925666,
     "start_price": 0.0938,
-    "end_price": 0.068537,
-    "return": -0.269327,
+    "end_price": 0.069872,
+    "return": -0.255101,
     "price_check": true
    },
    {
@@ -1564,8 +1574,8 @@
     "value_score": 18.80476,
     "p_s": 93.835101,
     "start_price": 0.00324,
-    "end_price": 0.00238,
-    "return": -0.265264,
+    "end_price": 0.002335,
+    "return": -0.27922,
     "price_check": true
    },
    {
@@ -1578,8 +1588,8 @@
     "value_score": 15.1789,
     "p_s": 3774.256401,
     "start_price": 0.136936,
-    "end_price": 0.095893,
-    "return": -0.299725,
+    "end_price": 0.097892,
+    "return": -0.285125,
     "price_check": true
    },
    {
@@ -1592,8 +1602,8 @@
     "value_score": 11.631501,
     "p_s": 358.389098,
     "start_price": 0.018633,
-    "end_price": 0.015505,
-    "return": -0.167866,
+    "end_price": 0.015876,
+    "return": -0.14795,
     "price_check": true
    },
    {
@@ -1606,8 +1616,8 @@
     "value_score": 9.420565,
     "p_s": 827.378865,
     "start_price": 1.605238,
-    "end_price": 1.168552,
-    "return": -0.272038,
+    "end_price": 1.151753,
+    "return": -0.282503,
     "price_check": true
    },
    {
@@ -1620,8 +1630,8 @@
     "value_score": null,
     "p_s": 0.031713,
     "start_price": 2.2e-05,
-    "end_price": 1.7e-05,
-    "return": -0.22278,
+    "end_price": 1.8e-05,
+    "return": -0.203169,
     "price_check": true
    },
    {
@@ -1634,8 +1644,8 @@
     "value_score": null,
     "p_s": 0.038503,
     "start_price": 0.166327,
-    "end_price": 0.124204,
-    "return": -0.253254,
+    "end_price": 0.135612,
+    "return": -0.184665,
     "price_check": true
    },
    {
@@ -1648,8 +1658,8 @@
     "value_score": null,
     "p_s": 0.043116,
     "start_price": 0.593757,
-    "end_price": 0.323122,
-    "return": -0.455801,
+    "end_price": 0.374816,
+    "return": -0.368738,
     "price_check": true
    },
    {
@@ -1662,8 +1672,8 @@
     "value_score": null,
     "p_s": 0.089562,
     "start_price": 0.000511,
-    "end_price": 0.000479,
-    "return": -0.063697,
+    "end_price": 0.000469,
+    "return": -0.082805,
     "price_check": true
    },
    {
@@ -1676,8 +1686,8 @@
     "value_score": null,
     "p_s": 0.10459,
     "start_price": 0.04666,
-    "end_price": 0.036285,
-    "return": -0.222355,
+    "end_price": 0.036819,
+    "return": -0.210911,
     "price_check": true
    },
    {
@@ -1690,8 +1700,8 @@
     "value_score": null,
     "p_s": 0.144507,
     "start_price": 0.001126,
-    "end_price": 0.000511,
-    "return": -0.546113,
+    "end_price": 0.000524,
+    "return": -0.534379,
     "price_check": true
    },
    {
@@ -1704,8 +1714,8 @@
     "value_score": null,
     "p_s": 0.188327,
     "start_price": 0.002291,
-    "end_price": 0.001789,
-    "return": -0.219088,
+    "end_price": 0.001941,
+    "return": -0.152659,
     "price_check": true
    },
    {
@@ -1718,8 +1728,8 @@
     "value_score": null,
     "p_s": 0.188329,
     "start_price": 0.019213,
-    "end_price": 0.013653,
-    "return": -0.28938,
+    "end_price": 0.013349,
+    "return": -0.305208,
     "price_check": true
    },
    {
@@ -1732,8 +1742,8 @@
     "value_score": null,
     "p_s": 0.201635,
     "start_price": 0.013239,
-    "end_price": 0.011462,
-    "return": -0.134199,
+    "end_price": 0.011313,
+    "return": -0.14545,
     "price_check": true
    },
    {
@@ -1746,8 +1756,8 @@
     "value_score": null,
     "p_s": 0.244373,
     "start_price": 0.047079,
-    "end_price": 0.030278,
-    "return": -0.356861,
+    "end_price": 0.035018,
+    "return": -0.256176,
     "price_check": true
    },
    {
@@ -1760,8 +1770,8 @@
     "value_score": null,
     "p_s": 0.251102,
     "start_price": 0.000944,
-    "end_price": 0.000711,
-    "return": -0.247408,
+    "end_price": 0.000689,
+    "return": -0.270861,
     "price_check": true
    },
    {
@@ -1774,8 +1784,8 @@
     "value_score": null,
     "p_s": 0.31764,
     "start_price": 0.135556,
-    "end_price": 0.099768,
-    "return": -0.264012,
+    "end_price": 0.099897,
+    "return": -0.263057,
     "price_check": true
    },
    {
@@ -1788,8 +1798,8 @@
     "value_score": null,
     "p_s": 0.420763,
     "start_price": 0.02375,
-    "end_price": 0.016665,
-    "return": -0.298312,
+    "end_price": 0.015807,
+    "return": -0.334458,
     "price_check": true
    },
    {
@@ -1802,8 +1812,8 @@
     "value_score": null,
     "p_s": 0.424068,
     "start_price": 0.084498,
-    "end_price": 0.070197,
-    "return": -0.16924,
+    "end_price": 0.071828,
+    "return": -0.149942,
     "price_check": true
    },
    {
@@ -1816,8 +1826,8 @@
     "value_score": null,
     "p_s": 0.498799,
     "start_price": 0.014035,
-    "end_price": 0.010098,
-    "return": -0.28049,
+    "end_price": 0.010344,
+    "return": -0.262939,
     "price_check": true
    },
    {
@@ -1830,8 +1840,8 @@
     "value_score": null,
     "p_s": 0.507578,
     "start_price": 0.302097,
-    "end_price": 0.219899,
-    "return": -0.27209,
+    "end_price": 0.219611,
+    "return": -0.273043,
     "price_check": true
    },
    {
@@ -1844,8 +1854,8 @@
     "value_score": null,
     "p_s": 0.529019,
     "start_price": 0.003338,
-    "end_price": 0.002117,
-    "return": -0.365652,
+    "end_price": 0.002028,
+    "return": -0.392289,
     "price_check": true
    },
    {
@@ -1858,8 +1868,8 @@
     "value_score": null,
     "p_s": 0.587694,
     "start_price": 0.007925,
-    "end_price": 0.007954,
-    "return": 0.003706,
+    "end_price": 0.00794,
+    "return": 0.001899,
     "price_check": true
    },
    {
@@ -1872,8 +1882,8 @@
     "value_score": null,
     "p_s": 0.736058,
     "start_price": 0.002386,
-    "end_price": 0.001813,
-    "return": -0.240293,
+    "end_price": 0.001815,
+    "return": -0.239389,
     "price_check": true
    },
    {
@@ -1886,8 +1896,8 @@
     "value_score": null,
     "p_s": 0.768784,
     "start_price": 0.143185,
-    "end_price": 0.09321,
-    "return": -0.349021,
+    "end_price": 0.0887,
+    "return": -0.380521,
     "price_check": true
    },
    {
@@ -1900,8 +1910,8 @@
     "value_score": null,
     "p_s": 0.818446,
     "start_price": 0.004301,
-    "end_price": 0.003081,
-    "return": -0.283494,
+    "end_price": 0.003084,
+    "return": -0.282847,
     "price_check": true
    },
    {
@@ -1914,8 +1924,8 @@
     "value_score": null,
     "p_s": 0.896905,
     "start_price": 0.019934,
-    "end_price": 0.013773,
-    "return": -0.309065,
+    "end_price": 0.016609,
+    "return": -0.166802,
     "price_check": true
    },
    {
@@ -1928,8 +1938,8 @@
     "value_score": null,
     "p_s": 0.985965,
     "start_price": 15.092547,
-    "end_price": 12.33339,
-    "return": -0.182816,
+    "end_price": 13.023688,
+    "return": -0.137078,
     "price_check": true
    },
    {
@@ -1942,8 +1952,8 @@
     "value_score": null,
     "p_s": 1.155965,
     "start_price": 0.004758,
-    "end_price": 0.004175,
-    "return": -0.12256,
+    "end_price": 0.004514,
+    "return": -0.051314,
     "price_check": true
    },
    {
@@ -1956,8 +1966,8 @@
     "value_score": null,
     "p_s": 1.230951,
     "start_price": 0.016853,
-    "end_price": 0.011222,
-    "return": -0.334153,
+    "end_price": 0.011144,
+    "return": -0.338744,
     "price_check": true
    },
    {
@@ -1970,8 +1980,8 @@
     "value_score": null,
     "p_s": 1.296487,
     "start_price": 0.003372,
-    "end_price": 0.002718,
-    "return": -0.193941,
+    "end_price": 0.002845,
+    "return": -0.15631,
     "price_check": true
    },
    {
@@ -1984,8 +1994,8 @@
     "value_score": null,
     "p_s": 1.378923,
     "start_price": 0.001902,
-    "end_price": 0.00189,
-    "return": -0.006085,
+    "end_price": 0.001888,
+    "return": -0.007416,
     "price_check": true
    },
    {
@@ -1998,8 +2008,8 @@
     "value_score": null,
     "p_s": 1.514041,
     "start_price": 0.784943,
-    "end_price": 0.618956,
-    "return": -0.211463,
+    "end_price": 0.617203,
+    "return": -0.213697,
     "price_check": true
    },
    {
@@ -2012,8 +2022,8 @@
     "value_score": null,
     "p_s": 1.641219,
     "start_price": 0.012436,
-    "end_price": 0.011379,
-    "return": -0.08497,
+    "end_price": 0.011503,
+    "return": -0.074997,
     "price_check": true
    },
    {
@@ -2026,8 +2036,8 @@
     "value_score": null,
     "p_s": 1.818452,
     "start_price": 0.349049,
-    "end_price": 0.295712,
-    "return": -0.152808,
+    "end_price": 0.295173,
+    "return": -0.154351,
     "price_check": true
    },
    {
@@ -2040,8 +2050,8 @@
     "value_score": null,
     "p_s": 1.86923,
     "start_price": 0.006483,
-    "end_price": 0.006,
-    "return": -0.074519,
+    "end_price": 0.005932,
+    "return": -0.084924,
     "price_check": true
    },
    {
@@ -2054,8 +2064,8 @@
     "value_score": null,
     "p_s": 2.121301,
     "start_price": 9.415597,
-    "end_price": 7.428857,
-    "return": -0.211005,
+    "end_price": 7.351439,
+    "return": -0.219228,
     "price_check": true
    },
    {
@@ -2068,8 +2078,8 @@
     "value_score": null,
     "p_s": 2.163524,
     "start_price": 0.01279,
-    "end_price": 0.010944,
-    "return": -0.14436,
+    "end_price": 0.011089,
+    "return": -0.132987,
     "price_check": true
    },
    {
@@ -2082,8 +2092,8 @@
     "value_score": null,
     "p_s": 2.322185,
     "start_price": 0.008372,
-    "end_price": 0.007262,
-    "return": -0.132673,
+    "end_price": 0.007479,
+    "return": -0.106691,
     "price_check": true
    },
    {
@@ -2096,8 +2106,8 @@
     "value_score": null,
     "p_s": 2.571022,
     "start_price": 0.038094,
-    "end_price": 0.041607,
-    "return": 0.092222,
+    "end_price": 0.042543,
+    "return": 0.116783,
     "price_check": true
    },
    {
@@ -2110,8 +2120,8 @@
     "value_score": null,
     "p_s": 2.592204,
     "start_price": 0.052589,
-    "end_price": 0.031973,
-    "return": -0.392018,
+    "end_price": 0.036918,
+    "return": -0.297992,
     "price_check": true
    },
    {
@@ -2124,8 +2134,8 @@
     "value_score": null,
     "p_s": 2.654761,
     "start_price": 0.005375,
-    "end_price": 0.003501,
-    "return": -0.34867,
+    "end_price": 0.003924,
+    "return": -0.269967,
     "price_check": true
    },
    {
@@ -2138,8 +2148,8 @@
     "value_score": null,
     "p_s": 3.270478,
     "start_price": 0.051169,
-    "end_price": 0.050003,
-    "return": -0.022792,
+    "end_price": 0.051573,
+    "return": 0.007897,
     "price_check": true
    },
    {
@@ -2152,8 +2162,8 @@
     "value_score": null,
     "p_s": 3.67575,
     "start_price": 0.007583,
-    "end_price": 0.006189,
-    "return": -0.183846,
+    "end_price": 0.006557,
+    "return": -0.135281,
     "price_check": true
    },
    {
@@ -2166,8 +2176,8 @@
     "value_score": null,
     "p_s": 3.954724,
     "start_price": 0.045717,
-    "end_price": 0.036607,
-    "return": -0.199262,
+    "end_price": 0.041075,
+    "return": -0.101546,
     "price_check": true
    },
    {
@@ -2180,8 +2190,8 @@
     "value_score": null,
     "p_s": 4.085198,
     "start_price": 0.442919,
-    "end_price": 0.392622,
-    "return": -0.113557,
+    "end_price": 0.334206,
+    "return": -0.245446,
     "price_check": true
    },
    {
@@ -2194,8 +2204,8 @@
     "value_score": null,
     "p_s": 4.167263,
     "start_price": 55.516467,
-    "end_price": 43.55576,
-    "return": -0.215444,
+    "end_price": 46.148797,
+    "return": -0.168737,
     "price_check": true
    },
    {
@@ -2208,8 +2218,8 @@
     "value_score": null,
     "p_s": 4.673027,
     "start_price": 0.000129,
-    "end_price": 0.000114,
-    "return": -0.117865,
+    "end_price": 0.000112,
+    "return": -0.135,
     "price_check": true
    },
    {
@@ -2222,8 +2232,8 @@
     "value_score": null,
     "p_s": 5.386913,
     "start_price": 0.032991,
-    "end_price": 0.025295,
-    "return": -0.233278,
+    "end_price": 0.02593,
+    "return": -0.214021,
     "price_check": true
    },
    {
@@ -2236,8 +2246,8 @@
     "value_score": null,
     "p_s": 5.82426,
     "start_price": 0.083786,
-    "end_price": 0.066586,
-    "return": -0.205289,
+    "end_price": 0.073575,
+    "return": -0.121865,
     "price_check": true
    },
    {
@@ -2250,8 +2260,8 @@
     "value_score": null,
     "p_s": 6.712827,
     "start_price": 0.008045,
-    "end_price": 0.006256,
-    "return": -0.22236,
+    "end_price": 0.006367,
+    "return": -0.208571,
     "price_check": true
    },
    {
@@ -2264,8 +2274,8 @@
     "value_score": null,
     "p_s": 8.438307,
     "start_price": 0.040103,
-    "end_price": 0.039464,
-    "return": -0.015944,
+    "end_price": 0.03763,
+    "return": -0.061676,
     "price_check": true
    },
    {
@@ -2278,8 +2288,8 @@
     "value_score": null,
     "p_s": 11.089221,
     "start_price": 0.002484,
-    "end_price": 0.002063,
-    "return": -0.169673,
+    "end_price": 0.002068,
+    "return": -0.167271,
     "price_check": true
    },
    {
@@ -2292,8 +2302,8 @@
     "value_score": null,
     "p_s": 11.712753,
     "start_price": 0.115727,
-    "end_price": 0.110906,
-    "return": -0.041655,
+    "end_price": 0.117822,
+    "return": 0.018106,
     "price_check": true
    },
    {
@@ -2306,8 +2316,8 @@
     "value_score": null,
     "p_s": 12.319267,
     "start_price": 0.001505,
-    "end_price": 0.00119,
-    "return": -0.209204,
+    "end_price": 0.001242,
+    "return": -0.174511,
     "price_check": true
    },
    {
@@ -2320,8 +2330,8 @@
     "value_score": null,
     "p_s": 12.664183,
     "start_price": 0.034289,
-    "end_price": 0.028667,
-    "return": -0.16395,
+    "end_price": 0.030036,
+    "return": -0.124023,
     "price_check": true
    },
    {
@@ -2334,8 +2344,8 @@
     "value_score": null,
     "p_s": 15.643589,
     "start_price": 0.020162,
-    "end_price": 0.016635,
-    "return": -0.174927,
+    "end_price": 0.016959,
+    "return": -0.158893,
     "price_check": true
    },
    {
@@ -2348,8 +2358,8 @@
     "value_score": null,
     "p_s": 16.734488,
     "start_price": 0.003915,
-    "end_price": 0.003051,
-    "return": -0.220648,
+    "end_price": 0.002986,
+    "return": -0.237335,
     "price_check": true
    },
    {
@@ -2362,8 +2372,8 @@
     "value_score": null,
     "p_s": 21.956502,
     "start_price": 0.01131,
-    "end_price": 0.00861,
-    "return": -0.238717,
+    "end_price": 0.009021,
+    "return": -0.202391,
     "price_check": true
    },
    {
@@ -2390,8 +2400,8 @@
     "value_score": null,
     "p_s": null,
     "start_price": 0.250921,
-    "end_price": 0.206054,
-    "return": -0.178812,
+    "end_price": 0.219933,
+    "return": -0.1235,
     "price_check": true
    },
    {
@@ -2404,8 +2414,8 @@
     "value_score": null,
     "p_s": null,
     "start_price": 0.000114,
-    "end_price": 2e-05,
-    "return": -0.824457,
+    "end_price": 3e-05,
+    "return": -0.736596,
     "price_check": true
    },
    {
@@ -2426,8 +2436,8 @@
  },
  {
   "scored_at": "2026-11-16T22:54:50Z",
-  "as_of": "2026-11-20T21:10:11Z",
-  "days": 3.9,
+  "as_of": "2026-11-21T20:09:36Z",
+  "days": 4.9,
   "tokens": 153,
   "priced": 151,
   "unpriced": [
@@ -2436,84 +2446,84 @@
   ],
   "price_mismatch": [],
   "benchmarks": {
-   "BTC": -0.10853434640258375,
-   "ETH": -0.12364144634471008,
-   "All tokens (equal weight)": -0.11398994244040092,
-   "Rated tokens (equal weight)": -0.09973811763988319
+   "BTC": -0.0774862166527821,
+   "ETH": -0.07878875095461657,
+   "All tokens (equal weight)": -0.09117800876098262,
+   "Rated tokens (equal weight)": -0.0771831120136308
   },
-  "rank_correlation": -0.0931763175956363,
+  "rank_correlation": -0.057775530108730974,
   "labels": [
    {
     "group": "Value candidate",
     "tokens": 20,
     "priced": 20,
-    "avg_return": -0.10695,
-    "median_return": -0.109151,
-    "vs_basket": 0.00704,
-    "pct_up": 0.05,
-    "beat_basket": 0.55,
-    "best": "FLIP +2%",
-    "worst": "ORE -19%"
+    "avg_return": -0.094976,
+    "median_return": -0.099411,
+    "vs_basket": -0.003798,
+    "pct_up": 0.0,
+    "beat_basket": 0.45,
+    "best": "ORCA -1%",
+    "worst": "SYRUP -18%"
    },
    {
     "group": "Value trap risk",
     "tokens": 4,
     "priced": 4,
-    "avg_return": -0.104358,
-    "median_return": -0.104683,
-    "vs_basket": 0.009632,
+    "avg_return": -0.070377,
+    "median_return": -0.104539,
+    "vs_basket": 0.020801,
     "pct_up": 0.25,
     "beat_basket": 0.5,
-    "best": "USUAL +11%",
-    "worst": "ANSEM -32%"
+    "best": "USUAL +14%",
+    "worst": "ANSEM -22%"
    },
    {
     "group": "Good, priced in",
     "tokens": 16,
     "priced": 16,
-    "avg_return": -0.108413,
-    "median_return": -0.109471,
-    "vs_basket": 0.005577,
-    "pct_up": 0.0625,
-    "beat_basket": 0.5,
-    "best": "O +3%",
-    "worst": "STG -20%"
+    "avg_return": -0.053743,
+    "median_return": -0.083922,
+    "vs_basket": 0.037435,
+    "pct_up": 0.1875,
+    "beat_basket": 0.625,
+    "best": "DRV +18%",
+    "worst": "STG -21%"
    },
    {
     "group": "Mixed",
     "tokens": 26,
     "priced": 26,
-    "avg_return": -0.113609,
-    "median_return": -0.122045,
-    "vs_basket": 0.000381,
-    "pct_up": 0.038462,
-    "beat_basket": 0.423077,
-    "best": "DBR +1%",
-    "worst": "RHEA -21%"
+    "avg_return": -0.096406,
+    "median_return": -0.09887,
+    "vs_basket": -0.005228,
+    "pct_up": 0.076923,
+    "beat_basket": 0.461538,
+    "best": "TREE +11%",
+    "worst": "KNTQ -26%"
    },
    {
     "group": "Avoid",
     "tokens": 28,
     "priced": 28,
-    "avg_return": -0.076089,
-    "median_return": -0.097534,
-    "vs_basket": 0.037901,
-    "pct_up": 0.142857,
+    "avg_return": -0.060991,
+    "median_return": -0.062142,
+    "vs_basket": 0.030187,
+    "pct_up": 0.178571,
     "beat_basket": 0.642857,
-    "best": "KERNEL +25%",
-    "worst": "CFG -23%"
+    "best": "YB +30%",
+    "worst": "CFG -25%"
    },
    {
     "group": "Unrated",
     "tokens": 59,
     "priced": 57,
-    "avg_return": -0.137493,
-    "median_return": -0.124634,
-    "vs_basket": -0.023503,
+    "avg_return": -0.114257,
+    "median_return": -0.100374,
+    "vs_basket": -0.023079,
     "pct_up": 0.087719,
-    "beat_basket": 0.421053,
-    "best": "THOR +7%",
-    "worst": "ODOS -81%"
+    "beat_basket": 0.45614,
+    "best": "THOR +9%",
+    "worst": "ODOS -71%"
    }
   ],
   "buckets": [
@@ -2521,60 +2531,60 @@
     "group": "Top 20%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.123795,
-    "median_return": -0.128376,
-    "vs_basket": -0.009805,
-    "pct_up": 0.052632,
-    "beat_basket": 0.421053,
-    "best": "FLIP +2%",
-    "worst": "STG -20%"
+    "avg_return": -0.103923,
+    "median_return": -0.095506,
+    "vs_basket": -0.012745,
+    "pct_up": 0.0,
+    "beat_basket": 0.473684,
+    "best": "ORCA -1%",
+    "worst": "STG -21%"
    },
    {
     "group": "20-40%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.096781,
-    "median_return": -0.099605,
-    "vs_basket": 0.017209,
-    "pct_up": 0.105263,
-    "beat_basket": 0.631579,
-    "best": "O +3%",
-    "worst": "ANSEM -32%"
+    "avg_return": -0.061805,
+    "median_return": -0.082583,
+    "vs_basket": 0.029373,
+    "pct_up": 0.210526,
+    "beat_basket": 0.526316,
+    "best": "VVV +17%",
+    "worst": "ANSEM -22%"
    },
    {
     "group": "40-60%",
     "tokens": 18,
     "priced": 18,
-    "avg_return": -0.103997,
-    "median_return": -0.109471,
-    "vs_basket": 0.009993,
-    "pct_up": 0.055556,
-    "beat_basket": 0.5,
-    "best": "USUAL +11%",
-    "worst": "CFG -23%"
+    "avg_return": -0.069622,
+    "median_return": -0.079911,
+    "vs_basket": 0.021556,
+    "pct_up": 0.111111,
+    "beat_basket": 0.611111,
+    "best": "DRV +18%",
+    "worst": "CFG -25%"
    },
    {
     "group": "60-80%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.114723,
-    "median_return": -0.120933,
-    "vs_basket": -0.000733,
-    "pct_up": 0.0,
+    "avg_return": -0.103584,
+    "median_return": -0.095954,
+    "vs_basket": -0.012406,
+    "pct_up": 0.052632,
     "beat_basket": 0.473684,
-    "best": "QI -3%",
-    "worst": "RHEA -21%"
+    "best": "F +0%",
+    "worst": "KNTQ -26%"
    },
    {
     "group": "Bottom 20%",
     "tokens": 19,
     "priced": 19,
-    "avg_return": -0.059619,
-    "median_return": -0.097754,
-    "vs_basket": 0.054371,
+    "avg_return": -0.046584,
+    "median_return": -0.056272,
+    "vs_basket": 0.044594,
     "pct_up": 0.210526,
     "beat_basket": 0.631579,
-    "best": "KERNEL +25%",
+    "best": "YB +30%",
     "worst": "ZRO -20%"
    }
   ],
@@ -2589,8 +2599,8 @@
     "value_score": 87.072655,
     "p_s": 2.159795,
     "start_price": 7.46535,
-    "end_price": 6.821843,
-    "return": -0.086199,
+    "end_price": 7.210182,
+    "return": -0.03418,
     "price_check": true
    },
    {
@@ -2604,7 +2614,7 @@
     "p_s": 6.32561,
     "start_price": 2e-06,
     "end_price": 2e-06,
-    "return": -0.128977,
+    "return": -0.128107,
     "price_check": true
    },
    {
@@ -2617,8 +2627,8 @@
     "value_score": 77.906573,
     "p_s": 1.998134,
     "start_price": 0.00286,
-    "end_price": 0.002377,
-    "return": -0.168867,
+    "end_price": 0.002391,
+    "return": -0.164132,
     "price_check": true
    },
    {
@@ -2631,8 +2641,8 @@
     "value_score": 76.059756,
     "p_s": 2.305948,
     "start_price": 0.019694,
-    "end_price": 0.01847,
-    "return": -0.062173,
+    "end_price": 0.018792,
+    "return": -0.045839,
     "price_check": true
    },
    {
@@ -2645,8 +2655,8 @@
     "value_score": 73.379075,
     "p_s": 7.794729,
     "start_price": 1.620257,
-    "end_price": 1.46,
-    "return": -0.098908,
+    "end_price": 1.481852,
+    "return": -0.085422,
     "price_check": true
    },
    {
@@ -2659,8 +2669,8 @@
     "value_score": 72.787305,
     "p_s": 23.118911,
     "start_price": 5.142392,
-    "end_price": 4.342824,
-    "return": -0.155486,
+    "end_price": 4.7056,
+    "return": -0.08494,
     "price_check": true
    },
    {
@@ -2673,8 +2683,8 @@
     "value_score": 72.136566,
     "p_s": 1.066172,
     "start_price": 84.121356,
-    "end_price": 68.48432,
-    "return": -0.185887,
+    "end_price": 75.430318,
+    "return": -0.103315,
     "price_check": true
    },
    {
@@ -2687,8 +2697,8 @@
     "value_score": 70.841515,
     "p_s": 5.745489,
     "start_price": 1.184347,
-    "end_price": 1.060377,
-    "return": -0.104674,
+    "end_price": 1.172609,
+    "return": -0.009911,
     "price_check": true
    },
    {
@@ -2701,8 +2711,8 @@
     "value_score": 70.828286,
     "p_s": 7.948967,
     "start_price": 1.397406,
-    "end_price": 1.262515,
-    "return": -0.09653,
+    "end_price": 1.34145,
+    "return": -0.040043,
     "price_check": true
    },
    {
@@ -2715,8 +2725,8 @@
     "value_score": 70.367631,
     "p_s": 5.879581,
     "start_price": 0.358531,
-    "end_price": 0.301718,
-    "return": -0.158459,
+    "end_price": 0.317476,
+    "return": -0.114509,
     "price_check": true
    },
    {
@@ -2729,8 +2739,8 @@
     "value_score": 69.985922,
     "p_s": 8.211606,
     "start_price": 0.470253,
-    "end_price": 0.477882,
-    "return": 0.016225,
+    "end_price": 0.390501,
+    "return": -0.169593,
     "price_check": true
    },
    {
@@ -2743,8 +2753,8 @@
     "value_score": 69.579243,
     "p_s": 17.965822,
     "start_price": 0.519079,
-    "end_price": 0.476747,
-    "return": -0.081552,
+    "end_price": 0.491206,
+    "return": -0.053696,
     "price_check": true
    },
    {
@@ -2757,8 +2767,8 @@
     "value_score": 69.117366,
     "p_s": 7.99841,
     "start_price": 1.875829,
-    "end_price": 1.580951,
-    "return": -0.157199,
+    "end_price": 1.597606,
+    "return": -0.14832,
     "price_check": true
    },
    {
@@ -2771,8 +2781,8 @@
     "value_score": 68.665795,
     "p_s": 184.887964,
     "start_price": 3.168421,
-    "end_price": 2.761674,
-    "return": -0.128376,
+    "end_price": 2.879882,
+    "return": -0.091067,
     "price_check": true
    },
    {
@@ -2785,8 +2795,8 @@
     "value_score": 66.843257,
     "p_s": 6.897372,
     "start_price": 2.346118,
-    "end_price": 2.123604,
-    "return": -0.094843,
+    "end_price": 2.165998,
+    "return": -0.076773,
     "price_check": true
    },
    {
@@ -2799,8 +2809,8 @@
     "value_score": 66.431956,
     "p_s": 7.279372,
     "start_price": 0.050985,
-    "end_price": 0.043009,
-    "return": -0.156441,
+    "end_price": 0.043838,
+    "return": -0.140163,
     "price_check": true
    },
    {
@@ -2813,8 +2823,8 @@
     "value_score": 66.035637,
     "p_s": 7.738945,
     "start_price": 0.108104,
-    "end_price": 0.088675,
-    "return": -0.179732,
+    "end_price": 0.08836,
+    "return": -0.182641,
     "price_check": true
    },
    {
@@ -2827,8 +2837,8 @@
     "value_score": 65.631455,
     "p_s": 2.84191,
     "start_price": 0.125717,
-    "end_price": 0.100984,
-    "return": -0.196734,
+    "end_price": 0.099773,
+    "return": -0.206373,
     "price_check": true
    },
    {
@@ -2841,8 +2851,8 @@
     "value_score": 65.083567,
     "p_s": 7.542239,
     "start_price": 0.437979,
-    "end_price": 0.38223,
-    "return": -0.127286,
+    "end_price": 0.396149,
+    "return": -0.095506,
     "price_check": true
    },
    {
@@ -2855,8 +2865,8 @@
     "value_score": 63.613041,
     "p_s": 5.270801,
     "start_price": 0.013868,
-    "end_price": 0.012087,
-    "return": -0.128425,
+    "end_price": 0.01204,
+    "return": -0.131792,
     "price_check": true
    },
    {
@@ -2869,8 +2879,8 @@
     "value_score": 63.389169,
     "p_s": 1.898503,
     "start_price": 0.000226,
-    "end_price": 0.0002,
-    "return": -0.112995,
+    "end_price": 0.000212,
+    "return": -0.061942,
     "price_check": true
    },
    {
@@ -2883,8 +2893,8 @@
     "value_score": 63.117855,
     "p_s": 153.960349,
     "start_price": 1.377173,
-    "end_price": 1.24,
-    "return": -0.099605,
+    "end_price": 1.3075,
+    "return": -0.050591,
     "price_check": true
    },
    {
@@ -2897,8 +2907,8 @@
     "value_score": 62.623146,
     "p_s": 3.677614,
     "start_price": 0.073158,
-    "end_price": 0.069812,
-    "return": -0.045743,
+    "end_price": 0.071486,
+    "return": -0.022861,
     "price_check": true
    },
    {
@@ -2911,8 +2921,8 @@
     "value_score": 62.337169,
     "p_s": 85.547776,
     "start_price": 20.400116,
-    "end_price": 19.596,
-    "return": -0.039417,
+    "end_price": 23.860309,
+    "return": 0.169616,
     "price_check": true
    },
    {
@@ -2925,8 +2935,8 @@
     "value_score": 62.063411,
     "p_s": 5.628633,
     "start_price": 4.456401,
-    "end_price": 3.950029,
-    "return": -0.113628,
+    "end_price": 3.949216,
+    "return": -0.11381,
     "price_check": true
    },
    {
@@ -2939,8 +2949,8 @@
     "value_score": 61.586234,
     "p_s": 18.190828,
     "start_price": 69.780107,
-    "end_price": 60.168951,
-    "return": -0.137735,
+    "end_price": 61.25187,
+    "return": -0.122216,
     "price_check": true
    },
    {
@@ -2953,8 +2963,8 @@
     "value_score": 60.987027,
     "p_s": 2.868087,
     "start_price": 0.268781,
-    "end_price": 0.233051,
-    "return": -0.132934,
+    "end_price": 0.233604,
+    "return": -0.130876,
     "price_check": true
    },
    {
@@ -2967,8 +2977,8 @@
     "value_score": 60.937991,
     "p_s": 12.214646,
     "start_price": 1.421234,
-    "end_price": 1.176865,
-    "return": -0.171941,
+    "end_price": 1.146767,
+    "return": -0.193119,
     "price_check": true
    },
    {
@@ -2981,8 +2991,8 @@
     "value_score": 60.579126,
     "p_s": 4.97471,
     "start_price": 0.068469,
-    "end_price": 0.065783,
-    "return": -0.039228,
+    "end_price": 0.067147,
+    "return": -0.019303,
     "price_check": true
    },
    {
@@ -2995,8 +3005,8 @@
     "value_score": 60.060989,
     "p_s": 6.515326,
     "start_price": 0.276827,
-    "end_price": 0.234947,
-    "return": -0.151285,
+    "end_price": 0.231,
+    "return": -0.165543,
     "price_check": true
    },
    {
@@ -3009,8 +3019,8 @@
     "value_score": 59.033905,
     "p_s": 8.335309,
     "start_price": 0.24284,
-    "end_price": 0.22044,
-    "return": -0.092242,
+    "end_price": 0.216839,
+    "return": -0.107069,
     "price_check": true
    },
    {
@@ -3023,8 +3033,8 @@
     "value_score": 58.000818,
     "p_s": 13.559326,
     "start_price": 0.201108,
-    "end_price": 0.19195,
-    "return": -0.045539,
+    "end_price": 0.1845,
+    "return": -0.082583,
     "price_check": true
    },
    {
@@ -3037,8 +3047,8 @@
     "value_score": 57.559607,
     "p_s": 5.192028,
     "start_price": 0.550306,
-    "end_price": 0.564396,
-    "return": 0.025605,
+    "end_price": 0.627073,
+    "return": 0.139498,
     "price_check": true
    },
    {
@@ -3051,8 +3061,8 @@
     "value_score": 57.39327,
     "p_s": 11.927896,
     "start_price": 2.874854,
-    "end_price": 2.3115,
-    "return": -0.195959,
+    "end_price": 2.3735,
+    "return": -0.174393,
     "price_check": true
    },
    {
@@ -3065,8 +3075,8 @@
     "value_score": 56.418887,
     "p_s": 3.977491,
     "start_price": 0.047164,
-    "end_price": 0.031973,
-    "return": -0.322081,
+    "end_price": 0.036918,
+    "return": -0.21724,
     "price_check": true
    },
    {
@@ -3079,8 +3089,8 @@
     "value_score": 55.774629,
     "p_s": 15.397693,
     "start_price": 0.173291,
-    "end_price": 0.167715,
-    "return": -0.03218,
+    "end_price": 0.192502,
+    "return": 0.110857,
     "price_check": true
    },
    {
@@ -3093,8 +3103,8 @@
     "value_score": 55.657168,
     "p_s": 129.306592,
     "start_price": 0.014777,
-    "end_price": 0.014548,
-    "return": -0.015456,
+    "end_price": 0.014597,
+    "return": -0.012171,
     "price_check": true
    },
    {
@@ -3107,8 +3117,8 @@
     "value_score": 53.895778,
     "p_s": 12.428079,
     "start_price": 0.012689,
-    "end_price": 0.01284,
-    "return": 0.011943,
+    "end_price": 0.012831,
+    "return": 0.011244,
     "price_check": true
    },
    {
@@ -3121,8 +3131,8 @@
     "value_score": 53.65007,
     "p_s": 21.547496,
     "start_price": 0.206908,
-    "end_price": 0.174031,
-    "return": -0.158897,
+    "end_price": 0.176192,
+    "return": -0.148453,
     "price_check": true
    },
    {
@@ -3135,8 +3145,8 @@
     "value_score": 53.254388,
     "p_s": 22.087652,
     "start_price": 1.64118,
-    "end_price": 1.405227,
-    "return": -0.143771,
+    "end_price": 1.474541,
+    "return": -0.101536,
     "price_check": true
    },
    {
@@ -3149,8 +3159,8 @@
     "value_score": 52.053742,
     "p_s": 122.84164,
     "start_price": 9.158905,
-    "end_price": 8.292406,
-    "return": -0.094607,
+    "end_price": 8.633658,
+    "return": -0.057348,
     "price_check": true
    },
    {
@@ -3163,8 +3173,8 @@
     "value_score": 51.328573,
     "p_s": 41.864237,
     "start_price": 17.859091,
-    "end_price": 16.647891,
-    "return": -0.06782,
+    "end_price": 17.096832,
+    "return": -0.042682,
     "price_check": true
    },
    {
@@ -3177,8 +3187,8 @@
     "value_score": 51.127385,
     "p_s": 57.976863,
     "start_price": 0.130524,
-    "end_price": 0.111206,
-    "return": -0.148005,
+    "end_price": 0.11317,
+    "return": -0.132958,
     "price_check": true
    },
    {
@@ -3191,8 +3201,8 @@
     "value_score": 51.127067,
     "p_s": 4.336803,
     "start_price": 0.009846,
-    "end_price": 0.010969,
-    "return": 0.114015,
+    "end_price": 0.011272,
+    "return": 0.144809,
     "price_check": true
    },
    {
@@ -3205,8 +3215,8 @@
     "value_score": 51.012899,
     "p_s": 2.691,
     "start_price": 0.096214,
-    "end_price": 0.091412,
-    "return": -0.049914,
+    "end_price": 0.093111,
+    "return": -0.032254,
     "price_check": true
    },
    {
@@ -3219,8 +3229,8 @@
     "value_score": 50.793436,
     "p_s": 3.721274,
     "start_price": 0.287372,
-    "end_price": 0.26444,
-    "return": -0.079799,
+    "end_price": 0.265268,
+    "return": -0.076917,
     "price_check": true
    },
    {
@@ -3233,8 +3243,8 @@
     "value_score": 50.6934,
     "p_s": 2.965063,
     "start_price": 0.019643,
-    "end_price": 0.017297,
-    "return": -0.119452,
+    "end_price": 0.017932,
+    "return": -0.087112,
     "price_check": true
    },
    {
@@ -3247,8 +3257,8 @@
     "value_score": 50.644046,
     "p_s": 20.383782,
     "start_price": 0.080299,
-    "end_price": 0.069734,
-    "return": -0.13157,
+    "end_price": 0.068717,
+    "return": -0.144241,
     "price_check": true
    },
    {
@@ -3261,8 +3271,8 @@
     "value_score": 50.425486,
     "p_s": 1.786687,
     "start_price": 0.004496,
-    "end_price": 0.003798,
-    "return": -0.15532,
+    "end_price": 0.003878,
+    "return": -0.137508,
     "price_check": true
    },
    {
@@ -3275,8 +3285,8 @@
     "value_score": 50.045476,
     "p_s": 10.131791,
     "start_price": 0.466484,
-    "end_price": 0.427276,
-    "return": -0.084051,
+    "end_price": 0.466409,
+    "return": -0.000162,
     "price_check": true
    },
    {
@@ -3289,8 +3299,8 @@
     "value_score": 49.305219,
     "p_s": 3.139595,
     "start_price": 0.092118,
-    "end_price": 0.085286,
-    "return": -0.07417,
+    "end_price": 0.088106,
+    "return": -0.043548,
     "price_check": true
    },
    {
@@ -3303,8 +3313,8 @@
     "value_score": 48.862096,
     "p_s": 63.139173,
     "start_price": 0.052413,
-    "end_price": 0.046301,
-    "return": -0.116623,
+    "end_price": 0.048068,
+    "return": -0.082905,
     "price_check": true
    },
    {
@@ -3317,8 +3327,8 @@
     "value_score": 47.832887,
     "p_s": 47.664102,
     "start_price": 0.28728,
-    "end_price": 0.242436,
-    "return": -0.156098,
+    "end_price": 0.33781,
+    "return": 0.175891,
     "price_check": true
    },
    {
@@ -3331,8 +3341,8 @@
     "value_score": 47.583886,
     "p_s": 6.136834,
     "start_price": 0.072081,
-    "end_price": 0.055718,
-    "return": -0.227008,
+    "end_price": 0.054098,
+    "return": -0.249478,
     "price_check": true
    },
    {
@@ -3345,8 +3355,8 @@
     "value_score": 47.581814,
     "p_s": 1.104515,
     "start_price": 7.33,
-    "end_price": 6.58,
-    "return": -0.102319,
+    "end_price": 6.09,
+    "return": -0.169168,
     "price_check": true
    },
    {
@@ -3359,8 +3369,8 @@
     "value_score": 47.527254,
     "p_s": 5.282078,
     "start_price": 0.163281,
-    "end_price": 0.150785,
-    "return": -0.076532,
+    "end_price": 0.152238,
+    "return": -0.067631,
     "price_check": true
    },
    {
@@ -3373,8 +3383,8 @@
     "value_score": 47.44443,
     "p_s": 7.617967,
     "start_price": 0.074364,
-    "end_price": 0.060563,
-    "return": -0.185582,
+    "end_price": 0.0613,
+    "return": -0.175674,
     "price_check": true
    },
    {
@@ -3387,8 +3397,8 @@
     "value_score": 46.981332,
     "p_s": 7.53898,
     "start_price": 0.001572,
-    "end_price": 0.001519,
-    "return": -0.033699,
+    "end_price": 0.001534,
+    "return": -0.023985,
     "price_check": true
    },
    {
@@ -3401,8 +3411,8 @@
     "value_score": 46.351258,
     "p_s": 10.645509,
     "start_price": 0.045691,
-    "end_price": 0.043895,
-    "return": -0.039291,
+    "end_price": 0.04359,
+    "return": -0.045974,
     "price_check": true
    },
    {
@@ -3415,8 +3425,8 @@
     "value_score": 46.215787,
     "p_s": 18.147927,
     "start_price": 0.224945,
-    "end_price": 0.187526,
-    "return": -0.166345,
+    "end_price": 0.1662,
+    "return": -0.261151,
     "price_check": true
    },
    {
@@ -3429,8 +3439,8 @@
     "value_score": 44.858473,
     "p_s": 9.020963,
     "start_price": 0.136001,
-    "end_price": 0.130542,
-    "return": -0.040137,
+    "end_price": 0.129296,
+    "return": -0.0493,
     "price_check": true
    },
    {
@@ -3443,8 +3453,8 @@
     "value_score": 44.641666,
     "p_s": 3.267949,
     "start_price": 0.280402,
-    "end_price": 0.23295,
-    "return": -0.169229,
+    "end_price": 0.2356,
+    "return": -0.159778,
     "price_check": true
    },
    {
@@ -3457,8 +3467,8 @@
     "value_score": 44.597465,
     "p_s": 12.124526,
     "start_price": 0.154462,
-    "end_price": 0.144721,
-    "return": -0.063067,
+    "end_price": 0.148689,
+    "return": -0.037379,
     "price_check": true
    },
    {
@@ -3471,8 +3481,8 @@
     "value_score": 43.386353,
     "p_s": 17.522062,
     "start_price": 1.769074,
-    "end_price": 1.605553,
-    "return": -0.092433,
+    "end_price": 1.621854,
+    "return": -0.083219,
     "price_check": true
    },
    {
@@ -3485,8 +3495,8 @@
     "value_score": 43.276064,
     "p_s": 26.581075,
     "start_price": 108.071746,
-    "end_price": 95.002268,
-    "return": -0.120933,
+    "end_price": 97.674889,
+    "return": -0.096203,
     "price_check": true
    },
    {
@@ -3500,7 +3510,7 @@
     "p_s": 174.754003,
     "start_price": 3e-06,
     "end_price": 3e-06,
-    "return": -0.053981,
+    "return": -0.000471,
     "price_check": true
    },
    {
@@ -3513,8 +3523,8 @@
     "value_score": 43.147605,
     "p_s": 93.857698,
     "start_price": 50.155895,
-    "end_price": 43.987814,
-    "return": -0.122978,
+    "end_price": 46.991533,
+    "return": -0.063091,
     "price_check": true
    },
    {
@@ -3527,8 +3537,8 @@
     "value_score": 42.761858,
     "p_s": 12.537055,
     "start_price": 0.063943,
-    "end_price": 0.056849,
-    "return": -0.110938,
+    "end_price": 0.057807,
+    "return": -0.095954,
     "price_check": true
    },
    {
@@ -3541,8 +3551,8 @@
     "value_score": 42.609864,
     "p_s": 7.406869,
     "start_price": 0.004107,
-    "end_price": 0.003601,
-    "return": -0.123157,
+    "end_price": 0.003582,
+    "return": -0.127702,
     "price_check": true
    },
    {
@@ -3555,8 +3565,8 @@
     "value_score": 41.550533,
     "p_s": 10.253878,
     "start_price": 0.016193,
-    "end_price": 0.014617,
-    "return": -0.097314,
+    "end_price": 0.015202,
+    "return": -0.061193,
     "price_check": true
    },
    {
@@ -3569,8 +3579,8 @@
     "value_score": 41.181627,
     "p_s": 5.878321,
     "start_price": 0.032662,
-    "end_price": 0.025798,
-    "return": -0.210149,
+    "end_price": 0.026497,
+    "return": -0.18876,
     "price_check": true
    },
    {
@@ -3583,8 +3593,8 @@
     "value_score": 40.468783,
     "p_s": 20.063377,
     "start_price": 0.264764,
-    "end_price": 0.2221,
-    "return": -0.16114,
+    "end_price": 0.219633,
+    "return": -0.170456,
     "price_check": true
    },
    {
@@ -3597,8 +3607,8 @@
     "value_score": 39.849547,
     "p_s": 37.935144,
     "start_price": 1.441666,
-    "end_price": 1.2252,
-    "return": -0.15015,
+    "end_price": 1.27165,
+    "return": -0.11793,
     "price_check": true
    },
    {
@@ -3611,8 +3621,8 @@
     "value_score": 38.09942,
     "p_s": 9.515902,
     "start_price": 0.066639,
-    "end_price": 0.053507,
-    "return": -0.19706,
+    "end_price": 0.052546,
+    "return": -0.211473,
     "price_check": true
    },
    {
@@ -3625,8 +3635,8 @@
     "value_score": 38.001296,
     "p_s": 3.883206,
     "start_price": 0.002112,
-    "end_price": 0.002023,
-    "return": -0.042147,
+    "end_price": 0.002116,
+    "return": 0.001604,
     "price_check": true
    },
    {
@@ -3639,8 +3649,8 @@
     "value_score": 37.226401,
     "p_s": 29.735088,
     "start_price": 0.099608,
-    "end_price": 0.09985,
-    "return": 0.002432,
+    "end_price": 0.099614,
+    "return": 6.6e-05,
     "price_check": true
    },
    {
@@ -3653,8 +3663,8 @@
     "value_score": 36.601269,
     "p_s": 991.996383,
     "start_price": 0.720983,
-    "end_price": 0.632181,
-    "return": -0.123168,
+    "end_price": 0.646097,
+    "return": -0.103865,
     "price_check": true
    },
    {
@@ -3667,8 +3677,8 @@
     "value_score": 34.632369,
     "p_s": 42.465303,
     "start_price": 3.085178,
-    "end_price": 3.553647,
-    "return": 0.151845,
+    "end_price": 3.386912,
+    "return": 0.097801,
     "price_check": true
    },
    {
@@ -3681,8 +3691,8 @@
     "value_score": 33.255451,
     "p_s": 16.552595,
     "start_price": 0.043072,
-    "end_price": 0.047508,
-    "return": 0.103008,
+    "end_price": 0.056,
+    "return": 0.30016,
     "price_check": true
    },
    {
@@ -3695,8 +3705,8 @@
     "value_score": 31.343077,
     "p_s": 128.50268,
     "start_price": 15.640705,
-    "end_price": 15.087175,
-    "return": -0.03539,
+    "end_price": 15.371465,
+    "return": -0.017214,
     "price_check": true
    },
    {
@@ -3709,8 +3719,8 @@
     "value_score": 29.4842,
     "p_s": 85.217572,
     "start_price": 0.678488,
-    "end_price": 0.606331,
-    "return": -0.106351,
+    "end_price": 0.617588,
+    "return": -0.089759,
     "price_check": true
    },
    {
@@ -3723,8 +3733,8 @@
     "value_score": 28.837923,
     "p_s": 21.551159,
     "start_price": 0.027486,
-    "end_price": 0.0234,
-    "return": -0.148647,
+    "end_price": 0.0233,
+    "return": -0.152263,
     "price_check": true
    },
    {
@@ -3737,8 +3747,8 @@
     "value_score": 27.400761,
     "p_s": 15.387038,
     "start_price": 0.027706,
-    "end_price": 0.025528,
-    "return": -0.078628,
+    "end_price": 0.026224,
+    "return": -0.053484,
     "price_check": true
    },
    {
@@ -3751,8 +3761,8 @@
     "value_score": 26.564346,
     "p_s": 51.447749,
     "start_price": 3.927501,
-    "end_price": 3.490268,
-    "return": -0.111326,
+    "end_price": 3.582389,
+    "return": -0.087871,
     "price_check": true
    },
    {
@@ -3765,8 +3775,8 @@
     "value_score": 26.466594,
     "p_s": 8.641275,
     "start_price": 0.038269,
-    "end_price": 0.04785,
-    "return": 0.250352,
+    "end_price": 0.043516,
+    "return": 0.137102,
     "price_check": true
    },
    {
@@ -3779,8 +3789,8 @@
     "value_score": 24.502848,
     "p_s": 107.918813,
     "start_price": 0.826132,
-    "end_price": 0.764525,
-    "return": -0.074572,
+    "end_price": 0.779644,
+    "return": -0.056272,
     "price_check": true
    },
    {
@@ -3793,8 +3803,8 @@
     "value_score": 24.187067,
     "p_s": 183.437601,
     "start_price": 0.444404,
-    "end_price": 0.370693,
-    "return": -0.165866,
+    "end_price": 0.3781,
+    "return": -0.149198,
     "price_check": true
    },
    {
@@ -3807,8 +3817,8 @@
     "value_score": 23.177568,
     "p_s": 39.51847,
     "start_price": 0.412473,
-    "end_price": 0.412318,
-    "return": -0.000376,
+    "end_price": 0.407028,
+    "return": -0.013199,
     "price_check": true
    },
    {
@@ -3821,8 +3831,8 @@
     "value_score": 21.653332,
     "p_s": 101.940637,
     "start_price": 0.079671,
-    "end_price": 0.068449,
-    "return": -0.140856,
+    "end_price": 0.069852,
+    "return": -0.123251,
     "price_check": true
    },
    {
@@ -3835,8 +3845,8 @@
     "value_score": 21.324961,
     "p_s": 70.332083,
     "start_price": 11.710117,
-    "end_price": 10.565407,
-    "return": -0.097754,
+    "end_price": 11.254939,
+    "return": -0.038871,
     "price_check": true
    },
    {
@@ -3849,8 +3859,8 @@
     "value_score": 16.992647,
     "p_s": 87.523951,
     "start_price": 0.002799,
-    "end_price": 0.002378,
-    "return": -0.150654,
+    "end_price": 0.00234,
+    "return": -0.164124,
     "price_check": true
    },
    {
@@ -3863,8 +3873,8 @@
     "value_score": 14.926367,
     "p_s": 3186.303487,
     "start_price": 0.11535,
-    "end_price": 0.095875,
-    "return": -0.168833,
+    "end_price": 0.0979,
+    "return": -0.151278,
     "price_check": true
    },
    {
@@ -3877,8 +3887,8 @@
     "value_score": 11.866951,
     "p_s": 334.947166,
     "start_price": 0.01615,
-    "end_price": 0.01549,
-    "return": -0.04084,
+    "end_price": 0.015881,
+    "return": -0.016617,
     "price_check": true
    },
    {
@@ -3891,8 +3901,8 @@
     "value_score": 10.246876,
     "p_s": 750.448937,
     "start_price": 1.453305,
-    "end_price": 1.1668,
-    "return": -0.197141,
+    "end_price": 1.158339,
+    "return": -0.202962,
     "price_check": true
    },
    {
@@ -3905,8 +3915,8 @@
     "value_score": null,
     "p_s": 0.034294,
     "start_price": 0.455566,
-    "end_price": 0.323122,
-    "return": -0.290724,
+    "end_price": 0.377854,
+    "return": -0.170584,
     "price_check": true
    },
    {
@@ -3919,8 +3929,8 @@
     "value_score": null,
     "p_s": 0.041273,
     "start_price": 0.151429,
-    "end_price": 0.124204,
-    "return": -0.179789,
+    "end_price": 0.131217,
+    "return": -0.133479,
     "price_check": true
    },
    {
@@ -3933,8 +3943,8 @@
     "value_score": null,
     "p_s": 0.086474,
     "start_price": 0.000472,
-    "end_price": 0.000479,
-    "return": 0.01512,
+    "end_price": 0.000468,
+    "return": -0.007776,
     "price_check": true
    },
    {
@@ -3947,8 +3957,8 @@
     "value_score": null,
     "p_s": 0.089609,
     "start_price": 0.040693,
-    "end_price": 0.036285,
-    "return": -0.108334,
+    "end_price": 0.036819,
+    "return": -0.095212,
     "price_check": true
    },
    {
@@ -3961,8 +3971,8 @@
     "value_score": null,
     "p_s": 0.100043,
     "start_price": 0.000698,
-    "end_price": 0.000511,
-    "return": -0.268075,
+    "end_price": 0.000528,
+    "return": -0.24335,
     "price_check": true
    },
    {
@@ -3975,8 +3985,8 @@
     "value_score": null,
     "p_s": 0.180905,
     "start_price": 0.000704,
-    "end_price": 0.000711,
-    "return": 0.008783,
+    "end_price": 0.00069,
+    "return": -0.020684,
     "price_check": true
    },
    {
@@ -3989,8 +3999,8 @@
     "value_score": null,
     "p_s": 0.18704,
     "start_price": 0.018997,
-    "end_price": 0.013653,
-    "return": -0.281301,
+    "end_price": 0.013438,
+    "return": -0.292594,
     "price_check": true
    },
    {
@@ -4003,8 +4013,8 @@
     "value_score": null,
     "p_s": 0.191678,
     "start_price": 0.012136,
-    "end_price": 0.011462,
-    "return": -0.05551,
+    "end_price": 0.011241,
+    "return": -0.073734,
     "price_check": true
    },
    {
@@ -4017,8 +4027,8 @@
     "value_score": null,
     "p_s": 0.215834,
     "start_price": 0.041643,
-    "end_price": 0.030278,
-    "return": -0.272906,
+    "end_price": 0.035018,
+    "return": -0.159078,
     "price_check": true
    },
    {
@@ -4031,8 +4041,8 @@
     "value_score": null,
     "p_s": 0.232857,
     "start_price": 0.002798,
-    "end_price": 0.001789,
-    "return": -0.360603,
+    "end_price": 0.001941,
+    "return": -0.306212,
     "price_check": true
    },
    {
@@ -4045,8 +4055,8 @@
     "value_score": null,
     "p_s": 0.255506,
     "start_price": 0.107251,
-    "end_price": 0.099768,
-    "return": -0.069779,
+    "end_price": 0.099897,
+    "return": -0.068573,
     "price_check": true
    },
    {
@@ -4059,8 +4069,8 @@
     "value_score": null,
     "p_s": 0.357041,
     "start_price": 0.020489,
-    "end_price": 0.016665,
-    "return": -0.186645,
+    "end_price": 0.015807,
+    "return": -0.228542,
     "price_check": true
    },
    {
@@ -4073,8 +4083,8 @@
     "value_score": null,
     "p_s": 0.384582,
     "start_price": 0.069028,
-    "end_price": 0.070197,
-    "return": 0.016943,
+    "end_price": 0.072102,
+    "return": 0.044535,
     "price_check": true
    },
    {
@@ -4087,8 +4097,8 @@
     "value_score": null,
     "p_s": 0.407461,
     "start_price": 0.244114,
-    "end_price": 0.219899,
-    "return": -0.099195,
+    "end_price": 0.219611,
+    "return": -0.100374,
     "price_check": true
    },
    {
@@ -4101,8 +4111,8 @@
     "value_score": null,
     "p_s": 0.409551,
     "start_price": 0.012195,
-    "end_price": 0.010098,
-    "return": -0.171926,
+    "end_price": 0.010344,
+    "return": -0.151726,
     "price_check": true
    },
    {
@@ -4115,8 +4125,8 @@
     "value_score": null,
     "p_s": 0.473635,
     "start_price": 0.00291,
-    "end_price": 0.002117,
-    "return": -0.272521,
+    "end_price": 0.002028,
+    "return": -0.303069,
     "price_check": true
    },
    {
@@ -4129,8 +4139,8 @@
     "value_score": null,
     "p_s": 0.625605,
     "start_price": 0.008181,
-    "end_price": 0.007954,
-    "return": -0.027719,
+    "end_price": 0.00794,
+    "return": -0.02947,
     "price_check": true
    },
    {
@@ -4143,8 +4153,8 @@
     "value_score": null,
     "p_s": 0.6323,
     "start_price": 0.002056,
-    "end_price": 0.001813,
-    "return": -0.118451,
+    "end_price": 0.001814,
+    "return": -0.117809,
     "price_check": true
    },
    {
@@ -4157,8 +4167,8 @@
     "value_score": null,
     "p_s": 0.644551,
     "start_price": 0.119929,
-    "end_price": 0.0929,
-    "return": -0.225375,
+    "end_price": 0.088407,
+    "return": -0.262837,
     "price_check": true
    },
    {
@@ -4171,8 +4181,8 @@
     "value_score": null,
     "p_s": 0.810078,
     "start_price": 0.003642,
-    "end_price": 0.003081,
-    "return": -0.153899,
+    "end_price": 0.003084,
+    "return": -0.153135,
     "price_check": true
    },
    {
@@ -4185,8 +4195,8 @@
     "value_score": null,
     "p_s": 0.916184,
     "start_price": 0.019587,
-    "end_price": 0.013773,
-    "return": -0.296849,
+    "end_price": 0.016609,
+    "return": -0.152072,
     "price_check": true
    },
    {
@@ -4199,8 +4209,8 @@
     "value_score": null,
     "p_s": 0.949421,
     "start_price": 14.542718,
-    "end_price": 12.33339,
-    "return": -0.15192,
+    "end_price": 13.019052,
+    "return": -0.104772,
     "price_check": true
    },
    {
@@ -4213,8 +4223,8 @@
     "value_score": null,
     "p_s": 0.970157,
     "start_price": 0.013469,
-    "end_price": 0.011222,
-    "return": -0.16684,
+    "end_price": 0.011144,
+    "return": -0.172585,
     "price_check": true
    },
    {
@@ -4227,8 +4237,8 @@
     "value_score": null,
     "p_s": 0.974021,
     "start_price": 0.171577,
-    "end_price": 0.140185,
-    "return": -0.182965,
+    "end_price": 0.15532,
+    "return": -0.094751,
     "price_check": true
    },
    {
@@ -4241,8 +4251,8 @@
     "value_score": null,
     "p_s": 1.168024,
     "start_price": 0.004814,
-    "end_price": 0.004213,
-    "return": -0.124892,
+    "end_price": 0.004509,
+    "return": -0.063408,
     "price_check": true
    },
    {
@@ -4255,8 +4265,8 @@
     "value_score": null,
     "p_s": 1.269417,
     "start_price": 0.003185,
-    "end_price": 0.002718,
-    "return": -0.146566,
+    "end_price": 0.002845,
+    "return": -0.106723,
     "price_check": true
    },
    {
@@ -4269,8 +4279,8 @@
     "value_score": null,
     "p_s": 1.333857,
     "start_price": 0.707968,
-    "end_price": 0.618956,
-    "return": -0.125729,
+    "end_price": 0.610445,
+    "return": -0.137751,
     "price_check": true
    },
    {
@@ -4283,8 +4293,8 @@
     "value_score": null,
     "p_s": 1.377659,
     "start_price": 0.0019,
-    "end_price": 0.00189,
-    "return": -0.004979,
+    "end_price": 0.001888,
+    "return": -0.006312,
     "price_check": true
    },
    {
@@ -4297,8 +4307,8 @@
     "value_score": null,
     "p_s": 1.57088,
     "start_price": 0.011978,
-    "end_price": 0.011379,
-    "return": -0.049989,
+    "end_price": 0.011503,
+    "return": -0.039635,
     "price_check": true
    },
    {
@@ -4311,8 +4321,8 @@
     "value_score": null,
     "p_s": 1.773443,
     "start_price": 0.337679,
-    "end_price": 0.295712,
-    "return": -0.124281,
+    "end_price": 0.295173,
+    "return": -0.125877,
     "price_check": true
    },
    {
@@ -4325,8 +4335,8 @@
     "value_score": null,
     "p_s": 1.796209,
     "start_price": 0.038867,
-    "end_price": 0.041607,
-    "return": 0.070497,
+    "end_price": 0.042543,
+    "return": 0.09457,
     "price_check": true
    },
    {
@@ -4339,8 +4349,8 @@
     "value_score": null,
     "p_s": 1.866345,
     "start_price": 0.006493,
-    "end_price": 0.006,
-    "return": -0.075932,
+    "end_price": 0.005932,
+    "return": -0.086321,
     "price_check": true
    },
    {
@@ -4353,8 +4363,8 @@
     "value_score": null,
     "p_s": 1.949092,
     "start_price": 8.740245,
-    "end_price": 7.428857,
-    "return": -0.15004,
+    "end_price": 7.351439,
+    "return": -0.158898,
     "price_check": true
    },
    {
@@ -4367,8 +4377,8 @@
     "value_score": null,
     "p_s": 2.024906,
     "start_price": 0.011891,
-    "end_price": 0.010944,
-    "return": -0.07964,
+    "end_price": 0.011089,
+    "return": -0.067408,
     "price_check": true
    },
    {
@@ -4381,8 +4391,8 @@
     "value_score": null,
     "p_s": 2.189145,
     "start_price": 0.007905,
-    "end_price": 0.007262,
-    "return": -0.081438,
+    "end_price": 0.007479,
+    "return": -0.05392,
     "price_check": true
    },
    {
@@ -4395,8 +4405,8 @@
     "value_score": null,
     "p_s": 2.724566,
     "start_price": 0.005432,
-    "end_price": 0.003501,
-    "return": -0.355525,
+    "end_price": 0.003924,
+    "return": -0.27765,
     "price_check": true
    },
    {
@@ -4409,8 +4419,8 @@
     "value_score": null,
     "p_s": 2.990672,
     "start_price": 0.051444,
-    "end_price": 0.050003,
-    "return": -0.028021,
+    "end_price": 0.051573,
+    "return": 0.002504,
     "price_check": true
    },
    {
@@ -4423,8 +4433,8 @@
     "value_score": null,
     "p_s": 3.129731,
     "start_price": 0.007199,
-    "end_price": 0.006189,
-    "return": -0.140289,
+    "end_price": 0.006901,
+    "return": -0.041417,
     "price_check": true
    },
    {
@@ -4437,8 +4447,8 @@
     "value_score": null,
     "p_s": 3.546896,
     "start_price": 0.182692,
-    "end_price": 0.170993,
-    "return": -0.064035,
+    "end_price": 0.172266,
+    "return": -0.057067,
     "price_check": true
    },
    {
@@ -4451,8 +4461,8 @@
     "value_score": null,
     "p_s": 3.84138,
     "start_price": 52.032222,
-    "end_price": 43.55576,
-    "return": -0.162908,
+    "end_price": 46.148797,
+    "return": -0.113073,
     "price_check": true
    },
    {
@@ -4465,8 +4475,8 @@
     "value_score": null,
     "p_s": 3.898553,
     "start_price": 0.423392,
-    "end_price": 0.392622,
-    "return": -0.072674,
+    "end_price": 0.334206,
+    "return": -0.210646,
     "price_check": true
    },
    {
@@ -4479,8 +4489,8 @@
     "value_score": null,
     "p_s": 3.904609,
     "start_price": 0.042801,
-    "end_price": 0.036607,
-    "return": -0.144709,
+    "end_price": 0.041075,
+    "return": -0.040336,
     "price_check": true
    },
    {
@@ -4493,8 +4503,8 @@
     "value_score": null,
     "p_s": 4.460217,
     "start_price": 0.000119,
-    "end_price": 0.000114,
-    "return": -0.044406,
+    "end_price": 0.000112,
+    "return": -0.059436,
     "price_check": true
    },
    {
@@ -4507,8 +4517,8 @@
     "value_score": null,
     "p_s": 4.79925,
     "start_price": 0.029862,
-    "end_price": 0.025295,
-    "return": -0.152942,
+    "end_price": 0.025865,
+    "return": -0.13384,
     "price_check": true
    },
    {
@@ -4521,8 +4531,8 @@
     "value_score": null,
     "p_s": 5.004075,
     "start_price": 0.075544,
-    "end_price": 0.066595,
-    "return": -0.118462,
+    "end_price": 0.073575,
+    "return": -0.026063,
     "price_check": true
    },
    {
@@ -4535,8 +4545,8 @@
     "value_score": null,
     "p_s": 5.461113,
     "start_price": 0.038716,
-    "end_price": 0.037348,
-    "return": -0.035323,
+    "end_price": 0.038738,
+    "return": 0.000573,
     "price_check": true
    },
    {
@@ -4549,8 +4559,8 @@
     "value_score": null,
     "p_s": 6.037925,
     "start_price": 0.007173,
-    "end_price": 0.006256,
-    "return": -0.127812,
+    "end_price": 0.006367,
+    "return": -0.112346,
     "price_check": true
    },
    {
@@ -4563,8 +4573,8 @@
     "value_score": null,
     "p_s": 8.039842,
     "start_price": 0.038502,
-    "end_price": 0.039464,
-    "return": 0.024999,
+    "end_price": 0.03763,
+    "return": -0.022636,
     "price_check": true
    },
    {
@@ -4577,8 +4587,8 @@
     "value_score": null,
     "p_s": 10.355493,
     "start_price": 0.002358,
-    "end_price": 0.002056,
-    "return": -0.128208,
+    "end_price": 0.002068,
+    "return": -0.122922,
     "price_check": true
    },
    {
@@ -4591,8 +4601,8 @@
     "value_score": null,
     "p_s": 11.045038,
     "start_price": 0.001412,
-    "end_price": 0.00119,
-    "return": -0.157547,
+    "end_price": 0.001242,
+    "return": -0.120588,
     "price_check": true
    },
    {
@@ -4605,8 +4615,8 @@
     "value_score": null,
     "p_s": 11.365235,
     "start_price": 0.030473,
-    "end_price": 0.028645,
-    "return": -0.059991,
+    "end_price": 0.030036,
+    "return": -0.01433,
     "price_check": true
    },
    {
@@ -4619,8 +4629,8 @@
     "value_score": null,
     "p_s": 11.963636,
     "start_price": 0.115903,
-    "end_price": 0.110906,
-    "return": -0.043109,
+    "end_price": 0.117822,
+    "return": 0.016561,
     "price_check": true
    },
    {
@@ -4633,8 +4643,8 @@
     "value_score": null,
     "p_s": 14.7141,
     "start_price": 0.003463,
-    "end_price": 0.003051,
-    "return": -0.118806,
+    "end_price": 0.002986,
+    "return": -0.137673,
     "price_check": true
    },
    {
@@ -4647,8 +4657,8 @@
     "value_score": null,
     "p_s": 18.874987,
     "start_price": 0.00964,
-    "end_price": 0.0086,
-    "return": -0.10792,
+    "end_price": 0.00904,
+    "return": -0.062278,
     "price_check": true
    },
    {
@@ -4661,8 +4671,8 @@
     "value_score": null,
     "p_s": 28.04868,
     "start_price": 0.017961,
-    "end_price": 0.016635,
-    "return": -0.073819,
+    "end_price": 0.016959,
+    "return": -0.05582,
     "price_check": true
    },
    {
@@ -4689,8 +4699,8 @@
     "value_score": null,
     "p_s": null,
     "start_price": 0.23539,
-    "end_price": 0.206053,
-    "return": -0.124634,
+    "end_price": 0.220432,
+    "return": -0.063548,
     "price_check": true
    },
    {
@@ -4703,8 +4713,8 @@
     "value_score": null,
     "p_s": null,
     "start_price": 0.000104,
-    "end_price": 2e-05,
-    "return": -0.80749,
+    "end_price": 3e-05,
+    "return": -0.711074,
     "price_check": true
    },
    {
